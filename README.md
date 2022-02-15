@@ -1,0 +1,2 @@
+# MORFEInvariantManifold_examples
+Collection of analyses performed with MORFEInvariantManifold
