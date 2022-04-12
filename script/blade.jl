@@ -5,6 +5,9 @@ using MORFEInvariantManifold
 # Meshes associated to the blade are used to benchmark the scalability of the code.
 mesh_file = "blade_1.mphtxt"
 
+# add material
+MORFE_add_material("Titanium",4400.0,104e9,0.3)
+
 ### DOMAINS INFO
 # domain_list is a vector that stores vectors of integers. 
 # Each subvector is a domain. Each integer is a COMSOL volume.
@@ -52,7 +55,20 @@ style = 'r'
 # max_order: maximum order of the asymptotic expansion of the autonomous problem
 max_order = 7
 
-@time Cp, rdyn = MORFE_mech_autonomous(mesh_file,domains_list,materials,
+odir, Cp, rdyn = MORFE_mech_autonomous(mesh_file,domains_list,materials,
                                        boundaries_list,constrained_dof,bc_vals,
                                        α,β,
                                        Φₗᵢₛₜ,style,max_order);
+
+x0 = [0.0,0.3]
+integration_length = 3.0
+forward=true
+MaxNumPoints=100
+minstep=1e-8
+maxstep=20.0
+ncol=4.0
+ntst=40.0
+MORFE_integrate_rdyn_backbone(odir,x0,integration_length,forward,MaxNumPoints,minstep,maxstep,ncol,ntst)
+
+#
+frf = MORFE_compute_backbone_modal(odir)

@@ -4,6 +4,9 @@ using MORFEInvariantManifold
 # Name of the mesh file. The one of this example is a COMSOL mesh format.
 mesh_file = "arch_3.mphtxt"
 
+# add material
+MORFE_add_material("polysilicon",2.33e-3,160e3,0.22)
+
 ### DOMAINS INFO
 # domain_list is a vector that stores vectors of integers. 
 # Each subvector is a domain. Each integer is a COMSOL volume.
@@ -51,7 +54,19 @@ style = 'c'
 # max_order: maximum order of the asymptotic expansion of the autonomous problem
 max_order = 9
 
-Cp, rdyn = MORFE_mech_autonomous(mesh_file,domains_list,materials,
-                                 boundaries_list,constrained_dof,bc_vals,
-                                 α,β,
-                                 Φₗᵢₛₜ,style,max_order)
+odir, Cp, rdyn = MORFE_mech_autonomous(mesh_file,domains_list,materials,
+                                       boundaries_list,constrained_dof,bc_vals,
+                                       α,β,
+                                       Φₗᵢₛₜ,style,max_order)
+
+x0 = [0.0,0.3]
+integration_length = 100.0
+forward=true
+MaxNumPoints=100
+minstep=1e-8
+maxstep=20.0
+ncol=4.0
+ntst=40.0
+MORFE_integrate_rdyn_backbone(odir,x0,integration_length,forward,MaxNumPoints,minstep,maxstep,ncol,ntst)
+
+frf = MORFE_compute_backbone_modal(odir)
