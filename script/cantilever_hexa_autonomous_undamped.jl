@@ -52,7 +52,7 @@ bc_vals = [
 # style: parametrisation style. 'g' graph, 'r' real normal form, 'c' complex normal form
 style = 'c'
 # max_order: maximum order of the asymptotic expansion of the autonomous problem
-max_order = 9
+max_order = 5
 
 odir, Cp, rdyn = MORFE_mech_autonomous(mesh_file,domains_list,materials,
                                        boundaries_list,constrained_dof,bc_vals,

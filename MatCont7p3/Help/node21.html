@@ -1,0 +1,79 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Locators</TITLE>
+<META NAME="description" CONTENT="Locators">
+<META NAME="keywords" CONTENT="ManualAug2019 ">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="ManualAug2019 .css">
+
+<LINK REL="next" HREF="node22.html">
+<LINK REL="previous" HREF="node20.html">
+<LINK REL="up" HREF="node17.html">
+<LINK REL="next" HREF="node22.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html503"
+  HREF="node22.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="/usr/share/latex2html/icons/next.png"></A> 
+<A NAME="tex2html499"
+  HREF="node17.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="/usr/share/latex2html/icons/up.png"></A> 
+<A NAME="tex2html493"
+  HREF="node20.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="/usr/share/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html501"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="/usr/share/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html504"
+  HREF="node22.html">User functions</A>
+<B> Up:</B> <A NAME="tex2html500"
+  HREF="node17.html">Options</A>
+<B> Previous:</B> <A NAME="tex2html494"
+  HREF="node20.html">Singularities and test functions</A>
+ &nbsp; <B>  <A NAME="tex2html502"
+  HREF="node1.html">Contents</A></B> 
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H3><A NAME="SECTION00034400000000000000">
+Locators</A>
+</H3>
+It may be useful to have a specific locator code for locating certain singularities (cf. section <A HREF="node12.html#s:locator">2.4.4</A>). To use a specific locator you must set the option <SPAN  CLASS="textit">Locators</SPAN>. This is a vector in which the index of an element corresponds to the index of a singularity. Setting the entry to <SPAN CLASS="MATH"><IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img102.png"
+ ALT="$1$"></SPAN> means the presence of a user-defined locator.
+The continuer has stored the handles to the locators in the variable <TT>cds.curve_locator</TT> and will then make a call to 
+<BR>
+<TT>[x,v]=feval(cds.curve_locate,i,x1,v1,x2,v2)</TT>
+<BR>
+to locate singularity <SPAN CLASS="MATH"><IMG
+ WIDTH="10" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img122.png"
+ ALT="$i$"></SPAN> which was detected between <TT>x1</TT> and <TT>x2</TT> with their corresponding tangent vectors <TT>v1</TT> and <TT>v2</TT>. It must return the located point and the tangent vector at that point. If the locator was unable to find a point it should return <TT>x = []</TT>.
+
+<P>
+<BR><HR>
+
+</BODY>
+</HTML>

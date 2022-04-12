@@ -1,0 +1,232 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Poincar&#233; maps in CL/SMALL>_MATCONT</TITLE>
+<META NAME="description" CONTENT="Poincar&#233; maps in CL/SMALL>_MATCONT">
+<META NAME="keywords" CONTENT="ManualAug2019 ">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="ManualAug2019 .css">
+
+<LINK REL="previous" HREF="node44.html">
+<LINK REL="up" HREF="node44.html">
+<LINK REL="next" HREF="node46.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html793"
+  HREF="node46.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="/usr/share/latex2html/icons/next.png"></A> 
+<A NAME="tex2html789"
+  HREF="node44.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="/usr/share/latex2html/icons/up.png"></A> 
+<A NAME="tex2html785"
+  HREF="node44.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="/usr/share/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html791"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="/usr/share/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html794"
+  HREF="node46.html">Equilibrium continuation</A>
+<B> Up:</B> <A NAME="tex2html790"
+  HREF="node44.html">Poincar&#233; section and Poincar&#233;</A>
+<B> Previous:</B> <A NAME="tex2html786"
+  HREF="node44.html">Poincar&#233; section and Poincar&#233;</A>
+ &nbsp; <B>  <A NAME="tex2html792"
+  HREF="node1.html">Contents</A></B> 
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H3><A NAME="SECTION00052100000000000000"></A><A NAME="PinClM"></A>
+<BR>
+Poincar&#233; maps in C<SMALL>L/SMALL>_M<SMALL>AT</SMALL>C<SMALL>ONT</SMALL>
+</H3>
+When computing an orbit <SPAN CLASS="MATH"><IMG
+ WIDTH="60" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img176.png"
+ ALT="$(t,y(t))$"></SPAN> in Matlab an event can be defined as going through a zero 
+of a given scalar function <SPAN CLASS="MATH"><IMG
+ WIDTH="59" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img177.png"
+ ALT="$G(t,y).$"></SPAN> If <SPAN CLASS="MATH"><IMG
+ WIDTH="18" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img178.png"
+ ALT="$G$"></SPAN> does not explicitly depend on time in an autonomous
+dynamical system, this feature can be used to detect Poincar&#233; intersections.
+One does this by setting the Events property to a function handle, e.g. <TT>@events</TT>, 
+creating a function <TT>[value,isterminal,direction] = events(t,y)</TT> and 
+calling 
+
+<P>
+<TT>[t,Y,TE,YE,IE] = solver(odefun,tspan,y0,options)</TT>. 
+
+<P>
+For the <SPAN CLASS="MATH"><IMG
+ WIDTH="10" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img122.png"
+ ALT="$i$"></SPAN>-th event 
+function:
+
+<UL>
+<LI><TT>value(i)</TT> is the value of the function. 
+</LI>
+<LI><TT>isterminal(i)</TT> = 1 if the integration is to terminate at a zero of this event function 
+and 0 otherwise. 
+</LI>
+<LI><TT>direction(i)</TT> = 0 if all zeros are to be computed (the default), +1 if only the zeros 
+are needed where the event function increases, and -1 if only the zeros where the event 
+function decreases. 
+</LI>
+</UL>
+Corresponding entries in <TT>TE, YE</TT>, and <TT>IE</TT> return, respectively, the time at 
+which an event occurs, the solution at the time of the event, and the index <SPAN CLASS="MATH"><IMG
+ WIDTH="10" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img122.png"
+ ALT="$i$"></SPAN>
+of the event function that vanishes.
+<BR>
+
+<P>
+<B>Example</B>
+<BR>
+
+<P>
+Let a set of two event functions be introduced by defining the function <TT>t</TT>estEV:
+<PRE>
+function [value,isterminal,direction]= testEV(t,y,varargin)
+value=[y(1)-0.2;y(2)-0.3];
+isterminal=zeros(2,1);
+direction=ones(2,1);
+end
+</PRE>
+This event function requires that the system is at least two-dimensional and defines  two events,
+namely <SPAN CLASS="MATH"><IMG
+ WIDTH="81" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img179.png"
+ ALT="$y(1)=0.2$"></SPAN> and <SPAN CLASS="MATH"><IMG
+ WIDTH="81" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img180.png"
+ ALT="$y(2)=0.3$"></SPAN>. The integration will not be terminated if an event is detected and
+all zeros will be detected regardless of the direction of <SPAN CLASS="MATH"><IMG
+ WIDTH="13" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img181.png"
+ ALT="$y$"></SPAN> (increasing or decreasing).
+
+<P>
+We now consider the system <TT>a</TT>daptx in the directory <TT>T</TT>estruns/TestSystems of M<SMALL>AT</SMALL>C<SMALL>ONT</SMALL> with  three state variables
+and two parameters. By runnning the script <TT>t</TT>estPoincare:
+
+<P>
+<PRE>
+TSTP=@testEV;
+OPTIONS = odeset('RelTol',1e-8,'Events',TSTP);
+hls = adaptx;
+[t,y,TE,YE,IE] = ode45(hls{2},[0 300],[0.3 0.5 -0.1],OPTIONS,1,0.8);
+x0 = y(end,:);
+[t,y,TE,YE,IE] = ode45(hls{2},[0 10],x0,OPTIONS,1,0.8);
+</PRE>
+we integrate the system <TT>a</TT>daptx from <SPAN CLASS="MATH"><IMG
+ WIDTH="13" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img112.png"
+ ALT="$0$"></SPAN> to <SPAN CLASS="MATH"><IMG
+ WIDTH="30" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img113.png"
+ ALT="$300$"></SPAN> and then further from <SPAN CLASS="MATH"><IMG
+ WIDTH="30" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img113.png"
+ ALT="$300$"></SPAN> to <SPAN CLASS="MATH"><IMG
+ WIDTH="30" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img182.png"
+ ALT="$310$"></SPAN> starting from the
+point <!-- MATH
+ $[0.3;0.5;-0.1]$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="109" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img183.png"
+ ALT="$[0.3;0.5;-0.1]$"></SPAN> with parameter values <SPAN CLASS="MATH"><IMG
+ WIDTH="43" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img184.png"
+ ALT="$1,0.8$"></SPAN> and we detect the points in the second run where <SPAN CLASS="MATH"><IMG
+ WIDTH="81" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img179.png"
+ ALT="$y(1)=0.2$"></SPAN> or <SPAN CLASS="MATH"><IMG
+ WIDTH="86" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img185.png"
+ ALT="$y(2)=0.3.$"></SPAN>
+The output is given by
+
+<P>
+<PRE>
+TE =
+
+    5.6334
+    6.6979
+
+YE =
+
+   -0.2247    0.3000    0.3131
+    0.2000    0.4213   -0.1059
+
+IE =
+
+     2
+     1
+</PRE>
+
+<P>
+The test is run by typing <TT>t</TT>estPoincare in the command line.
+
+<P>
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html793"
+  HREF="node46.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="/usr/share/latex2html/icons/next.png"></A> 
+<A NAME="tex2html789"
+  HREF="node44.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="/usr/share/latex2html/icons/up.png"></A> 
+<A NAME="tex2html785"
+  HREF="node44.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="/usr/share/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html791"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="/usr/share/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html794"
+  HREF="node46.html">Equilibrium continuation</A>
+<B> Up:</B> <A NAME="tex2html790"
+  HREF="node44.html">Poincar&#233; section and Poincar&#233;</A>
+<B> Previous:</B> <A NAME="tex2html786"
+  HREF="node44.html">Poincar&#233; section and Poincar&#233;</A>
+ &nbsp; <B>  <A NAME="tex2html792"
+  HREF="node1.html">Contents</A></B> </DIV>
+<!--End of Navigation Panel-->
+
+</BODY>
+</HTML>

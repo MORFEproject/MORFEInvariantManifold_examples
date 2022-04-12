@@ -1,0 +1,10 @@
+testbratu;
+x1=x(1:2,s(6).index);
+p(ap)=x(3,s(6).index);
+[x0,v0]=init_BP_EP(@bratu,x1,p,s(6),0.01);
+opt=contset(opt,'InitStepsize',0.0001);
+[x1,v1,s1,h1,f1]=cont(@equilibrium,x0,v0,opt);
+cpl(x1,v1,s1,[3 1 2]);
+opt=contset(opt,'Backward',1);
+[x2,v2,s2,h2,f2]=cont(@equilibrium,x0,v0,opt);
+cpl(x2,v2,s2,[3 1 2]);

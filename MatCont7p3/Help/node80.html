@@ -1,0 +1,457 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Bifurcations along a flip curve</TITLE>
+<META NAME="description" CONTENT="Bifurcations along a flip curve">
+<META NAME="keywords" CONTENT="ManualAug2019 ">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="ManualAug2019 .css">
+
+<LINK REL="next" HREF="node81.html">
+<LINK REL="previous" HREF="node79.html">
+<LINK REL="up" HREF="node77.html">
+<LINK REL="next" HREF="node81.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html1263"
+  HREF="node81.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="/usr/share/latex2html/icons/next.png"></A> 
+<A NAME="tex2html1259"
+  HREF="node77.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="/usr/share/latex2html/icons/up.png"></A> 
+<A NAME="tex2html1253"
+  HREF="node79.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="/usr/share/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html1261"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="/usr/share/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html1264"
+  HREF="node81.html">Period doubling initialization</A>
+<B> Up:</B> <A NAME="tex2html1260"
+  HREF="node77.html">Period Doubling</A>
+<B> Previous:</B> <A NAME="tex2html1254"
+  HREF="node79.html">Output of a continuation</A>
+ &nbsp; <B>  <A NAME="tex2html1262"
+  HREF="node1.html">Contents</A></B> 
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H3><A NAME="SECTION00083300000000000000">
+Bifurcations along a flip curve</A>
+</H3>
+In M<SMALL>AT</SMALL>C<SMALL>ONT / </SMALL>CL_M<SMALL>AT</SMALL>C<SMALL>ONT</SMALL> there are four generic codim 2 bifurcations that can be detected along
+a flip curve:
+
+<UL>
+<LI><EM>Strong 1:2 resonance</EM>. We will denote this bifurcation with <TT>R2</TT>
+</LI>
+<LI><EM>Fold - flip</EM>, <EM>Limit Point - Period Doubling</EM>or  We will denote this bifurcation with <TT>LPPD</TT>
+</LI>
+<LI><EM>Flip - Neimark-Sacker</EM>, denoted as <TT>PDNS</TT>
+</LI>
+<LI><EM>Generalized period doubling</EM> point, denoted as <TT>GPD</TT>
+</LI>
+</UL>
+To detect these singularities, we define 4 test functions:
+
+<UL>
+<LI><!-- MATH
+ $\phi_1=(v_1^*)^T_{W_1}L_{C\times M}v_{1M}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="174" HEIGHT="39" ALIGN="MIDDLE" BORDER="0"
+ SRC="img390.png"
+ ALT="$\phi_1=(v_1^*)^T_{W_1}L_{C\times M}v_{1M}$"></SPAN>
+</LI>
+<LI><!-- MATH
+ $\phi_2=(\psi_1^*)^T_{W_1}(F(u_{0,1}(t)))_C$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="198" HEIGHT="39" ALIGN="MIDDLE" BORDER="0"
+ SRC="img391.png"
+ ALT="$\phi_2=(\psi_1^*)^T_{W_1}(F(u_{0,1}(t)))_C$"></SPAN>
+</LI>
+<LI><!-- MATH
+ $\phi_3=det\left(\left(M \odot M \right) - I_n \right)$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="195" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img392.png"
+ ALT="$\phi_3=det\left(\left(M \odot M \right) - I_n \right)$"></SPAN>
+</LI>
+<LI><SPAN CLASS="MATH"><IMG
+ WIDTH="53" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img393.png"
+ ALT="$\phi_4=c$"></SPAN>
+</LI>
+</UL>
+ where <SPAN CLASS="MATH"><IMG
+ WIDTH="11" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img313.png"
+ ALT="$c$"></SPAN> is the coefficient defined in (<A HREF="node60.html#PerNF-PD">52</A>), <SPAN CLASS="MATH"><IMG
+ WIDTH="23" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img394.png"
+ ALT="$M$"></SPAN> is the monodromy matrix and <SPAN CLASS="MATH"><IMG
+ WIDTH="17" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img197.png"
+ ALT="$\odot$"></SPAN> is the bialternate product.
+
+<P>
+The <SPAN CLASS="MATH"><IMG
+ WIDTH="20" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img198.png"
+ ALT="$v_1$"></SPAN>'s and <SPAN CLASS="MATH"><IMG
+ WIDTH="23" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img395.png"
+ ALT="$\psi_1$"></SPAN>'s are obtained as follows. For a given <!-- MATH
+ $\zeta \in {{\cal C}}^1([0,1],{\mathbb{R}^n})$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="130" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img396.png"
+ ALT="$\zeta \in {{\cal C}}^1([0,1],{\mathbb{R}^n})$"></SPAN> we consider three different discretizations:
+
+<UL>
+<LI><!-- MATH
+ $\zeta_M \in {\mathbb{R}^{(Nm+1)n}}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="121" HEIGHT="42" ALIGN="MIDDLE" BORDER="0"
+ SRC="img397.png"
+ ALT="$\zeta_M \in {\mathbb{R}^{(Nm+1)n}}$"></SPAN> the vector of values in the mesh points,
+</LI>
+<LI><!-- MATH
+ $\zeta_C \in {\mathbb{R}^{Nmn}}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="90" HEIGHT="39" ALIGN="MIDDLE" BORDER="0"
+ SRC="img398.png"
+ ALT="$\zeta_C \in {\mathbb{R}^{Nmn}}$"></SPAN> the vector of values in the collocation points,
+</LI>
+<LI><!-- MATH
+ $\zeta_W=\left[\begin{array}{c}\zeta_{W_1}\\\zeta_{W_2}\end{array}\right] \in {\mathbb{R}^{Nmn}}\times{\mathbb{R}^n}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="222" HEIGHT="61" ALIGN="MIDDLE" BORDER="0"
+ SRC="img399.png"
+ ALT="$\zeta_W=\left[\begin{array}{c}\zeta_{W_1}\\ \zeta_{W_2}\end{array}\right] \in {\mathbb{R}^{Nmn}}\times{\mathbb{R}^n}$"></SPAN> where <SPAN CLASS="MATH"><IMG
+ WIDTH="32" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img400.png"
+ ALT="$\zeta_{W_1}$"></SPAN> is the vector of values in the collocation points multiplied with the Gauss - Legendre weights and the lengths of the mesh intervals, and <!-- MATH
+ $\zeta_{W_2}=\zeta(0)$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="86" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img401.png"
+ ALT="$\zeta_{W_2}=\zeta(0)$"></SPAN>.
+</LI>
+</UL>
+
+<P>
+Formally we further introduce <SPAN CLASS="MATH"><IMG
+ WIDTH="52" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img402.png"
+ ALT="$L_{C\times M}$"></SPAN> which is a structured sparse matrix that converts a vector <SPAN CLASS="MATH"><IMG
+ WIDTH="27" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img403.png"
+ ALT="$\zeta_M$"></SPAN> of values in the mesh points into a vector <SPAN CLASS="MATH"><IMG
+ WIDTH="23" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img404.png"
+ ALT="$\zeta_C$"></SPAN> of values in the collocation points by <!-- MATH
+ $\zeta_C=L_{C\times M}\zeta_M$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="117" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img405.png"
+ ALT="$\zeta_C=L_{C\times M}\zeta_M$"></SPAN>.
+We compute <SPAN CLASS="MATH"><IMG
+ WIDTH="34" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img406.png"
+ ALT="$v_{1M}$"></SPAN> by solving
+<BR>
+<DIV ALIGN="RIGHT" CLASS="mathdisplay">
+
+<!-- MATH
+ \begin{equation}
+\left[\begin{array}{c}D-TA(t)\\
+\delta_0+\delta_1
+\end{array}\right]_{disc}v_{1M}=0.
+
+\end{equation}
+ -->
+<A NAME="op1"></A>
+<TABLE WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE"><TD ALIGN="CENTER" NOWRAP><A NAME="op1"></A><IMG
+ WIDTH="205" HEIGHT="51" BORDER="0"
+ SRC="img407.png"
+ ALT="\begin{displaymath}
+\left[\begin{array}{c}D-TA(t)\\
+\delta_0+\delta_1
+\end{array}\right]_{disc}v_{1M}=0.
+\end{displaymath}"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+(<SPAN CLASS="arabic">67</SPAN>)</TD></TR>
+</TABLE>
+<BR CLEAR="ALL"></DIV><P></P>
+The normalization of <SPAN CLASS="MATH"><IMG
+ WIDTH="34" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img406.png"
+ ALT="$v_{1M}$"></SPAN> is done by requiring <!-- MATH
+ $\sum_{i=1}^N\sum_{j=0}^m\sigma_j\langle(v_{1M})_{(i-1)m+j},(v_{1M})_{(i-1)m+j}\rangle\Delta_i=1$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="395" HEIGHT="41" ALIGN="MIDDLE" BORDER="0"
+ SRC="img408.png"
+ ALT="$\sum_{i=1}^N\sum_{j=0}^m\sigma_j\langle(v_{1M})_{(i-1)m+j},(v_{1M})_{(i-1)m+j}\rangle\Delta_i=1$"></SPAN> where <SPAN CLASS="MATH"><IMG
+ WIDTH="21" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img409.png"
+ ALT="$\sigma_j$"></SPAN> is the Gauss-Lagrange quadrature coefficient and <SPAN CLASS="MATH"><IMG
+ WIDTH="24" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img410.png"
+ ALT="$\Delta_i$"></SPAN> is the length of the i-th interval.
+By discretization we obtain <BR><P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay">
+<!-- MATH
+ \begin{displaymath}
+(v_{1W}^*)^T\left[\begin{array}{c}D-TA(t)\\\delta_0+\delta_1\end{array}\right]_{disc}=0.
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="234" HEIGHT="51" BORDER="0"
+ SRC="img411.png"
+ ALT="\begin{displaymath}(v_{1W}^*)^T\left[\begin{array}{c}D-TA(t)\\ \delta_0+\delta_1\end{array}\right]_{disc}=0.\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+To normalize <SPAN CLASS="MATH"><IMG
+ WIDTH="54" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img412.png"
+ ALT="$(v_1^*)_{W_1}$"></SPAN> we require <!-- MATH
+ $\sum_{i=1}^N\sum_{j=1}^m\left|((v_1^*)_{W_1})_{ij}\right|_1=1$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="218" HEIGHT="41" ALIGN="MIDDLE" BORDER="0"
+ SRC="img413.png"
+ ALT="$\sum_{i=1}^N\sum_{j=1}^m\left\vert((v_1^*)_{W_1})_{ij}\right\vert _1=1$"></SPAN>. Then <!-- MATH
+ $\int_{0}^{1} {\langle v_1^*(t),v_1(t)\rangle dt}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="135" HEIGHT="42" ALIGN="MIDDLE" BORDER="0"
+ SRC="img414.png"
+ ALT="$\int_{0}^{1} {\langle v_1^*(t),v_1(t)\rangle dt}$"></SPAN> is approximated by <!-- MATH
+ $(v_1^*)^T_{W_1}L_{C\times M}v_{1M}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="133" HEIGHT="39" ALIGN="MIDDLE" BORDER="0"
+ SRC="img415.png"
+ ALT="$(v_1^*)^T_{W_1}L_{C\times M}v_{1M}$"></SPAN> and if this quantity is nonzero, <SPAN CLASS="MATH"><IMG
+ WIDTH="35" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img416.png"
+ ALT="$v^*_{1W}$"></SPAN> is rescaled so that <!-- MATH
+ $\int_{0}^{1} {\langle v_1^*(t),v_1(t)\rangle dt}=\frac{1}{2}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="169" HEIGHT="42" ALIGN="MIDDLE" BORDER="0"
+ SRC="img417.png"
+ ALT="$\int_{0}^{1} {\langle v_1^*(t),v_1(t)\rangle dt}=\frac{1}{2}$"></SPAN>. We compute <SPAN CLASS="MATH"><IMG
+ WIDTH="37" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img418.png"
+ ALT="$\psi_{1W}^*$"></SPAN> by solving  <BR><P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay">
+<!-- MATH
+ \begin{displaymath}
+(\psi_{1W}^*)^T\left[\begin{array}{c}D-TA(t)\\\delta_0-\delta_1\end{array}\right]_{disc}=0
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="232" HEIGHT="51" BORDER="0"
+ SRC="img419.png"
+ ALT="\begin{displaymath}(\psi_{1W}^*)^T\left[\begin{array}{c}D-TA(t)\\ \delta_0-\delta_1\end{array}\right]_{disc}=0\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+and normalize <SPAN CLASS="MATH"><IMG
+ WIDTH="42" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img420.png"
+ ALT="$\psi_{1W_1}^*$"></SPAN> by requiring <!-- MATH
+ $\sum_{i=1}^N\sum_{j=1}^m\left|((\psi_1^*)_{W_1})_{ij}\right|_1=1$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="221" HEIGHT="41" ALIGN="MIDDLE" BORDER="0"
+ SRC="img421.png"
+ ALT="$\sum_{i=1}^N\sum_{j=1}^m\left\vert((\psi_1^*)_{W_1})_{ij}\right\vert _1=1$"></SPAN>. Then <!-- MATH
+ $\int_{0}^{1} {\langle \psi_1^*(t),F(u_{0,1}(t))\rangle dt}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="177" HEIGHT="42" ALIGN="MIDDLE" BORDER="0"
+ SRC="img422.png"
+ ALT="$\int_{0}^{1} {\langle \psi_1^*(t),F(u_{0,1}(t))\rangle dt}$"></SPAN> is approximated by <!-- MATH
+ $(\psi_1^*)^T_{W_1}(F(u_{0,1}(t)))_C$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="157" HEIGHT="39" ALIGN="MIDDLE" BORDER="0"
+ SRC="img423.png"
+ ALT="$(\psi_1^*)^T_{W_1}(F(u_{0,1}(t)))_C$"></SPAN> and if this quantity is nonzero, <SPAN CLASS="MATH"><IMG
+ WIDTH="37" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img424.png"
+ ALT="$\psi^*_{1W}$"></SPAN> is rescaled so that <!-- MATH
+ $\int_{0}^{1} {\langle \psi_1^*(t),F(u_{0,1}(t))\rangle dt}=1$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="209" HEIGHT="42" ALIGN="MIDDLE" BORDER="0"
+ SRC="img425.png"
+ ALT="$\int_{0}^{1} {\langle \psi_1^*(t),F(u_{0,1}(t))\rangle dt}=1$"></SPAN>.
+<SPAN CLASS="MATH"><IMG
+ WIDTH="21" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img426.png"
+ ALT="$a_1$"></SPAN> can be computed as <!-- MATH
+ $(\psi^*_{W_1})^T(B(t,v_{1M},v_{1M}))_C$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="195" HEIGHT="39" ALIGN="MIDDLE" BORDER="0"
+ SRC="img427.png"
+ ALT="$(\psi^*_{W_1})^T(B(t,v_{1M},v_{1M}))_C$"></SPAN>.
+ The computation of <SPAN CLASS="MATH"><IMG
+ WIDTH="61" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img428.png"
+ ALT="$(h_{2,1})_M$"></SPAN> is done by solving 
+ <BR><P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay">
+<!-- MATH
+ \begin{displaymath}
+\left\{\begin{array}{rcl}
+(D-TA(t))_{C\times M}(h_{2,1})_M&=& (B(t;v_{1M},v_{1M}))_C + 2a_1(F(u_{0,1}(t)))_C,\ t \in [0,1] \\
+(\delta(0)-\delta(1))(h_{2,1})_M&=&0,\\
+(\psi^*_{W_1})^TL_{C\times M}(h_{2,1})_M&=&0.
+\end{array}
+\right.
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="610" HEIGHT="73" BORDER="0"
+ SRC="img429.png"
+ ALT="\begin{displaymath}
+\left\{\begin{array}{rcl}
+(D-TA(t))_{C\times M}(h_{2,1})_M...
+...*_{W_1})^TL_{C\times M}(h_{2,1})_M&amp;=&amp;0.
+\end{array}
+\right.
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+
+<P>
+The expression for the normal form coefficient <SPAN CLASS="MATH"><IMG
+ WIDTH="11" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img313.png"
+ ALT="$c$"></SPAN> becomes
+<BR><P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay">
+<!-- MATH
+ \begin{displaymath}
+\begin{array}{c}
+c=\frac{1}{3}((v^*_{1W_1})^T(C(t;v_{1M},\frac{1}{T}v_{1M},v_{1M})_C+3(B(t;v_{1M},(h_{2,1})_M)_C\\
+-6\frac{a_1}{T}(v^*_{1W_1})^T(A(t)v_{1}(t))_C).
+\end{array}
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="470" HEIGHT="51" BORDER="0"
+ SRC="img430.png"
+ ALT="\begin{displaymath}
+\begin{array}{c}
+c=\frac{1}{3}((v^*_{1W_1})^T(C(t;v_{1M},\...
+...
+-6\frac{a_1}{T}(v^*_{1W_1})^T(A(t)v_{1}(t))_C).
+\end{array}
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+The singularity matrix is:
+<BR>
+<DIV ALIGN="RIGHT" CLASS="mathdisplay">
+
+<!-- MATH
+ \begin{equation}
+S = \left(\begin{array}{ccc}
+0 & - & - \\
+- & 0 & -\\
+1 & 1 & 0
+\end{array}\right).
+\end{equation}
+ -->
+<TABLE WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE"><TD ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="160" HEIGHT="72" BORDER="0"
+ SRC="img431.png"
+ ALT="\begin{displaymath}
+S = \left(\begin{array}{ccc}
+0 &amp; - &amp; - \\
+- &amp; 0 &amp; -\\
+1 &amp; 1 &amp; 0
+\end{array}\right).
+\end{displaymath}"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+(<SPAN CLASS="arabic">68</SPAN>)</TD></TR>
+</TABLE>
+<BR CLEAR="ALL"></DIV><P></P>
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html1263"
+  HREF="node81.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="/usr/share/latex2html/icons/next.png"></A> 
+<A NAME="tex2html1259"
+  HREF="node77.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="/usr/share/latex2html/icons/up.png"></A> 
+<A NAME="tex2html1253"
+  HREF="node79.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="/usr/share/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html1261"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="/usr/share/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html1264"
+  HREF="node81.html">Period doubling initialization</A>
+<B> Up:</B> <A NAME="tex2html1260"
+  HREF="node77.html">Period Doubling</A>
+<B> Previous:</B> <A NAME="tex2html1254"
+  HREF="node79.html">Output of a continuation</A>
+ &nbsp; <B>  <A NAME="tex2html1262"
+  HREF="node1.html">Contents</A></B> </DIV>
+<!--End of Navigation Panel-->
+
+</BODY>
+</HTML>

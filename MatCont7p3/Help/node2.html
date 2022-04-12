@@ -1,0 +1,176 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Mathematical aspects of numerical continuation and handling of singularities</TITLE>
+<META NAME="description" CONTENT="Mathematical aspects of numerical continuation and handling of singularities">
+<META NAME="keywords" CONTENT="ManualAug2019 ">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="ManualAug2019 .css">
+
+<LINK REL="next" HREF="node13.html">
+<LINK REL="previous" HREF="node1.html">
+<LINK REL="up" HREF="ManualAug2019 .html">
+<LINK REL="next" HREF="node3.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html234"
+  HREF="node3.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="/usr/share/latex2html/icons/next.png"></A> 
+<A NAME="tex2html230"
+  HREF="ManualAug2019 .html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="/usr/share/latex2html/icons/up.png"></A> 
+<A NAME="tex2html224"
+  HREF="node1.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="/usr/share/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html232"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="/usr/share/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html235"
+  HREF="node3.html">Prediction</A>
+<B> Up:</B> <A NAME="tex2html231"
+  HREF="ManualAug2019 .html">ManualAug2019</A>
+<B> Previous:</B> <A NAME="tex2html225"
+  HREF="node1.html">Contents</A>
+ &nbsp; <B>  <A NAME="tex2html233"
+  HREF="node1.html">Contents</A></B> 
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION00020000000000000000"></A><A NAME="s:numcont"></A>
+<BR>
+Mathematical aspects of numerical continuation and handling of singularities
+</H1>
+
+<P>
+Consider a smooth function <!-- MATH
+ $F: \ensuremath{\mathbf{R}}^{n+1} \to \ensuremath{\mathbf{R}}^n$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="124" HEIGHT="20" ALIGN="BOTTOM" BORDER="0"
+ SRC="img7.png"
+ ALT="$F: \ensuremath{\mathbf{R}}^{n+1} \to \ensuremath{\mathbf{R}}^n$"></SPAN>. We want to compute a solution 
+curve of the equation <SPAN CLASS="MATH"><IMG
+ WIDTH="73" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img8.png"
+ ALT="$F(x)=0$"></SPAN>. Numerical continuation is a technique to compute a consecutive 
+sequence of points which approximate the desired branch. Most continuation algorithms 
+implement a predictor-corrector method. The idea behind this method is to generate a 
+sequence of points <SPAN CLASS="MATH"><IMG
+ WIDTH="19" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img9.png"
+ ALT="$x_i$"></SPAN>, <SPAN CLASS="MATH"><IMG
+ WIDTH="86" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img10.png"
+ ALT="$i=1,2,\dots$"></SPAN> along the curve, satisfying a chosen 
+tolerance criterion: <!-- MATH
+ $||F(x_i)||\leq\epsilon$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="96" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img11.png"
+ ALT="$\vert\vert F(x_i)\vert\vert\leq\epsilon$"></SPAN> for some <SPAN CLASS="MATH"><IMG
+ WIDTH="43" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img12.png"
+ ALT="$\epsilon &gt; 0$"></SPAN> and an additional accuracy condition <!-- MATH
+ $||\delta x_i||\leq\epsilon'$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="82" HEIGHT="36" ALIGN="MIDDLE" BORDER="0"
+ SRC="img13.png"
+ ALT="$\vert\vert\delta x_i\vert\vert\leq\epsilon'$"></SPAN> where <SPAN CLASS="MATH"><IMG
+ WIDTH="47" HEIGHT="36" ALIGN="MIDDLE" BORDER="0"
+ SRC="img14.png"
+ ALT="$\epsilon' &gt; 0$"></SPAN> and <SPAN CLASS="MATH"><IMG
+ WIDTH="28" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img15.png"
+ ALT="$\delta x_i$"></SPAN> is the last Newton correction.
+
+<P>
+To show how the points are generated, suppose we have found a point <SPAN CLASS="MATH"><IMG
+ WIDTH="19" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img9.png"
+ ALT="$x_i$"></SPAN> on the 
+curve. Also suppose we have a normalized 
+tangent vector <SPAN CLASS="MATH"><IMG
+ WIDTH="18" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img16.png"
+ ALT="$v_i$"></SPAN> at <SPAN CLASS="MATH"><IMG
+ WIDTH="19" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img9.png"
+ ALT="$x_i$"></SPAN>, i.e. <!-- MATH
+ $F_x(x_i)v_i = 0,\ \langle v_i,v_i \rangle =1$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="193" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img17.png"
+ ALT="$F_x(x_i)v_i = 0,\ \langle v_i,v_i \rangle =1$"></SPAN>. 
+
+<P>
+The computation of the next point <SPAN CLASS="MATH"><IMG
+ WIDTH="36" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img18.png"
+ ALT="$x_{i+1}$"></SPAN> consists of 2 steps:
+
+<UL>
+<LI>prediction of a new point
+</LI>
+<LI>correction of the predicted point
+</LI>
+</UL>
+
+<P>
+<BR><HR>
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"><STRONG>Subsections</STRONG></A>
+
+<UL CLASS="ChildLinks">
+<LI><A NAME="tex2html236"
+  HREF="node3.html">Prediction</A>
+<LI><A NAME="tex2html237"
+  HREF="node4.html">Correction</A>
+<UL>
+<LI><A NAME="tex2html238"
+  HREF="node5.html">Pseudo-arclength continuation</A>
+<LI><A NAME="tex2html239"
+  HREF="node6.html">Moore-Penrose continuation</A>
+</UL>
+<BR>
+<LI><A NAME="tex2html240"
+  HREF="node7.html">Stepsize control</A>
+<LI><A NAME="tex2html241"
+  HREF="node8.html">Singularity handling</A>
+<UL>
+<LI><A NAME="tex2html242"
+  HREF="node9.html">Test functions</A>
+<LI><A NAME="tex2html243"
+  HREF="node10.html">Multiple test functions</A>
+<LI><A NAME="tex2html244"
+  HREF="node11.html">Singularity matrix</A>
+<LI><A NAME="tex2html245"
+  HREF="node12.html">User location</A>
+</UL></UL>
+<!--End of Table of Child-Links-->
+<BR><HR>
+
+</BODY>
+</HTML>

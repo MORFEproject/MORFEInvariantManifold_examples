@@ -1,0 +1,205 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Mathematical definition</TITLE>
+<META NAME="description" CONTENT="Mathematical definition">
+<META NAME="keywords" CONTENT="ManualAug2019 ">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="ManualAug2019 .css">
+
+<LINK REL="next" HREF="node73.html">
+<LINK REL="previous" HREF="node71.html">
+<LINK REL="up" HREF="node71.html">
+<LINK REL="next" HREF="node73.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html1164"
+  HREF="node73.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="/usr/share/latex2html/icons/next.png"></A> 
+<A NAME="tex2html1160"
+  HREF="node71.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="/usr/share/latex2html/icons/up.png"></A> 
+<A NAME="tex2html1154"
+  HREF="node71.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="/usr/share/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html1162"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="/usr/share/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html1165"
+  HREF="node73.html">Bifurcations along a Hopf</A>
+<B> Up:</B> <A NAME="tex2html1161"
+  HREF="node71.html">Hopf Continuation</A>
+<B> Previous:</B> <A NAME="tex2html1155"
+  HREF="node71.html">Hopf Continuation</A>
+ &nbsp; <B>  <A NAME="tex2html1163"
+  HREF="node1.html">Contents</A></B> 
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H3><A NAME="SECTION00082100000000000000">
+Mathematical definition</A>
+</H3>
+In the M<SMALL>AT</SMALL>C<SMALL>ONT / </SMALL>CL_M<SMALL>AT</SMALL>C<SMALL>ONT</SMALL> toolbox Hopf curves are computed by <I>minimally extended defining systems</I>,
+cf. [<A
+ HREF="node115.html#willy">22</A>] &#167;4.3.4.
+The Hopf curve is defined by the following system
+<BR>
+<DIV ALIGN="RIGHT" CLASS="mathdisplay">
+
+<!-- MATH
+ \begin{equation}
+\left\{
+\begin{array}{ccl}
+f(u,\alpha) & = & 0, \\
+g_{i_1j_1}(u,\alpha,k) & = & 0\\
+g_{i_2j_2}(u,\alpha,k) & = & 0 
+\end{array}
+\right.
+
+\end{equation}
+ -->
+<A NAME="MinimalHopf"></A>
+<TABLE WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE"><TD ALIGN="CENTER" NOWRAP><A NAME="MinimalHopf"></A><IMG
+ WIDTH="170" HEIGHT="72" BORDER="0"
+ SRC="img366.png"
+ ALT="\begin{displaymath}
+\left\{
+\begin{array}{ccl}
+f(u,\alpha) &amp; = &amp; 0, \\
+g_{i...
+...0\\
+g_{i_2j_2}(u,\alpha,k) &amp; = &amp; 0
+\end{array}
+\right.
+\end{displaymath}"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+(<SPAN CLASS="arabic">61</SPAN>)</TD></TR>
+</TABLE>
+<BR CLEAR="ALL"></DIV><P></P>
+with the unknowns <!-- MATH
+ $u,\alpha,k,(i_1,j_1,i_2,j_2)\in\{1,2\}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="215" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img367.png"
+ ALT="$u,\alpha,k,(i_1,j_1,i_2,j_2)\in\{1,2\}$"></SPAN> and where <!-- MATH
+ $g=\left(
+\begin{array}{cc}
+g_{11} & g_{12} \\
+g_{21} & g_{22}
+\end{array}
+\right)$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="139" HEIGHT="61" ALIGN="MIDDLE" BORDER="0"
+ SRC="img368.png"
+ ALT="$g=\left(
+\begin{array}{cc}
+g_{11} &amp; g_{12} \\
+g_{21} &amp; g_{22}
+\end{array}
+\right)$"></SPAN> is obtained by solving
+<BR>
+<DIV ALIGN="RIGHT" CLASS="mathdisplay">
+
+<!-- MATH
+ \begin{equation}
+\left(
+\begin{array}{cc}
+f_u^2+kI_n & W_{bor} \\
+V_{bor}^T  &  O
+\end{array}
+\right)
+\left(
+\begin{array}{c}
+V\\
+G
+\end{array}
+\right)
+=\left(
+\begin{array}{c}
+0_{n,2}\\I_2
+\end{array}
+\right),
+
+\end{equation}
+ -->
+<A NAME="fe4"></A>
+<TABLE WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE"><TD ALIGN="CENTER" NOWRAP><A NAME="fe4"></A><IMG
+ WIDTH="314" HEIGHT="51" BORDER="0"
+ SRC="img369.png"
+ ALT="\begin{displaymath}
+\left(
+\begin{array}{cc}
+f_u^2+kI_n &amp; W_{bor} \\
+V_{bor...
+...ft(
+\begin{array}{c}
+0_{n,2}\\ I_2
+\end{array}
+\right),
+\end{displaymath}"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+(<SPAN CLASS="arabic">62</SPAN>)</TD></TR>
+</TABLE>
+<BR CLEAR="ALL"></DIV><P></P>
+where <SPAN CLASS="MATH"><IMG
+ WIDTH="21" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img370.png"
+ ALT="$f_u$"></SPAN> has eigenvalues <!-- MATH
+ $\pm i\omega,\omega>0$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="86" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img371.png"
+ ALT="$\pm i\omega,\omega&gt;0$"></SPAN>, <SPAN CLASS="MATH"><IMG
+ WIDTH="56" HEIGHT="20" ALIGN="BOTTOM" BORDER="0"
+ SRC="img372.png"
+ ALT="$k=\omega^2$"></SPAN> and 
+<!-- MATH
+ $V_{bor},W_{bor} \in \ensuremath{\mathbf{R}}^{n\times 2}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="140" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img373.png"
+ ALT="$V_{bor},W_{bor} \in \ensuremath{\mathbf{R}}^{n\times 2}$"></SPAN> are chosen such that the matrix in
+(<A HREF="#fe4">62</A>) is nonsingular. <!-- MATH
+ $i_1,j_1,i_2,j_2,V_{bor}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="121" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img374.png"
+ ALT="$i_1,j_1,i_2,j_2,V_{bor}$"></SPAN> and <SPAN CLASS="MATH"><IMG
+ WIDTH="40" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img375.png"
+ ALT="$W_{bor}$"></SPAN> are auxiliary 
+variables that can be adapted.
+This method is implemented in the curve definition file <TT>hopf.m</TT>.
+
+<P>
+<BR><HR>
+
+</BODY>
+</HTML>

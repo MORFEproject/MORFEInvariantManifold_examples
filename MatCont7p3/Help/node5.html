@@ -1,0 +1,265 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Pseudo-arclength continuation</TITLE>
+<META NAME="description" CONTENT="Pseudo-arclength continuation">
+<META NAME="keywords" CONTENT="ManualAug2019 ">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="ManualAug2019 .css">
+
+<LINK REL="next" HREF="node6.html">
+<LINK REL="previous" HREF="node4.html">
+<LINK REL="up" HREF="node4.html">
+<LINK REL="next" HREF="node6.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html282"
+  HREF="node6.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="/usr/share/latex2html/icons/next.png"></A> 
+<A NAME="tex2html278"
+  HREF="node4.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="/usr/share/latex2html/icons/up.png"></A> 
+<A NAME="tex2html272"
+  HREF="node4.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="/usr/share/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html280"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="/usr/share/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html283"
+  HREF="node6.html">Moore-Penrose continuation</A>
+<B> Up:</B> <A NAME="tex2html279"
+  HREF="node4.html">Correction</A>
+<B> Previous:</B> <A NAME="tex2html273"
+  HREF="node4.html">Correction</A>
+ &nbsp; <B>  <A NAME="tex2html281"
+  HREF="node1.html">Contents</A></B> 
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H3><A NAME="SECTION00022100000000000000">
+Pseudo-arclength continuation</A>
+</H3>
+One option for choosing <SPAN CLASS="MATH"><IMG
+ WIDTH="36" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img23.png"
+ ALT="$g(x)$"></SPAN> is to select a hyperplane passing through <SPAN CLASS="MATH"><IMG
+ WIDTH="27" HEIGHT="19" ALIGN="BOTTOM" BORDER="0"
+ SRC="img21.png"
+ ALT="$X^0$"></SPAN> that is
+orthogonal to the vector <SPAN CLASS="MATH"><IMG
+ WIDTH="18" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img16.png"
+ ALT="$v_i$"></SPAN>:
+<BR>
+<DIV ALIGN="RIGHT" CLASS="mathdisplay">
+
+<!-- MATH
+ \begin{equation}
+g(x) = \langle x-X^0,v_i \rangle \ .
+\end{equation}
+ -->
+<TABLE WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE"><TD ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="155" HEIGHT="32" BORDER="0"
+ SRC="img24.png"
+ ALT="\begin{displaymath}
+g(x) = \langle x-X^0,v_i \rangle \ .
+\end{displaymath}"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+(<SPAN CLASS="arabic">3</SPAN>)</TD></TR>
+</TABLE>
+<BR CLEAR="ALL"></DIV><P></P>
+So, the Newton iteration becomes:
+<BR>
+<DIV ALIGN="RIGHT" CLASS="mathdisplay">
+
+<!-- MATH
+ \begin{equation}
+X^{k+1} = X^k - H^{-1}_x(X^k)H(X^k)
+\end{equation}
+ -->
+<TABLE WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE"><TD ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="232" HEIGHT="32" BORDER="0"
+ SRC="img25.png"
+ ALT="\begin{displaymath}
+X^{k+1} = X^k - H^{-1}_x(X^k)H(X^k)
+\end{displaymath}"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+(<SPAN CLASS="arabic">4</SPAN>)</TD></TR>
+</TABLE>
+<BR CLEAR="ALL"></DIV><P></P>
+<BR>
+<DIV ALIGN="RIGHT" CLASS="mathdisplay">
+
+<!-- MATH
+ \begin{equation}
+H(X) = \left( \begin{array}{c}
+         F(X)\\
+	 0
+	\end{array}\right),\ \  
+H_x(X) = \left( \begin{array}{c}
+  F_x(X)\\
+	v_i^T
+	\end{array}\right)\ .
+\end{equation}
+ -->
+<TABLE WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE"><TD ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="354" HEIGHT="51" BORDER="0"
+ SRC="img26.png"
+ ALT="\begin{displaymath}
+H(X) = \left( \begin{array}{c}
+F(X)\\
+0
+\end{array}\...
+... \begin{array}{c}
+F_x(X)\\
+v_i^T
+\end{array}\right)\ .
+\end{displaymath}"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+(<SPAN CLASS="arabic">5</SPAN>)</TD></TR>
+</TABLE>
+<BR CLEAR="ALL"></DIV><P></P>
+Then one can prove that the Newton iteration for (<A HREF="node4.html#eq:corr">2</A>) will converge to a point <SPAN CLASS="MATH"><IMG
+ WIDTH="36" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img18.png"
+ ALT="$x_{i+1}$"></SPAN> 
+on the curve from <SPAN CLASS="MATH"><IMG
+ WIDTH="27" HEIGHT="19" ALIGN="BOTTOM" BORDER="0"
+ SRC="img21.png"
+ ALT="$X^0$"></SPAN> provided that the stepsize <SPAN CLASS="MATH"><IMG
+ WIDTH="14" HEIGHT="20" ALIGN="BOTTOM" BORDER="0"
+ SRC="img27.png"
+ ALT="$h$"></SPAN> is sufficiently small and that the 
+curve is regular (rank <SPAN CLASS="MATH"><IMG
+ WIDTH="81" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img28.png"
+ ALT="$F_x(x)=n$"></SPAN>).
+Having found the new point <SPAN CLASS="MATH"><IMG
+ WIDTH="36" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img18.png"
+ ALT="$x_{i+1}$"></SPAN> on the curve we need to compute the tangent vector at 
+that point:
+<BR>
+<DIV ALIGN="RIGHT" CLASS="mathdisplay">
+
+<!-- MATH
+ \begin{equation}
+F_x(x_{i+1})v_{i+1} = 0\ .
+\end{equation}
+ -->
+<TABLE WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE"><TD ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="139" HEIGHT="32" BORDER="0"
+ SRC="img29.png"
+ ALT="\begin{displaymath}
+F_x(x_{i+1})v_{i+1} = 0\ .
+\end{displaymath}"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+(<SPAN CLASS="arabic">6</SPAN>)</TD></TR>
+</TABLE>
+<BR CLEAR="ALL"></DIV><P></P>
+Furthermore the direction along the curve must be preserved: <!-- MATH
+ $\langle v_i,v_{i+1} \rangle  = 1$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="102" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img30.png"
+ ALT="$\langle v_i,v_{i+1} \rangle = 1$"></SPAN>, so we get the (<SPAN CLASS="MATH"><IMG
+ WIDTH="44" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img31.png"
+ ALT="$n+1$"></SPAN>)-dimensional appended system
+<BR>
+<DIV ALIGN="RIGHT" CLASS="mathdisplay">
+
+<!-- MATH
+ \begin{equation}
+\left( \begin{array}{c}
+  F_x(x_{i+1})\\
+  v_i^T
+  \end{array}\right)v_{i+1}
+  = \left( \begin{array}{c}
+  0\\
+  1
+  \end{array}\right).
+\end{equation}
+ -->
+<TABLE WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE"><TD ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="218" HEIGHT="51" BORDER="0"
+ SRC="img32.png"
+ ALT="\begin{displaymath}
+\left( \begin{array}{c}
+F_x(x_{i+1})\\
+v_i^T
+\end{a...
+...
+= \left( \begin{array}{c}
+0\\
+1
+\end{array}\right).
+\end{displaymath}"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+(<SPAN CLASS="arabic">7</SPAN>)</TD></TR>
+</TABLE>
+<BR CLEAR="ALL"></DIV><P></P>
+Upon solving this system, <SPAN CLASS="MATH"><IMG
+ WIDTH="35" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img33.png"
+ ALT="$v_{i+1}$"></SPAN> must be normalized.
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html282"
+  HREF="node6.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="/usr/share/latex2html/icons/next.png"></A> 
+<A NAME="tex2html278"
+  HREF="node4.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="/usr/share/latex2html/icons/up.png"></A> 
+<A NAME="tex2html272"
+  HREF="node4.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="/usr/share/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html280"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="/usr/share/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html283"
+  HREF="node6.html">Moore-Penrose continuation</A>
+<B> Up:</B> <A NAME="tex2html279"
+  HREF="node4.html">Correction</A>
+<B> Previous:</B> <A NAME="tex2html273"
+  HREF="node4.html">Correction</A>
+ &nbsp; <B>  <A NAME="tex2html281"
+  HREF="node1.html">Contents</A></B> </DIV>
+<!--End of Navigation Panel-->
+
+</BODY>
+</HTML>

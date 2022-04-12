@@ -1,0 +1,394 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Structure and construction of an odefile</TITLE>
+<META NAME="description" CONTENT="Structure and construction of an odefile">
+<META NAME="keywords" CONTENT="ManualAug2019 ">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="ManualAug2019 .css">
+
+<LINK REL="next" HREF="node36.html">
+<LINK REL="previous" HREF="node34.html">
+<LINK REL="up" HREF="node34.html">
+<LINK REL="next" HREF="node36.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html671"
+  HREF="node36.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="/usr/share/latex2html/icons/next.png"></A> 
+<A NAME="tex2html667"
+  HREF="node34.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="/usr/share/latex2html/icons/up.png"></A> 
+<A NAME="tex2html661"
+  HREF="node34.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="/usr/share/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html669"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="/usr/share/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html672"
+  HREF="node36.html">Handling auxiliary functions in</A>
+<B> Up:</B> <A NAME="tex2html668"
+  HREF="node34.html">The odefile of a</A>
+<B> Previous:</B> <A NAME="tex2html662"
+  HREF="node34.html">The odefile of a</A>
+ &nbsp; <B>  <A NAME="tex2html670"
+  HREF="node1.html">Contents</A></B> 
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00041000000000000000"></A>
+ <A NAME="Sec:MF"></A>
+<BR>
+Structure and construction of an odefile
+</H2>
+A solution curve must be initialized before doing a continuation. Each curve file has its own initializers and in the case of dynamical systems the initializers typically use an <I>odefile</I> where the ode is defined.
+An <I>odefile</I> (short for <I>system definition file</I>) contains at least the following sections:
+<BR>
+<TABLE CELLPADDING=3>
+<TR><TD ALIGN="LEFT"><I>init</I>, <I>fun_eval</I>, <I>jacobian</I>, <I>jacobianp</I>, <I>hessians</I>, <I>hessiansp</I>, <I>der3</I>, <I>der4</I> , 
+<I>der5</I>.</TD>
+<TD ALIGN="LEFT">&nbsp;</TD>
+</TR>
+</TABLE>
+<BR>
+An <I>odefile</I> may also contain  one or more sections that describe user functions.
+<BR>
+<P>
+There is a variety of options to create such odefiles. In all cases users should avoid using loops, conditional statements, or other specific programming constructions in the system definition. 
+
+<P>
+First, an <I>odefile</I> can be defined by simply using the M<SMALL>ATLAB</SMALL> editor (or, in fact, any text editor). This is likely to lead to errors and therefore not encouraged if the <SMALL>MATLAB</SMALL> symbolic toolbox is available and symbolic derivatives are desirable.
+
+<P>
+A second option is to use the GUI version of M<SMALL>AT</SMALL>C<SMALL>ONT</SMALL> by defining the problem in the 'System' window and then choosing the options ``symbolically" or ``numerically"  to use  symbolic or numeric (= finite difference) derivatives, respectively. The user functions can also be added in the GUI of M<SMALL>AT</SMALL>C<SMALL>ONT</SMALL>, using the menu `User function'.
+
+<P>
+From version 6.7 on M<SMALL>AT</SMALL>C<SMALL>ONT</SMALL> provides another possibility to create odefiles. It is in fact a shortcut to using the  GUI version of M<SMALL>AT</SMALL>C<SMALL>ONT</SMALL>. As an example we will study the <I>R&#246;ssler chaotic system</I>:
+<BR><P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay">
+<!-- MATH
+ \begin{displaymath}
+\left\{\begin{array}{rcl}
+\dot{x}&=&-y-z\\
+\dot{y}&=&x+Ay\\
+\dot{z}&=&Bx-Cz+xz,\\
+\end{array}
+\right.
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="188" HEIGHT="72" BORDER="0"
+ SRC="img132.png"
+ ALT="\begin{displaymath}\left\{\begin{array}{rcl}
+\dot{x}&amp;=&amp;-y-z\\
+\dot{y}&amp;=&amp;x+Ay\\
+\dot{z}&amp;=&amp;Bx-Cz+xz,\\
+\end{array}
+\right.
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+where <SPAN CLASS="MATH"><IMG
+ WIDTH="61" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img133.png"
+ ALT="$(x,y,z)$"></SPAN> are the phase variables, and <SPAN CLASS="MATH"><IMG
+ WIDTH="74" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img134.png"
+ ALT="$(A,B,C)$"></SPAN> are the parameters.
+
+<P>
+An <I>odefile</I> can be created by calling <TT>SysGUI.new</TT>. 
+
+<P>
+This opens a <B>System</B> window,
+which contains several fields and buttons.
+To identify the system, type for example
+
+<P>
+
+<P>
+<BR>
+
+<PRE>
+Roessl
+</PRE>
+
+<P>
+
+<P>
+<BR>
+in the <B>Name</B> field (it must be one word).
+
+<P>
+Input names of the <B>Coordinates</B>: <TT>X,Y,Z</TT>, and
+the <B>Parameters</B>: <TT>AA,BB,CC</TT>. 
+
+<P>
+If shown, select symbolic generation
+of the 1st order derivatives by pressing the corresponding radio-button
+<A NAME="tex2html3"
+  HREF="footnode.html#foot2719"><SUP><SPAN CLASS="arabic">1</SPAN></SUP></A>.
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="systeminput"></A><A NAME="2724"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 5:</STRONG>
+Specifying a new model.</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="543" HEIGHT="458" ALIGN="BOTTOM" BORDER="0"
+ SRC="img135.png"
+ ALT="\includegraphics[width=12cm]{ex/SystemScr.eps}">
+
+</DIV></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+Finally, in the large input field, type the RHS of the truncated normal form map as
+
+<P>
+
+<P>
+<BR>
+
+<PRE>
+X'=-Y-Z
+Y'=X+AA*Y
+Z'=BB*X-CC*Z+X*Z
+</PRE>
+
+<P>
+
+<P>
+<BR>
+Avoid typical mistakes:
+
+<UL>
+<LI>Make sure the multiplication is written explicitly with <SPAN CLASS="MATH"><IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img136.png"
+ ALT="$*$"></SPAN>. 
+</LI>
+<LI>Specify the right hand sides in the same order as the coordinates.
+</LI>
+</UL>
+
+It is best not to add comma's or semicolons after the equations.
+Now the <B>System</B> window should look like in Figure <A HREF="#systeminput">5</A>, 
+and you can press the <B>OK</B> 
+button. Two new files will be created in the <TT>Systems</TT> directory of M<SMALL>AT</SMALL>C<SMALL>ONT</SMALL>, namely the <I>odefile</I> <TT>Roessl.m</TT> and a <TT>mat-</TT>file <TT>Roessl.mat</TT>.
+
+<P>
+The <I>odefile</I> can be edited later on by calling <TT>SysGUI.edit(@name)</TT> where <TT>name</TT> is the name of an existing <I>odefile</I>. User functions can be added by calling <TT>SysGUI.userfunctions(@name).</TT> See Figure <A HREF="#UserfunctionScr">6</A>.
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="UserfunctionScr"></A><A NAME="2750"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 6:</STRONG>
+Adding a user function.</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="543" HEIGHT="478" ALIGN="BOTTOM" BORDER="0"
+ SRC="img137.png"
+ ALT="\includegraphics[width=12cm]{ex/UserfunctionScr.eps}">
+
+</DIV></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+We note that if state variables, parameters or user functions are added or deleted then this constitutes another dynamical system. So either all computed data
+should be deleted or ignored, or the name of the system should be changed. The last option is recommended, in particular when the GUI is used.
+
+<P>
+A  special point on a bifurcation curve that is specified by a user function has a structure as follows: 
+<BR>
+<TABLE CELLPADDING=3>
+<TR><TD ALIGN="LEFT"><I>s.index</I></TD>
+<TD ALIGN="LEFT">&nbsp;&nbsp; index of the  detected singular point defined by the user function.</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><I>s.label</I></TD>
+<TD ALIGN="LEFT">&nbsp;&nbsp;  a string  that is in <TT>UserInfo.label</TT>,  label of the singularity.</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><I>s.data</I></TD>
+<TD ALIGN="LEFT">&nbsp;&nbsp;  an empty tangent vector, values of  the  test and user functions in</TD>
+</TR>
+<TR><TD ALIGN="LEFT">&nbsp;</TD>
+<TD ALIGN="LEFT">&nbsp;&nbsp;the singular point.</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><I>s.msg</I></TD>
+<TD ALIGN="LEFT">&nbsp;&nbsp;  a string that is set in <TT>UserInfo.name</TT>.</TD>
+</TR>
+</TABLE>
+
+<P>
+We now give an <I>odefile</I> for the <I>R&#246;ssler</I> system using symbolic derivatives of all orders up to three and including the 
+userfunction <SPAN CLASS="MATH"><IMG
+ WIDTH="44" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img138.png"
+ ALT="$x-1$"></SPAN>. Note that we have returned to state variables denoted by <SPAN CLASS="MATH"><IMG
+ WIDTH="47" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img139.png"
+ ALT="$x,y,z$"></SPAN> and parameters <SPAN CLASS="MATH"><IMG
+ WIDTH="60" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img140.png"
+ ALT="$A,B,C$"></SPAN>.
+
+<P>
+<PRE>
+function out = Roessl
+out{1} = @init;
+out{2} = @fun_eval;
+out{3} = @jacobian;
+out{4} = @jacobianp;
+out{5} = @hessians;
+out{6} = @hessiansp;
+out{7} = @der3;
+out{8} = [];
+out{9} = [];
+out{10}= @xis1;
+
+% --------------------------------------------------------------------------
+function dydt = fun_eval(t,kmrgd,A,B,C)
+dydt=[-kmrgd(2)-kmrgd(3);
+kmrgd(1)+A*kmrgd(2);
+B*kmrgd(1)-C*kmrgd(3)+kmrgd(1)*kmrgd(3);];
+
+% --------------------------------------------------------------------------
+function [tspan,y0,options] = init
+y0=[0,0,0];
+options = odeset('Jacobian',handles(3),'JacobianP',handles(4),...
+                 'Hessians',handles(5),'HessiansP',handles(6));
+handles = feval(Roessl);
+tspan = [0 10];
+
+% --------------------------------------------------------------------------
+function jac = jacobian(t,kmrgd,A,B,C)
+jac=[ 0 , -1 , -1 ; 1 , A , 0 ; B + kmrgd(3) , 0 , kmrgd(1) - C ];
+% --------------------------------------------------------------------------
+function jacp = jacobianp(t,kmrgd,A,B,C)
+jacp=[ 0 , 0 , 0 ; kmrgd(2) , 0 , 0 ; 0 , kmrgd(1) , -kmrgd(3) ];
+% --------------------------------------------------------------------------
+function hess = hessians(t,kmrgd,A,B,C)
+hess1=[ 0 , 0 , 0 ; 0 , 0 , 0 ; 0 , 0 , 1 ];
+hess2=[ 0 , 0 , 0 ; 0 , 0 , 0 ; 0 , 0 , 0 ];
+hess3=[ 0 , 0 , 0 ; 0 , 0 , 0 ; 1 , 0 , 0 ];
+hess(:,:,1) =hess1;
+hess(:,:,2) =hess2;
+hess(:,:,3) =hess3;
+% --------------------------------------------------------------------------
+function hessp = hessiansp(t,kmrgd,A,B,C)
+hessp1=[ 0 , 0 , 0 ; 0 , 1 , 0 ; 0 , 0 , 0 ];
+hessp2=[ 0 , 0 , 0 ; 0 , 0 , 0 ; 1 , 0 , 0 ];
+hessp3=[ 0 , 0 , 0 ; 0 , 0 , 0 ; 0 , 0 , -1 ];
+hessp(:,:,1) =hessp1;
+hessp(:,:,2) =hessp2;
+hessp(:,:,3) =hessp3;
+%---------------------------------------------------------------------------
+function tens3  = der3(t,kmrgd,A,B,C)
+tens31=[ 0 , 0 , 0 ; 0 , 0 , 0 ; 0 , 0 , 0 ];
+tens32=[ 0 , 0 , 0 ; 0 , 0 , 0 ; 0 , 0 , 0 ];
+tens33=[ 0 , 0 , 0 ; 0 , 0 , 0 ; 0 , 0 , 0 ];
+tens34=[ 0 , 0 , 0 ; 0 , 0 , 0 ; 0 , 0 , 0 ];
+tens35=[ 0 , 0 , 0 ; 0 , 0 , 0 ; 0 , 0 , 0 ];
+tens36=[ 0 , 0 , 0 ; 0 , 0 , 0 ; 0 , 0 , 0 ];
+tens37=[ 0 , 0 , 0 ; 0 , 0 , 0 ; 0 , 0 , 0 ];
+tens38=[ 0 , 0 , 0 ; 0 , 0 , 0 ; 0 , 0 , 0 ];
+tens39=[ 0 , 0 , 0 ; 0 , 0 , 0 ; 0 , 0 , 0 ];
+tens3(:,:,1,1) =tens31;
+tens3(:,:,1,2) =tens32;
+tens3(:,:,1,3) =tens33;
+tens3(:,:,2,1) =tens34;
+tens3(:,:,2,2) =tens35;
+tens3(:,:,2,3) =tens36;
+tens3(:,:,3,1) =tens37;
+tens3(:,:,3,2) =tens38;
+tens3(:,:,3,3) =tens39;
+%---------------------------------------------------------------------------
+function tens4  = der4(t,kmrgd,A,B,C)
+%---------------------------------------------------------------------------
+function tens5  = der5(t,kmrgd,A,B,C)
+function userfun1=xis1(t,kmrgd,A,B,C)
+userfun1=kmrgd(1)-1;
+</PRE>
+
+<P>
+We observe the following:
+
+<P>
+
+<UL>
+<LI>The state variables are collected in a vector called <TT>kmrgd</TT>.
+</LI>
+<LI>Internally the names of the parameters are extended so that, e.g., ``C" is replaced by
+``par_C". This is done to avoid clashes with the symbolic toolbox in which 
+certain names are protected. This does not affect the use of the odefile since the parameters
+are not referred to by name. If the user writes his own odefile then this
+precaution is not necessary.
+</LI>
+<LI>The init function is called when performing a time integration in the GUI
+mode of MatCont. It is of no use in the command line version. See &#167;<A HREF="node43.html#S4:maps">5.1.3</A>
+for a command line example.
+</LI>
+</UL>
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html671"
+  HREF="node36.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="/usr/share/latex2html/icons/next.png"></A> 
+<A NAME="tex2html667"
+  HREF="node34.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="/usr/share/latex2html/icons/up.png"></A> 
+<A NAME="tex2html661"
+  HREF="node34.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="/usr/share/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html669"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="/usr/share/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html672"
+  HREF="node36.html">Handling auxiliary functions in</A>
+<B> Up:</B> <A NAME="tex2html668"
+  HREF="node34.html">The odefile of a</A>
+<B> Previous:</B> <A NAME="tex2html662"
+  HREF="node34.html">The odefile of a</A>
+ &nbsp; <B>  <A NAME="tex2html670"
+  HREF="node1.html">Contents</A></B> </DIV>
+<!--End of Navigation Panel-->
+
+</BODY>
+</HTML>

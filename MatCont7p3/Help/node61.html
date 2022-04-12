@@ -1,0 +1,143 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Limitcycle initialization</TITLE>
+<META NAME="description" CONTENT="Limitcycle initialization">
+<META NAME="keywords" CONTENT="ManualAug2019 ">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="ManualAug2019 .css">
+
+<LINK REL="next" HREF="node62.html">
+<LINK REL="previous" HREF="node58.html">
+<LINK REL="up" HREF="node53.html">
+<LINK REL="next" HREF="node62.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html998"
+  HREF="node62.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="/usr/share/latex2html/icons/next.png"></A> 
+<A NAME="tex2html994"
+  HREF="node53.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="/usr/share/latex2html/icons/up.png"></A> 
+<A NAME="tex2html988"
+  HREF="node60.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="/usr/share/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html996"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="/usr/share/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html999"
+  HREF="node62.html">Adaptive control example</A>
+<B> Up:</B> <A NAME="tex2html995"
+  HREF="node53.html">Continuation of limit cycles</A>
+<B> Previous:</B> <A NAME="tex2html989"
+  HREF="node60.html">Normal form coefficients</A>
+ &nbsp; <B>  <A NAME="tex2html997"
+  HREF="node1.html">Contents</A></B> 
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00076000000000000000"></A><A NAME="LimCycInit"></A>
+<BR>
+Limitcycle initialization
+</H2>
+For limit cycles the same problems occur as with equilibria, a limit cycle continuation can't be done by just calling the continuer as
+<BLOCKQUOTE>
+<TT>[x,v,s,h,f]=cont(@limitcycle, x0, v0, opt)</TT>
+
+</BLOCKQUOTE>
+The limit cycle curve file has to know
+
+<UL>
+<LI>which ode file to use,
+</LI>
+<LI>which parameter is active,
+</LI>
+<LI>the values of all parameters,
+</LI>
+<LI>the number of mesh and collocation points to use for the discretization.
+</LI>
+</UL>
+Also an initial cycle <TT>x0</TT> has to be known. All this information can be supplied using any of the following three starting functions. All three
+return an initial cycle <TT>x0</TT> as well as its tangent vector <TT>v0</TT>.
+
+<UL>
+<LI><TT>[x0,v0]=init_H_LC(@odefile, x, p, ap, h, ntst, ncol)</TT> 
+<BR>
+Calculates an initial cycle from a Hopf point detected on an equilibrium curve. Here <TT>odefile</TT> is the ode-file to be used. <TT>x</TT> is a vector containing the values of the state variables returned by a previous equilibrium curve continuation. <TT>p</TT> is the vector containing the current values of the parameters. <TT>ap</TT> is the active parameter, <TT>h</TT> contains the value of the initial amplitude and <TT>ntst</TT> and <TT>ncol</TT> are the number of mesh and collocation points to be used for the discretization.
+
+<P>
+</LI>
+<LI><TT>[x0,v0]=init_BPC_LC(@odefile, x, v, s, ap, ntst, ncol,h)</TT> 
+<BR>
+Calculates an initial cycle for starting a secondary cycle from a BPC detected on a previous calculated limit cycle. <TT>odefile</TT>, <TT>ap</TT>, <TT>ntst</TT> and <TT>ncol</TT> are the same as for <TT>init_H_LC</TT>. <TT>x</TT>, <TT>v</TT> and <TT>s</TT> are here the <TT>x</TT>, <TT>v</TT> and <TT>s</TT> as returned by a previous limit cycle continuation and <TT>h</TT> contains the value of the initial amplitude.
+
+<P>
+</LI>
+<LI><TT>[x0,v0]=init_LC_LC(@odefile, x, v, s, par, ap, ntst, ncol)</TT> 
+<BR>
+This starter can be used to start a limit cycle continuation from a previous limit cycle continuation. <TT>odefile</TT>, <TT>ap</TT>, <TT>ntst</TT> and <TT>ncol</TT> are the same as for <TT>init_H_LC</TT>. <TT>x</TT> and <TT>v</TT> are here the <TT>x</TT> and <TT>v</TT> as returned by a previous limit cycle continuation. <TT>s</TT> is the special point structure for the
+point from where to start the new continuation. <TT>par</TT> is the parameter vector that is to be used for the new continuation. If this is the same as in the cycle returned by the continuer (arguably the natural situation), then this is the same as
+<TT>s.data.parametervalues</TT>
+
+<P>
+</LI>
+<LI><TT>[x0,v0]=init_PD_LC(@odefile, x, s, ntst, ncol,h)</TT> 
+<BR>
+This starter calculates an initial double period cycle from a period doubling bifurcation point. Here <TT>h</TT> is a distance parameter which can be set to zero. We note also that there is no active parameter <TT>ap</TT>
+input argument. 
+</LI>
+</UL>
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html998"
+  HREF="node62.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="/usr/share/latex2html/icons/next.png"></A> 
+<A NAME="tex2html994"
+  HREF="node53.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="/usr/share/latex2html/icons/up.png"></A> 
+<A NAME="tex2html988"
+  HREF="node60.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="/usr/share/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html996"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="/usr/share/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html999"
+  HREF="node62.html">Adaptive control example</A>
+<B> Up:</B> <A NAME="tex2html995"
+  HREF="node53.html">Continuation of limit cycles</A>
+<B> Previous:</B> <A NAME="tex2html989"
+  HREF="node60.html">Normal form coefficients</A>
+ &nbsp; <B>  <A NAME="tex2html997"
+  HREF="node1.html">Contents</A></B> </DIV>
+<!--End of Navigation Panel-->
+
+</BODY>
+</HTML>

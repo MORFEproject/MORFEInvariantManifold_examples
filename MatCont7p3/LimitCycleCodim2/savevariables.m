@@ -1,0 +1,10 @@
+pippo='LPC2'
+assignin('base',['phi_',pippo],phi)
+assignin('base',['v1_',pippo],v1)
+assignin('base',['w1_',pippo],w1)
+assignin('base',['v2_',pippo],v2)
+assignin('base',['p_',pippo],p)
+%assignin('base',['S_',pippo],S)
+assignin('base',['x_',pippo],x)
+assignin('base',['p_',pippo],p)
+assignin('base',['T_',pippo],T)

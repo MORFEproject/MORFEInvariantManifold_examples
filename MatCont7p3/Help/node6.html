@@ -1,0 +1,529 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Moore-Penrose continuation</TITLE>
+<META NAME="description" CONTENT="Moore-Penrose continuation">
+<META NAME="keywords" CONTENT="ManualAug2019 ">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="ManualAug2019 .css">
+
+<LINK REL="previous" HREF="node5.html">
+<LINK REL="up" HREF="node4.html">
+<LINK REL="next" HREF="node7.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html292"
+  HREF="node7.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="/usr/share/latex2html/icons/next.png"></A> 
+<A NAME="tex2html288"
+  HREF="node4.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="/usr/share/latex2html/icons/up.png"></A> 
+<A NAME="tex2html284"
+  HREF="node5.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="/usr/share/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html290"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="/usr/share/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html293"
+  HREF="node7.html">Stepsize control</A>
+<B> Up:</B> <A NAME="tex2html289"
+  HREF="node4.html">Correction</A>
+<B> Previous:</B> <A NAME="tex2html285"
+  HREF="node5.html">Pseudo-arclength continuation</A>
+ &nbsp; <B>  <A NAME="tex2html291"
+  HREF="node1.html">Contents</A></B> 
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H3><A NAME="SECTION00022200000000000000">
+Moore-Penrose continuation</A>
+</H3>
+
+<P>
+CL_M<SMALL>AT</SMALL>C<SMALL>ONT</SMALL> implements a continuation method that is slightly different from
+the pseudo-arclength continuation. 
+
+<DIV ALIGN="CENTER"><A NAME="fig:mp"></A><A NAME="717"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 3:</STRONG>
+Moore-Penrose continuation</CAPTION>
+<TR><TD><IMG
+ WIDTH="370" HEIGHT="254" BORDER="0"
+ SRC="img34.png"
+ ALT="\begin{figure}\begin{center}
+\input{moore1.pstex_t}
+\end{center}\end{figure}"></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+<P>
+<DIV><B>Definition  <SPAN CLASS="arabic">1</SPAN></B> &nbsp; 
+<I>Let <SPAN CLASS="MATH"><IMG
+ WIDTH="17" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img35.png"
+ ALT="$A$"></SPAN> be an <SPAN CLASS="MATH"><IMG
+ WIDTH="101" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img36.png"
+ ALT="$N\times (N+1)$"></SPAN> matrix with maximal rank. Then the <EM>Moore-Penrose inverse</EM> of <SPAN CLASS="MATH"><IMG
+ WIDTH="17" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img35.png"
+ ALT="$A$"></SPAN> is defined by <!-- MATH
+ $A^+ = A^T(AA^T)^{-1}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="143" HEIGHT="39" ALIGN="MIDDLE" BORDER="0"
+ SRC="img37.png"
+ ALT="$A^+ = A^T(AA^T)^{-1}$"></SPAN>.</I></DIV><P></P>
+Let <SPAN CLASS="MATH"><IMG
+ WIDTH="17" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img35.png"
+ ALT="$A$"></SPAN> be an <SPAN CLASS="MATH"><IMG
+ WIDTH="101" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img36.png"
+ ALT="$N\times (N+1)$"></SPAN> matrix with maximal rank. Consider the following linear system with <!-- MATH
+ $x,v\in \ensuremath{\mathbf{R}}^{N+1},b\in \ensuremath{\mathbf{R}}^N$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="162" HEIGHT="39" ALIGN="MIDDLE" BORDER="0"
+ SRC="img38.png"
+ ALT="$x,v\in \ensuremath{\mathbf{R}}^{N+1},b\in \ensuremath{\mathbf{R}}^N$"></SPAN>:
+<BR>
+<DIV ALIGN="CENTER"><A NAME="mp1"></A>
+<!-- MATH
+ \begin{eqnarray}
+Ax &=& b\\
+v^Tx &=& 0
+\end{eqnarray}
+ -->
+<TABLE CELLPADDING="0" ALIGN="CENTER" WIDTH="100%">
+<TR VALIGN="MIDDLE"><TD NOWRAP WIDTH="50%" ALIGN="RIGHT"><IMG
+ WIDTH="27" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img39.png"
+ ALT="$\displaystyle Ax$"></TD>
+<TD ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="17" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img40.png"
+ ALT="$\textstyle =$"></TD>
+<TD ALIGN="LEFT" WIDTH="50%" NOWRAP><IMG
+ WIDTH="11" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img41.png"
+ ALT="$\displaystyle b$"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+(<SPAN CLASS="arabic">8</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE"><TD NOWRAP WIDTH="50%" ALIGN="RIGHT"><IMG
+ WIDTH="33" HEIGHT="40" ALIGN="MIDDLE" BORDER="0"
+ SRC="img42.png"
+ ALT="$\displaystyle v^Tx$"></TD>
+<TD ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="17" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img40.png"
+ ALT="$\textstyle =$"></TD>
+<TD ALIGN="LEFT" WIDTH="50%" NOWRAP><IMG
+ WIDTH="13" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img43.png"
+ ALT="$\displaystyle 0$"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+(<SPAN CLASS="arabic">9</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+where <SPAN CLASS="MATH"><IMG
+ WIDTH="14" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img44.png"
+ ALT="$x$"></SPAN> is a point on the curve and <SPAN CLASS="MATH"><IMG
+ WIDTH="13" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img45.png"
+ ALT="$v$"></SPAN> its tangent vector with respect to <SPAN CLASS="MATH"><IMG
+ WIDTH="17" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img35.png"
+ ALT="$A$"></SPAN>, i.e. <SPAN CLASS="MATH"><IMG
+ WIDTH="58" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img46.png"
+ ALT="$Av=0$"></SPAN>.
+Since <SPAN CLASS="MATH"><IMG
+ WIDTH="80" HEIGHT="19" ALIGN="BOTTOM" BORDER="0"
+ SRC="img47.png"
+ ALT="$AA^+b = b$"></SPAN> and <!-- MATH
+ $v^TA^+b = \langle Av,(AA^T)^{-1}b\rangle = 0$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="230" HEIGHT="39" ALIGN="MIDDLE" BORDER="0"
+ SRC="img48.png"
+ ALT="$v^TA^+b = \langle Av,(AA^T)^{-1}b\rangle = 0$"></SPAN>, a solution of this system is
+<BR>
+<DIV ALIGN="RIGHT" CLASS="mathdisplay">
+
+<!-- MATH
+ \begin{equation}
+x = A^+b.
+\end{equation}
+ -->
+<A NAME="mp2"></A>
+<TABLE WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE"><TD ALIGN="CENTER" NOWRAP><A NAME="mp2"></A><IMG
+ WIDTH="70" HEIGHT="49" BORDER="0"
+ SRC="img49.png"
+ ALT="\begin{displaymath}
+x = A^+b.
+\end{displaymath}"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+(<SPAN CLASS="arabic">10</SPAN>)</TD></TR>
+</TABLE>
+<BR CLEAR="ALL"></DIV><P></P>
+Suppose we have a predicted point <SPAN CLASS="MATH"><IMG
+ WIDTH="27" HEIGHT="19" ALIGN="BOTTOM" BORDER="0"
+ SRC="img21.png"
+ ALT="$X^0$"></SPAN> using (<A HREF="node3.html#eq:prediction">1</A>). We want to find the point <SPAN CLASS="MATH"><IMG
+ WIDTH="14" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img44.png"
+ ALT="$x$"></SPAN> on the curve which is nearest to <SPAN CLASS="MATH"><IMG
+ WIDTH="27" HEIGHT="19" ALIGN="BOTTOM" BORDER="0"
+ SRC="img21.png"
+ ALT="$X^0$"></SPAN>, i.e. we are trying to solve the optimization problem:
+<BR>
+<DIV ALIGN="RIGHT" CLASS="mathdisplay">
+
+<!-- MATH
+ \begin{equation}
+\min_{x}\{ ||x-X^0||\ |\ F(x)=0 \}
+\end{equation}
+ -->
+<TABLE WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE"><TD ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="205" HEIGHT="39" BORDER="0"
+ SRC="img50.png"
+ ALT="\begin{displaymath}
+\min_{x}\{ \vert\vert x-X^0\vert\vert\ \vert\ F(x)=0 \}
+\end{displaymath}"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+(<SPAN CLASS="arabic">11</SPAN>)</TD></TR>
+</TABLE>
+<BR CLEAR="ALL"></DIV><P></P>
+So, the system we need to solve is:
+<BR>
+<DIV ALIGN="CENTER">
+
+<!-- MATH
+ \begin{eqnarray}
+F(x) &=& 0 \\
+w^T(x-X^0) &=& 0
+\end{eqnarray}
+ -->
+<TABLE CELLPADDING="0" ALIGN="CENTER" WIDTH="100%">
+<TR VALIGN="MIDDLE"><TD NOWRAP WIDTH="50%" ALIGN="RIGHT"><IMG
+ WIDTH="41" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img51.png"
+ ALT="$\displaystyle F(x)$"></TD>
+<TD ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="17" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img40.png"
+ ALT="$\textstyle =$"></TD>
+<TD ALIGN="LEFT" WIDTH="50%" NOWRAP><IMG
+ WIDTH="13" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img43.png"
+ ALT="$\displaystyle 0$"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+(<SPAN CLASS="arabic">12</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE"><TD NOWRAP WIDTH="50%" ALIGN="RIGHT"><IMG
+ WIDTH="96" HEIGHT="40" ALIGN="MIDDLE" BORDER="0"
+ SRC="img52.png"
+ ALT="$\displaystyle w^T(x-X^0)$"></TD>
+<TD ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="17" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img40.png"
+ ALT="$\textstyle =$"></TD>
+<TD ALIGN="LEFT" WIDTH="50%" NOWRAP><IMG
+ WIDTH="13" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img43.png"
+ ALT="$\displaystyle 0$"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+(<SPAN CLASS="arabic">13</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+where <SPAN CLASS="MATH"><IMG
+ WIDTH="17" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img53.png"
+ ALT="$w$"></SPAN> is the tangent vector at point <SPAN CLASS="MATH"><IMG
+ WIDTH="14" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img44.png"
+ ALT="$x$"></SPAN>. In Newton's method this system is solved using a linearization about <SPAN CLASS="MATH"><IMG
+ WIDTH="27" HEIGHT="19" ALIGN="BOTTOM" BORDER="0"
+ SRC="img21.png"
+ ALT="$X^0$"></SPAN>. Taylor expansion about <SPAN CLASS="MATH"><IMG
+ WIDTH="27" HEIGHT="19" ALIGN="BOTTOM" BORDER="0"
+ SRC="img21.png"
+ ALT="$X^0$"></SPAN> gives:
+<BR>
+<DIV ALIGN="CENTER">
+
+<!-- MATH
+ \begin{eqnarray}
+F(x) &=& F(X^0) + F_x(X^0)(x-X^0) + \ensuremath{\mathcal{O}}(||x-X^0||^2)\\
+w^T(x-X^0) &=& v^T(x-X^0) + \ensuremath{\mathcal{O}}(||x-X^0||^2)\ .
+\end{eqnarray}
+ -->
+<TABLE CELLPADDING="0" ALIGN="CENTER" WIDTH="100%">
+<TR VALIGN="MIDDLE"><TD NOWRAP WIDTH="50%" ALIGN="RIGHT"><IMG
+ WIDTH="41" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img51.png"
+ ALT="$\displaystyle F(x)$"></TD>
+<TD ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="17" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img40.png"
+ ALT="$\textstyle =$"></TD>
+<TD ALIGN="LEFT" WIDTH="50%" NOWRAP><IMG
+ WIDTH="331" HEIGHT="39" ALIGN="MIDDLE" BORDER="0"
+ SRC="img54.png"
+ ALT="$\displaystyle F(X^0) + F_x(X^0)(x-X^0) + \ensuremath{\mathcal{O}}(\vert\vert x-X^0\vert\vert^2)$"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+(<SPAN CLASS="arabic">14</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE"><TD NOWRAP WIDTH="50%" ALIGN="RIGHT"><IMG
+ WIDTH="96" HEIGHT="40" ALIGN="MIDDLE" BORDER="0"
+ SRC="img52.png"
+ ALT="$\displaystyle w^T(x-X^0)$"></TD>
+<TD ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="17" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img40.png"
+ ALT="$\textstyle =$"></TD>
+<TD ALIGN="LEFT" WIDTH="50%" NOWRAP><IMG
+ WIDTH="233" HEIGHT="40" ALIGN="MIDDLE" BORDER="0"
+ SRC="img55.png"
+ ALT="$\displaystyle v^T(x-X^0) + \ensuremath{\mathcal{O}}(\vert\vert x-X^0\vert\vert^2)\ .$"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+(<SPAN CLASS="arabic">15</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+So when we discard the higher order terms we can see using (<A HREF="#mp1">8</A>) and (<A HREF="#mp2">10</A>) that the solution of this system is:
+<BR>
+<DIV ALIGN="RIGHT" CLASS="mathdisplay">
+
+<!-- MATH
+ \begin{equation}
+x = X^0 - F_x^+(X^0)F(X^0)\ .
+\end{equation}
+ -->
+<TABLE WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE"><TD ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="200" HEIGHT="32" BORDER="0"
+ SRC="img56.png"
+ ALT="\begin{displaymath}
+x = X^0 - F_x^+(X^0)F(X^0)\ .
+\end{displaymath}"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+(<SPAN CLASS="arabic">16</SPAN>)</TD></TR>
+</TABLE>
+<BR CLEAR="ALL"></DIV><P></P>
+However, the null vector of <SPAN CLASS="MATH"><IMG
+ WIDTH="60" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img57.png"
+ ALT="$F_x(X^0)$"></SPAN> is not known, therefore we approximate it by <SPAN CLASS="MATH"><IMG
+ WIDTH="63" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img58.png"
+ ALT="$V^0 = v_i$"></SPAN>, the tangent vector at <SPAN CLASS="MATH"><IMG
+ WIDTH="19" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img9.png"
+ ALT="$x_i$"></SPAN>. Geometrically this means
+we are solving <SPAN CLASS="MATH"><IMG
+ WIDTH="73" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img8.png"
+ ALT="$F(x)=0$"></SPAN> in a hyperplane perpendicular to the previous tangent vector. This is illustrated in Figure <A HREF="#fig:mp">3</A>. In other words, the extra function <SPAN CLASS="MATH"><IMG
+ WIDTH="36" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img23.png"
+ ALT="$g(x)$"></SPAN> in (<A HREF="node4.html#eq:corr">2</A>) becomes:
+<BR>
+<DIV ALIGN="RIGHT" CLASS="mathdisplay">
+
+<!-- MATH
+ \begin{equation}
+g_k(x) = \langle x-X^{k},V^k \rangle ,
+\end{equation}
+ -->
+<TABLE WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE"><TD ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="166" HEIGHT="32" BORDER="0"
+ SRC="img59.png"
+ ALT="\begin{displaymath}
+g_k(x) = \langle x-X^{k},V^k \rangle ,
+\end{displaymath}"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+(<SPAN CLASS="arabic">17</SPAN>)</TD></TR>
+</TABLE>
+<BR CLEAR="ALL"></DIV><P></P>
+where <!-- MATH
+ $F_x(X^{k-1})V^k=0$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="132" HEIGHT="39" ALIGN="MIDDLE" BORDER="0"
+ SRC="img60.png"
+ ALT="$F_x(X^{k-1})V^k=0$"></SPAN> for <SPAN CLASS="MATH"><IMG
+ WIDTH="90" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img61.png"
+ ALT="$k=1,2,\ldots$"></SPAN>.
+Thus, the Newton iteration we are doing is:
+<BR>
+<DIV ALIGN="CENTER"><A NAME="eq:mp1"></A><A NAME="eq:mp2"></A>
+<!-- MATH
+ \begin{eqnarray}
+X^{k+1} &=& X^k - H^{-1}_x(X^k,V^k)H(X^k,V^k)\\
+V^{k+1} &=& V^k - H^{-1}_x(X^k,V^k)R(X^k,V^k)
+\end{eqnarray}
+ -->
+<TABLE CELLPADDING="0" ALIGN="CENTER" WIDTH="100%">
+<TR VALIGN="MIDDLE"><TD NOWRAP WIDTH="50%" ALIGN="RIGHT"><IMG
+ WIDTH="45" HEIGHT="41" ALIGN="MIDDLE" BORDER="0"
+ SRC="img62.png"
+ ALT="$\displaystyle X^{k+1}$"></TD>
+<TD ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="17" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img40.png"
+ ALT="$\textstyle =$"></TD>
+<TD ALIGN="LEFT" WIDTH="50%" NOWRAP><IMG
+ WIDTH="234" HEIGHT="41" ALIGN="MIDDLE" BORDER="0"
+ SRC="img63.png"
+ ALT="$\displaystyle X^k - H^{-1}_x(X^k,V^k)H(X^k,V^k)$"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+(<SPAN CLASS="arabic">18</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE"><TD NOWRAP WIDTH="50%" ALIGN="RIGHT"><IMG
+ WIDTH="43" HEIGHT="41" ALIGN="MIDDLE" BORDER="0"
+ SRC="img64.png"
+ ALT="$\displaystyle V^{k+1}$"></TD>
+<TD ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="17" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img40.png"
+ ALT="$\textstyle =$"></TD>
+<TD ALIGN="LEFT" WIDTH="50%" NOWRAP><IMG
+ WIDTH="230" HEIGHT="41" ALIGN="MIDDLE" BORDER="0"
+ SRC="img65.png"
+ ALT="$\displaystyle V^k - H^{-1}_x(X^k,V^k)R(X^k,V^k)$"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+(<SPAN CLASS="arabic">19</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+<BR>
+<DIV ALIGN="RIGHT" CLASS="mathdisplay">
+
+<!-- MATH
+ \begin{equation}
+H(X,V) = \left( \begin{array}{c}
+  F(X)\\
+	0
+	\end{array}\right),\ \ 
+H_x(X,V) = \left( \begin{array}{c}
+  F_x(X)\\
+	V^T
+	\end{array}\right)
+\end{equation}
+ -->
+<TABLE WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE"><TD ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="381" HEIGHT="51" BORDER="0"
+ SRC="img66.png"
+ ALT="\begin{displaymath}
+H(X,V) = \left( \begin{array}{c}
+F(X)\\
+0
+\end{array...
+...left( \begin{array}{c}
+F_x(X)\\
+V^T
+\end{array}\right)
+\end{displaymath}"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+(<SPAN CLASS="arabic">20</SPAN>)</TD></TR>
+</TABLE>
+<BR CLEAR="ALL"></DIV><P></P>
+<BR>
+<DIV ALIGN="RIGHT" CLASS="mathdisplay">
+
+<!-- MATH
+ \begin{equation}
+R(X,V) = \left( \begin{array}{c}
+  F_x(X)V \\
+	0
+	\end{array}\right)\ .
+\end{equation}
+ -->
+<TABLE WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE"><TD ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="204" HEIGHT="51" BORDER="0"
+ SRC="img67.png"
+ ALT="\begin{displaymath}
+R(X,V) = \left( \begin{array}{c}
+F_x(X)V \\
+0
+\end{array}\right)\ .
+\end{displaymath}"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+(<SPAN CLASS="arabic">21</SPAN>)</TD></TR>
+</TABLE>
+<BR CLEAR="ALL"></DIV><P></P>
+One can prove that under the same conditions as for the pseudo-arclength continuation, 
+the Newton iterations (<A HREF="#eq:mp1">18</A>) and (<A HREF="#eq:mp2">19</A>) converge to a point on the 
+curve <SPAN CLASS="MATH"><IMG
+ WIDTH="36" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img18.png"
+ ALT="$x_{i+1}$"></SPAN> and the corresponding tangent vector <SPAN CLASS="MATH"><IMG
+ WIDTH="35" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img33.png"
+ ALT="$v_{i+1}$"></SPAN>, respectively.
+In the pseudo-arclength continuation, we had to compute a tangent vector when a new point 
+was found. In this case however, we already compute the tangent vectors <SPAN CLASS="MATH"><IMG
+ WIDTH="26" HEIGHT="20" ALIGN="BOTTOM" BORDER="0"
+ SRC="img68.png"
+ ALT="$V^k$"></SPAN> at each 
+iterate (<A HREF="#eq:mp2">19</A>), so we only need to normalize the computed 
+tangent vectors.
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html292"
+  HREF="node7.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="/usr/share/latex2html/icons/next.png"></A> 
+<A NAME="tex2html288"
+  HREF="node4.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="/usr/share/latex2html/icons/up.png"></A> 
+<A NAME="tex2html284"
+  HREF="node5.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="/usr/share/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html290"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="/usr/share/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html293"
+  HREF="node7.html">Stepsize control</A>
+<B> Up:</B> <A NAME="tex2html289"
+  HREF="node4.html">Correction</A>
+<B> Previous:</B> <A NAME="tex2html285"
+  HREF="node5.html">Pseudo-arclength continuation</A>
+ &nbsp; <B>  <A NAME="tex2html291"
+  HREF="node1.html">Contents</A></B> </DIV>
+<!--End of Navigation Panel-->
+
+</BODY>
+</HTML>

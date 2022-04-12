@@ -1,0 +1,458 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>ManualAug2019 </TITLE>
+<META NAME="description" CONTENT="ManualAug2019 ">
+<META NAME="keywords" CONTENT="ManualAug2019 ">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="ManualAug2019 .css">
+
+<LINK REL="next" HREF="node1.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html39"
+  HREF="node1.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="/usr/share/latex2html/icons/next.png"></A> 
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="/usr/share/latex2html/icons/up_g.png"> 
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="/usr/share/latex2html/icons/prev_g.png"> 
+<A NAME="tex2html37"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="/usr/share/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html40"
+  HREF="node1.html">Contents</A>
+ &nbsp; <B>  <A NAME="tex2html38"
+  HREF="node1.html">Contents</A></B> 
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<P>
+
+<P>
+<DIV ALIGN="CENTER">
+</DIV>
+<DIV ALIGN="CENTER"><BIG CLASS="XHUGE"><SPAN  CLASS="textbf"> MATCONT:</SPAN>
+<BR></BIG>
+<BR>
+<BR>
+<BR>
+</DIV>
+<DIV ALIGN="CENTER"><BIG CLASS="XHUGE"><SPAN  CLASS="textbf">Continuation toolbox for ODEs</SPAN>
+<BR>
+<BR>
+<SPAN  CLASS="textbf">in Matlab</SPAN>
+</BIG>
+
+<BR>
+<BR>
+<BR>
+<BR>
+</DIV>
+<DIV ALIGN="CENTER"><BIG CLASS="HUGE">W. Govaerts,  Yu. A. Kuznetsov, H.G.E. Meijer,
+<BR>
+<BR>
+<BR>
+B. Al-Hdaibat, V. De Witte, A. Dhooge, W. Mestrom, N. Neirynck, A.M. Riet
+and B. Sautois
+<BR></BIG></DIV>
+<P><P>
+<BR>
+<DIV ALIGN="CENTER"><BIG CLASS="HUGE">
+<BR>
+<BR>
+August 2019, adapted for version MatCont 7.1.
+</BIG>
+</DIV>
+<P>
+<DIV ALIGN="CENTER">
+<BR>
+<BR>
+</DIV>
+<P>
+<DIV ALIGN="CENTER"></DIV>
+<DIV ALIGN="CENTER">
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="404" HEIGHT="302" ALIGN="BOTTOM" BORDER="0"
+ SRC="img3.png"
+ ALT="\includegraphics[scale=0.6]{ex/LCcurve2.eps}">
+
+</DIV>
+</DIV>
+<DIV ALIGN="CENTER">
+</DIV>
+<P>
+<DIV ALIGN="CENTER">
+<BR>
+<BR>
+</DIV>
+<P>
+<DIV ALIGN="CENTER"><TABLE CELLPADDING=3>
+<TR><TD ALIGN="LEFT"><TABLE CELLPADDING=3>
+<TR><TD ALIGN="RIGHT"><IMG
+ WIDTH="117" HEIGHT="94" ALIGN="BOTTOM" BORDER="0"
+ SRC="img4.png"
+ ALT="\includegraphics[scale=0.6]{rug.eps}"></TD>
+<TD ALIGN="RIGHT"><TABLE  WIDTH="272">
+<TR><TD> 
+                                                                                           Belgium 
+<BR>                                                             </TD></TR>
+</TABLE></TD>
+</TR>
+</TABLE></TD>
+<TD ALIGN="RIGHT"><TABLE CELLPADDING=3>
+<TR><TD ALIGN="LEFT"><IMG
+ WIDTH="82" HEIGHT="74" ALIGN="BOTTOM" BORDER="0"
+ SRC="img5.png"
+ ALT="\includegraphics[scale=0.6]{uusol.eps}"></TD>
+<TD ALIGN="LEFT"><TABLE  WIDTH="272">
+<TR><TD> 
+                                                             Utrecht University
+<BR>
+The Netherlands 
+<BR>                                                             </TD></TR>
+</TABLE></TD>
+</TR>
+</TABLE></TD>
+</TR>
+</TABLE>
+<TABLE CELLPADDING=3>
+<TR><TD ALIGN="RIGHT"><IMG
+ WIDTH="197" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img6.png"
+ ALT="\includegraphics[scale=0.6]{ex/UTLogoBlackRGBEN.eps}"></TD>
+<TD ALIGN="RIGHT"><TABLE  WIDTH="272">
+<TR><TD> 
+                                                                                                 The Netherlands 
+<BR>                                                             </TD></TR>
+</TABLE>
+
+<P></TD>
+</TR>
+</TABLE>
+</DIV>
+<P>
+<DIV ALIGN="CENTER">
+</DIV>
+
+<P>
+
+<BR><HR>
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"></A>
+
+<UL CLASS="ChildLinks">
+<LI><A NAME="tex2html41"
+  HREF="node1.html">Contents</A>
+<LI><A NAME="tex2html42"
+  HREF="node2.html">Mathematical aspects of numerical continuation and handling of singularities</A>
+<UL>
+<LI><A NAME="tex2html43"
+  HREF="node3.html">Prediction</A>
+<LI><A NAME="tex2html44"
+  HREF="node4.html">Correction</A>
+<UL>
+<LI><A NAME="tex2html45"
+  HREF="node5.html">Pseudo-arclength continuation</A>
+<LI><A NAME="tex2html46"
+  HREF="node6.html">Moore-Penrose continuation</A>
+</UL>
+<LI><A NAME="tex2html47"
+  HREF="node7.html">Stepsize control</A>
+<LI><A NAME="tex2html48"
+  HREF="node8.html">Singularity handling</A>
+<UL>
+<LI><A NAME="tex2html49"
+  HREF="node9.html">Test functions</A>
+<LI><A NAME="tex2html50"
+  HREF="node10.html">Multiple test functions</A>
+<LI><A NAME="tex2html51"
+  HREF="node11.html">Singularity matrix</A>
+<LI><A NAME="tex2html52"
+  HREF="node12.html">User location</A>
+</UL>
+</UL>
+<BR>
+<LI><A NAME="tex2html53"
+  HREF="node13.html">General software aspects of MatCont</A>
+<UL>
+<LI><A NAME="tex2html54"
+  HREF="node14.html">System definition</A>
+<LI><A NAME="tex2html55"
+  HREF="node15.html">Continuation and output</A>
+<LI><A NAME="tex2html56"
+  HREF="node16.html">Curve file</A>
+<LI><A NAME="tex2html57"
+  HREF="node17.html">Options</A>
+<UL>
+<LI><A NAME="tex2html58"
+  HREF="node18.html">The options-structure</A>
+<LI><A NAME="tex2html59"
+  HREF="node19.html">Derivatives of the defining system of the curve</A>
+<LI><A NAME="tex2html60"
+  HREF="node20.html">Singularities and test functions</A>
+<LI><A NAME="tex2html61"
+  HREF="node21.html">Locators</A>
+<LI><A NAME="tex2html62"
+  HREF="node22.html">User functions</A>
+<LI><A NAME="tex2html63"
+  HREF="node23.html">Defaultprocessor</A>
+<LI><A NAME="tex2html64"
+  HREF="node24.html">Special processors</A>
+<LI><A NAME="tex2html65"
+  HREF="node25.html">Workspace</A>
+<LI><A NAME="tex2html66"
+  HREF="node26.html">Adaptation</A>
+<LI><A NAME="tex2html67"
+  HREF="node27.html">Tangent search order</A>
+<LI><A NAME="tex2html68"
+  HREF="node28.html">Summary</A>
+</UL>
+<LI><A NAME="tex2html69"
+  HREF="node29.html">Failure handling</A>
+<LI><A NAME="tex2html70"
+  HREF="node30.html">General remarks on the data flow</A>
+<LI><A NAME="tex2html71"
+  HREF="node31.html">Directories</A>
+<LI><A NAME="tex2html72"
+  HREF="node32.html">Global Structures</A>
+<LI><A NAME="tex2html73"
+  HREF="node33.html">Plots in M<SMALL>AT</SMALL>C<SMALL>ONT</SMALL></A>
+</UL>
+<BR>
+<LI><A NAME="tex2html74"
+  HREF="node34.html">The odefile of a dynamical system</A>
+<UL>
+<LI><A NAME="tex2html75"
+  HREF="node35.html">Structure and construction of an odefile</A>
+<LI><A NAME="tex2html76"
+  HREF="node36.html">Handling auxiliary functions in the construction of the odefile</A>
+<LI><A NAME="tex2html77"
+  HREF="node37.html">Access to function and Jacobian values</A>
+<LI><A NAME="tex2html78"
+  HREF="node38.html">Time integration using the odefile</A>
+</UL>
+<BR>
+<LI><A NAME="tex2html79"
+  HREF="node39.html">Time integration and Poincar&#233; maps</A>
+<UL>
+<LI><A NAME="tex2html80"
+  HREF="node40.html">Time integration</A>
+<UL>
+<LI><A NAME="tex2html81"
+  HREF="node41.html">Solver output properties</A>
+<LI><A NAME="tex2html82"
+  HREF="node42.html">Jacobian matrices</A>
+<LI><A NAME="tex2html83"
+  HREF="node43.html">The Steinmetz-Larter example</A>
+</UL>
+<LI><A NAME="tex2html84"
+  HREF="node44.html">Poincar&#233; section and Poincar&#233; map</A>
+<UL>
+<LI><A NAME="tex2html85"
+  HREF="node45.html">Poincar&#233; maps in C<SMALL>L/SMALL>_M<SMALL>AT</SMALL>C<SMALL>ONT</SMALL></A>
+</UL>
+</UL>
+<BR>
+<LI><A NAME="tex2html86"
+  HREF="node46.html">Equilibrium continuation</A>
+<UL>
+<LI><A NAME="tex2html87"
+  HREF="node47.html">Mathematical definition</A>
+<LI><A NAME="tex2html88"
+  HREF="node48.html">Initialization by time integration</A>
+<LI><A NAME="tex2html89"
+  HREF="node49.html">Bifurcations and their normal form coefficients</A>
+<UL>
+<LI><A NAME="tex2html90"
+  HREF="node50.html">Branch point locator</A>
+</UL>
+<LI><A NAME="tex2html91"
+  HREF="node51.html">Equilibrium initialization</A>
+<LI><A NAME="tex2html92"
+  HREF="node52.html">Bratu example</A>
+</UL>
+<BR>
+<LI><A NAME="tex2html93"
+  HREF="node53.html">Continuation of limit cycles</A>
+<UL>
+<LI><A NAME="tex2html94"
+  HREF="node54.html">Mathematical definition</A>
+<LI><A NAME="tex2html95"
+  HREF="node55.html">Discretization of a limit cycle</A>
+<LI><A NAME="tex2html96"
+  HREF="node56.html">Plotting the output of a continuation of limit cycles</A>
+<LI><A NAME="tex2html97"
+  HREF="node57.html">Initialization by time integration</A>
+<LI><A NAME="tex2html98"
+  HREF="node58.html">Bifurcations of limit cycles</A>
+<UL>
+<LI><A NAME="tex2html99"
+  HREF="node59.html">Branch Point Locator</A>
+<LI><A NAME="tex2html100"
+  HREF="node60.html">Normal form coefficients</A>
+</UL>
+<LI><A NAME="tex2html101"
+  HREF="node61.html">Limitcycle initialization</A>
+<LI><A NAME="tex2html102"
+  HREF="node62.html">Adaptive control example</A>
+<LI><A NAME="tex2html103"
+  HREF="node63.html">The phase response curve</A>
+</UL>
+<BR>
+<LI><A NAME="tex2html104"
+  HREF="node64.html">Continuation of codim 1 bifurcations</A>
+<UL>
+<LI><A NAME="tex2html105"
+  HREF="node65.html">Fold Continuation</A>
+<UL>
+<LI><A NAME="tex2html106"
+  HREF="node66.html">Mathematical definition</A>
+<LI><A NAME="tex2html107"
+  HREF="node67.html">Bifurcations along a fold curve</A>
+<LI><A NAME="tex2html108"
+  HREF="node68.html">Fold initialization</A>
+<LI><A NAME="tex2html109"
+  HREF="node69.html">Adaptation</A>
+<LI><A NAME="tex2html110"
+  HREF="node70.html">Example: a catalytic oscillator</A>
+</UL>
+<LI><A NAME="tex2html111"
+  HREF="node71.html">Hopf Continuation</A>
+<UL>
+<LI><A NAME="tex2html112"
+  HREF="node72.html">Mathematical definition</A>
+<LI><A NAME="tex2html113"
+  HREF="node73.html">Bifurcations along a Hopf curve</A>
+<LI><A NAME="tex2html114"
+  HREF="node74.html">Hopf initialization</A>
+<LI><A NAME="tex2html115"
+  HREF="node75.html">Adaptation</A>
+<LI><A NAME="tex2html116"
+  HREF="node76.html">Example</A>
+</UL>
+<LI><A NAME="tex2html117"
+  HREF="node77.html">Period Doubling</A>
+<UL>
+<LI><A NAME="tex2html118"
+  HREF="node78.html">Mathematical definition</A>
+<LI><A NAME="tex2html119"
+  HREF="node79.html">Output of a continuation of period doubling bifurcation points</A>
+<LI><A NAME="tex2html120"
+  HREF="node80.html">Bifurcations along a flip curve</A>
+<LI><A NAME="tex2html121"
+  HREF="node81.html">Period doubling initialization</A>
+<LI><A NAME="tex2html122"
+  HREF="node82.html">Example</A>
+</UL>
+<LI><A NAME="tex2html123"
+  HREF="node83.html">Continuation of fold bifurcation of limit cycles</A>
+<UL>
+<LI><A NAME="tex2html124"
+  HREF="node84.html">Mathematical definition</A>
+<LI><A NAME="tex2html125"
+  HREF="node85.html">Bifurcations along a fold of cycles curve</A>
+<LI><A NAME="tex2html126"
+  HREF="node86.html">Fold of cycles initialization</A>
+<LI><A NAME="tex2html127"
+  HREF="node87.html">Example: the fast Morris-Lecar equations</A>
+</UL>
+<LI><A NAME="tex2html128"
+  HREF="node88.html">Continuation of torus bifurcation of limit cycles</A>
+<UL>
+<LI><A NAME="tex2html129"
+  HREF="node89.html">Mathematical definition</A>
+<LI><A NAME="tex2html130"
+  HREF="node90.html">Bifurcations along a Neimark-Sacker curve</A>
+<LI><A NAME="tex2html131"
+  HREF="node91.html">Torus bifurcation initialization</A>
+<LI><A NAME="tex2html132"
+  HREF="node92.html">Example: an autonomous electronic circuit</A>
+</UL>
+</UL>
+<BR>
+<LI><A NAME="tex2html133"
+  HREF="node93.html">Continuation of codim 2 bifurcations</A>
+<UL>
+<LI><A NAME="tex2html134"
+  HREF="node94.html">Branch Point Continuation</A>
+<UL>
+<LI><A NAME="tex2html135"
+  HREF="node95.html">Mathematical definition</A>
+<LI><A NAME="tex2html136"
+  HREF="node96.html">Bifurcations</A>
+<LI><A NAME="tex2html137"
+  HREF="node97.html">Branch Point initialization</A>
+<LI><A NAME="tex2html138"
+  HREF="node98.html">Example</A>
+</UL>
+<LI><A NAME="tex2html139"
+  HREF="node99.html">Branch Point of Cycles Continuation</A>
+<UL>
+<LI><A NAME="tex2html140"
+  HREF="node100.html">Mathematical Definition</A>
+<LI><A NAME="tex2html141"
+  HREF="node101.html">Bifurcations</A>
+<LI><A NAME="tex2html142"
+  HREF="node102.html">Branch Point of Cycles initialization</A>
+<LI><A NAME="tex2html143"
+  HREF="node103.html">Example</A>
+</UL>
+</UL>
+<BR>
+<LI><A NAME="tex2html144"
+  HREF="node104.html">Continuation of homoclinic and heteroclinic orbits</A>
+<UL>
+<LI><A NAME="tex2html145"
+  HREF="node105.html">Homoclinic orbits: Mathematical definition</A>
+<UL>
+<LI><A NAME="tex2html146"
+  HREF="node106.html">Homoclinic-to-Hyperbolic-Saddle Orbits</A>
+<LI><A NAME="tex2html147"
+  HREF="node107.html">Homoclinic-to-Saddle-Node Orbits</A>
+</UL>
+<LI><A NAME="tex2html148"
+  HREF="node108.html">Bifurcations</A>
+<LI><A NAME="tex2html149"
+  HREF="node109.html">Homoclinic initialization (HHS)</A>
+<LI><A NAME="tex2html150"
+  HREF="node110.html">Homoclinic-to-Saddle-Node initialization (HSN)</A>
+<LI><A NAME="tex2html151"
+  HREF="node111.html">CL_M<SMALL>AT</SMALL>C<SMALL>ONT</SMALL>: the MLFast example</A>
+<LI><A NAME="tex2html152"
+  HREF="node112.html">Heteroclinic orbits (Het)</A>
+</UL>
+<BR>
+<LI><A NAME="tex2html153"
+  HREF="node113.html">Continuer example: a curve object</A>
+<LI><A NAME="tex2html154"
+  HREF="node114.html">The Brusselator example: Continuation of a solution to a boundary value problem in a free parameter</A>
+<LI><A NAME="tex2html155"
+  HREF="node115.html">Bibliography</A>
+<LI><A NAME="tex2html156"
+  HREF="node116.html">About this document ...</A>
+</UL>
+<!--End of Table of Child-Links-->
+<BR><HR>
+
+</BODY>
+</HTML>

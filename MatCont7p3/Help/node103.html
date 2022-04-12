@@ -1,0 +1,348 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Example</TITLE>
+<META NAME="description" CONTENT="Example">
+<META NAME="keywords" CONTENT="ManualAug2019 ">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="ManualAug2019 .css">
+
+<LINK REL="previous" HREF="node102.html">
+<LINK REL="up" HREF="node99.html">
+<LINK REL="next" HREF="node104.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html1551"
+  HREF="node104.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="/usr/share/latex2html/icons/next.png"></A> 
+<A NAME="tex2html1547"
+  HREF="node99.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="/usr/share/latex2html/icons/up.png"></A> 
+<A NAME="tex2html1543"
+  HREF="node102.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="/usr/share/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html1549"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="/usr/share/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html1552"
+  HREF="node104.html">Continuation of homoclinic and</A>
+<B> Up:</B> <A NAME="tex2html1548"
+  HREF="node99.html">Branch Point of Cycles</A>
+<B> Previous:</B> <A NAME="tex2html1544"
+  HREF="node102.html">Branch Point of Cycles</A>
+ &nbsp; <B>  <A NAME="tex2html1550"
+  HREF="node1.html">Contents</A></B> 
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H3><A NAME="SECTION00092400000000000000"></A><A NAME="ttorBPC4"></A>
+<BR>
+Example
+</H3>
+In this section we discuss a non-generic situation, i.e. a case with a symmetry and a continuation of BPC points that involves two effective parameters and one artificial parameter.
+
+<P>
+For this example the following model is used:
+<BR>
+<DIV ALIGN="RIGHT" CLASS="mathdisplay">
+
+<!-- MATH
+ \begin{equation}
+\left\{\begin{array}{rcl}
+\dot{x}&=&(-(\beta+\nu)x+\beta y-a_3 x^3+b_3 (y-x)^3)/r\\
+\dot{y}&=&\beta x-(\beta+\gamma)y-z-b_3 (y-x)^3\\
+\dot{z}&=y
+\end{array}\right.
+
+\end{equation}
+ -->
+<A NAME="FrRoGaPo"></A>
+<TABLE WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE"><TD ALIGN="CENTER" NOWRAP><A NAME="FrRoGaPo"></A><IMG
+ WIDTH="394" HEIGHT="72" BORDER="0"
+ SRC="img593.png"
+ ALT="\begin{displaymath}
+\left\{\begin{array}{rcl}
+\dot{x}&amp;=&amp;(-(\beta+\nu)x+\beta y...
+...a+\gamma)y-z-b_3 (y-x)^3\\
+\dot{z}&amp;=y
+\end{array}\right.
+\end{displaymath}"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+(<SPAN CLASS="arabic">87</SPAN>)</TD></TR>
+</TABLE>
+<BR CLEAR="ALL"></DIV><P></P>
+which is the same system as in the torus of cycles continuation.
+It has a trivial solution branch <SPAN CLASS="MATH"><IMG
+ WIDTH="110" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img529.png"
+ ALT="$x=y=z=0$"></SPAN> for all parameter values. Moreover, it has the <SPAN CLASS="MATH"><IMG
+ WIDTH="23" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img594.png"
+ ALT="$Z_2$"></SPAN> - symmetry <!-- MATH
+ $x\rightarrow -x$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="64" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img595.png"
+ ALT="$x\rightarrow -x$"></SPAN>,<!-- MATH
+ $y\rightarrow -y$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="63" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img596.png"
+ ALT="$y\rightarrow -y$"></SPAN>.
+To compute the branch of BPC points with respect to <SPAN CLASS="MATH"><IMG
+ WIDTH="14" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img536.png"
+ ALT="$\nu$"></SPAN> through the BPC point that we will detect on a limitcycle continued with free parameters <SPAN CLASS="MATH"><IMG
+ WIDTH="31" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img597.png"
+ ALT="$\nu,\beta$"></SPAN>, we need to introduce an additional free parameter that breaks the symmetry.
+There are many choices for this; we choose to introduce a parameter <SPAN CLASS="MATH"><IMG
+ WIDTH="11" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img91.png"
+ ALT="$\epsilon$"></SPAN> and extend the system (<A HREF="#FrRoGaPo">87</A>) by simply adding a term <SPAN CLASS="MATH"><IMG
+ WIDTH="24" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img598.png"
+ ALT="$+\epsilon$"></SPAN> to the first right-hand-side. For <SPAN CLASS="MATH"><IMG
+ WIDTH="43" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img599.png"
+ ALT="$\epsilon=0$"></SPAN> this reduces to (<A HREF="#FrRoGaPo">87</A>) while for <!-- MATH
+ $\epsilon \neq 0$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="43" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img600.png"
+ ALT="$\epsilon \neq 0$"></SPAN> the symmetry is broken. 
+
+<P>
+We start by computing the trivial branch with fixed parameters <SPAN CLASS="MATH"><IMG
+ WIDTH="73" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img531.png"
+ ALT="$\gamma=-0.6$"></SPAN>, <SPAN CLASS="MATH"><IMG
+ WIDTH="58" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img532.png"
+ ALT="$r=0.6$"></SPAN>, <SPAN CLASS="MATH"><IMG
+ WIDTH="110" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img601.png"
+ ALT="$a_3=0.328578$"></SPAN>,
+<SPAN CLASS="MATH"><IMG
+ WIDTH="108" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img602.png"
+ ALT="$b_3=0.933578$"></SPAN>, <SPAN CLASS="MATH"><IMG
+ WIDTH="60" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img530.png"
+ ALT="$\beta=0.5$"></SPAN>,<SPAN CLASS="MATH"><IMG
+ WIDTH="43" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img599.png"
+ ALT="$\epsilon=0$"></SPAN> and free parameter <SPAN CLASS="MATH"><IMG
+ WIDTH="14" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img536.png"
+ ALT="$\nu$"></SPAN> with initially <SPAN CLASS="MATH"><IMG
+ WIDTH="73" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img535.png"
+ ALT="$\nu=-0.9$"></SPAN>. On this branch a Hopf point is detected for <!-- MATH
+ $\nu=-0.58933644$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="134" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img603.png"
+ ALT="$\nu=-0.58933644$"></SPAN> and a branch point of equilibria for <SPAN CLASS="MATH"><IMG
+ WIDTH="73" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img604.png"
+ ALT="$\nu=-0.5$"></SPAN>.
+<PRE>
+&gt;&gt; p=[0.5;-0.6;0.6;0.32858;0.93358;-0.9;0];
+&gt;&gt; [x0,v0]=init_EP_EP(@torBPC,[0;0;0],p,[6]);
+&gt;&gt; opt=contset; opt= contset(opt,'Singularities',1);
+&gt;&gt; opt=contset(opt,'MaxNumPoints',50);
+&gt;&gt; [x,v,s,h,f]=cont(@equilibrium,x0,[],opt);
+first point found
+tangent vector to first point found
+label = H , x = ( 0.000000 0.000000 0.000000 -0.589336 )
+First Lyapunov coefficient = -4.563631e-001
+label = BP, x = ( 0.000000 0.000000 0.000000 -0.500000 )
+
+elapsed time  = 0.3 secs
+npoints curve = 50
+</PRE>
+
+<P>
+These computations can be done by running the script <TT>t</TT>esttorBPC4.  
+
+<P>
+From the Hopf point we start the computation of a curve of limit cycles, using 25 test 
+intervals and 4 collocation points.
+This is clearly a branch of symmetric 
+solutions of (<A HREF="#FrRoGaPo">87</A>); we detect one
+LPC and two BPC, see Fig. <A HREF="#prentLCBPC1fig">28</A>.
+<PRE>
+&gt;&gt; x1=x(1:3,s(2).index);p(6)= x(end,s(2).index);ap = 6;
+&gt;&gt; [x0,v0]=init_H_LC(@torBPC,x1,p,ap,0.0001,25,4);
+&gt;&gt; opt=contset; opt= contset(opt,'Singularities',1);
+&gt;&gt; opt=contset(opt,'Multipliers',1);
+&gt;&gt; opt=contset(opt,'MaxNumPoints',150);
+&gt;&gt; opt=contset(opt,'Adapt',5);
+&gt;&gt; [xlc,vlc,slc,hlc,flc]=cont(@limitcycle,x0,v0,opt);
+first point found
+tangent vector to first point found
+Limit point cycle (period = 8.426472e+000, parameter = -5.843348e-001)
+Normal form coefficient = 1.553595e-001
+Branch Point cycle(period = 8.689669e+000, parameter = -5.870290e-001)
+Neimark-Sacker (period = 8.743033e+000, parameter = -5.881194e-001)
+Neutral saddle
+
+elapsed time  = 30.2 secs
+npoints curve = 150
+&gt;&gt; plotcycle(xlc,vlc,slc,[1 2]);
+</PRE>
+
+<P>
+These computations can be done by running the script <TT>t</TT>esttorBPC5.  
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="prentLCBPC1fig"></A><A NAME="7886"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 28:</STRONG>
+Curve of limit cycles with LPC and branch points in the circuit example.</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="538" HEIGHT="403" ALIGN="BOTTOM" BORDER="0"
+ SRC="img605.png"
+ ALT="\includegraphics[scale=0.8]{ex/LCBPC1.eps}">
+</DIV></TD></TR>
+</TABLE>
+</DIV>
+We continue the secondary cycle branch passing through the BPC point. From Fig. <A HREF="#prentLCBPC2fig">29</A> it is clear that in the secondary cycle the symmetry is broken.
+<PRE>
+&gt;&gt; [x1,v1]=init_BPC_LC(@torBPC,xlc,vlc,slc(3),25,4,1e-6);
+&gt;&gt; opt=contset(opt,'MaxNumPoints',50);
+&gt;&gt; opt=contset(opt,'Backward',1);
+&gt;&gt; [xlc1,vlc1,slc1,hlc1,flc1]=cont(@limitcycle,x1,v1,opt);
+first point found
+tangent vector to first point found
+Neimark-Sacker (period = 8.794152e+000, parameter = -5.916502e-001)
+Normal form coefficient = -8.661266e-003
+Period Doubling (period = 9.266303e+000, parameter = -6.149552e-001)
+Normal form coefficient = -6.374237e-003
+
+elapsed time  = 13.6 secs
+npoints curve = 50
+&gt;&gt; plotcycle(xlc1,vlc1,slc1,[1 2]);
+</PRE>
+
+<P>
+These computations can be done by running the script <TT>t</TT>esttorBPC6.  
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="prentLCBPC2fig"></A><A NAME="7895"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 29:</STRONG>
+Asymmetric curve of limit cycles in the circuit example.</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="635" HEIGHT="492" ALIGN="BOTTOM" BORDER="0"
+ SRC="img606.png"
+ ALT="\includegraphics[scale=0.8]{ex/LCBPC2.eps}">
+</DIV></TD></TR>
+</TABLE>
+</DIV>
+Using the code for the continuation of generic BPC points with three free parameters <!-- MATH
+ $\nu,\beta,\epsilon$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="46" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img607.png"
+ ALT="$\nu,\beta,\epsilon$"></SPAN> we continue the curve of non-generic BPC points, where
+<SPAN CLASS="MATH"><IMG
+ WIDTH="11" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img91.png"
+ ALT="$\epsilon$"></SPAN> remains close to zero. The picture in Fig. <A HREF="#prentBPCfig">30</A> clearly shows that the symmetry is preserved (the axis labels were added manually).
+<PRE>
+&gt;&gt; [x1,v1]=init_BPC_BPC(@torBPC,xlc,slc(3),[1 6 7],25,4,ap);
+&gt;&gt; opt=contset(opt,'MaxNumPoints',200);
+&gt;&gt; [xbpc,vbpc,sbpc,hbpc,fbpc]=cont(@branchpointcycle,x1,v1,opt);
+first point found
+tangent vector to first point found
+
+elapsed time  = 158.1 secs
+npoints curve = 200
+&gt;&gt; plotcycle(xbpc,vbpc,sbpc,[1 2]);
+</PRE>
+
+<P>
+These computations can be done by running the script <TT>t</TT>esttorBPC7.  
+
+<DIV ALIGN="CENTER"><A NAME="prentBPCfig"></A><A NAME="7904"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 30:</STRONG>
+Curve of BPC points in the circuit example.</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="538" HEIGHT="403" ALIGN="BOTTOM" BORDER="0"
+ SRC="img608.png"
+ ALT="\includegraphics[scale=0.8]{ex/Figure30.eps}">
+</DIV></TD></TR>
+</TABLE>
+</DIV>
+
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html1551"
+  HREF="node104.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="/usr/share/latex2html/icons/next.png"></A> 
+<A NAME="tex2html1547"
+  HREF="node99.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="/usr/share/latex2html/icons/up.png"></A> 
+<A NAME="tex2html1543"
+  HREF="node102.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="/usr/share/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html1549"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="/usr/share/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html1552"
+  HREF="node104.html">Continuation of homoclinic and</A>
+<B> Up:</B> <A NAME="tex2html1548"
+  HREF="node99.html">Branch Point of Cycles</A>
+<B> Previous:</B> <A NAME="tex2html1544"
+  HREF="node102.html">Branch Point of Cycles</A>
+ &nbsp; <B>  <A NAME="tex2html1550"
+  HREF="node1.html">Contents</A></B> </DIV>
+<!--End of Navigation Panel-->
+
+</BODY>
+</HTML>

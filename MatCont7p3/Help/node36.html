@@ -1,0 +1,123 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Handling auxiliary functions in the construction of the odefile</TITLE>
+<META NAME="description" CONTENT="Handling auxiliary functions in the construction of the odefile">
+<META NAME="keywords" CONTENT="ManualAug2019 ">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="ManualAug2019 .css">
+
+<LINK REL="next" HREF="node37.html">
+<LINK REL="previous" HREF="node35.html">
+<LINK REL="up" HREF="node34.html">
+<LINK REL="next" HREF="node37.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html683"
+  HREF="node37.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="/usr/share/latex2html/icons/next.png"></A> 
+<A NAME="tex2html679"
+  HREF="node34.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="/usr/share/latex2html/icons/up.png"></A> 
+<A NAME="tex2html673"
+  HREF="node35.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="/usr/share/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html681"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="/usr/share/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html684"
+  HREF="node37.html">Access to function and</A>
+<B> Up:</B> <A NAME="tex2html680"
+  HREF="node34.html">The odefile of a</A>
+<B> Previous:</B> <A NAME="tex2html674"
+  HREF="node35.html">Structure and construction of</A>
+ &nbsp; <B>  <A NAME="tex2html682"
+  HREF="node1.html">Contents</A></B> 
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00042000000000000000">
+Handling auxiliary functions in the construction of the odefile</A>
+</H2>
+
+<P>
+If complicated expressions arise several times in the definition of a dynamical system then is
+often useful to give them a name.
+A simple example is the following system (a catalytic oscillator, (<A HREF="node70.html#CaOs">60</A>):
+<BR>
+<DIV ALIGN="CENTER">
+
+<!-- MATH
+ \begin{eqnarray}
+\left\{\begin{array}{rcl}
+\dot x & = & 2q_1z^2 -2q_5x^2 -q_3xy \\
+\dot y & = & q_2z -q_6y -q_3xy\\
+\dot s & = & q_4z -kq_4s
+\end{array}\right.
+\end{eqnarray}
+ -->
+<TABLE CELLPADDING="0" ALIGN="CENTER" WIDTH="100%">
+<TR VALIGN="MIDDLE"><TD NOWRAP WIDTH="50%" ALIGN="RIGHT"><IMG
+ WIDTH="252" HEIGHT="81" ALIGN="MIDDLE" BORDER="0"
+ SRC="img141.png"
+ ALT="$\displaystyle \left\{\begin{array}{rcl}
+\dot x &amp; = &amp; 2q_1z^2 -2q_5x^2 -q_3xy \\
+\dot y &amp; = &amp; q_2z -q_6y -q_3xy\\
+\dot s &amp; = &amp; q_4z -kq_4s
+\end{array}\right.$"></TD>
+<TD>&nbsp;</TD>
+<TD>&nbsp;</TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+(<SPAN CLASS="arabic">31</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+where <SPAN CLASS="MATH"><IMG
+ WIDTH="136" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img142.png"
+ ALT="$z=1 -x -y -s$"></SPAN>.
+When <TT>SysGUI.new</TT> is used to create the <I>odefile</I> of the system then is not 
+necessary to ``expand" the auxiliary function for <SPAN CLASS="MATH"><IMG
+ WIDTH="18" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img143.png"
+ ALT="$z.$"></SPAN> The system can be introduced as
+
+<P>
+<PRE>
+z=1-x-y-s
+x'=2*q1*z^2-2*q5*x^2-q3*x*y
+y'=q2*z-q6*y-q3*x*y
+z'=q4*z-k*q4*s
+</PRE>
+
+<P>
+We note that the definition of the auxiliary functions must precede the definiton of the
+right hand sides.
+
+<P>
+The corresponding odefile is <TT>cataloscill.m</TT> in the directory <TT>Testruns/TestSystems.</TT>
+
+<P>
+<BR><HR>
+
+</BODY>
+</HTML>

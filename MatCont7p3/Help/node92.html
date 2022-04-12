@@ -1,0 +1,514 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Example: an autonomous electronic circuit</TITLE>
+<META NAME="description" CONTENT="Example: an autonomous electronic circuit">
+<META NAME="keywords" CONTENT="ManualAug2019 ">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="ManualAug2019 .css">
+
+<LINK REL="previous" HREF="node91.html">
+<LINK REL="up" HREF="node88.html">
+<LINK REL="next" HREF="node93.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html1407"
+  HREF="node93.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="/usr/share/latex2html/icons/next.png"></A> 
+<A NAME="tex2html1403"
+  HREF="node88.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="/usr/share/latex2html/icons/up.png"></A> 
+<A NAME="tex2html1399"
+  HREF="node91.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="/usr/share/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html1405"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="/usr/share/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html1408"
+  HREF="node93.html">Continuation of codim 2</A>
+<B> Up:</B> <A NAME="tex2html1404"
+  HREF="node88.html">Continuation of torus bifurcation</A>
+<B> Previous:</B> <A NAME="tex2html1400"
+  HREF="node91.html">Torus bifurcation initialization</A>
+ &nbsp; <B>  <A NAME="tex2html1406"
+  HREF="node1.html">Contents</A></B> 
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H3><A NAME="SECTION00085400000000000000"></A><A NAME="ttorNeimarkSacker"></A>
+<BR>
+Example: an autonomous electronic circuit
+</H3>
+We consider the following 
+model of an autonomous electronic circuit [<A
+ HREF="node115.html#FrRo">18</A>] where <SPAN CLASS="MATH"><IMG
+ WIDTH="31" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img526.png"
+ ALT="$x,y$"></SPAN> and <SPAN CLASS="MATH"><IMG
+ WIDTH="13" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img344.png"
+ ALT="$z$"></SPAN> are state variables and <!-- MATH
+ $\beta,\gamma,r,a_3,b_3,\nu$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="112" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img527.png"
+ ALT="$\beta,\gamma,r,a_3,b_3,\nu$"></SPAN> are parameters : 
+
+<P>
+<BR>
+<DIV ALIGN="RIGHT" CLASS="mathdisplay">
+
+<!-- MATH
+ \begin{equation}
+\left\{\begin{array}{rcl}
+\dot x&=&(-(\beta+\nu)x+\beta y-a_3x^3+b_3(y-x)^3)/r\\
+\dot y&=&\beta x-(\beta+\gamma)y-z-b_3(y-x)^3\\
+\dot z&=&y
+\end{array}\right.
+
+\end{equation}
+ -->
+<A NAME="toruseq"></A>
+<TABLE WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE"><TD ALIGN="CENTER" NOWRAP><A NAME="toruseq"></A><IMG
+ WIDTH="380" HEIGHT="72" BORDER="0"
+ SRC="img528.png"
+ ALT="\begin{displaymath}
+\left\{\begin{array}{rcl}
+\dot x&amp;=&amp;(-(\beta+\nu)x+\beta y-...
+...ta+\gamma)y-z-b_3(y-x)^3\\
+\dot z&amp;=&amp;y
+\end{array}\right.
+\end{displaymath}"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+(<SPAN CLASS="arabic">80</SPAN>)</TD></TR>
+</TABLE>
+<BR CLEAR="ALL"></DIV><P></P> 
+
+<P>
+A torus bifurcation in this system is described in the manual [<A
+ HREF="node115.html#Doao:97">14</A>]. It is found by
+starting an equilibrium curve from the trival  equilibrium point (<SPAN CLASS="MATH"><IMG
+ WIDTH="110" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img529.png"
+ ALT="$x=y=z=0$"></SPAN>)
+at <SPAN CLASS="MATH"><IMG
+ WIDTH="60" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img530.png"
+ ALT="$\beta=0.5$"></SPAN>, <SPAN CLASS="MATH"><IMG
+ WIDTH="73" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img531.png"
+ ALT="$\gamma=-0.6$"></SPAN>, <SPAN CLASS="MATH"><IMG
+ WIDTH="58" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img532.png"
+ ALT="$r=0.6$"></SPAN>, <SPAN CLASS="MATH"><IMG
+ WIDTH="101" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img533.png"
+ ALT="$a_3=0.32858$"></SPAN>, <SPAN CLASS="MATH"><IMG
+ WIDTH="99" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img534.png"
+ ALT="$b_3=0.93358$"></SPAN>, <SPAN CLASS="MATH"><IMG
+ WIDTH="73" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img535.png"
+ ALT="$\nu=-0.9$"></SPAN>. The free 
+parameter is <SPAN CLASS="MATH"><IMG
+ WIDTH="14" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img536.png"
+ ALT="$\nu$"></SPAN> and the branch is the trivial one (<SPAN CLASS="MATH"><IMG
+ WIDTH="110" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img529.png"
+ ALT="$x=y=z=0$"></SPAN>). On this branch a Hopf bifurcation
+is detected at <SPAN CLASS="MATH"><IMG
+ WIDTH="107" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img537.png"
+ ALT="$\nu=-0.58934$"></SPAN>. On the emerging branch of limit cycles a branch point of
+limit cycles is found; by continuing the newly found branch one detects a
+torus bifurcation of periodic orbits. 
+
+<P>
+We proceed in a somewhat different way; to avoid the branch point of periodic orbits we start with a
+slightly perturbed system where the last equation of (<A HREF="#toruseq">80</A>) is replaced by
+<BR><P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay">
+<!-- MATH
+ \begin{displaymath}
+\dot z=y+\epsilon
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="70" HEIGHT="30" BORDER="0"
+ SRC="img538.png"
+ ALT="\begin{displaymath}
+\dot z=y+\epsilon
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+where <SPAN CLASS="MATH"><IMG
+ WIDTH="11" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img91.png"
+ ALT="$\epsilon$"></SPAN> is a new (artificial) parameter with initially <!-- MATH
+ $\epsilon=0.001$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="74" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img539.png"
+ ALT="$\epsilon=0.001$"></SPAN>. The perturbed system is 
+introduced in M<SMALL>AT</SMALL>C<SMALL>ONT</SMALL>  in the odefile <TT>torBPC.m</TT> in the directory <TT>Testruns/TestSystems</TT>.
+It contains a user function <SPAN CLASS="MATH"><IMG
+ WIDTH="11" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img91.png"
+ ALT="$\epsilon$"></SPAN> so that the zeroes of the user function correspond to solutions of the
+unperturbed system (<A HREF="#toruseq">80</A>).
+
+<P>
+The trivial solution is replaced by the equilibrium solution
+<SPAN CLASS="MATH"><IMG
+ WIDTH="94" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img540.png"
+ ALT="$x=0.00125$"></SPAN>, <SPAN CLASS="MATH"><IMG
+ WIDTH="89" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img541.png"
+ ALT="$y=-0.001$"></SPAN>, <SPAN CLASS="MATH"><IMG
+ WIDTH="119" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img542.png"
+ ALT="$z=0.00052502$"></SPAN> of the perturbed system <TT>torBPC.m</TT> and we compute a branch of equilibria with free 
+parameter <SPAN CLASS="MATH"><IMG
+ WIDTH="14" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img536.png"
+ ALT="$\nu$"></SPAN> in the now standard way (note that <SPAN CLASS="MATH"><IMG
+ WIDTH="14" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img536.png"
+ ALT="$\nu$"></SPAN> is the sixth parameter, <SPAN CLASS="MATH"><IMG
+ WIDTH="11" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img91.png"
+ ALT="$\epsilon$"></SPAN> is the seventh): 
+
+<P>
+<PRE>
+&gt;&gt; p=[0.5;-0.6;0.6;0.32858;0.93358;-0.9;0.001];
+&gt;&gt; [x0,v0]=init_EP_EP(@torBPC,[0.00125;-0.001;0.00052502],p,[6]);
+&gt;&gt; opt=contset; opt= contset(opt,'Singularities',1);
+&gt;&gt; opt=contset(opt,'MaxNumPoints',10);
+&gt;&gt; [x,v,s,h,f]=cont(@equilibrium,x0,[],opt);
+first point found
+tangent vector to first point found
+label = H , x = ( 0.005604 -0.001000 0.002702 -0.589286 )
+First Lyapunov coefficient = -4.548985e-001
+
+elapsed time  = 0.1 secs
+npoints curve = 10
+</PRE><A NAME="NSEP1"></A>
+A Hopf point is found for <SPAN CLASS="MATH"><IMG
+ WIDTH="107" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img543.png"
+ ALT="$\nu=-0.58928$"></SPAN> for the state values
+<SPAN CLASS="MATH"><IMG
+ WIDTH="112" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img544.png"
+ ALT="$x=0.0056037$"></SPAN>, <SPAN CLASS="MATH"><IMG
+ WIDTH="89" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img541.png"
+ ALT="$y=-0.001$"></SPAN>, <SPAN CLASS="MATH"><IMG
+ WIDTH="111" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img545.png"
+ ALT="$z=0.0027021$"></SPAN>. We start a curve of periodic orbits from this Hopf point,
+using <SPAN CLASS="MATH"><IMG
+ WIDTH="60" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img546.png"
+ ALT="$N=25$"></SPAN> test intervals and <SPAN CLASS="MATH"><IMG
+ WIDTH="51" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img482.png"
+ ALT="$m=4$"></SPAN> collocation points and
+choosing <SPAN CLASS="MATH"><IMG
+ WIDTH="14" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img536.png"
+ ALT="$\nu$"></SPAN> as the free parameter. The results can be seen in Figure <A HREF="#NSLC1fig">23</A>.
+<PRE>
+&gt;&gt; x1=x(1:3,s(2).index);p(6)= x(end,s(2).index);
+&gt;&gt; [x0,v0]=init_H_LC(@torBPC,x1,p,[6],0.0001,25,4);
+&gt;&gt; opt=contset; opt= contset(opt,'Singularities',1);
+&gt;&gt; opt=contset(opt,'MaxNumPoints',50);
+&gt;&gt; opt=contset(opt,'Multipliers',1);
+&gt;&gt; [x,v,s,h,f]=cont(@limitcycle,x0,v0,opt);
+first point found
+tangent vector to first point found
+Limit point cycle (period = 8.411855e+000, parameter = -5.844928e-001)
+Normal form coefficient = 1.788080e-001
+Neimark-Sacker (period = 8.861103e+000, parameter = -5.957506e-001)
+Normal form coefficient = 2.674115e-003
+Period Doubling (period = 9.256846e+000, parameter = -6.146817e-001)
+Normal form coefficient = -6.068973e-003
+
+elapsed time  = 28.3 secs
+npoints curve = 50
+&gt;&gt; plotcycle(x,v,s,[1 2]);
+</PRE>
+
+<DIV ALIGN="CENTER"><A NAME="NSLC1fig"></A><A NAME="6456"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 23:</STRONG>
+Computed limit cycle curve started from a Hopf bifurcation</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="470" HEIGHT="353" ALIGN="BOTTOM" BORDER="0"
+ SRC="img547.png"
+ ALT="\includegraphics[scale=0.7]{ex/Figure23.eps}">
+</DIV></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+The previous computations are done by running the script <TT>t</TT>esttorBPC1, including drawing
+Figure <A HREF="#NSLC1fig">23</A> in which the Hopf point and the three bifurcations of limit cycles are clearly
+visible. The axis labels were added manually.
+
+<P>
+In particular, we detect a torus bifurcation point at <SPAN CLASS="MATH"><IMG
+ WIDTH="107" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img548.png"
+ ALT="$\nu=-0.59575$"></SPAN>.
+To recover the torus bifurcation point of (<A HREF="#toruseq">80</A>) we continue the torus bifurcation
+in two parameters <SPAN CLASS="MATH"><IMG
+ WIDTH="27" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img549.png"
+ ALT="$\nu,\epsilon$"></SPAN>. With the aid of the user function <SPAN CLASS="MATH"><IMG
+ WIDTH="11" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img91.png"
+ ALT="$\epsilon$"></SPAN> we will now locate a NS bifurcation of (<A HREF="#toruseq">80</A>).
+The starting vector <TT>x1</TT> is calculated from the NS on this branch using <TT>init_NS_NS</TT>. Continuation is done using a call to the standard continuer with <TT>neimarksacker</TT> as curve definition file:
+<PRE>
+p=[0.5;-0.6;0.6;0.32858;0.93358;-0.9;0.001];
+x=[0.00125;-0.001;0.00052502];
+[x0,v0]=init_EP_EP(@torBPC,x,p,[6]);
+opt=contset;
+opt=contset(opt,'Singularities',1);
+opt=contset(opt,'MaxNumPoints',10);
+[x,v,s,h,f]=cont(@equilibrium,x0,[],opt);
+x1=x(1:3,s(2).index);
+p(6)=x(end,s(2).index);
+[x0,v0]=init_H_LC(@torBPC,x1,p,[6],0.0001,25,4);
+opt=contset;
+opt=contset(opt,'Singularities',1);
+opt=contset(opt,'Multipliers',1);
+opt=contset(opt,'MaxNumPoints',50);
+[x,v,s,h,f]=cont(@limitcycle,x0,v0,opt);
+[x1,v1]=init_NS_NS(@torBPC,x,s(3),[6 7],25,4);
+opt=contset;
+opt=contset(opt,'VarTolerance',1e-4);
+opt=contset(opt,'FunTolerance',1e-4);
+opt=contset(opt,'Userfunctions',1);
+UserInfo.name='epsilon0';
+UserInfo.state=1;
+UserInfo.label='E0';
+opt=contset(opt,'UserfunctionsInfo',UserInfo);
+opt=contset(opt,'Backward',1);
+opt=contset(opt,'MaxNumPoints',16);
+[xns1,vns1,sns1,hns1,fns1]=cont(@neimarksacker,x1,v1,opt);
+plotcycle(xns1,vns1,sns1,[1 2]);
+</PRE>
+
+<P>
+This continuation is done by running the script <TT>t</TT>esttorBPC2. The output is the following:
+<PRE>
+&gt;&gt; testtorBPC2
+first point found
+tangent vector to first point found
+label = H , x = ( 0.005604 -0.001000 0.002702 -0.589286 )
+First Lyapunov coefficient = -4.549030e-01
+
+elapsed time  = 0.7 secs
+npoints curve = 10
+first point found
+tangent vector to first point found
+Limit point cycle (period = 8.411870e+00, parameter = -5.844928e-01)
+Normal form coefficient = 1.788366e-01
+Neimark-Sacker (period = 8.861100e+00, parameter = -5.957504e-01)
+Normal form coefficient = 2.674115e-03
+Period Doubling (period = 9.256846e+00, parameter = -6.146817e-01)
+Normal form coefficient = -6.068982e-03
+
+elapsed time  = 11.5 secs
+npoints curve = 50
+first point found
+tangent vector to first point found
+label = E0, x = ( 0.046835 0.141698 0.046209 ... 
+... 0.141698 0.046209 8.793572 -0.591612 -0.000006 0.822406 )
+
+elapsed time  = 9.1 secs
+npoints curve = 16
+</PRE>
+We note that the point with label E0 is a torus bifurcation point of (<A HREF="#toruseq">80</A>) with <!-- MATH
+ $\nu=-0.591612,$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="121" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img550.png"
+ ALT="$\nu=-0.591612,$"></SPAN> <!-- MATH
+ $\epsilon=-0.000006\approx 0,$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="150" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img551.png"
+ ALT="$\epsilon=-0.000006\approx 0,$"></SPAN> and period <SPAN CLASS="MATH"><IMG
+ WIDTH="75" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img552.png"
+ ALT="$0.822406.$"></SPAN>
+The orbits are shown in Figure <A HREF="#NSNSfig">24</A>. The axis labels were added manually.
+
+<DIV ALIGN="CENTER"><A NAME="NSNSfig"></A><A NAME="6470"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 24:</STRONG>
+Computed torus bifurcation curve started from a torus bifurcation of limit cycles</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="538" HEIGHT="403" ALIGN="BOTTOM" BORDER="0"
+ SRC="img553.png"
+ ALT="\includegraphics[scale=0.8]{ex/Figure24.eps}">
+</DIV></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+Finally, we continue numerically the NS orbit with two free parameters <SPAN CLASS="MATH"><IMG
+ WIDTH="32" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img554.png"
+ ALT="$\beta,\nu$"></SPAN> and find, interestingly, that the NS orbit shrinks to a single point.
+The results are plotted using the standard plot function <TT>plotcycle</TT> where the fourth argument is used to select the coordinates. The plot is shown in Figure <A HREF="#NSNS1fig">25</A> (the axis labels were added manually). This computation is executed by running <TT>testtorBPC3</TT>:
+<PRE>
+p=[0.5;-0.6;0.6;0.32858;0.93358;-0.9;0.001];
+x=[0.00125;-0.001;0.00052502];
+[x0,v0]=init_EP_EP(@torBPC,x,p,[6]);
+opt=contset;
+opt=contset(opt,'Singularities',1);
+opt=contset(opt,'MaxNumPoints',10);
+[x,v,s,h,f]=cont(@equilibrium,x0,[],opt);
+x1=x(1:3,s(2).index);
+p(6)=x(end,s(2).index);
+[x0,v0]=init_H_LC(@torBPC,x1,p,[6],0.0001,25,4);
+opt=contset;
+opt=contset(opt,'Singularities',1);
+opt=contset(opt,'Multipliers',1);
+opt=contset(opt,'MaxNumPoints',50);
+[x,v,s,h,f]=cont(@limitcycle,x0,v0,opt);
+[x2,v2]=init_NS_NS(@torBPC,x,s(3),[1 6],50,4);
+opt=contset; opt=contset(opt,'VarTolerance',1e-4);
+opt=contset(opt,'FunTolerance',1e-4);
+opt=contset(opt,'MaxNumPoints',50);
+[xns2,vns2,sns2,hns,fns]=cont(@neimarksacker,x2,v2,opt);
+plotcycle(xns2,vns2,sns2,[1 2]);
+</PRE>
+The output is as follows:
+<PRE>
+&gt;&gt; testtorBPC3
+first point found
+tangent vector to first point found
+label = H , x = ( 0.005604 -0.001000 0.002702 -0.589286 )
+First Lyapunov coefficient = -4.549030e-01
+
+elapsed time  = 0.0 secs
+npoints curve = 10
+first point found
+tangent vector to first point found
+Limit point cycle (period = 8.411870e+00, parameter = -5.844928e-01)
+Normal form coefficient = 1.788366e-01
+Neimark-Sacker (period = 8.861100e+00, parameter = -5.957504e-01)
+Normal form coefficient = 2.674115e-03
+Period Doubling (period = 9.256846e+00, parameter = -6.146817e-01)
+Normal form coefficient = -6.068982e-03
+
+elapsed time  = 14.1 secs
+npoints curve = 50
+first point found
+tangent vector to first point found
+
+elapsed time  = 124.5 secs
+npoints curve = 50
+</PRE>
+Here <SPAN CLASS="MATH"><IMG
+ WIDTH="41" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img555.png"
+ ALT="$xns2$"></SPAN> is a <SPAN CLASS="MATH"><IMG
+ WIDTH="69" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img556.png"
+ ALT="$607 \times 50$"></SPAN> matrix. The last four components of each column are, in that order, the period of the orbit, the values of the two free parameters,
+and the value of the additional variable <SPAN CLASS="MATH"><IMG
+ WIDTH="14" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img498.png"
+ ALT="$\kappa$"></SPAN> that is introduced in (<A HREF="node89.html#minextns">75</A>).
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="NSNS1fig"></A><A NAME="6480"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 25:</STRONG>
+Computed torus bifurcation curve that shrinks to a single point</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="538" HEIGHT="403" ALIGN="BOTTOM" BORDER="0"
+ SRC="img557.png"
+ ALT="\includegraphics[scale=0.8]{ex/Figure25.eps}">
+</DIV></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html1407"
+  HREF="node93.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="/usr/share/latex2html/icons/next.png"></A> 
+<A NAME="tex2html1403"
+  HREF="node88.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="/usr/share/latex2html/icons/up.png"></A> 
+<A NAME="tex2html1399"
+  HREF="node91.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="/usr/share/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html1405"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="/usr/share/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html1408"
+  HREF="node93.html">Continuation of codim 2</A>
+<B> Up:</B> <A NAME="tex2html1404"
+  HREF="node88.html">Continuation of torus bifurcation</A>
+<B> Previous:</B> <A NAME="tex2html1400"
+  HREF="node91.html">Torus bifurcation initialization</A>
+ &nbsp; <B>  <A NAME="tex2html1406"
+  HREF="node1.html">Contents</A></B> </DIV>
+<!--End of Navigation Panel-->
+
+</BODY>
+</HTML>

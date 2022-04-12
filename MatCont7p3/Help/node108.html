@@ -1,0 +1,615 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Bifurcations</TITLE>
+<META NAME="description" CONTENT="Bifurcations">
+<META NAME="keywords" CONTENT="ManualAug2019 ">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="ManualAug2019 .css">
+
+<LINK REL="next" HREF="node109.html">
+<LINK REL="previous" HREF="node105.html">
+<LINK REL="up" HREF="node104.html">
+<LINK REL="next" HREF="node109.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html1619"
+  HREF="node109.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="/usr/share/latex2html/icons/next.png"></A> 
+<A NAME="tex2html1615"
+  HREF="node104.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="/usr/share/latex2html/icons/up.png"></A> 
+<A NAME="tex2html1609"
+  HREF="node107.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="/usr/share/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html1617"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="/usr/share/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html1620"
+  HREF="node109.html">Homoclinic initialization (HHS)</A>
+<B> Up:</B> <A NAME="tex2html1616"
+  HREF="node104.html">Continuation of homoclinic and</A>
+<B> Previous:</B> <A NAME="tex2html1610"
+  HREF="node107.html">Homoclinic-to-Saddle-Node Orbits</A>
+ &nbsp; <B>  <A NAME="tex2html1618"
+  HREF="node1.html">Contents</A></B> 
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION000102000000000000000">
+Bifurcations</A>
+</H2>
+
+<P>
+During HSN continuation, only one bifurcation is tested for, namely the non-central 
+homoclinic-to-saddle-node orbit or NCH. This orbit forms the transition between HHS 
+and HSN curves.<A NAME="8263"></A> The strategy 
+used for detection is taken from HomCont [<A
+ HREF="node115.html#chkusa">5</A>].
+<BR>
+<P>
+During HHS continuation, all bifurcations detected in HomCont are also detected 
+in our implementation. For this, mostly test functions from [<A
+ HREF="node115.html#chkusa">5</A>] are used. 
+
+<P>
+Suppose that the eigenvalues of <!-- MATH
+ $f_x(x_0,\alpha_0)$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="78" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img648.png"
+ ALT="$f_x(x_0,\alpha_0)$"></SPAN> can be ordered according to
+<BR>
+<DIV ALIGN="RIGHT" CLASS="mathdisplay">
+
+<!-- MATH
+ \begin{equation}
+\Re(\mu_{ns}) \leq ... \leq \Re(\mu_1) < 0 < \Re(\lambda_1) \leq ... \leq \Re(\lambda_{nu}),
+\end{equation}
+ -->
+<A NAME="homorder"></A>
+<TABLE WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE"><TD ALIGN="CENTER" NOWRAP><A NAME="homorder"></A><IMG
+ WIDTH="374" HEIGHT="55" BORDER="0"
+ SRC="img649.png"
+ ALT="\begin{displaymath}
+\Re(\mu_{ns}) \leq ... \leq \Re(\mu_1) &lt; 0 &lt; \Re(\lambda_1) \leq ... \leq \Re(\lambda_{nu}),
+\end{displaymath}"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+(<SPAN CLASS="arabic">95</SPAN>)</TD></TR>
+</TABLE>
+<BR CLEAR="ALL"></DIV><P></P>
+where <SPAN CLASS="MATH"><IMG
+ WIDTH="30" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img650.png"
+ ALT="$\Re()$"></SPAN> stands for 'real part of', <SPAN CLASS="MATH"><IMG
+ WIDTH="22" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img651.png"
+ ALT="$ns$"></SPAN> is the number of stable, and <SPAN CLASS="MATH"><IMG
+ WIDTH="14" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img536.png"
+ ALT="$\nu$"></SPAN> the number of unstable eigenvalues.
+The test functions for the bifurcations are<A NAME="8271"></A>
+
+<UL>
+<LI>Neutral saddle, saddle-focus or bi-focus
+	  <BR><P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay">
+<!-- MATH
+ \begin{displaymath}
+\psi = \Re(\mu_1) + \Re(\lambda_1)
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="142" HEIGHT="32" BORDER="0"
+ SRC="img652.png"
+ ALT="\begin{displaymath}\psi = \Re(\mu_1) + \Re(\lambda_1)\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+If both <SPAN CLASS="MATH"><IMG
+ WIDTH="22" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img653.png"
+ ALT="$\mu_1$"></SPAN> and <SPAN CLASS="MATH"><IMG
+ WIDTH="22" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img654.png"
+ ALT="$\lambda_1$"></SPAN> are real, then it is a neutral saddle, if one is real and one consists of a pair of complex conjugates, the bifurcation is a saddle-focus, and it is a bi-focus when both eigenvalues consist of a pair of complex conjugates.
+
+<P>
+</LI>
+<LI>Double real stable leading eigenvalue
+	  <BR><P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay">
+<!-- MATH
+ \begin{displaymath}
+\psi = \left\{ \begin{array}{ll} (\Re(\mu_1) - \Re(\mu_2))^2, & \ \ \ \Im(\mu_1) = 0\\
+	  								-(\Im(\mu_1) - \Im(\mu_2))^2, & \ \ \ \Im(\mu_1) \neq 0 \end{array} \right.	  
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="314" HEIGHT="51" BORDER="0"
+ SRC="img655.png"
+ ALT="\begin{displaymath}\psi = \left\{ \begin{array}{ll} (\Re(\mu_1) - \Re(\mu_2))^2,...
+...- \Im(\mu_2))^2, &amp; \ \ \ \Im(\mu_1) \neq 0 \end{array} \right. \end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>	
+
+<P>
+</LI>
+<LI>Double real unstable leading eigenvalue
+	  <BR><P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay">
+<!-- MATH
+ \begin{displaymath}
+\psi = \left\{ \begin{array}{ll} (\Re(\lambda_1) - \Re(\lambda_2))^2, & \ \ \ \Im(\lambda_1) = 0\\
+	  								-(\Im(\lambda_1) - \Im(\lambda_2))^2, & \ \ \ \Im(\lambda_1) \neq 0 \end{array} \right.	  
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="313" HEIGHT="51" BORDER="0"
+ SRC="img656.png"
+ ALT="\begin{displaymath}\psi = \left\{ \begin{array}{ll} (\Re(\lambda_1) - \Re(\lambd...
+...ambda_2))^2, &amp; \ \ \ \Im(\lambda_1) \neq 0 \end{array} \right. \end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>	
+
+<P>
+</LI>
+<LI>Neutrally-divergent saddle-focus (stable)
+	  <BR><P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay">
+<!-- MATH
+ \begin{displaymath}
+\psi = \Re(\mu_1) + \Re(\mu_2) + \Re(\lambda_1)
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="208" HEIGHT="32" BORDER="0"
+ SRC="img657.png"
+ ALT="\begin{displaymath}\psi = \Re(\mu_1) + \Re(\mu_2) + \Re(\lambda_1)\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>	
+
+<P>
+</LI>
+<LI>Neutrally-divergent saddle-focus (unstable)
+	  <BR><P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay">
+<!-- MATH
+ \begin{displaymath}
+\psi = \Re(\mu_1) + \Re(\lambda_2) + \Re(\lambda_1)
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="208" HEIGHT="32" BORDER="0"
+ SRC="img658.png"
+ ALT="\begin{displaymath}\psi = \Re(\mu_1) + \Re(\lambda_2) + \Re(\lambda_1)\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>	
+
+<P>
+</LI>
+<LI>Three leading eigenvalues (stable)
+	  <BR><P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay">
+<!-- MATH
+ \begin{displaymath}
+\psi = \Re(\mu_1) - \Re(\mu_3)
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="144" HEIGHT="32" BORDER="0"
+ SRC="img659.png"
+ ALT="\begin{displaymath}\psi = \Re(\mu_1) - \Re(\mu_3)\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>	
+
+<P>
+</LI>
+<LI>Three leading eigenvalues (unstable)
+	  <BR><P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay">
+<!-- MATH
+ \begin{displaymath}
+\psi = \Re(\lambda_1) + \Re(\lambda_3)
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="142" HEIGHT="32" BORDER="0"
+ SRC="img660.png"
+ ALT="\begin{displaymath}\psi = \Re(\lambda_1) + \Re(\lambda_3)\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>	
+
+<P>
+</LI>
+<LI>Non-central homoclinic-to-saddle-node 
+	  <BR><P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay">
+<!-- MATH
+ \begin{displaymath}
+\psi = \Re(\mu_1)
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="78" HEIGHT="32" BORDER="0"
+ SRC="img661.png"
+ ALT="\begin{displaymath}\psi = \Re(\mu_1)\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>	
+
+<P>
+</LI>
+<LI>Shil'nikov-Hopf
+	  <BR><P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay">
+<!-- MATH
+ \begin{displaymath}
+\psi = \Re(\lambda_1)
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="78" HEIGHT="32" BORDER="0"
+ SRC="img662.png"
+ ALT="\begin{displaymath}\psi = \Re(\lambda_1)\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>	
+
+<P>
+</LI>
+<LI>Bogdanov-Takens point
+	  <BR><P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay">
+<!-- MATH
+ \begin{displaymath}
+\psi = \left\{ \begin{array}{l}\Re(\mu_1)\\
+	  					\Re(\lambda_1) \end{array} \right.
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="98" HEIGHT="51" BORDER="0"
+ SRC="img663.png"
+ ALT="\begin{displaymath}\psi = \left\{ \begin{array}{l}\Re(\mu_1)\\
+\Re(\lambda_1) \end{array} \right.\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>	
+
+<P>
+</LI>
+</UL> 
+
+<P>
+For orbit- and inclination-flip bifurcations, we assume the same ordering of the eigenvalues of <!-- MATH
+ $f_x(x_0,\alpha_0) = A(x_0,\alpha_0)$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="172" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img664.png"
+ ALT="$f_x(x_0,\alpha_0) = A(x_0,\alpha_0)$"></SPAN> as shown in (<A HREF="#homorder">95</A>), but also that the leading eigenvalues <SPAN CLASS="MATH"><IMG
+ WIDTH="22" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img653.png"
+ ALT="$\mu_1$"></SPAN> and <SPAN CLASS="MATH"><IMG
+ WIDTH="22" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img654.png"
+ ALT="$\lambda_1$"></SPAN> are unique and real:
+<BR><P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay">
+<!-- MATH
+ \begin{displaymath}
+\Re(\mu_{ns}) \leq ... \leq \Re(\mu_2) < \mu_1 < 0 < \lambda_1 < \Re(\lambda_2) \leq ... \leq \Re(\lambda_{nu})\ .
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="463" HEIGHT="32" BORDER="0"
+ SRC="img665.png"
+ ALT="\begin{displaymath}
+\Re(\mu_{ns}) \leq ... \leq \Re(\mu_2) &lt; \mu_1 &lt; 0 &lt; \lambda_1 &lt; \Re(\lambda_2) \leq ... \leq \Re(\lambda_{nu})\ .
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+Then it is possible to choose normalised eigenvectors <SPAN CLASS="MATH"><IMG
+ WIDTH="20" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img666.png"
+ ALT="$p_1^s$"></SPAN> and <SPAN CLASS="MATH"><IMG
+ WIDTH="21" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img667.png"
+ ALT="$p_1^u$"></SPAN> of <!-- MATH
+ $A^T(x_0,\alpha_0)$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="85" HEIGHT="39" ALIGN="MIDDLE" BORDER="0"
+ SRC="img668.png"
+ ALT="$A^T(x_0,\alpha_0)$"></SPAN> and <SPAN CLASS="MATH"><IMG
+ WIDTH="19" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img669.png"
+ ALT="$q_1^s$"></SPAN> and <SPAN CLASS="MATH"><IMG
+ WIDTH="21" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img670.png"
+ ALT="$q_1^u$"></SPAN> of <!-- MATH
+ $A(x_0,\alpha_0)$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="74" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img671.png"
+ ALT="$A(x_0,\alpha_0)$"></SPAN> depending smoothly on <!-- MATH
+ $(x_0,\alpha_0)$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="61" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img672.png"
+ ALT="$(x_0,\alpha_0)$"></SPAN>, which satisfy
+<BR>
+<DIV ALIGN="CENTER">
+
+<!-- MATH
+ \begin{eqnarray}
+A^T(x_0,\alpha_0)\ p_1^s = \mu_1\ p_1^s & \ \ \ \ &  A^T(x_0,\alpha_0)\ p_1^u = \lambda_1\ p_1^u \nonumber\\
+A(x_0,\alpha_0)\ q_1^s = \mu_1\ q_1^s & \ \ \ \ &  A(x_0,\alpha_0)\ q_1^u = \lambda_1\ q_1^u \ . \nonumber
+\end{eqnarray}
+ -->
+<TABLE CELLPADDING="0" ALIGN="CENTER" WIDTH="100%">
+<TR VALIGN="MIDDLE"><TD NOWRAP WIDTH="50%" ALIGN="RIGHT"><IMG
+ WIDTH="171" HEIGHT="40" ALIGN="MIDDLE" BORDER="0"
+ SRC="img673.png"
+ ALT="$\displaystyle A^T(x_0,\alpha_0)\ p_1^s = \mu_1\ p_1^s$"></TD>
+<TD ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="27" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img674.png"
+ ALT="$\textstyle \ \ \ \ $"></TD>
+<TD ALIGN="LEFT" WIDTH="50%" NOWRAP><IMG
+ WIDTH="172" HEIGHT="40" ALIGN="MIDDLE" BORDER="0"
+ SRC="img675.png"
+ ALT="$\displaystyle A^T(x_0,\alpha_0)\ p_1^u = \lambda_1\ p_1^u$"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+&nbsp;</TD></TR>
+<TR VALIGN="MIDDLE"><TD NOWRAP WIDTH="50%" ALIGN="RIGHT"><IMG
+ WIDTH="158" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img676.png"
+ ALT="$\displaystyle A(x_0,\alpha_0)\ q_1^s = \mu_1\ q_1^s$"></TD>
+<TD ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="27" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img674.png"
+ ALT="$\textstyle \ \ \ \ $"></TD>
+<TD ALIGN="LEFT" WIDTH="50%" NOWRAP><IMG
+ WIDTH="172" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img677.png"
+ ALT="$\displaystyle A(x_0,\alpha_0)\ q_1^u = \lambda_1\ q_1^u \ .$"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+&nbsp;</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+The test functions for the orbit-flip bifurcations are then:
+
+<UL>
+<LI>Orbit-flip with respect to the stable manifold
+	  <BR><P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay">
+<!-- MATH
+ \begin{displaymath}
+\psi = e^{-\mu_1 T} <p_1^s, x(1) - x_0>
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="214" HEIGHT="32" BORDER="0"
+ SRC="img678.png"
+ ALT="\begin{displaymath}\psi = e^{-\mu_1 T} &lt;p_1^s, x(1) - x_0&gt;\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>	
+
+<P>
+</LI>
+<LI>Orbit-flip with respect to the unstable manifold
+	  <BR><P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay">
+<!-- MATH
+ \begin{displaymath}
+\psi = e^{\lambda_1 T} <p_1^u, x(0) - x_0>
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="204" HEIGHT="32" BORDER="0"
+ SRC="img679.png"
+ ALT="\begin{displaymath}\psi = e^{\lambda_1 T} &lt;p_1^u, x(0) - x_0&gt;\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+</LI>
+</UL> 
+
+<P>
+For the inclination-flip bifurcations, in [<A
+ HREF="node115.html#chkusa">5</A>] the following test functions are introduced:
+
+<UL>
+<LI>Inclination-flip with respect to the stable manifold
+	  <BR><P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay">
+<!-- MATH
+ \begin{displaymath}
+\psi = e^{-\mu_1 T} <q_1^s, \phi(0)>
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="175" HEIGHT="32" BORDER="0"
+ SRC="img680.png"
+ ALT="\begin{displaymath}\psi = e^{-\mu_1 T} &lt;q_1^s, \phi(0)&gt;\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>	
+
+<P>
+</LI>
+<LI>Inclination-flip with respect to the unstable manifold
+	  <BR><P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay">
+<!-- MATH
+ \begin{displaymath}
+\psi = e^{\lambda_1 T} <q_1^u, \phi(1)>
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="166" HEIGHT="32" BORDER="0"
+ SRC="img681.png"
+ ALT="\begin{displaymath}\psi = e^{\lambda_1 T} &lt;q_1^u, \phi(1)&gt;\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+</LI>
+</UL> 
+where <SPAN CLASS="MATH"><IMG
+ WIDTH="14" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img682.png"
+ ALT="$\phi$"></SPAN> (<!-- MATH
+ $\phi \in {\cal C}^1([0,1],{\mathbb{R}}^n)$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="131" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img683.png"
+ ALT="$\phi \in {\cal C}^1([0,1],{\mathbb{R}}^n)$"></SPAN>) is the solution to the adjoint system, which can be written as
+<BR>
+<DIV ALIGN="RIGHT" CLASS="mathdisplay">
+
+<!-- MATH
+ \begin{equation}
+\left\{\begin{array}{l} \dot{\phi}(t) + 2\:T\:A^T(x(t),\alpha_0)\:\phi(t) = 0\\
+(L_s)^T\phi(1) = 0\\
+(L_u)^T\phi(0) = 0\\
+\int_0^1\widetilde{\phi}^T(t)[\phi(t)-\widetilde{\phi}(t)]dt = 0\end{array} \right.
+\end{equation}
+ -->
+<A NAME="inclinationsystem"></A>
+<TABLE WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE"><TD ALIGN="CENTER" NOWRAP><A NAME="inclinationsystem"></A><IMG
+ WIDTH="260" HEIGHT="121" BORDER="0"
+ SRC="img684.png"
+ ALT="\begin{displaymath}
+\left\{\begin{array}{l} \dot{\phi}(t) + 2\:T\:A^T(x(t),\al...
+...i}^T(t)[\phi(t)-\widetilde{\phi}(t)]dt = 0\end{array} \right.
+\end{displaymath}"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+(<SPAN CLASS="arabic">96</SPAN>)</TD></TR>
+</TABLE>
+<BR CLEAR="ALL"></DIV><P></P>
+where <SPAN CLASS="MATH"><IMG
+ WIDTH="23" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img685.png"
+ ALT="$L_s$"></SPAN> and <SPAN CLASS="MATH"><IMG
+ WIDTH="24" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img686.png"
+ ALT="$L_u$"></SPAN> are matrices whose columns form bases for the stable and unstable eigenspaces of <!-- MATH
+ $A(x_0,\alpha_0)$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="74" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img671.png"
+ ALT="$A(x_0,\alpha_0)$"></SPAN>, respectively, and the last condition selects one solution out of the family <SPAN CLASS="MATH"><IMG
+ WIDTH="42" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img687.png"
+ ALT="$c\phi(t)$"></SPAN> for <!-- MATH
+ $c \in {\mathbb{R}}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="45" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img688.png"
+ ALT="$c \in {\mathbb{R}}$"></SPAN>. <SPAN CLASS="MATH"><IMG
+ WIDTH="24" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img686.png"
+ ALT="$L_u$"></SPAN> is equivalent to <SPAN CLASS="MATH"><IMG
+ WIDTH="29" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img689.png"
+ ALT="$Q_U$"></SPAN> from the mathematical definition of the system, and <SPAN CLASS="MATH"><IMG
+ WIDTH="23" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img685.png"
+ ALT="$L_s$"></SPAN> to <SPAN CLASS="MATH"><IMG
+ WIDTH="27" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img690.png"
+ ALT="$Q_S$"></SPAN>. In the homoclinic defining system the orthogonal complements of <SPAN CLASS="MATH"><IMG
+ WIDTH="27" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img690.png"
+ ALT="$Q_S$"></SPAN> and <SPAN CLASS="MATH"><IMG
+ WIDTH="29" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img689.png"
+ ALT="$Q_U$"></SPAN> are used; in the adjoint system for the inclination-flip bifurcation, we use the matrices themselves (or at least, their transposed versions).
+<BR>
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html1619"
+  HREF="node109.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="/usr/share/latex2html/icons/next.png"></A> 
+<A NAME="tex2html1615"
+  HREF="node104.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="/usr/share/latex2html/icons/up.png"></A> 
+<A NAME="tex2html1609"
+  HREF="node107.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="/usr/share/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html1617"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="/usr/share/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html1620"
+  HREF="node109.html">Homoclinic initialization (HHS)</A>
+<B> Up:</B> <A NAME="tex2html1616"
+  HREF="node104.html">Continuation of homoclinic and</A>
+<B> Previous:</B> <A NAME="tex2html1610"
+  HREF="node107.html">Homoclinic-to-Saddle-Node Orbits</A>
+ &nbsp; <B>  <A NAME="tex2html1618"
+  HREF="node1.html">Contents</A></B> </DIV>
+<!--End of Navigation Panel-->
+
+</BODY>
+</HTML>

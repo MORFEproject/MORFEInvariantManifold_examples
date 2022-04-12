@@ -1,0 +1,117 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Jacobian matrices</TITLE>
+<META NAME="description" CONTENT="Jacobian matrices">
+<META NAME="keywords" CONTENT="ManualAug2019 ">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="ManualAug2019 .css">
+
+<LINK REL="next" HREF="node43.html">
+<LINK REL="previous" HREF="node41.html">
+<LINK REL="up" HREF="node40.html">
+<LINK REL="next" HREF="node43.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html762"
+  HREF="node43.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="/usr/share/latex2html/icons/next.png"></A> 
+<A NAME="tex2html758"
+  HREF="node40.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="/usr/share/latex2html/icons/up.png"></A> 
+<A NAME="tex2html752"
+  HREF="node41.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="/usr/share/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html760"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="/usr/share/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html763"
+  HREF="node43.html">The Steinmetz-Larter example</A>
+<B> Up:</B> <A NAME="tex2html759"
+  HREF="node40.html">Time integration</A>
+<B> Previous:</B> <A NAME="tex2html753"
+  HREF="node41.html">Solver output properties</A>
+ &nbsp; <B>  <A NAME="tex2html761"
+  HREF="node1.html">Contents</A></B> 
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H3><A NAME="SECTION00051200000000000000">
+Jacobian matrices</A>
+</H3>
+
+<P>
+Stiff ODE solvers often execute faster if the Jacobian matrix, i.e. the 
+matrix of partial derivatives of the RHS that 
+defines the differential equations, is provided.  The Jacobian matrix pertains only to 
+those solvers for stiff problems (<TT>ode15s, ode23s, ode23t, ode23tb</TT>), for which it 
+can be critical for reliability and efficiency. If the user does not provide a code
+to calculate the Jacobian matrix, these solvers approximate it numerically 
+using finite differences. Supplying an analytical Jacobian matrix often increases the speed 
+and reliability of the solution for stiff problems. If the Jacobian matrix is provided 
+(symbolically) in the odefile, M<SMALL>AT</SMALL>C<SMALL>ONT</SMALL> stores as property the function handle 
+of the Jacobian, otherwise this handle is set empty.
+
+<P>
+The standard <SMALL>MATLAB</SMALL> <TT>odeget</TT> and <TT>odeset</TT> only support Jacobian matrices 
+of the RHS w.r.t. the state variables. However, we do need derivatives with 
+respect to the parameters for the continuation. To compute normal form coefficients, 
+it is also useful to have higher-order symbolic derivatives.
+To overcome this problem, M<SMALL>AT</SMALL>C<SMALL>ONT</SMALL> contains new versions of <TT>odeget</TT> and <TT>odeset</TT>, 
+which support Jacobian matrices with respect to parameters and higher-order 
+partial derivatives w.r.t state variables. 
+The new routines are compatible with the ones provided by <SMALL>MATLAB</SMALL>.
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html762"
+  HREF="node43.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="/usr/share/latex2html/icons/next.png"></A> 
+<A NAME="tex2html758"
+  HREF="node40.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="/usr/share/latex2html/icons/up.png"></A> 
+<A NAME="tex2html752"
+  HREF="node41.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="/usr/share/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html760"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="/usr/share/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html763"
+  HREF="node43.html">The Steinmetz-Larter example</A>
+<B> Up:</B> <A NAME="tex2html759"
+  HREF="node40.html">Time integration</A>
+<B> Previous:</B> <A NAME="tex2html753"
+  HREF="node41.html">Solver output properties</A>
+ &nbsp; <B>  <A NAME="tex2html761"
+  HREF="node1.html">Contents</A></B> </DIV>
+<!--End of Navigation Panel-->
+
+</BODY>
+</HTML>

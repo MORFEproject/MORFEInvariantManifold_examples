@@ -1,0 +1,94 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Time integration using the odefile</TITLE>
+<META NAME="description" CONTENT="Time integration using the odefile">
+<META NAME="keywords" CONTENT="ManualAug2019 ">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="ManualAug2019 .css">
+
+<LINK REL="previous" HREF="node37.html">
+<LINK REL="up" HREF="node34.html">
+<LINK REL="next" HREF="node39.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html705"
+  HREF="node39.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="/usr/share/latex2html/icons/next.png"></A> 
+<A NAME="tex2html701"
+  HREF="node34.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="/usr/share/latex2html/icons/up.png"></A> 
+<A NAME="tex2html697"
+  HREF="node37.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="/usr/share/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html703"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="/usr/share/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html706"
+  HREF="node39.html">Time integration and Poincar&#233;</A>
+<B> Up:</B> <A NAME="tex2html702"
+  HREF="node34.html">The odefile of a</A>
+<B> Previous:</B> <A NAME="tex2html698"
+  HREF="node37.html">Access to function and</A>
+ &nbsp; <B>  <A NAME="tex2html704"
+  HREF="node1.html">Contents</A></B> 
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00044000000000000000"></A><A NAME="timin"></A>
+<BR>
+Time integration using the odefile
+</H2>	
+
+<P>
+Time integration (= simulation) of the dynamical system
+can be done on the command line as in the following example:
+<PRE>
+OPTIONS=[];
+hls = MyML;
+[t,y] = ode45(hls{2},[0 1000],[0 0],OPTIONS,30,10);
+x0 = y(end,:)';
+</PRE>
+In this example the system MyML is integrated over the interval <SPAN CLASS="MATH"><IMG
+ WIDTH="65" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img145.png"
+ ALT="$[0,1000]$"></SPAN>
+starting with the input vector <SPAN CLASS="MATH"><IMG
+ WIDTH="39" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img146.png"
+ ALT="$[0,0]$"></SPAN> and with parameters <SPAN CLASS="MATH"><IMG
+ WIDTH="46" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img147.png"
+ ALT="$30,10$"></SPAN> in that order.
+The integration is performed with the integration routine ode45 with the defaults
+(OPTIONS=[]) in M<SMALL>ATLAB</SMALL>. The output vector is placed in x0. More details are given
+in Chapter <A HREF="node39.html#Poinsection">5</A>.
+
+<P>
+
+<P>
+
+<BR><HR>
+
+</BODY>
+</HTML>

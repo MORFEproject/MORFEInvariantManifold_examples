@@ -1,0 +1,307 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Example</TITLE>
+<META NAME="description" CONTENT="Example">
+<META NAME="keywords" CONTENT="ManualAug2019 ">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="ManualAug2019 .css">
+
+<LINK REL="previous" HREF="node97.html">
+<LINK REL="up" HREF="node94.html">
+<LINK REL="next" HREF="node99.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html1491"
+  HREF="node99.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="/usr/share/latex2html/icons/next.png"></A> 
+<A NAME="tex2html1487"
+  HREF="node94.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="/usr/share/latex2html/icons/up.png"></A> 
+<A NAME="tex2html1483"
+  HREF="node97.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="/usr/share/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html1489"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="/usr/share/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html1492"
+  HREF="node99.html">Branch Point of Cycles</A>
+<B> Up:</B> <A NAME="tex2html1488"
+  HREF="node94.html">Branch Point Continuation</A>
+<B> Previous:</B> <A NAME="tex2html1484"
+  HREF="node97.html">Branch Point initialization</A>
+ &nbsp; <B>  <A NAME="tex2html1490"
+  HREF="node1.html">Contents</A></B> 
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H3><A NAME="SECTION00091400000000000000"></A><A NAME="cstrmodel"></A>
+<BR>
+Example
+</H3>
+For this example we use a model of a continuous stirred tank reactor (<TT>cstr.m</TT>):
+<BR>
+<DIV ALIGN="RIGHT" CLASS="mathdisplay">
+
+<!-- MATH
+ \begin{equation}
+\left\{
+\begin{array}{rcl}
+\dot x&=& \alpha_3-(1+\lambda)x+\lambda\alpha_1/(1+\lambda\alpha_2*e^{-\alpha_4x/(1+x)})
+\end{array}\right.
+\end{equation}
+ -->
+<A NAME="cstr"></A>
+<TABLE WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE"><TD ALIGN="CENTER" NOWRAP><A NAME="cstr"></A><IMG
+ WIDTH="406" HEIGHT="57" BORDER="0"
+ SRC="img569.png"
+ ALT="\begin{displaymath}
+\left\{
+\begin{array}{rcl}
+\dot x&amp;=&amp; \alpha_3-(1+\lambda...
+.../(1+\lambda\alpha_2*e^{-\alpha_4x/(1+x)})
+\end{array}\right.
+\end{displaymath}"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+(<SPAN CLASS="arabic">83</SPAN>)</TD></TR>
+</TABLE>
+<BR CLEAR="ALL"></DIV><P></P>
+where <!-- MATH
+ $\alpha_1=10-9*\beta+\gamma,\alpha_2=10-9*\beta$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="276" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img570.png"
+ ALT="$\alpha_1=10-9*\beta+\gamma,\alpha_2=10-9*\beta$"></SPAN> and <!-- MATH
+ $\alpha_3=-0.9+0.4*\beta$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="152" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img571.png"
+ ALT="$\alpha_3=-0.9+0.4*\beta$"></SPAN>.
+The model is coded in such a way that the parameters are <!-- MATH
+ $\lambda,\beta,\gamma,\alpha_4,$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="82" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img572.png"
+ ALT="$\lambda,\beta,\gamma,\alpha_4,$"></SPAN> in that order.
+
+<P>
+It is easily seen that <SPAN CLASS="MATH"><IMG
+ WIDTH="73" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img573.png"
+ ALT="$x=-0.9$"></SPAN> is an equilibrium point of the system for the choice <SPAN CLASS="MATH"><IMG
+ WIDTH="75" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img574.png"
+ ALT="$(0,0,0,3)$"></SPAN> of the parameters.
+From this we can start an equilbrium continuation with <SPAN CLASS="MATH"><IMG
+ WIDTH="14" HEIGHT="20" ALIGN="BOTTOM" BORDER="0"
+ SRC="img575.png"
+ ALT="$\lambda$"></SPAN> (the first parameter) free.
+
+<P>
+<PRE>
+p=[0;0;0;3];ap1=[1];
+[x0,v0]=init_EP_EP(@cstr,[-0.9],p,ap1);
+opt=contset;
+opt=contset(opt,'VarTolerance',1e-3);
+opt=contset(opt,'FunTolerance',1e-3);
+opt=contset(opt,'MaxNumPoints',50);
+opt=contset(opt,'Singularities',1);
+[x,v,s,h,f]=cont(@equilibrium,x0,[],opt);
+first point found
+tangent vector to first point found
+label = LP, x = ( -0.143564 1.250669 )
+a=1.550147e+000
+label = LP, x = ( 0.393180 0.377651 )
+a=-7.370472e-001
+cpl(x,v,s,[2,1]);
+</PRE><A NAME="BP1"></A>
+ The results are plotted using the plot function <TT>cpl</TT> where the fourth argument is used to select the second and first components of the solution which are the parameter <SPAN CLASS="MATH"><IMG
+ WIDTH="14" HEIGHT="20" ALIGN="BOTTOM" BORDER="0"
+ SRC="img575.png"
+ ALT="$\lambda$"></SPAN> and the coordinate <SPAN CLASS="MATH"><IMG
+ WIDTH="14" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img44.png"
+ ALT="$x$"></SPAN>. The resulting curve is a part of Figure <A HREF="#LPBPfig">26</A>.
+These computations can be done by running the script <TT>c</TT>str1. 
+
+<P>
+We start a fold continuation from the second LP  detected on the previous equilibrium curve; 
+<SPAN CLASS="MATH"><IMG
+ WIDTH="14" HEIGHT="20" ALIGN="BOTTOM" BORDER="0"
+ SRC="img575.png"
+ ALT="$\lambda$"></SPAN> and <SPAN CLASS="MATH"><IMG
+ WIDTH="15" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img294.png"
+ ALT="$\beta$"></SPAN> are free in this run.
+<PRE>
+x1=x(1,s(3).index);
+p(ap1)=x(end,s(3).index);
+[x0,v0]=init_LP_LP(@cstr,x1,p,[1 2],[1 2 3 4]);
+opt=contset(opt,'MaxNumPoints',300);
+[x2,v2,s2,h2,f2]=cont(@limitpoint,x0,v0,opt);
+first point found
+tangent vector to first point found
+label = BP1, x = ( 2.018621 0.581081 -4.709219 )
+label = CP , x = ( 0.259553 1.968966 -0.090655 )
+c=-8.847089e-001
+label = BP1, x = ( 0.030643 1.772454 -0.127542 )
+label = BP4, x = ( -0.000009 1.707401 -0.124964 )
+label = CP , x = ( -0.173872 0.405524 0.608093 )
+c=-2.263137e+000
+label = BP4, x = ( -0.000000 0.421692 0.528995 )
+Closed curve detected at step 164
+
+elapsed time  = 0.5 secs
+npoints curve = 164
+hold on;
+cpl(x2,v2,s2,[2,1]);
+</PRE>
+
+<P>
+These computations can be done by running the script <TT>c</TT>str2.  
+The results are plotted using the standard plot function <TT>cpl</TT> where the 
+fourth argument is used to select the second and first components of the solution 
+which are the parameter <SPAN CLASS="MATH"><IMG
+ WIDTH="14" HEIGHT="20" ALIGN="BOTTOM" BORDER="0"
+ SRC="img575.png"
+ ALT="$\lambda$"></SPAN> and the coordinate <SPAN CLASS="MATH"><IMG
+ WIDTH="14" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img44.png"
+ ALT="$x$"></SPAN>. The results can be seen in 
+Figure <A HREF="#LPBPfig">26</A>.
+
+<DIV ALIGN="CENTER"><A NAME="LPBPfig"></A><A NAME="7857"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 26:</STRONG>
+Computed fold curve</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="400" HEIGHT="300" ALIGN="BOTTOM" BORDER="0"
+ SRC="img576.png"
+ ALT="\includegraphics[scale=0.6]{ex/LPBP.eps}">
+</DIV></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+Finally, we continue numerically the BP curves with three free parameters <SPAN CLASS="MATH"><IMG
+ WIDTH="33" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img577.png"
+ ALT="$\lambda,\beta$"></SPAN> and <SPAN CLASS="MATH"><IMG
+ WIDTH="14" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img578.png"
+ ALT="$\gamma$"></SPAN>. The BP curves are started respectively from the first BP1 point (<SPAN CLASS="MATH"><IMG
+ WIDTH="14" HEIGHT="20" ALIGN="BOTTOM" BORDER="0"
+ SRC="img575.png"
+ ALT="$\lambda$"></SPAN> is the branch parameter) and the first BP4 point (<SPAN CLASS="MATH"><IMG
+ WIDTH="23" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img579.png"
+ ALT="$\alpha_4$"></SPAN> is the branch parameter) detected on the previous fold curve.
+The results are plotted using the standard plot function <TT>cpl</TT> where the fourth argument is used to select the coordinates. A graphical representation of this phenomenon is shown in Figure <A HREF="#BPBPfig">27</A>. In the latter <SPAN CLASS="MATH"><IMG
+ WIDTH="14" HEIGHT="20" ALIGN="BOTTOM" BORDER="0"
+ SRC="img575.png"
+ ALT="$\lambda$"></SPAN> is plotted versus <SPAN CLASS="MATH"><IMG
+ WIDTH="14" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img44.png"
+ ALT="$x$"></SPAN>. 
+The labels of the plot are added manually .
+<PRE>
+x1=x2(1,s2(2).index);
+p([1 2])=x2(end-1:end,s2(2).index);
+[x0,v0]=init_BP_BP(@cstr,x1,p,[1 2 3],1);
+opt=contset(opt,'Backward',1);
+[x3,v3,s3,h3,f3]=cont(@branchpoint,x0,[],opt);
+first point found
+tangent vector to first point found
+
+elapsed time  = 0.8 secs
+npoints curve = 300
+hold on;
+cpl(x3,v3,s3,[2,1]);
+x1=x2(1,s2(5).index);
+p([1 2])=x2(end-1:end,s2(5).index);
+[x0,v0]=init_BP_BP(@cstr,x1,p,[1 2 3],4);
+opt=contset(opt,'Backward',1);
+[x3,v3,s3,h3,f3]=cont(@branchpoint,x0,[],opt);
+first point found
+tangent vector to first point found
+
+elapsed time  = 0.8 secs
+npoints curve = 300
+hold on;
+cpl(x3,v3,s3,[2,1]);
+</PRE>
+These computations can be done by running the script <TT>c</TT>str3.  
+
+<DIV ALIGN="CENTER"><A NAME="BPBPfig"></A><A NAME="7867"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 27:</STRONG>
+Computed BP curves started from Branch Points detected on a fold curve.</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="534" HEIGHT="401" ALIGN="BOTTOM" BORDER="0"
+ SRC="img580.png"
+ ALT="\includegraphics[scale=0.8]{ex/BP.eps}">
+</DIV></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html1491"
+  HREF="node99.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="/usr/share/latex2html/icons/next.png"></A> 
+<A NAME="tex2html1487"
+  HREF="node94.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="/usr/share/latex2html/icons/up.png"></A> 
+<A NAME="tex2html1483"
+  HREF="node97.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="/usr/share/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html1489"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="/usr/share/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html1492"
+  HREF="node99.html">Branch Point of Cycles</A>
+<B> Up:</B> <A NAME="tex2html1488"
+  HREF="node94.html">Branch Point Continuation</A>
+<B> Previous:</B> <A NAME="tex2html1484"
+  HREF="node97.html">Branch Point initialization</A>
+ &nbsp; <B>  <A NAME="tex2html1490"
+  HREF="node1.html">Contents</A></B> </DIV>
+<!--End of Navigation Panel-->
+
+</BODY>
+</HTML>

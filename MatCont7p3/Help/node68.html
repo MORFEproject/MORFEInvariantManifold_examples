@@ -1,0 +1,137 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Fold initialization</TITLE>
+<META NAME="description" CONTENT="Fold initialization">
+<META NAME="keywords" CONTENT="ManualAug2019 ">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="ManualAug2019 .css">
+
+<LINK REL="next" HREF="node69.html">
+<LINK REL="previous" HREF="node67.html">
+<LINK REL="up" HREF="node65.html">
+<LINK REL="next" HREF="node69.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html1113"
+  HREF="node69.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="/usr/share/latex2html/icons/next.png"></A> 
+<A NAME="tex2html1109"
+  HREF="node65.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="/usr/share/latex2html/icons/up.png"></A> 
+<A NAME="tex2html1103"
+  HREF="node67.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="/usr/share/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html1111"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="/usr/share/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html1114"
+  HREF="node69.html">Adaptation</A>
+<B> Up:</B> <A NAME="tex2html1110"
+  HREF="node65.html">Fold Continuation</A>
+<B> Previous:</B> <A NAME="tex2html1104"
+  HREF="node67.html">Bifurcations along a fold</A>
+ &nbsp; <B>  <A NAME="tex2html1112"
+  HREF="node1.html">Contents</A></B> 
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H3><A NAME="SECTION00081300000000000000">
+Fold initialization</A>
+</H3>
+The most natural way to start a fold curve continuation in the toolbox is from a limit point. 
+As in the case of equilibria, a fold curve continuation cannot be done by just calling the continuer as:
+<BR>
+<TT>[x,v,s,h,f]=cont(@limitpoint, x0, v0, opt)</TT>.
+<BR>
+The fold curve file has to know
+
+<UL>
+<LI>which odefile to use,
+</LI>
+<LI>which parameters are active,
+</LI>
+<LI>the values of all parameters.
+</LI>
+</UL>
+ To initialize the continuation one first gives the following command: 
+<BR>
+ <TT>[x0,v0]=init_LP_LP(@odefile, xnew, p, ap <!-- MATH
+ $(,bp)_{optional}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="91" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img357.png"
+ ALT="$(,bp)_{optional}$"></SPAN>)</TT>.
+<BR>
+<P>
+In this command <TT>xnew</TT> must be a vector that contains the values of the state variables. <TT>p</TT> must contain the current values of all the parameters and 
+<TT>ap</TT> must be the indices of the <SPAN CLASS="MATH"><IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img103.png"
+ ALT="$2$"></SPAN> active parameters.
+In the most natural situation where <TT>x</TT> is the matrix returned by the 
+previous equilibrium curve continuation one starts to build  <SPAN CLASS="MATH"><IMG
+ WIDTH="39" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img358.png"
+ ALT="$x_{new}$"></SPAN> by the command <TT>xnew=x(1:nphase,s(i).index)</TT>, where <TT>nphase</TT> is the number of state variables and <TT>s(i)</TT> is the special point structure of the detected fold point on the equilibrium curve continuation. Next, the command <TT>p(ap_old)=x(end,s(i).index);</TT> replaces the old value of the free parameter in the previous run by the newly found parameter <TT>p</TT>. <TT>odefile</TT> specifies the ode-file to be used. 
+<TT>bp</TT> are the optional indices of the branch parameters. It also works without entering a value for this field. 
+
+<P>
+M<SMALL>AT</SMALL>C<SMALL>ONT</SMALL> provides four other initializers which allow to continue a fold curve from a codim 2 equilibrium bifurcation, namely <TT>init_BP_LP.m,</TT>
+<TT>init_BT_LP.m,</TT> <TT>init_CP_LP.m</TT> and <TT>init_ZH_LP.m</TT>. In fact, these initializers are only added for ease of use: they refer back to
+<TT>init_LP_LP.m.</TT>
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html1113"
+  HREF="node69.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="/usr/share/latex2html/icons/next.png"></A> 
+<A NAME="tex2html1109"
+  HREF="node65.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="/usr/share/latex2html/icons/up.png"></A> 
+<A NAME="tex2html1103"
+  HREF="node67.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="/usr/share/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html1111"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="/usr/share/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html1114"
+  HREF="node69.html">Adaptation</A>
+<B> Up:</B> <A NAME="tex2html1110"
+  HREF="node65.html">Fold Continuation</A>
+<B> Previous:</B> <A NAME="tex2html1104"
+  HREF="node67.html">Bifurcations along a fold</A>
+ &nbsp; <B>  <A NAME="tex2html1112"
+  HREF="node1.html">Contents</A></B> </DIV>
+<!--End of Navigation Panel-->
+
+</BODY>
+</HTML>

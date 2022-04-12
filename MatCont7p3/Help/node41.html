@@ -1,0 +1,160 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Solver output properties</TITLE>
+<META NAME="description" CONTENT="Solver output properties">
+<META NAME="keywords" CONTENT="ManualAug2019 ">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="ManualAug2019 .css">
+
+<LINK REL="next" HREF="node42.html">
+<LINK REL="previous" HREF="node40.html">
+<LINK REL="up" HREF="node40.html">
+<LINK REL="next" HREF="node42.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html750"
+  HREF="node42.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="/usr/share/latex2html/icons/next.png"></A> 
+<A NAME="tex2html746"
+  HREF="node40.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="/usr/share/latex2html/icons/up.png"></A> 
+<A NAME="tex2html740"
+  HREF="node40.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="/usr/share/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html748"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="/usr/share/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html751"
+  HREF="node42.html">Jacobian matrices</A>
+<B> Up:</B> <A NAME="tex2html747"
+  HREF="node40.html">Time integration</A>
+<B> Previous:</B> <A NAME="tex2html741"
+  HREF="node40.html">Time integration</A>
+ &nbsp; <B>  <A NAME="tex2html749"
+  HREF="node1.html">Contents</A></B> 
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H3><A NAME="SECTION00051100000000000000"></A><A NAME="integplot"></A>
+<BR>
+Solver output properties
+</H3>
+The solver output properties allow one to control the output that the solvers generate. 
+M<SMALL>AT</SMALL>C<SMALL>ONT</SMALL> detects whether extra output is needed by looking at the number of open 
+output windows (2D, 3D or numeric). If extra output is required, M<SMALL>AT</SMALL>C<SMALL>ONT</SMALL> 
+sets the OutputFcn property to the output function, <TT>integplot</TT> which is passed 
+to an ODE solver by <TT>options = odeset('OutputFcn', @integplot),</TT> otherwise it is 
+set to the function <TT>integ_prs.</TT> The output function must be of the form
+<TT>status = integplot(t, y, flag, <SPAN CLASS="MATH"><IMG
+ WIDTH="20" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img130.png"
+ ALT="$p_1$"></SPAN>, <SPAN CLASS="MATH"><IMG
+ WIDTH="20" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img131.png"
+ ALT="$p_2$"></SPAN>,...).</TT>
+The solver calls this function after every successful integration step with the 
+following flags. Note that the syntax of the call differs with the flag. The function 
+must respond appropriately:
+
+<UL>
+<LI><TT>init</TT>: The solver calls <TT>integplot(tspan,y0,'init')</TT> before beginning 
+the integration, to allow the output function to initialize. This part initializes the output windows and 
+does some initializations to speed up the further processing of the output. It also 
+launches the window that makes it possible to interactively "stop/pause/resume" the 
+computations.
+</LI>
+<LI>within M<SMALL>AT</SMALL>C<SMALL>ONT</SMALL> it is possible to define the number of 
+points (<SPAN CLASS="MATH"><IMG
+ WIDTH="62" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img149.png"
+ ALT="$npoints$"></SPAN>) after which output is needed. Because the solver calls 
+<TT>status = integplot</TT> <TT>(t,y)</TT> 
+after each integration step, the number of calls to 
+<TT>integplot</TT> and <SPAN CLASS="MATH"><IMG
+ WIDTH="62" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img149.png"
+ ALT="$npoints$"></SPAN> does not correspond. Therefore this part is divided 
+into two parts. <TT>t</TT> contains points where output was generated during the step, 
+and <TT>y</TT> is the numerical solution at the points in <TT>t</TT>. If t is a vector, 
+the <SPAN CLASS="MATH"><IMG
+ WIDTH="10" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img122.png"
+ ALT="$i$"></SPAN>-th column of <TT>y</TT> corresponds to the <SPAN CLASS="MATH"><IMG
+ WIDTH="10" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img122.png"
+ ALT="$i$"></SPAN>-th element of <TT>t</TT>. The output 
+is produced according to the Refine option. 
+<TT>integplot</TT> must return a status output value of <SPAN CLASS="MATH"><IMG
+ WIDTH="13" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img112.png"
+ ALT="$0$"></SPAN> or <SPAN CLASS="MATH"><IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img102.png"
+ ALT="$1$"></SPAN>. If <SPAN CLASS="MATH"><IMG
+ WIDTH="84" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img150.png"
+ ALT="$status = 1$"></SPAN>, 
+the solver halts integration. This part also handles the "stop/pause/resume" interactions.
+</LI>
+<LI><TT>done</TT>: The solver calls <TT>integplot([],[],'done')</TT> when integration 
+is completed to allow the output function to perform any cleanup chores. The stop-window 
+is also deleted.
+</LI>
+</UL>
+Setting the OutputFcn property to the output function, <TT>integ_prs</TT>, reduces the output time. It only allows to interactively pause, 
+resume and stop the integration.
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html750"
+  HREF="node42.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="/usr/share/latex2html/icons/next.png"></A> 
+<A NAME="tex2html746"
+  HREF="node40.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="/usr/share/latex2html/icons/up.png"></A> 
+<A NAME="tex2html740"
+  HREF="node40.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="/usr/share/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html748"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="/usr/share/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html751"
+  HREF="node42.html">Jacobian matrices</A>
+<B> Up:</B> <A NAME="tex2html747"
+  HREF="node40.html">Time integration</A>
+<B> Previous:</B> <A NAME="tex2html741"
+  HREF="node40.html">Time integration</A>
+ &nbsp; <B>  <A NAME="tex2html749"
+  HREF="node1.html">Contents</A></B> </DIV>
+<!--End of Navigation Panel-->
+
+</BODY>
+</HTML>

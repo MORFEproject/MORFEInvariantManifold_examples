@@ -1,0 +1,120 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Singularities and test functions</TITLE>
+<META NAME="description" CONTENT="Singularities and test functions">
+<META NAME="keywords" CONTENT="ManualAug2019 ">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="ManualAug2019 .css">
+
+<LINK REL="next" HREF="node21.html">
+<LINK REL="previous" HREF="node19.html">
+<LINK REL="up" HREF="node17.html">
+<LINK REL="next" HREF="node21.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html491"
+  HREF="node21.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="/usr/share/latex2html/icons/next.png"></A> 
+<A NAME="tex2html487"
+  HREF="node17.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="/usr/share/latex2html/icons/up.png"></A> 
+<A NAME="tex2html481"
+  HREF="node19.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="/usr/share/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html489"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="/usr/share/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html492"
+  HREF="node21.html">Locators</A>
+<B> Up:</B> <A NAME="tex2html488"
+  HREF="node17.html">Options</A>
+<B> Previous:</B> <A NAME="tex2html482"
+  HREF="node19.html">Derivatives of the defining</A>
+ &nbsp; <B>  <A NAME="tex2html490"
+  HREF="node1.html">Contents</A></B> 
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H3><A NAME="SECTION00034300000000000000">
+Singularities and test functions</A>
+</H3>
+
+<P>
+To detect singularities on the curve one must set the option <SPAN  CLASS="textit">Singularities</SPAN> on.
+Singularities are defined using the singularity matrix, as described in section <A HREF="node11.html#s:singmat">2.4.3</A>. The continuer stores the handles to the singularities, the testfunctions and the processing of the singularities respectively in the variables <TT>cds.curve_singmat</TT>,<TT>cds.curve_testf</TT> and <TT>cds.curve_process</TT>.
+
+<P>
+A call to <TT>[S,L] = feval(cds.curve_singmat)</TT> gets the singularity matrix <SPAN CLASS="MATH"><IMG
+ WIDTH="16" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img76.png"
+ ALT="$S$"></SPAN> 
+and a vector of 2-character strings which are abbreviations of the singularities. 
+
+<P>
+A call to <TT>feval(cds.curve_testf, ids, x, v)</TT> then must return the evaluation of all 
+testfunctions, whose indices are in the integer vector <TT>ids</TT>, 
+at <TT>x</TT> (<TT>v</TT> is the tangent vector at <TT>x</TT>). 
+As a second return argument it should return an array of all testfunction id's which could 
+not be evaluated. If this array is not empty the stepsize will be decreased.
+
+<P>
+When a singularity is found, a call to <TT>[failed,s] = feval(cds.curve_process,i,x,v,s)</TT> will be made to process singularity <TT>i</TT> at
+<TT>x</TT>. This is the point where computations can be done, like computing normal 
+forms, eigenvalues, etc. of the singularity. These results can then be saved in the 
+structure <TT>s.data</TT> which can be reused for further analysis. Note that 
+the first and last point of the curve are also treated as singular.
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html491"
+  HREF="node21.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="/usr/share/latex2html/icons/next.png"></A> 
+<A NAME="tex2html487"
+  HREF="node17.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="/usr/share/latex2html/icons/up.png"></A> 
+<A NAME="tex2html481"
+  HREF="node19.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="/usr/share/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html489"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="/usr/share/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html492"
+  HREF="node21.html">Locators</A>
+<B> Up:</B> <A NAME="tex2html488"
+  HREF="node17.html">Options</A>
+<B> Previous:</B> <A NAME="tex2html482"
+  HREF="node19.html">Derivatives of the defining</A>
+ &nbsp; <B>  <A NAME="tex2html490"
+  HREF="node1.html">Contents</A></B> </DIV>
+<!--End of Navigation Panel-->
+
+</BODY>
+</HTML>

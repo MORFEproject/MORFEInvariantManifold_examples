@@ -1,0 +1,140 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Access to function and Jacobian values</TITLE>
+<META NAME="description" CONTENT="Access to function and Jacobian values">
+<META NAME="keywords" CONTENT="ManualAug2019 ">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="ManualAug2019 .css">
+
+<LINK REL="next" HREF="node38.html">
+<LINK REL="previous" HREF="node36.html">
+<LINK REL="up" HREF="node34.html">
+<LINK REL="next" HREF="node38.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html695"
+  HREF="node38.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="/usr/share/latex2html/icons/next.png"></A> 
+<A NAME="tex2html691"
+  HREF="node34.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="/usr/share/latex2html/icons/up.png"></A> 
+<A NAME="tex2html685"
+  HREF="node36.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="/usr/share/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html693"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="/usr/share/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html696"
+  HREF="node38.html">Time integration using the</A>
+<B> Up:</B> <A NAME="tex2html692"
+  HREF="node34.html">The odefile of a</A>
+<B> Previous:</B> <A NAME="tex2html686"
+  HREF="node36.html">Handling auxiliary functions in</A>
+ &nbsp; <B>  <A NAME="tex2html694"
+  HREF="node1.html">Contents</A></B> 
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00043000000000000000"></A><A NAME="access"></A>
+<BR>
+Access to function and Jacobian values
+</H2>
+Once an odefile is created, it can be used to compute the values of
+the odefunction and its derivatives with respect to state variables and
+parameters on the command line. As an example, consider the Morris-Lecar
+system <TT>MyML</TT> in the directory <TT>Testruns/TestSystems</TT>. 
+This system has two state variables and two parameters.
+We compute the odefunction values and derivatives with respect to the state vaariables and
+parameters for the state vector <SPAN CLASS="MATH"><IMG
+ WIDTH="39" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img144.png"
+ ALT="$[0;0]$"></SPAN> and parameters (30,10)
+by executing the script <TT>testodefile</TT>, available in the 
+directory <TT>Testruns</TT>: 
+
+<P>
+<PRE>
+MyMLSystem=MyML
+MyMLfunction=MyMLSystem{2}
+MyMLjacobian=MyMLSystem{3}
+MyMLjacobianp=MyMLSystem{4}
+MyMLfunction(0,[0;0],30,10)
+MyMLjacobian(0,[0;0],30,10)
+MyMLjacobianp(0,[0;0],30,10)
+</PRE>
+
+<P>
+The output is as follows:
+
+<P>
+<PRE>
+MyMLSystem =
+
+   1 x 9 cell array 
+	
+	{@init} {@fun_eval}  {@jacobian} {@jacobianp} {@hessians}
+	{@hessiansp} {0x0 double} {0x0 double} {0x0 double}
+	
+MyMLfunction =
+
+  function_handle with value:
+
+    @fun_eval
+
+
+MyMLjacobian =
+
+  function_handle with value:
+
+    @jacobian
+
+
+MyMLjacobianp =
+
+  function_handle with value:
+
+    @jacobianp
+
+
+ans =
+
+   33.1953
+    0.0167
+
+
+ans =
+
+    1.8282 -128.0000
+    0.0013   -0.0694
+
+
+ans =
+
+    0.2000         0
+         0   -0.0013
+</PRE>
+<BR><HR>
+
+</BODY>
+</HTML>

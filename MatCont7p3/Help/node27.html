@@ -1,0 +1,87 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Tangent search order</TITLE>
+<META NAME="description" CONTENT="Tangent search order">
+<META NAME="keywords" CONTENT="ManualAug2019 ">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="ManualAug2019 .css">
+
+<LINK REL="next" HREF="node28.html">
+<LINK REL="previous" HREF="node26.html">
+<LINK REL="up" HREF="node17.html">
+<LINK REL="next" HREF="node28.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html575"
+  HREF="node28.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="/usr/share/latex2html/icons/next.png"></A> 
+<A NAME="tex2html571"
+  HREF="node17.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="/usr/share/latex2html/icons/up.png"></A> 
+<A NAME="tex2html565"
+  HREF="node26.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="/usr/share/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html573"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="/usr/share/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html576"
+  HREF="node28.html">Summary</A>
+<B> Up:</B> <A NAME="tex2html572"
+  HREF="node17.html">Options</A>
+<B> Previous:</B> <A NAME="tex2html566"
+  HREF="node26.html">Adaptation</A>
+ &nbsp; <B>  <A NAME="tex2html574"
+  HREF="node1.html">Contents</A></B> 
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H3><A NAME="SECTION000341000000000000000"></A><A NAME="TSO"></A>
+<BR>
+Tangent search order
+</H3>
+To start a continuation, an initial point <SPAN CLASS="MATH"><IMG
+ WIDTH="21" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img124.png"
+ ALT="$x_0$"></SPAN> and a tangent vector <SPAN CLASS="MATH"><IMG
+ WIDTH="20" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img114.png"
+ ALT="$v_0$"></SPAN> are needed in general. Often, only <SPAN CLASS="MATH"><IMG
+ WIDTH="21" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img124.png"
+ ALT="$x_0$"></SPAN> is available. In this case, M<SMALL>AT</SMALL>C<SMALL>ONT</SMALL> successively tries all unit vectors as candidate tangent vectors. By default, this is done in increasing order of index (cds.options.TSearchOrder <SPAN CLASS="MATH"><IMG
+ WIDTH="31" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img116.png"
+ ALT="$= 1$"></SPAN>). If cds.options.TsearchOrder is set to a value different from <SPAN CLASS="MATH"><IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img102.png"
+ ALT="$1$"></SPAN> then the cycling is done in decreasing order of index. See &#167;<A HREF="node57.html#IniTimInt">7.4</A> for an example.
+
+<P>
+In cases where the number of continuation variables is large (e.g. when computing limit cycles) the choice of cds.options.TSearchOrder can substantially change the speed of the computation.
+
+<P>
+<BR><HR>
+
+</BODY>
+</HTML>

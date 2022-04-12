@@ -1,0 +1,247 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Mathematical Definition</TITLE>
+<META NAME="description" CONTENT="Mathematical Definition">
+<META NAME="keywords" CONTENT="ManualAug2019 ">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="ManualAug2019 .css">
+
+<LINK REL="next" HREF="node101.html">
+<LINK REL="previous" HREF="node99.html">
+<LINK REL="up" HREF="node99.html">
+<LINK REL="next" HREF="node101.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html1517"
+  HREF="node101.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="/usr/share/latex2html/icons/next.png"></A> 
+<A NAME="tex2html1513"
+  HREF="node99.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="/usr/share/latex2html/icons/up.png"></A> 
+<A NAME="tex2html1507"
+  HREF="node99.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="/usr/share/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html1515"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="/usr/share/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html1518"
+  HREF="node101.html">Bifurcations</A>
+<B> Up:</B> <A NAME="tex2html1514"
+  HREF="node99.html">Branch Point of Cycles</A>
+<B> Previous:</B> <A NAME="tex2html1508"
+  HREF="node99.html">Branch Point of Cycles</A>
+ &nbsp; <B>  <A NAME="tex2html1516"
+  HREF="node1.html">Contents</A></B> 
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H3><A NAME="SECTION00092100000000000000">
+Mathematical Definition</A>
+</H3>
+A BPC can be characterized by adding two extra constraints <SPAN CLASS="MATH"><IMG
+ WIDTH="57" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img581.png"
+ ALT="$G_1=0$"></SPAN> and <SPAN CLASS="MATH"><IMG
+ WIDTH="57" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img582.png"
+ ALT="$G_2=0$"></SPAN> to (<A HREF="node54.html#completelc">47</A>) where <SPAN CLASS="MATH"><IMG
+ WIDTH="25" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img583.png"
+ ALT="$G_1$"></SPAN> and <SPAN CLASS="MATH"><IMG
+ WIDTH="25" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img584.png"
+ ALT="$G_2$"></SPAN> are the Branch Point test functions. The complete BVP defining a BPC point using the minimal extended system is
+<BR>
+<DIV ALIGN="CENTER"><A NAME="minextBPC"></A>
+<!-- MATH
+ \begin{eqnarray}
+\left\{ \begin{array}{ll}
+\frac{dx}{dt} - Tf(x,\alpha) & = 0 \\
+x(0) - x(1) & = 0 \\
+\int_0^1 \langle x(t),\dot x_{old}(t) \rangle dt & = 0 \\
+G[x,T,\alpha] & = 0
+\end{array} \right.
+\end{eqnarray}
+ -->
+<TABLE CELLPADDING="0" ALIGN="CENTER" WIDTH="100%">
+<TR VALIGN="MIDDLE"><TD NOWRAP WIDTH="50%" ALIGN="RIGHT"><IMG
+ WIDTH="214" HEIGHT="106" ALIGN="MIDDLE" BORDER="0"
+ SRC="img585.png"
+ ALT="$\displaystyle \left\{ \begin{array}{ll}
+\frac{dx}{dt} - Tf(x,\alpha) &amp; = 0 \\
+...
+...t),\dot x_{old}(t) \rangle dt &amp; = 0 \\
+G[x,T,\alpha] &amp; = 0
+\end{array} \right.$"></TD>
+<TD>&nbsp;</TD>
+<TD>&nbsp;</TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+(<SPAN CLASS="arabic">84</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+where 
+<BR><P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay">
+<!-- MATH
+ \begin{displaymath}
+G=\left(\begin{array}{c}
+G_{1}\\
+G_{2}
+\end{array}\right)
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="97" HEIGHT="51" BORDER="0"
+ SRC="img586.png"
+ ALT="\begin{displaymath}
+G=\left(\begin{array}{c}
+G_{1}\\
+G_{2}
+\end{array}\right)\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+is defined by requiring
+<BR>
+<DIV ALIGN="RIGHT" CLASS="mathdisplay">
+
+<!-- MATH
+ \begin{equation}
+N\left(
+\begin{array}{cc}
+        v_1&v_2\\
+        G_1&G_2
+\end{array}
+\right)= \left(\begin{array}{cc}
+0&0 \\
+0&0\\
+0&0\\
+1&0\\
+0&1
+\end{array}\right).
+
+\end{equation}
+ -->
+<A NAME="eq:bpc1"></A>
+<TABLE WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE"><TD ALIGN="CENTER" NOWRAP><A NAME="eq:bpc1"></A><IMG
+ WIDTH="229" HEIGHT="115" BORDER="0"
+ SRC="img587.png"
+ ALT="\begin{displaymath}
+N\left(
+\begin{array}{cc}
+v_1&amp;v_2\\
+G_1&amp;G_2
+\end{arr...
+...
+0&amp;0 \\
+0&amp;0\\
+0&amp;0\\
+1&amp;0\\
+0&amp;1
+\end{array}\right).
+\end{displaymath}"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+(<SPAN CLASS="arabic">85</SPAN>)</TD></TR>
+</TABLE>
+<BR CLEAR="ALL"></DIV><P></P>
+Here <SPAN CLASS="MATH"><IMG
+ WIDTH="20" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img198.png"
+ ALT="$v_1$"></SPAN> and <SPAN CLASS="MATH"><IMG
+ WIDTH="20" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img299.png"
+ ALT="$v_2$"></SPAN> are functions, <SPAN CLASS="MATH"><IMG
+ WIDTH="25" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img583.png"
+ ALT="$G_1$"></SPAN> and <SPAN CLASS="MATH"><IMG
+ WIDTH="25" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img584.png"
+ ALT="$G_2$"></SPAN> are scalars and
+ <BR>
+<DIV ALIGN="RIGHT" CLASS="mathdisplay">
+
+<!-- MATH
+ \begin{equation}
+N =
+\left[
+\begin{array}{cccc}
+D-Tf_x(x(\cdot),\alpha) &~~~ -f(x(\cdot),\alpha)&~~~ -Tf_{\beta}(x(\cdot),\alpha) &~~~w_{01}\\
+\delta_1-\delta_0 &~~~ 0&~~~ 0 &~~~ w_{02}\\
+\mbox{\em Int}_{\dot x_{old}(\cdot)} &~~~ 0 &~~~ 0 &~~~ w_{03} \\
+v_{11} &~~~ v_{12}&~~~ v_{13} &~~~ 0\\
+v_{21} &~~~ v_{22}&~~~ v_{23} &~~~ 0
+\end{array}
+\right]
+
+\end{equation}
+ -->
+<A NAME="eq:bpc2"></A>
+<TABLE WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE"><TD ALIGN="CENTER" NOWRAP><A NAME="eq:bpc2"></A><IMG
+ WIDTH="531" HEIGHT="115" BORDER="0"
+ SRC="img588.png"
+ ALT="\begin{displaymath}
+N =
+\left[
+\begin{array}{cccc}
+D-Tf_x(x(\cdot),\alpha) ...
+...
+v_{21} &amp;~~~ v_{22}&amp;~~~ v_{23} &amp;~~~ 0
+\end{array}
+\right]
+\end{displaymath}"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+(<SPAN CLASS="arabic">86</SPAN>)</TD></TR>
+</TABLE>
+<BR CLEAR="ALL"></DIV><P></P>
+where the bordering operators <SPAN CLASS="MATH"><IMG
+ WIDTH="57" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img589.png"
+ ALT="$v_{11},v_{21}$"></SPAN>, function <SPAN CLASS="MATH"><IMG
+ WIDTH="31" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img590.png"
+ ALT="$w_{01}$"></SPAN>, vector <SPAN CLASS="MATH"><IMG
+ WIDTH="31" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img442.png"
+ ALT="$w_{02}$"></SPAN> and scalars <!-- MATH
+ $v_{12},v_{22},v_{13},v_{23}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="118" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img591.png"
+ ALT="$v_{12},v_{22},v_{13},v_{23}$"></SPAN> and <SPAN CLASS="MATH"><IMG
+ WIDTH="31" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img444.png"
+ ALT="$w_{03}$"></SPAN> are chosen so that <SPAN CLASS="MATH"><IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img592.png"
+ ALT="$N$"></SPAN> is nonsingular [<A
+ HREF="node115.html#report">15</A>][<A
+ HREF="node115.html#DGKD">16</A>].
+<BR><HR>
+
+</BODY>
+</HTML>

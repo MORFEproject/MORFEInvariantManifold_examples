@@ -1,0 +1,290 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Adaptive control example</TITLE>
+<META NAME="description" CONTENT="Adaptive control example">
+<META NAME="keywords" CONTENT="ManualAug2019 ">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="ManualAug2019 .css">
+
+<LINK REL="next" HREF="node63.html">
+<LINK REL="previous" HREF="node61.html">
+<LINK REL="up" HREF="node53.html">
+<LINK REL="next" HREF="node63.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html1010"
+  HREF="node63.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="/usr/share/latex2html/icons/next.png"></A> 
+<A NAME="tex2html1006"
+  HREF="node53.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="/usr/share/latex2html/icons/up.png"></A> 
+<A NAME="tex2html1000"
+  HREF="node61.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="/usr/share/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html1008"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="/usr/share/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html1011"
+  HREF="node63.html">The phase response curve</A>
+<B> Up:</B> <A NAME="tex2html1007"
+  HREF="node53.html">Continuation of limit cycles</A>
+<B> Previous:</B> <A NAME="tex2html1001"
+  HREF="node61.html">Limitcycle initialization</A>
+ &nbsp; <B>  <A NAME="tex2html1009"
+  HREF="node1.html">Contents</A></B> 
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00077000000000000000"></A>
+<A NAME="s:lcex"></A>
+<BR>
+Adaptive control example
+</H2>
+
+<P>
+For this example the following system from adaptive control was used
+in a feedback control system, as described in
+[<A
+ HREF="node115.html#GeTe:92">20</A>], [<A
+ HREF="node115.html#GeTe:95">21</A>] and further used in [<A
+ HREF="node115.html#yuri">25</A>] (Example 5.4, p. 178):
+<BR>
+<DIV ALIGN="CENTER"><A NAME="adaptivecontrol"></A>
+<!-- MATH
+ \begin{eqnarray}
+\left\{\begin{array}{rcl}
+\dot x & = & y \\
+\dot y & = & z \\
+\dot z & = & -\alpha z -\beta y -x +x^2
+\end{array}\right.
+
+\end{eqnarray}
+ -->
+<TABLE CELLPADDING="0" ALIGN="CENTER" WIDTH="100%">
+<TR VALIGN="MIDDLE"><TD NOWRAP WIDTH="50%" ALIGN="RIGHT"><IMG
+ WIDTH="237" HEIGHT="81" ALIGN="MIDDLE" BORDER="0"
+ SRC="img325.png"
+ ALT="$\displaystyle \left\{\begin{array}{rcl}
+\dot x &amp; = &amp; y \\
+\dot y &amp; = &amp; z \\
+\dot z &amp; = &amp; -\alpha z -\beta y -x +x^2
+\end{array}\right.$"></TD>
+<TD>&nbsp;</TD>
+<TD>&nbsp;</TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+(<SPAN CLASS="arabic">54</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+This system is introduced in the testruns of M<SMALL>AT</SMALL>C<SMALL>ONT</SMALL> under the name <TT>adaptx</TT>.
+It has a Hopf point at the origin for <SPAN CLASS="MATH"><IMG
+ WIDTH="47" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img326.png"
+ ALT="$\alpha = 1$"></SPAN> and <SPAN CLASS="MATH"><IMG
+ WIDTH="47" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img327.png"
+ ALT="$\beta = 1$"></SPAN> as detected in the testrun <TT>testadapt.m</TT>.
+
+<P>
+From this Hopf point an initial cycle is calculated using the starter <TT>init_H_LC</TT>. The results of the continuation are plotted using the plot function <TT>plotcycle(x,v,s,e)</TT> (see Figure <A HREF="#LCcurvefig">12</A>). This function plots the cycles <TT>x</TT>. <TT>e</TT> is an array whith either 2 or 3 elements for 2-dimensional and 3-dimensional plotting respectively. Its entries must be indices of state variables or active parameters in x. The index of the active parameter is <TT>size(x,1)</TT>
+
+<P>
+<PRE>
+&gt;&gt; init;
+&gt;&gt; [x0,v0]=init_EP_EP(@adaptx,[0;0;0],[-10;1],[1]);
+&gt;&gt; opt = contset; opt = contset(opt,'Singularities',1);
+&gt;&gt; [x,v,s,h,f]=cont(@equilibrium,x0,[],opt);
+first point found
+tangent vector to first point found
+label = H , x = ( 0.000000 0.000000 0.000000 1.000002 )
+First Lyapunov coefficient = -3.000001e-001
+
+elapsed time  = 0.3 secs
+npoints curve = 300
+&gt;&gt; x1=x(1:3,s(2).index);p=[x(end,s(2).index);1];
+&gt;&gt; [x0,v0]=init_H_LC(@adaptx,x1,p,[1],1e-6,20,4);
+&gt;&gt; opt = contset(opt,'MaxNumPoints',200);
+&gt;&gt; opt = contset(opt,'Multipliers',1);
+&gt;&gt; opt = contset(opt,'Adapt',1);
+&gt;&gt; [xlc,vlc,slc,hlc,flc]=cont(@limitcycle,x0,v0,opt);
+first point found
+tangent vector to first point found
+Limit point cycle (period = 6.283185e+000, parameter = 1.000000e+000)
+Normal form coefficient = -1.306379e+000
+Branch Point cycle(period = 6.283185e+000, parameter = 9.999996e-001)
+Period Doubling (period = 6.364071e+000, parameter = 6.303020e-001)
+Normal form coefficient = -4.267675e-002
+Neimark-Sacker (period = 6.433818e+000, parameter = 1.895460e-008)
+Neutral saddle
+Period Doubling (period = 6.364071e+000, parameter = -6.303020e-001)
+Normal form coefficient = 4.268472e-002
+
+elapsed time  = 27.6 secs
+npoints curve = 200
+&gt;&gt; plotcycle(xlc,vlc,slc,[size(xlc,1) 1 2]);
+</PRE>
+
+<P>
+We note that <TT>xlc</TT> is a <!-- MATH
+ $245 \times 200$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="77" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img328.png"
+ ALT="$245 \times 200$"></SPAN> matrix; each column corresponds to a computed limit cycle and gives the coordinates
+of all points of the fine mesh, i.e. <!-- MATH
+ $243=(20 \times 4 +1)\times 3$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="174" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img329.png"
+ ALT="$243=(20 \times 4 +1)\times 3$"></SPAN> values, plus the period <SPAN CLASS="MATH"><IMG
+ WIDTH="16" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img244.png"
+ ALT="$T$"></SPAN> as the <SPAN CLASS="MATH"><IMG
+ WIDTH="68" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img330.png"
+ ALT="$244-th$"></SPAN> component and the
+value of the active parameter <SPAN CLASS="MATH"><IMG
+ WIDTH="15" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img227.png"
+ ALT="$\alpha$"></SPAN> as the <SPAN CLASS="MATH"><IMG
+ WIDTH="68" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img331.png"
+ ALT="$245-th$"></SPAN> component.
+
+<P>
+The x-axis contains the active parameter, the y-axis the first state variable <SPAN CLASS="MATH"><IMG
+ WIDTH="14" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img44.png"
+ ALT="$x$"></SPAN> and the z-axis the second state variable <SPAN CLASS="MATH"><IMG
+ WIDTH="13" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img181.png"
+ ALT="$y$"></SPAN>.
+This run can be tested by the statement <TT>testadapt1</TT> (the axis labels have to be set manually). If you run only this example,
+do not forget to execute init <TT>init</TT> statement first.
+
+<DIV ALIGN="CENTER"><A NAME="LCcurvefig"></A><A NAME="4603"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 12:</STRONG>
+Computed limit cycle curve</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="538" HEIGHT="403" ALIGN="BOTTOM" BORDER="0"
+ SRC="img332.png"
+ ALT="\includegraphics[scale=0.8]{ex/LCcurve.eps}">
+</DIV></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+We note that the Limit point cycle and Branch point cycle detected in this run are degenerate: they reduce to the Hopf point itself. The Neimark-Sacker bifurcation is, in reality, a Neutral Saddle, i.e. it is an unstable periodic orbit with two real multipliers whose product is 1.
+
+<P>
+From the first Period Doubling bifurcation detected a limit cycle continuation of 
+the nearby double period cycle is started. First, an initial cycle and its tangent vector 
+are calculated using the starter <TT>init_PD_LC</TT>. The continuation is done using 
+the standard continuer and the result is plotted using the <TT>plotcycle</TT> function 
+(see figure <A HREF="#LCcurve2fig">13</A>).
+
+<P>
+<PRE>
+&gt;&gt; [x1,v1]=init_PD_LC(@adaptx,xlc,slc(4),40,4,1e-6);
+&gt;&gt; opt=contset(opt,'MaxNumPoints',250);
+&gt;&gt; [xlc2,vlc2,slc2,hlc2,flc2]=cont(@limitcycle,x1,v1,opt);
+first point found
+tangent vector to first point found
+Branch Point cycle(period = 1.272814e+001, parameter = 6.303020e-001)
+Period Doubling (period = 1.273437e+001, parameter = 5.796299e-001)
+Normal form coefficient = -5.579636e-002
+Neimark-Sacker (period = 1.154609e+001, parameter = 2.806142e-010)
+Neutral saddle
+Period Doubling (period = 1.106284e+001, parameter = -4.471966e-002)
+Normal form coefficient = 6.970442e-003
+Limit point cycle (period = 1.103168e+001, parameter = -4.494912e-002)
+Normal form coefficient = 1.311327e+002
+Neimark-Sacker (period = 1.076785e+001, parameter = -1.076152e-009)
+Neutral saddle
+Limit point cycle (period = 1.103169e+001, parameter = 4.494912e-002)
+Normal form coefficient = -1.310582e+002
+Period Doubling (period = 1.106284e+001, parameter = 4.471966e-002)
+Normal form coefficient = -6.973392e-003
+Neimark-Sacker (period = 1.154609e+001, parameter = 5.372279e-010)
+Neutral saddle
+Period Doubling (period = 1.273437e+001, parameter = -5.796298e-001)
+Normal form coefficient = 5.580465e-002
+
+elapsed time  = 62.3 secs
+npoints curve = 250
+&gt;&gt; plotcycle(xlc2,vlc2,slc2,[size(xlc2,1) 1 2]);
+</PRE>
+This run can be tested by the statement <TT>testadapt2</TT>.
+
+<DIV ALIGN="CENTER"><A NAME="LCcurve2fig"></A><A NAME="4614"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 13:</STRONG>
+Computed limit cycle curve started from a Period Doubling bifurcation</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="538" HEIGHT="403" ALIGN="BOTTOM" BORDER="0"
+ SRC="img333.png"
+ ALT="\includegraphics[scale=0.8]{ex/LCcurve2.eps}">
+</DIV></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html1010"
+  HREF="node63.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="/usr/share/latex2html/icons/next.png"></A> 
+<A NAME="tex2html1006"
+  HREF="node53.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="/usr/share/latex2html/icons/up.png"></A> 
+<A NAME="tex2html1000"
+  HREF="node61.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="/usr/share/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html1008"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="/usr/share/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html1011"
+  HREF="node63.html">The phase response curve</A>
+<B> Up:</B> <A NAME="tex2html1007"
+  HREF="node53.html">Continuation of limit cycles</A>
+<B> Previous:</B> <A NAME="tex2html1001"
+  HREF="node61.html">Limitcycle initialization</A>
+ &nbsp; <B>  <A NAME="tex2html1009"
+  HREF="node1.html">Contents</A></B> </DIV>
+<!--End of Navigation Panel-->
+
+</BODY>
+</HTML>

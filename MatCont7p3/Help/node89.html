@@ -1,0 +1,275 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Mathematical definition</TITLE>
+<META NAME="description" CONTENT="Mathematical definition">
+<META NAME="keywords" CONTENT="ManualAug2019 ">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="ManualAug2019 .css">
+
+<LINK REL="next" HREF="node90.html">
+<LINK REL="previous" HREF="node88.html">
+<LINK REL="up" HREF="node88.html">
+<LINK REL="next" HREF="node90.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html1373"
+  HREF="node90.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="/usr/share/latex2html/icons/next.png"></A> 
+<A NAME="tex2html1369"
+  HREF="node88.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="/usr/share/latex2html/icons/up.png"></A> 
+<A NAME="tex2html1363"
+  HREF="node88.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="/usr/share/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html1371"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="/usr/share/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html1374"
+  HREF="node90.html">Bifurcations along a Neimark-Sacker</A>
+<B> Up:</B> <A NAME="tex2html1370"
+  HREF="node88.html">Continuation of torus bifurcation</A>
+<B> Previous:</B> <A NAME="tex2html1364"
+  HREF="node88.html">Continuation of torus bifurcation</A>
+ &nbsp; <B>  <A NAME="tex2html1372"
+  HREF="node1.html">Contents</A></B> 
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H3><A NAME="SECTION00085100000000000000">
+Mathematical definition</A>
+</H3>
+
+<P>
+A torus bifurcation of limit cycles (Neimark-Sacker, NS) generically corresponds to a bifurcation to an invariant torus, on which the flow contains periodic or quasi-periodic motion. It can be characterized by adding an extra constraint <SPAN CLASS="MATH"><IMG
+ WIDTH="50" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img437.png"
+ ALT="$G=0$"></SPAN> to (<A HREF="node54.html#completelc">47</A>) where <SPAN CLASS="MATH"><IMG
+ WIDTH="18" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img178.png"
+ ALT="$G$"></SPAN> is the torus test function which has four components from which two are selected. The complete BVP defining a NS point using a minimally extended system is
+<BR>
+<DIV ALIGN="CENTER"><A NAME="minextns"></A>
+<!-- MATH
+ \begin{eqnarray}
+\left\{ \begin{array}{ll}
+\frac{dx}{dt} - Tf(x,\alpha) & = 0 \\
+x(0) - x(1) & = 0 \\
+\int_0^1 \langle x(t),\dot x_{old}(t) \rangle dt & = 0 \\
+G[x,T,\alpha,\kappa] & = 0
+\end{array} \right.
+\end{eqnarray}
+ -->
+<TABLE CELLPADDING="0" ALIGN="CENTER" WIDTH="100%">
+<TR VALIGN="MIDDLE"><TD NOWRAP WIDTH="50%" ALIGN="RIGHT"><IMG
+ WIDTH="214" HEIGHT="106" ALIGN="MIDDLE" BORDER="0"
+ SRC="img486.png"
+ ALT="$\displaystyle \left\{ \begin{array}{ll}
+\frac{dx}{dt} - Tf(x,\alpha) &amp; = 0 \\
+...
+... x_{old}(t) \rangle dt &amp; = 0 \\
+G[x,T,\alpha,\kappa] &amp; = 0
+\end{array} \right.$"></TD>
+<TD>&nbsp;</TD>
+<TD>&nbsp;</TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+(<SPAN CLASS="arabic">75</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+where 
+<BR><P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay">
+<!-- MATH
+ \begin{displaymath}
+G=\left(\begin{array}{cc}
+G^{11}&G^{12}\\
+G^{21}&G^{22}
+\end{array}\right)
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="147" HEIGHT="51" BORDER="0"
+ SRC="img487.png"
+ ALT="\begin{displaymath}
+G=\left(\begin{array}{cc}
+G^{11}&amp;G^{12}\\
+G^{21}&amp;G^{22}
+\end{array}\right)\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+is defined by requiring
+<BR>
+<DIV ALIGN="RIGHT" CLASS="mathdisplay">
+
+<!-- MATH
+ \begin{equation}
+N^3\left(
+\begin{array}{cc}
+        v^1&v^2\\
+       G^{11}&G^{12} \\
+       G^{21}&G^{22}
+\end{array}
+\right)= \left(\begin{array}{cc}
+0&~~0 \\
+0&~~0\\
+1&~~0\\
+0&~~1
+\end{array}\right).
+
+\end{equation}
+ -->
+<A NAME="eq:ns61"></A>
+<TABLE WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE"><TD ALIGN="CENTER" NOWRAP><A NAME="eq:ns61"></A><IMG
+ WIDTH="267" HEIGHT="94" BORDER="0"
+ SRC="img488.png"
+ ALT="\begin{displaymath}
+N^3\left(
+\begin{array}{cc}
+v^1&amp;v^2\\
+G^{11}&amp;G^{12} \...
+...
+0&amp;~~0 \\
+0&amp;~~0\\
+1&amp;~~0\\
+0&amp;~~1
+\end{array}\right).
+\end{displaymath}"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+(<SPAN CLASS="arabic">76</SPAN>)</TD></TR>
+</TABLE>
+<BR CLEAR="ALL"></DIV><P></P>
+Here <SPAN CLASS="MATH"><IMG
+ WIDTH="20" HEIGHT="20" ALIGN="BOTTOM" BORDER="0"
+ SRC="img489.png"
+ ALT="$v^1$"></SPAN> and <SPAN CLASS="MATH"><IMG
+ WIDTH="20" HEIGHT="20" ALIGN="BOTTOM" BORDER="0"
+ SRC="img490.png"
+ ALT="$v^2$"></SPAN> are functions and <!-- MATH
+ $G^{11},G^{12},G^{21}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="103" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img491.png"
+ ALT="$G^{11},G^{12},G^{21}$"></SPAN> and <SPAN CLASS="MATH"><IMG
+ WIDTH="32" HEIGHT="20" ALIGN="BOTTOM" BORDER="0"
+ SRC="img492.png"
+ ALT="$G^{22}$"></SPAN> are scalars and
+ <BR>
+<DIV ALIGN="RIGHT" CLASS="mathdisplay">
+
+<!-- MATH
+ \begin{equation}
+N^3 =
+\left[
+\begin{array}{ccc}
+D-Tf_x(x(\cdot),\alpha) &~~~ w_{11} &~~~w_{12}\\
+\delta_0-2\kappa\delta_1+\delta_2 &~~~ w_{21} &~~~ w_{22}\\
+\mbox{\em Int}_{v_{01}} &~~~ 0 &~~~ 0 \\
+\mbox{\em Int}_{v_{02}} &~~~ 0 &~~~ 0
+\end{array}
+\right]
+
+\end{equation}
+ -->
+<A NAME="eq:ns62"></A>
+<TABLE WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE"><TD ALIGN="CENTER" NOWRAP><A NAME="eq:ns62"></A><IMG
+ WIDTH="327" HEIGHT="94" BORDER="0"
+ SRC="img493.png"
+ ALT="\begin{displaymath}
+N^3 =
+\left[
+\begin{array}{ccc}
+D-Tf_x(x(\cdot),\alpha)...
+...\mbox{\em Int}_{v_{02}} &amp;~~~ 0 &amp;~~~ 0
+\end{array}
+\right]
+\end{displaymath}"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+(<SPAN CLASS="arabic">77</SPAN>)</TD></TR>
+</TABLE>
+<BR CLEAR="ALL"></DIV><P></P>
+where the bordering functions <!-- MATH
+ $v_{01},v_{02},w_{11},w_{12}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="126" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img494.png"
+ ALT="$v_{01},v_{02},w_{11},w_{12}$"></SPAN>, vectors <SPAN CLASS="MATH"><IMG
+ WIDTH="31" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img495.png"
+ ALT="$w_{21}$"></SPAN>and <SPAN CLASS="MATH"><IMG
+ WIDTH="31" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img496.png"
+ ALT="$w_{22}$"></SPAN> are chosen so that <SPAN CLASS="MATH"><IMG
+ WIDTH="27" HEIGHT="19" ALIGN="BOTTOM" BORDER="0"
+ SRC="img497.png"
+ ALT="$N^3$"></SPAN> is nonsingular [<A
+ HREF="node115.html#report">15</A>]. We note that an additional variable <SPAN CLASS="MATH"><IMG
+ WIDTH="14" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img498.png"
+ ALT="$\kappa$"></SPAN> is introduced in (<A HREF="#minextns">75</A>).
+This method (using system (<A HREF="#eq:ns61">76</A>) and (<A HREF="#eq:ns62">77</A>)) is implemented in the curve definition file <TT>neimarksacker.m</TT>. The discretization is done using orthogonal collocation over the interval <SPAN CLASS="MATH"><IMG
+ WIDTH="37" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img499.png"
+ ALT="$[0\ 2]$"></SPAN>. The additional variable <SPAN CLASS="MATH"><IMG
+ WIDTH="14" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img498.png"
+ ALT="$\kappa$"></SPAN> is introduced as the last continuation variable of <TT>neimarksacker.m</TT>, after the state variables, the period and the two active system parameters.
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html1373"
+  HREF="node90.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="/usr/share/latex2html/icons/next.png"></A> 
+<A NAME="tex2html1369"
+  HREF="node88.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="/usr/share/latex2html/icons/up.png"></A> 
+<A NAME="tex2html1363"
+  HREF="node88.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="/usr/share/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html1371"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="/usr/share/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html1374"
+  HREF="node90.html">Bifurcations along a Neimark-Sacker</A>
+<B> Up:</B> <A NAME="tex2html1370"
+  HREF="node88.html">Continuation of torus bifurcation</A>
+<B> Previous:</B> <A NAME="tex2html1364"
+  HREF="node88.html">Continuation of torus bifurcation</A>
+ &nbsp; <B>  <A NAME="tex2html1372"
+  HREF="node1.html">Contents</A></B> </DIV>
+<!--End of Navigation Panel-->
+
+</BODY>
+</HTML>

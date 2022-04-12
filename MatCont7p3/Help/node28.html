@@ -1,0 +1,168 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Summary</TITLE>
+<META NAME="description" CONTENT="Summary">
+<META NAME="keywords" CONTENT="ManualAug2019 ">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="ManualAug2019 .css">
+
+<LINK REL="previous" HREF="node27.html">
+<LINK REL="up" HREF="node17.html">
+<LINK REL="next" HREF="node29.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html585"
+  HREF="node29.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="/usr/share/latex2html/icons/next.png"></A> 
+<A NAME="tex2html581"
+  HREF="node17.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="/usr/share/latex2html/icons/up.png"></A> 
+<A NAME="tex2html577"
+  HREF="node27.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="/usr/share/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html583"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="/usr/share/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html586"
+  HREF="node29.html">Failure handling</A>
+<B> Up:</B> <A NAME="tex2html582"
+  HREF="node17.html">Options</A>
+<B> Previous:</B> <A NAME="tex2html578"
+  HREF="node27.html">Tangent search order</A>
+ &nbsp; <B>  <A NAME="tex2html584"
+  HREF="node1.html">Contents</A></B> 
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H3><A NAME="SECTION000341100000000000000">
+Summary</A>
+</H3>
+In the following table we list calls that can be made to the continuation curve description <TT>cds</TT> and which options are involved.
+<DIV ALIGN="CENTER">
+<TABLE CELLPADDING=3 BORDER="1">
+<TR><TD ALIGN="LEFT">Syntax of call</TD>
+<TD ALIGN="LEFT">What it should do (options involved)</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><TT>feval(cds.curve_func,x)</TT></TD>
+<TD ALIGN="LEFT">return <SPAN CLASS="MATH"><IMG
+ WIDTH="24" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img125.png"
+ ALT="$F($"></SPAN>x<SPAN CLASS="MATH"><IMG
+ WIDTH="11" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img126.png"
+ ALT="$)$"></SPAN></TD>
+</TR>
+<TR><TD ALIGN="LEFT"><TT>feval(cds.curve_options)</TT></TD>
+<TD ALIGN="LEFT">return option vector</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><TT>feval(cds.curve_jacobian,x)</TT></TD>
+<TD ALIGN="LEFT">return Jacobian at <TT>x</TT> (<SPAN  CLASS="textit">SymDerivative</SPAN><SPAN CLASS="MATH"><IMG
+ WIDTH="31" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img127.png"
+ ALT="$\geq 1$"></SPAN>)</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><TT>feval(cds.curve_hessians,x)</TT></TD>
+<TD ALIGN="LEFT">return Hessians at <TT>x</TT> (<SPAN  CLASS="textit">SymDerivative</SPAN><SPAN CLASS="MATH"><IMG
+ WIDTH="31" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img128.png"
+ ALT="$\geq 2$"></SPAN>)</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><TT>feval(cds.curve_init,x,v)</TT></TD>
+<TD ALIGN="LEFT">initialize user variable space (<SPAN  CLASS="textit">WorkSpace</SPAN>)</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><TT>feval(cds.curve_done)</TT></TD>
+<TD ALIGN="LEFT">destroy user variable space (<SPAN  CLASS="textit">WorkSpace</SPAN>)</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><TT>feval(cds.curve_defaultprocessor,x,v,s)</TT></TD>
+<TD ALIGN="LEFT">initialize data for testfunctions and</TD>
+</TR>
+<TR><TD ALIGN="LEFT">&nbsp;</TD>
+<TD ALIGN="LEFT">set some general singularity data</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><TT>feval(cds.curve_testf,ids,x,v)</TT></TD>
+<TD ALIGN="LEFT">return evaluation of testfunctions <TT>ids</TT> at <TT>x</TT></TD>
+</TR>
+<TR><TD ALIGN="LEFT">&nbsp;</TD>
+<TD ALIGN="LEFT">(<SPAN  CLASS="textit">Singularities</SPAN>)</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><TT>feval(cds.curve_locate,i,x1,x2,v1,v2)</TT></TD>
+<TD ALIGN="LEFT">return located singularity and tangent</TD>
+</TR>
+<TR><TD ALIGN="LEFT">&nbsp;</TD>
+<TD ALIGN="LEFT">vector(<SPAN  CLASS="textit">Locators</SPAN>)</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><TT>feval(cds.curve_userf,UserInfo,ids,x,v)</TT></TD>
+<TD ALIGN="LEFT">return evaluation of userfunctions ids with</TD>
+</TR>
+<TR><TD ALIGN="LEFT">&nbsp;</TD>
+<TD ALIGN="LEFT"><TT>UserInfo</TT> at <TT>x</TT> (<SPAN  CLASS="textit">Userfunctions</SPAN>)</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><TT>feval(cds.curve_singmat)</TT></TD>
+<TD ALIGN="LEFT">return singularity matrix (<SPAN  CLASS="textit">Singularities</SPAN>)</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><TT>feval(cds.curve_process,i,x)</TT></TD>
+<TD ALIGN="LEFT">run processor code of singularity <TT>i</TT></TD>
+</TR>
+<TR><TD ALIGN="LEFT">&nbsp;</TD>
+<TD ALIGN="LEFT">at <TT>x</TT>(<SPAN  CLASS="textit">Singularities</SPAN>)</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><TT>feval(cds.curve_adapt,x,v)</TT></TD>
+<TD ALIGN="LEFT">run adaptation code of problem (<SPAN  CLASS="textit">Adapt</SPAN>)</TD>
+</TR>
+</TABLE>
+</DIV>
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html585"
+  HREF="node29.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="/usr/share/latex2html/icons/next.png"></A> 
+<A NAME="tex2html581"
+  HREF="node17.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="/usr/share/latex2html/icons/up.png"></A> 
+<A NAME="tex2html577"
+  HREF="node27.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="/usr/share/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html583"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="/usr/share/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html586"
+  HREF="node29.html">Failure handling</A>
+<B> Up:</B> <A NAME="tex2html582"
+  HREF="node17.html">Options</A>
+<B> Previous:</B> <A NAME="tex2html578"
+  HREF="node27.html">Tangent search order</A>
+ &nbsp; <B>  <A NAME="tex2html584"
+  HREF="node1.html">Contents</A></B> </DIV>
+<!--End of Navigation Panel-->
+
+</BODY>
+</HTML>

@@ -1,0 +1,172 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>General remarks on the data flow</TITLE>
+<META NAME="description" CONTENT="General remarks on the data flow">
+<META NAME="keywords" CONTENT="ManualAug2019 ">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="ManualAug2019 .css">
+
+<LINK REL="next" HREF="node31.html">
+<LINK REL="previous" HREF="node29.html">
+<LINK REL="up" HREF="node13.html">
+<LINK REL="next" HREF="node31.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html609"
+  HREF="node31.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="/usr/share/latex2html/icons/next.png"></A> 
+<A NAME="tex2html605"
+  HREF="node13.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="/usr/share/latex2html/icons/up.png"></A> 
+<A NAME="tex2html599"
+  HREF="node29.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="/usr/share/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html607"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="/usr/share/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html610"
+  HREF="node31.html">Directories</A>
+<B> Up:</B> <A NAME="tex2html606"
+  HREF="node13.html">General software aspects of</A>
+<B> Previous:</B> <A NAME="tex2html600"
+  HREF="node29.html">Failure handling</A>
+ &nbsp; <B>  <A NAME="tex2html608"
+  HREF="node1.html">Contents</A></B> 
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00036000000000000000"></A><A NAME="dataflow"></A>
+<A NAME="s:structure"></A>
+<BR>
+General remarks on the data flow
+</H2>
+
+<DIV ALIGN="CENTER"><A NAME="fig:layers"></A><A NAME="1492"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 4:</STRONG>
+Structure of continuation process</CAPTION>
+<TR><TD><IMG
+ WIDTH="546" HEIGHT="410" BORDER="0"
+ SRC="img129.png"
+ ALT="\begin{figure}\begin{center}
+\input{cmlayer.pstex_t}
+\end{center}\end{figure}"></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+At this point we have discussed two components of a continuation process, the continuer 
+itself and the curve definition.
+In Figure <A HREF="#fig:layers">4</A> the complete structure is visualized. The arrows show 
+the flow of information between the objects, where an arrow from object A to object B indicates that
+information present in A is sent to B, typically by a call from B to A. The information is sometimes
+passed via a function call but in many cases via a global structure. Global structures are discussed in 
+&#167;<A HREF="node32.html#GlobStruct">3.8</A>.
+
+<P>
+As one can see, two extra 
+components are included: the <EM>curve initializer</EM> and some external ODE file.
+
+<P>
+Continuation of curves with complicated curve definitions often needs to be initialized. 
+Since the continuer is called only with the start point <SPAN CLASS="MATH"><IMG
+ WIDTH="21" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img124.png"
+ ALT="$x_0$"></SPAN> and an options structure 
+(and sometimes, but not always <SPAN CLASS="MATH"><IMG
+ WIDTH="20" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img114.png"
+ ALT="$v_0$"></SPAN>) 
+there must be some way 
+to initialize other parameters. Calling an initializer from a GUI or command prompt 
+solves this problem. The interaction between initializer and continuer is ``invisible" since it
+passes through a global structure called <TT>cds</TT> (continuation descriptor structure), see &#167;<A HREF="node32.html#GlobStruct">3.8</A>.
+One important field is <TT>cds.symjac</TT> which informs the continuer whether or not the
+curve definition file includes the Jacobian of the curve definition function. See also the note at the end of &#167;<A HREF="node113.html#s:circle">A</A>.
+
+<P>
+The standard <SMALL>MATLAB</SMALL> <TT>odeget</TT> and <TT>odeset</TT> only support Jacobian matrices coded in the ode-file. However, we do need the 
+derivatives with respect to the parameters.
+It is also useful to have higher-order symbolic derivatives available.
+
+<P>
+To overcome this problem, the package contains new versions of <TT>odeget</TT> 
+and <TT>odeset</TT> which support Jacobians with respect to parameters and higher-order 
+derivatives. The new routines are compatible with the ones provided by <SMALL>MATLAB</SMALL>.
+
+<P>
+To include the Jacobian with respect to parameters, the option <SPAN  CLASS="textit">JacobianP</SPAN> should contain the handle of the subfunction jacobianp <SPAN  CLASS="textit">@jacobianp</SPAN>. A call to <TT>feval(@jacobianp, 0, x, p1, p2, ...)</TT> should then return the Jacobian with respect to to parameter <SPAN CLASS="MATH"><IMG
+ WIDTH="20" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img130.png"
+ ALT="$p_1$"></SPAN>, <SPAN CLASS="MATH"><IMG
+ WIDTH="20" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img131.png"
+ ALT="$p_2$"></SPAN>, ....
+
+<P>
+To include Hessians in the ode-file the option  <SPAN  CLASS="textit">Hessians</SPAN> should contain the handle of the subfunction hessians <SPAN  CLASS="textit">@hessians</SPAN>. The software then assumes that a call to  <TT>feval(@hessians, 0, x,  p1, p2, ...)</TT> will return all Hessians in the same way as mentioned above. Setting the option to <SPAN  CLASS="textit">[]</SPAN> indicates that there are no Hessians available from the ode-file (default behaviour).
+
+<P>
+To include Hessians with respect to parameters in your ode-file the option <SPAN  CLASS="textit">HessiansP</SPAN> should contain the handle of the subfunction hessiansp <SPAN  CLASS="textit">@hessiansp</SPAN>. The software then assumes that a call to  <TT>feval(@hessiansp, 0, x, p1, p2, ...)</TT> will return all Hessians with respect to parameters in the same way as mentioned above. Setting the option to <SPAN  CLASS="textit">[]</SPAN> indicates that there are no Hessians with respect to parameters available from the ode-file (default behaviour).
+
+<P>
+To include the third order derivatives in your ode-file the option <SPAN  CLASS="textit">Der3</SPAN> should contain the handle of the subfunction der3 <SPAN  CLASS="textit">@der3</SPAN>. The software then assumes that a call to  <TT>feval(@der3, 0, x, p1, p2, ...)</TT> will return all third order derivatives in the same way as mentioned above. Setting the option to <SPAN  CLASS="textit">[]</SPAN> indicates that they are not available from the ode-file (default behaviour)
+
+<P>
+<SPAN  CLASS="textit">Der4</SPAN> and <SPAN  CLASS="textit">Der5</SPAN> are values indicating the 4th and 5th order symbolic derivative, available in the
+ode-file.
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html609"
+  HREF="node31.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="/usr/share/latex2html/icons/next.png"></A> 
+<A NAME="tex2html605"
+  HREF="node13.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="/usr/share/latex2html/icons/up.png"></A> 
+<A NAME="tex2html599"
+  HREF="node29.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="/usr/share/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html607"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="/usr/share/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html610"
+  HREF="node31.html">Directories</A>
+<B> Up:</B> <A NAME="tex2html606"
+  HREF="node13.html">General software aspects of</A>
+<B> Previous:</B> <A NAME="tex2html600"
+  HREF="node29.html">Failure handling</A>
+ &nbsp; <B>  <A NAME="tex2html608"
+  HREF="node1.html">Contents</A></B> </DIV>
+<!--End of Navigation Panel-->
+
+</BODY>
+</HTML>

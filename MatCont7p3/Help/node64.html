@@ -1,0 +1,153 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Continuation of codim 1 bifurcations</TITLE>
+<META NAME="description" CONTENT="Continuation of codim 1 bifurcations">
+<META NAME="keywords" CONTENT="ManualAug2019 ">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="ManualAug2019 .css">
+
+<LINK REL="next" HREF="node93.html">
+<LINK REL="previous" HREF="node53.html">
+<LINK REL="up" HREF="ManualAug2019 .html">
+<LINK REL="next" HREF="node65.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html1032"
+  HREF="node65.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="/usr/share/latex2html/icons/next.png"></A> 
+<A NAME="tex2html1028"
+  HREF="ManualAug2019 .html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="/usr/share/latex2html/icons/up.png"></A> 
+<A NAME="tex2html1022"
+  HREF="node63.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="/usr/share/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html1030"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="/usr/share/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html1033"
+  HREF="node65.html">Fold Continuation</A>
+<B> Up:</B> <A NAME="tex2html1029"
+  HREF="ManualAug2019 .html">ManualAug2019</A>
+<B> Previous:</B> <A NAME="tex2html1023"
+  HREF="node63.html">The phase response curve</A>
+ &nbsp; <B>  <A NAME="tex2html1031"
+  HREF="node1.html">Contents</A></B> 
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION00080000000000000000"></A>
+<A NAME="s:cd1"></A>
+<BR>
+Continuation of codim 1 bifurcations
+</H1>
+M<SMALL>AT</SMALL>C<SMALL>ONT</SMALL> computes branches of codim 1 bifurcations of equilibria (namely, fold LP and Hopf H)
+and of limit cycles (fold of cycles LPC, period doubling PD and Neimark-Sacker NS). On these branches
+codimension 2 bifurcations of equilibria (CP,BT,ZH,HH,GH) and of limit cycles (CPC,R1,R3,R4,CH,LPNS,PDNS,R2,
+NSNS,LPPD and GPD) are detected and located, cf. the graph of adjacency in Figure <A HREF="#graphadjacency">1.1</A>.
+For the numerical methods used in the computation of the normal form coefficients, but also for the meaning and
+use of these coefficients we refer to [<A
+ HREF="node115.html#yuri">25</A>] in the equilibrium case and to [<A
+ HREF="node115.html#dedegoku">9</A>] in the limit 
+cycle case. We note that the M<SMALL>AT</SMALL>C<SMALL>ONT</SMALL> directory <TT>LimitCycleCodim2</TT> is exclusively devoted to the
+computation of normal form coefficients of codim 2 bifurcations of limit cycles.
+<BR><HR>
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"><STRONG>Subsections</STRONG></A>
+
+<UL CLASS="ChildLinks">
+<LI><A NAME="tex2html1034"
+  HREF="node65.html">Fold Continuation</A>
+<UL>
+<LI><A NAME="tex2html1035"
+  HREF="node66.html">Mathematical definition</A>
+<LI><A NAME="tex2html1036"
+  HREF="node67.html">Bifurcations along a fold curve</A>
+<LI><A NAME="tex2html1037"
+  HREF="node68.html">Fold initialization</A>
+<LI><A NAME="tex2html1038"
+  HREF="node69.html">Adaptation</A>
+<LI><A NAME="tex2html1039"
+  HREF="node70.html">Example: a catalytic oscillator</A>
+</UL>
+<BR>
+<LI><A NAME="tex2html1040"
+  HREF="node71.html">Hopf Continuation</A>
+<UL>
+<LI><A NAME="tex2html1041"
+  HREF="node72.html">Mathematical definition</A>
+<LI><A NAME="tex2html1042"
+  HREF="node73.html">Bifurcations along a Hopf curve</A>
+<LI><A NAME="tex2html1043"
+  HREF="node74.html">Hopf initialization</A>
+<LI><A NAME="tex2html1044"
+  HREF="node75.html">Adaptation</A>
+<LI><A NAME="tex2html1045"
+  HREF="node76.html">Example</A>
+</UL>
+<BR>
+<LI><A NAME="tex2html1046"
+  HREF="node77.html">Period Doubling</A>
+<UL>
+<LI><A NAME="tex2html1047"
+  HREF="node78.html">Mathematical definition</A>
+<LI><A NAME="tex2html1048"
+  HREF="node79.html">Output of a continuation of period doubling bifurcation points</A>
+<LI><A NAME="tex2html1049"
+  HREF="node80.html">Bifurcations along a flip curve</A>
+<LI><A NAME="tex2html1050"
+  HREF="node81.html">Period doubling initialization</A>
+<LI><A NAME="tex2html1051"
+  HREF="node82.html">Example</A>
+</UL>
+<BR>
+<LI><A NAME="tex2html1052"
+  HREF="node83.html">Continuation of fold bifurcation of limit cycles</A>
+<UL>
+<LI><A NAME="tex2html1053"
+  HREF="node84.html">Mathematical definition</A>
+<LI><A NAME="tex2html1054"
+  HREF="node85.html">Bifurcations along a fold of cycles curve</A>
+<LI><A NAME="tex2html1055"
+  HREF="node86.html">Fold of cycles initialization</A>
+<LI><A NAME="tex2html1056"
+  HREF="node87.html">Example: the fast Morris-Lecar equations</A>
+</UL>
+<BR>
+<LI><A NAME="tex2html1057"
+  HREF="node88.html">Continuation of torus bifurcation of limit cycles</A>
+<UL>
+<LI><A NAME="tex2html1058"
+  HREF="node89.html">Mathematical definition</A>
+<LI><A NAME="tex2html1059"
+  HREF="node90.html">Bifurcations along a Neimark-Sacker curve</A>
+<LI><A NAME="tex2html1060"
+  HREF="node91.html">Torus bifurcation initialization</A>
+<LI><A NAME="tex2html1061"
+  HREF="node92.html">Example: an autonomous electronic circuit</A>
+</UL></UL>
+<!--End of Table of Child-Links-->
+<BR><HR>
+
+</BODY>
+</HTML>

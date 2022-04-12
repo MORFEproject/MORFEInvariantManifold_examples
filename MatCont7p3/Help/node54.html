@@ -1,0 +1,226 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Mathematical definition</TITLE>
+<META NAME="description" CONTENT="Mathematical definition">
+<META NAME="keywords" CONTENT="ManualAug2019 ">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="ManualAug2019 .css">
+
+<LINK REL="next" HREF="node55.html">
+<LINK REL="previous" HREF="node53.html">
+<LINK REL="up" HREF="node53.html">
+<LINK REL="next" HREF="node55.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html914"
+  HREF="node55.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="/usr/share/latex2html/icons/next.png"></A> 
+<A NAME="tex2html910"
+  HREF="node53.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="/usr/share/latex2html/icons/up.png"></A> 
+<A NAME="tex2html904"
+  HREF="node53.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="/usr/share/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html912"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="/usr/share/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html915"
+  HREF="node55.html">Discretization of a limit</A>
+<B> Up:</B> <A NAME="tex2html911"
+  HREF="node53.html">Continuation of limit cycles</A>
+<B> Previous:</B> <A NAME="tex2html905"
+  HREF="node53.html">Continuation of limit cycles</A>
+ &nbsp; <B>  <A NAME="tex2html913"
+  HREF="node1.html">Contents</A></B> 
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00071000000000000000">
+Mathematical definition</A>
+</H2>
+
+<P>
+Consider the following differential equation
+<BR>
+<DIV ALIGN="CENTER">
+
+<!-- MATH
+ \begin{eqnarray}
+\frac{du}{dt} = f(u,\alpha)
+\end{eqnarray}
+ -->
+<TABLE CELLPADDING="0" ALIGN="CENTER" WIDTH="100%">
+<TR VALIGN="MIDDLE"><TD NOWRAP WIDTH="50%" ALIGN="RIGHT"><IMG
+ WIDTH="103" HEIGHT="58" ALIGN="MIDDLE" BORDER="0"
+ SRC="img241.png"
+ ALT="$\displaystyle \frac{du}{dt} = f(u,\alpha)$"></TD>
+<TD>&nbsp;</TD>
+<TD>&nbsp;</TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+(<SPAN CLASS="arabic">44</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+with <!-- MATH
+ $u \in \ensuremath{\mathbf{R}}^n$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="59" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img242.png"
+ ALT="$u \in \ensuremath{\mathbf{R}}^n$"></SPAN> and <!-- MATH
+ $\alpha \in \ensuremath{\mathbf{R}}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="51" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img243.png"
+ ALT="$\alpha \in \ensuremath{\mathbf{R}}$"></SPAN>. A periodic solution with period <SPAN CLASS="MATH"><IMG
+ WIDTH="16" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img244.png"
+ ALT="$T$"></SPAN> satisfies the following system
+<BR>
+<DIV ALIGN="CENTER">
+
+<!-- MATH
+ \begin{eqnarray}
+\left\{ \begin{array}{l}
+\frac{du}{dt} = f(u,\alpha) \\
+u(0) = u(T)
+\end{array}\right.\ .
+\end{eqnarray}
+ -->
+<TABLE CELLPADDING="0" ALIGN="CENTER" WIDTH="100%">
+<TR VALIGN="MIDDLE"><TD NOWRAP WIDTH="50%" ALIGN="RIGHT"><IMG
+ WIDTH="143" HEIGHT="60" ALIGN="MIDDLE" BORDER="0"
+ SRC="img245.png"
+ ALT="$\displaystyle \left\{ \begin{array}{l}
+\frac{du}{dt} = f(u,\alpha) \\
+u(0) = u(T)
+\end{array}\right.\ .$"></TD>
+<TD>&nbsp;</TD>
+<TD>&nbsp;</TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+(<SPAN CLASS="arabic">45</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+For simplicity the period <SPAN CLASS="MATH"><IMG
+ WIDTH="16" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img244.png"
+ ALT="$T$"></SPAN> is treated as a parameter resulting in the system
+<BR>
+<DIV ALIGN="CENTER"><A NAME="lcp1"></A>
+<!-- MATH
+ \begin{eqnarray}
+\left\{ \begin{array}{l}
+\frac{du}{d\tau} = T\:f(u,\alpha) \\
+u(0) = u(1)
+\end{array} \right.\ .
+\end{eqnarray}
+ -->
+<TABLE CELLPADDING="0" ALIGN="CENTER" WIDTH="100%">
+<TR VALIGN="MIDDLE"><TD NOWRAP WIDTH="50%" ALIGN="RIGHT"><IMG
+ WIDTH="160" HEIGHT="60" ALIGN="MIDDLE" BORDER="0"
+ SRC="img246.png"
+ ALT="$\displaystyle \left\{ \begin{array}{l}
+\frac{du}{d\tau} = T\:f(u,\alpha) \\
+u(0) = u(1)
+\end{array} \right.\ .$"></TD>
+<TD>&nbsp;</TD>
+<TD>&nbsp;</TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+(<SPAN CLASS="arabic">46</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+If <SPAN CLASS="MATH"><IMG
+ WIDTH="37" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img247.png"
+ ALT="$u(\tau)$"></SPAN> is its solution then the shifted solution <SPAN CLASS="MATH"><IMG
+ WIDTH="66" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img248.png"
+ ALT="$u(\tau+s)$"></SPAN> is also a solution to (<A HREF="#lcp1">46</A>) for any value of <SPAN CLASS="MATH"><IMG
+ WIDTH="12" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img237.png"
+ ALT="$s$"></SPAN>. To select one solution, a phase condition is added to the system. The complete BVP (boundary value problem) is
+<BR>
+<DIV ALIGN="CENTER"><A NAME="completelc"></A>
+<!-- MATH
+ \begin{eqnarray}
+\left\{ \begin{array}{rl}
+\frac{du}{d\tau} - Tf(u,\alpha) & = 0 \\
+u(0) - u(1) & = 0 \\
+\int_0^1 \langle u(t),\dot u_{old}(t) \rangle dt & = 0
+\end{array} \right.
+\end{eqnarray}
+ -->
+<TABLE CELLPADDING="0" ALIGN="CENTER" WIDTH="100%">
+<TR VALIGN="MIDDLE"><TD NOWRAP WIDTH="50%" ALIGN="RIGHT"><IMG
+ WIDTH="214" HEIGHT="85" ALIGN="MIDDLE" BORDER="0"
+ SRC="img249.png"
+ ALT="$\displaystyle \left\{ \begin{array}{rl}
+\frac{du}{d\tau} - Tf(u,\alpha) &amp; = 0 \...
+... \\
+\int_0^1 \langle u(t),\dot u_{old}(t) \rangle dt &amp; = 0
+\end{array} \right.$"></TD>
+<TD>&nbsp;</TD>
+<TD>&nbsp;</TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+(<SPAN CLASS="arabic">47</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+where <SPAN CLASS="MATH"><IMG
+ WIDTH="32" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img250.png"
+ ALT="$\dot u_{old}$"></SPAN> is the derivative of a previous solution. A limit cycle is a closed phase orbit corresponding to this periodic solution. 
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html914"
+  HREF="node55.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="/usr/share/latex2html/icons/next.png"></A> 
+<A NAME="tex2html910"
+  HREF="node53.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="/usr/share/latex2html/icons/up.png"></A> 
+<A NAME="tex2html904"
+  HREF="node53.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="/usr/share/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html912"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="/usr/share/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html915"
+  HREF="node55.html">Discretization of a limit</A>
+<B> Up:</B> <A NAME="tex2html911"
+  HREF="node53.html">Continuation of limit cycles</A>
+<B> Previous:</B> <A NAME="tex2html905"
+  HREF="node53.html">Continuation of limit cycles</A>
+ &nbsp; <B>  <A NAME="tex2html913"
+  HREF="node1.html">Contents</A></B> </DIV>
+<!--End of Navigation Panel-->
+
+</BODY>
+</HTML>

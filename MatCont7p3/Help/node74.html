@@ -1,0 +1,131 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Hopf initialization</TITLE>
+<META NAME="description" CONTENT="Hopf initialization">
+<META NAME="keywords" CONTENT="ManualAug2019 ">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="ManualAug2019 .css">
+
+<LINK REL="next" HREF="node75.html">
+<LINK REL="previous" HREF="node73.html">
+<LINK REL="up" HREF="node71.html">
+<LINK REL="next" HREF="node75.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html1188"
+  HREF="node75.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="/usr/share/latex2html/icons/next.png"></A> 
+<A NAME="tex2html1184"
+  HREF="node71.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="/usr/share/latex2html/icons/up.png"></A> 
+<A NAME="tex2html1178"
+  HREF="node73.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="/usr/share/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html1186"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="/usr/share/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html1189"
+  HREF="node75.html">Adaptation</A>
+<B> Up:</B> <A NAME="tex2html1185"
+  HREF="node71.html">Hopf Continuation</A>
+<B> Previous:</B> <A NAME="tex2html1179"
+  HREF="node73.html">Bifurcations along a Hopf</A>
+ &nbsp; <B>  <A NAME="tex2html1187"
+  HREF="node1.html">Contents</A></B> 
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H3><A NAME="SECTION00082300000000000000">
+Hopf initialization</A>
+</H3>
+The most natural way to start the continuation of a Hopf bifurcation curve is to start it from a Hopf point, typically  
+found on an equilibrium curve. The continuation of Hopf points cannot simply be started by using the following command:
+<BR>
+<TT>[x,v,s,h,f]=cont(@hopf, x0, v0, opt)</TT>
+<BR>
+The Hopf curve file has to know
+
+<UL>
+<LI>the values of all state variables,
+</LI>
+<LI>which ode file to use,
+</LI>
+<LI>which parameters are active,
+</LI>
+<LI>the values of all parameters.
+</LI>
+</UL>
+Also an initial point <TT>x0</TT> has to be known. All this information can be supplied using the following command:
+<BR>
+ <TT>[x0,v0]=init_H_H(@odefile, xnew, p, ap)</TT>. 
+<BR>
+<P>
+The input arguments <TT>odefile,</TT> <TT>xnew,</TT>   <TT>p</TT>, <TT>ap</TT> are built exactly as in
+<TT>init_LP_LP</TT>. The output vector <TT>x0</TT> consists of <SPAN CLASS="MATH"><IMG
+ WIDTH="39" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img358.png"
+ ALT="$x_{new}$"></SPAN> extended with the free parameters and paramter <SPAN CLASS="MATH"><IMG
+ WIDTH="13" HEIGHT="20" ALIGN="BOTTOM" BORDER="0"
+ SRC="img364.png"
+ ALT="$k$"></SPAN> from (<A HREF="node72.html#fe4">62</A>).
+
+<P>
+M<SMALL>AT</SMALL>C<SMALL>ONT</SMALL> provides four other initializers which allow to continue a Hopf curve by starting from a codim 2 equilibrium point. These are
+<TT>init_BT_H.m,</TT> <TT>init_GH_H.m</TT>, <TT>init_HH_H.m</TT> and <TT>init_ZH_H.m</TT> These initializers are added merely for ease of use
+since they refer back to <TT>init_H_H.m.</TT> However, we note that two Hopf curves pass through a  Hopf point. So it can be necessary to specify the
+tangent vector to the desired Hopf  curve.
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html1188"
+  HREF="node75.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="/usr/share/latex2html/icons/next.png"></A> 
+<A NAME="tex2html1184"
+  HREF="node71.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="/usr/share/latex2html/icons/up.png"></A> 
+<A NAME="tex2html1178"
+  HREF="node73.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="/usr/share/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html1186"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="/usr/share/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html1189"
+  HREF="node75.html">Adaptation</A>
+<B> Up:</B> <A NAME="tex2html1185"
+  HREF="node71.html">Hopf Continuation</A>
+<B> Previous:</B> <A NAME="tex2html1179"
+  HREF="node73.html">Bifurcations along a Hopf</A>
+ &nbsp; <B>  <A NAME="tex2html1187"
+  HREF="node1.html">Contents</A></B> </DIV>
+<!--End of Navigation Panel-->
+
+</BODY>
+</HTML>

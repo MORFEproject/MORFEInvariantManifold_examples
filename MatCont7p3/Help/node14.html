@@ -1,0 +1,123 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>System definition</TITLE>
+<META NAME="description" CONTENT="System definition">
+<META NAME="keywords" CONTENT="ManualAug2019 ">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="ManualAug2019 .css">
+
+<LINK REL="next" HREF="node15.html">
+<LINK REL="previous" HREF="node13.html">
+<LINK REL="up" HREF="node13.html">
+<LINK REL="next" HREF="node15.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html408"
+  HREF="node15.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="/usr/share/latex2html/icons/next.png"></A> 
+<A NAME="tex2html404"
+  HREF="node13.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="/usr/share/latex2html/icons/up.png"></A> 
+<A NAME="tex2html398"
+  HREF="node13.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="/usr/share/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html406"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="/usr/share/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html409"
+  HREF="node15.html">Continuation and output</A>
+<B> Up:</B> <A NAME="tex2html405"
+  HREF="node13.html">General software aspects of</A>
+<B> Previous:</B> <A NAME="tex2html399"
+  HREF="node13.html">General software aspects of</A>
+ &nbsp; <B>  <A NAME="tex2html407"
+  HREF="node1.html">Contents</A></B> 
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00031000000000000000"></A><A NAME="s:sysdef"></A>
+<BR>
+System definition
+</H2>
+The user defines his dynamical system in an <I>odefile</I>, using the framework as in the file <TT>standard.m</TT> in the Systems directory.
+
+<P>
+In the function <TT>fun_eval</TT>, the dynamical system is to be given, where the parameters should be listed individually. Under <TT>init</TT>, the user can define some initialization parameters, as the phase variable values, the timespan, etc. All phase variables and parameters are expected to be scalar variables, not vectors or matrices. In the further functions, it is possible to supply the symbolic derivatives of the system to various orders to increase the speed and/or improve accuracy of the algorithm. Note that for the state variables derivatives up to fifth order can be provided. For the parameters first order derivatives of <TT>fun_eval</TT> and of its state Jacobian can be provided. No other  derivatives can be supplied through the system definition file, since they are never used in (CL_)M<SMALL>AT</SMALL>C<SMALL>ONT</SMALL>. We recall that the presence of symbolic derivatives, whenever necessary, typically will be stored in the subfields <TT>cds.options.SymDerivate</TT> and
+<TT>cds.options.SymDerivativeP</TT> of <TT>cds.options</TT>. This is done by the initializers to the curve description files. We note that 
+<!-- MATH
+ $0 \leq {\rm SymDerivative} \leq 5$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="179" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img100.png"
+ ALT="$ 0 \leq {\rm SymDerivative} \leq 5$"></SPAN> denotes the order of the highest symbolically available derivative with respect to state variables; similarly
+<!-- MATH
+ $0 \leq {\rm SymDerivativeP} \leq 2$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="191" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img101.png"
+ ALT="$ 0 \leq {\rm SymDerivativeP} \leq 2$"></SPAN> denotes the order of the highest symbolically available derivative in which a derivative with respect to a parameter is involved. It is always assumed that this implies the presence of the lower order derivatives.
+
+<P>
+Finally, the <I>odefile</I> can contain the description of any number of user functions, i.e. functions
+that can be monitored along computed curves and whose zeros can be detected and located. User functions can serve many purposes; an example of 
+a sophisticated use of user functions is given in &#167;<A HREF="node92.html#ttorNeimarkSacker">8.5.4</A>.
+
+<P>
+Details and examples on the construction of the <I>odefile</I> of a dynamical system are given in Chapter <A HREF="node34.html#odefiledynsys">4</A>.
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html408"
+  HREF="node15.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="/usr/share/latex2html/icons/next.png"></A> 
+<A NAME="tex2html404"
+  HREF="node13.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="/usr/share/latex2html/icons/up.png"></A> 
+<A NAME="tex2html398"
+  HREF="node13.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="/usr/share/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html406"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="/usr/share/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html409"
+  HREF="node15.html">Continuation and output</A>
+<B> Up:</B> <A NAME="tex2html405"
+  HREF="node13.html">General software aspects of</A>
+<B> Previous:</B> <A NAME="tex2html399"
+  HREF="node13.html">General software aspects of</A>
+ &nbsp; <B>  <A NAME="tex2html407"
+  HREF="node1.html">Contents</A></B> </DIV>
+<!--End of Navigation Panel-->
+
+</BODY>
+</HTML>

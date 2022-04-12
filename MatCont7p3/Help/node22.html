@@ -1,0 +1,127 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>User functions</TITLE>
+<META NAME="description" CONTENT="User functions">
+<META NAME="keywords" CONTENT="ManualAug2019 ">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="ManualAug2019 .css">
+
+<LINK REL="next" HREF="node23.html">
+<LINK REL="previous" HREF="node21.html">
+<LINK REL="up" HREF="node17.html">
+<LINK REL="next" HREF="node23.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html515"
+  HREF="node23.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="/usr/share/latex2html/icons/next.png"></A> 
+<A NAME="tex2html511"
+  HREF="node17.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="/usr/share/latex2html/icons/up.png"></A> 
+<A NAME="tex2html505"
+  HREF="node21.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="/usr/share/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html513"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="/usr/share/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html516"
+  HREF="node23.html">Defaultprocessor</A>
+<B> Up:</B> <A NAME="tex2html512"
+  HREF="node17.html">Options</A>
+<B> Previous:</B> <A NAME="tex2html506"
+  HREF="node21.html">Locators</A>
+ &nbsp; <B>  <A NAME="tex2html514"
+  HREF="node1.html">Contents</A></B> 
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H3><A NAME="SECTION00034500000000000000">
+User functions</A>
+</H3>
+To detect zeros of userfunctions on the curve one must set the option <SPAN  CLASS="textit">Userfunctions</SPAN> on. 
+The continuer has stored the handles to the userfunctions <TT>cds.curve_userf</TT>.
+First a call to <TT>UserInfo = contget(cds.options, 'UserfunctionsInfo', [])</TT> is made to get information  on the userfunctions. A call to <TT>feval(cds.curve_userf, UserInfo, ids, x, v)</TT> then must return the evaluation of all 
+userfunctions ids, whose information is in the structure <TT>UserInfo</TT>, 
+at <TT>x</TT> (<TT>v</TT> is the tangent vector at <TT>x</TT>). 
+As a second return argument it should return an array of all user function id's which could 
+not be evaluated. If this array is not empty the stepsize will be decreased.
+
+<P>
+A special point on a bifurcation curve that is specified by a user function has a structure as
+follows:
+<BR>
+<TABLE CELLPADDING=3>
+<TR><TD ALIGN="LEFT"><TT>s.index</TT></TD>
+<TD ALIGN="LEFT">index of the detected singular point defined by the user function.</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><TT>s.label</TT></TD>
+<TD ALIGN="LEFT">a string that is in <TT>UserInfo.label</TT>, label of the singularity.</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><TT>s.msg</TT></TD>
+<TD ALIGN="LEFT">a string that is set in <TT>UserInfo.name</TT>.</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><TT>s.data</TT></TD>
+<TD ALIGN="LEFT">an empty tangent vector or values of the user functions in
+the singular point.</TD>
+</TR>
+</TABLE>
+
+<P>
+When a change of sign of a userfunction is detected, the userfunction <TT>i</TT> is processed at
+<TT>x</TT>. This is the point where the results (values of the userfunction) can be saved in the 
+structure <TT>s.data</TT> which can be reused for further analysis.
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html515"
+  HREF="node23.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="/usr/share/latex2html/icons/next.png"></A> 
+<A NAME="tex2html511"
+  HREF="node17.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="/usr/share/latex2html/icons/up.png"></A> 
+<A NAME="tex2html505"
+  HREF="node21.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="/usr/share/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html513"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="/usr/share/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html516"
+  HREF="node23.html">Defaultprocessor</A>
+<B> Up:</B> <A NAME="tex2html512"
+  HREF="node17.html">Options</A>
+<B> Previous:</B> <A NAME="tex2html506"
+  HREF="node21.html">Locators</A>
+ &nbsp; <B>  <A NAME="tex2html514"
+  HREF="node1.html">Contents</A></B> </DIV>
+<!--End of Navigation Panel-->
+
+</BODY>
+</HTML>

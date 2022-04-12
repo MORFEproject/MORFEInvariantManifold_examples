@@ -1,0 +1,300 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Example: a catalytic oscillator</TITLE>
+<META NAME="description" CONTENT="Example: a catalytic oscillator">
+<META NAME="keywords" CONTENT="ManualAug2019 ">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="ManualAug2019 .css">
+
+<LINK REL="previous" HREF="node69.html">
+<LINK REL="up" HREF="node65.html">
+<LINK REL="next" HREF="node71.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html1135"
+  HREF="node71.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="/usr/share/latex2html/icons/next.png"></A> 
+<A NAME="tex2html1131"
+  HREF="node65.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="/usr/share/latex2html/icons/up.png"></A> 
+<A NAME="tex2html1127"
+  HREF="node69.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="/usr/share/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html1133"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="/usr/share/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html1136"
+  HREF="node71.html">Hopf Continuation</A>
+<B> Up:</B> <A NAME="tex2html1132"
+  HREF="node65.html">Fold Continuation</A>
+<B> Previous:</B> <A NAME="tex2html1128"
+  HREF="node69.html">Adaptation</A>
+ &nbsp; <B>  <A NAME="tex2html1134"
+  HREF="node1.html">Contents</A></B> 
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H3><A NAME="SECTION00081500000000000000"></A><A NAME="Catal1"></A>
+<BR>
+Example: a catalytic oscillator
+</H3>
+
+<P>
+For this example the following system (a catalytic oscillator) is used
+<BR>
+<DIV ALIGN="CENTER"><A NAME="CaOs"></A>
+<!-- MATH
+ \begin{eqnarray}
+\left\{\begin{array}{rcl}
+\dot x & = & 2q_1z^2 -2q_5x^2 -q_3xy \\
+\dot y & = & q_2z -q_6y -q_3xy\\
+\dot s & = & q_4z -kq_4s
+\end{array}\right.
+\end{eqnarray}
+ -->
+<TABLE CELLPADDING="0" ALIGN="CENTER" WIDTH="100%">
+<TR VALIGN="MIDDLE"><TD NOWRAP WIDTH="50%" ALIGN="RIGHT"><IMG
+ WIDTH="252" HEIGHT="81" ALIGN="MIDDLE" BORDER="0"
+ SRC="img141.png"
+ ALT="$\displaystyle \left\{\begin{array}{rcl}
+\dot x &amp; = &amp; 2q_1z^2 -2q_5x^2 -q_3xy \\
+\dot y &amp; = &amp; q_2z -q_6y -q_3xy\\
+\dot s &amp; = &amp; q_4z -kq_4s
+\end{array}\right.$"></TD>
+<TD>&nbsp;</TD>
+<TD>&nbsp;</TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+(<SPAN CLASS="arabic">60</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+where <SPAN CLASS="MATH"><IMG
+ WIDTH="136" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img142.png"
+ ALT="$z=1 -x -y -s$"></SPAN> and the parameters <!-- MATH
+ $q_1, q_2, q_3, q_4, q_5, q_6, k$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="152" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img361.png"
+ ALT="$q_1, q_2, q_3, q_4, q_5, q_6, k$"></SPAN> are introduced in that order in the odefile <TT>cataloscill</TT> in the M<SMALL>AT</SMALL>C<SMALL>ONT</SMALL>
+directory <TT>Testruns/TestSystems.</TT>
+
+<P>
+The starting vector <TT>x0</TT> and its tangent vector <TT>v0</TT> are calculated from the following equilibrium curve continuation (<SPAN CLASS="MATH"><IMG
+ WIDTH="19" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img362.png"
+ ALT="$q_2$"></SPAN> is free).
+<PRE>
+p=[2.5;2.204678;10;0.0675;1;0.1;0.4];
+ap1=[2];
+[x0,v0]=init_EP_EP(@cataloscill,[0.001137;0.891483;0.062345],p,ap1);
+opt=contset;
+opt=contset(opt,'MaxStepSize',0.025);
+opt=contset(opt,'MaxNumPoints',78);
+opt=contset(opt,'Singularities',1);
+[x,v,s,h,f]=cont(@equilibrium,x0,[],opt);
+cpl(x,v,s,[4,1]);
+</PRE><A NAME="LPEP"></A>
+<P>
+This set of commands is run by executing the file <TT>testequilcataloscill</TT> in the M<SMALL>AT</SMALL>C<SMALL>ONT</SMALL> directory <TT>Testruns.</TT> The command line output is
+the following:
+
+<P>
+<PRE>
+&gt;&gt; testequilcataloscill
+first point found
+tangent vector to first point found
+label = H , x = ( 0.016357 0.523973 0.328336 1.051558 )
+First Lyapunov coefficient = 1.070259e+01
+label = LP, x = ( 0.024717 0.450257 0.375018 1.042049 )
+a=-1.166509e-01
+label = LP, x = ( 0.054030 0.302241 0.459807 1.052200 )
+a=1.346534e-01
+label = H , x = ( 0.077929 0.233063 0.492149 1.040991 )
+First Lyapunov coefficient = 4.332247e+00
+
+elapsed time  = 1.2 secs
+npoints curve = 78
+</PRE>
+
+<P>
+The results are plotted using the plot function <TT>cpl</TT> where the fourth argument selects the fourth and first components of the solution which are the parameter <SPAN CLASS="MATH"><IMG
+ WIDTH="19" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img362.png"
+ ALT="$q_2$"></SPAN> and the coordinate <SPAN CLASS="MATH"><IMG
+ WIDTH="14" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img44.png"
+ ALT="$x$"></SPAN>. The results can be seen in Figure <A HREF="#Equilcataloscillfig">16</A>
+
+<DIV ALIGN="CENTER"><A NAME="Equilcataloscillfig"></A><A NAME="6293"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 16:</STRONG>
+Computed equilibrium curve in the catalytic oscillar system (<A HREF="#CaOs">60</A>)</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="404" HEIGHT="302" ALIGN="BOTTOM" BORDER="0"
+ SRC="img363.png"
+ ALT="\includegraphics[scale=0.6]{ex/testequilcataloscill.eps}">
+</DIV></TD></TR>
+</TABLE>
+</DIV>
+where the axes labels are added manually.
+
+<P>
+We now add a forward and a backward fold continuation from the first LP  detected on the previous equilibrium curve; 
+<SPAN CLASS="MATH"><IMG
+ WIDTH="19" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img362.png"
+ ALT="$q_2$"></SPAN> and <SPAN CLASS="MATH"><IMG
+ WIDTH="13" HEIGHT="20" ALIGN="BOTTOM" BORDER="0"
+ SRC="img364.png"
+ ALT="$k$"></SPAN> are free in both runs. 
+
+<P>
+<PRE>
+p=[2.5;2.204678;10;0.0675;1;0.1;0.4];
+ap1=[2];
+[x0,v0]=init_EP_EP(@cataloscill,[0.001137;0.891483;0.062345],p,ap1);
+opt=contset;
+opt=contset(opt,'MaxStepSize',0.025);
+opt=contset(opt,'MaxNumPoints',78);
+opt=contset(opt,'Singularities',1);
+[x,v,s,h,f]=cont(@equilibrium,x0,[],opt);
+cpl(x,v,s,[4,1]);
+'press any key'
+pause
+x1=x(1:3,s(3).index);
+p(ap1)=x(end,s(3).index);
+[x0,v0]=init_LP_LP(@cataloscill,x1,p,[2,7]);
+[x2,v2,s2,h2,f2]=cont(@limitpoint,x0,v0,opt);
+hold on;
+cpl(x2,v2,s2,[4,1]);
+'press any key'
+pause
+opt=contset(opt,'Backward',1);
+[x3,v3,s3,h3,f3]=cont(@limitpoint,x0,v0,opt);
+hold on
+cpl(x3,v3,s3,[4,1]);
+</PRE>
+
+<P>
+This set of commands is run by executing the file <TT>testLPcataloscill</TT> in the M<SMALL>AT</SMALL>C<SMALL>ONT</SMALL> directory <TT>Testruns.</TT> The command line output is
+the following:
+
+<P>
+<PRE>
+&gt;&gt; testLPcataloscill
+first point found
+tangent vector to first point found
+label = H , x = ( 0.016357 0.523973 0.328336 1.051558 )
+First Lyapunov coefficient = 1.070259e+01
+label = LP, x = ( 0.024717 0.450257 0.375018 1.042049 )
+a=-1.166509e-01
+label = LP, x = ( 0.054030 0.302241 0.459807 1.052200 )
+a=1.346534e-01
+label = H , x = ( 0.077929 0.233063 0.492149 1.040991 )
+First Lyapunov coefficient = 4.332247e+00
+
+elapsed time  = 0.4 secs
+npoints curve = 78
+
+ans =
+
+    'press any key'
+
+first point found
+tangent vector to first point found
+label = CP , x = ( 0.035941 0.352004 0.451371 1.006408 0.355991 )
+c=3.627908e-01
+label = BT , x = ( 0.115909 0.315467 0.288437 1.417627 0.971397 )
+(a,b)=(8.378438e-02, 2.136279e+00)
+
+elapsed time  = 0.9 secs
+npoints curve = 78
+
+ans =
+
+    'press any key'
+
+first point found
+tangent vector to first point found
+label = BT , x = ( 0.016337 0.638410 0.200456 1.161199 0.722340 )
+(a,b)=(-4.822577e-02, -1.937637e+00)
+
+elapsed time  = 0.5 secs
+npoints curve = 78
+</PRE>
+
+<P>
+The results are plotted in
+Figure <A HREF="#LPLPfig">17</A>, where, as usual, the axis labels are added manually.
+
+<DIV ALIGN="CENTER"><A NAME="LPLPfig"></A><A NAME="6304"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 17:</STRONG>
+Computed equilibrium and fold curves in the catalytic oscillator system (<A HREF="#CaOs">60</A>)</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="404" HEIGHT="302" ALIGN="BOTTOM" BORDER="0"
+ SRC="img365.png"
+ ALT="\includegraphics[scale=0.6]{ex/testLPcataloscill.eps}">
+</DIV></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html1135"
+  HREF="node71.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="/usr/share/latex2html/icons/next.png"></A> 
+<A NAME="tex2html1131"
+  HREF="node65.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="/usr/share/latex2html/icons/up.png"></A> 
+<A NAME="tex2html1127"
+  HREF="node69.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="/usr/share/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html1133"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="/usr/share/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html1136"
+  HREF="node71.html">Hopf Continuation</A>
+<B> Up:</B> <A NAME="tex2html1132"
+  HREF="node65.html">Fold Continuation</A>
+<B> Previous:</B> <A NAME="tex2html1128"
+  HREF="node69.html">Adaptation</A>
+ &nbsp; <B>  <A NAME="tex2html1134"
+  HREF="node1.html">Contents</A></B> </DIV>
+<!--End of Navigation Panel-->
+
+</BODY>
+</HTML>

@@ -1,0 +1,196 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Branch Point Locator</TITLE>
+<META NAME="description" CONTENT="Branch Point Locator">
+<META NAME="keywords" CONTENT="ManualAug2019 ">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="ManualAug2019 .css">
+
+<LINK REL="next" HREF="node60.html">
+<LINK REL="previous" HREF="node58.html">
+<LINK REL="up" HREF="node58.html">
+<LINK REL="next" HREF="node60.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html976"
+  HREF="node60.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="/usr/share/latex2html/icons/next.png"></A> 
+<A NAME="tex2html972"
+  HREF="node58.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="/usr/share/latex2html/icons/up.png"></A> 
+<A NAME="tex2html966"
+  HREF="node58.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="/usr/share/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html974"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="/usr/share/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html977"
+  HREF="node60.html">Normal form coefficients</A>
+<B> Up:</B> <A NAME="tex2html973"
+  HREF="node58.html">Bifurcations of limit cycles</A>
+<B> Previous:</B> <A NAME="tex2html967"
+  HREF="node58.html">Bifurcations of limit cycles</A>
+ &nbsp; <B>  <A NAME="tex2html975"
+  HREF="node1.html">Contents</A></B> 
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H3><A NAME="SECTION00075100000000000000"></A><A NAME="s:bpcloc"></A>
+<BR>
+Branch Point Locator
+</H3>
+
+<P>
+The location of  BPC points in the non-generic situation (i.e. where some symmetry is present) as zeros of the test functions is numerically suspect because no local quadratic convergence can be guaranteed. This difficulty can be avoided by introducing an additional unknown <!-- MATH
+ $\beta\in \ensuremath{\mathbf{R}}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="51" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img218.png"
+ ALT="$\beta\in \ensuremath{\mathbf{R}}$"></SPAN> and 
+considering the minimally extended system:
+<BR>
+<DIV ALIGN="CENTER"><A NAME="bpcloc"></A>
+<!-- MATH
+ \begin{eqnarray}
+\left\{ \begin{array}{ll}
+\frac{dx}{dt} - Tf(x,\alpha) +\beta p_1& = 0 \\
+x(0) - x(1) +\beta p_2& = 0 \\
+\int_0^1 \langle x(t),\dot x_{old}(t) \rangle dt+\beta p_3 & = 0 \\
+G[x,T,\alpha] & = 0
+\end{array} \right.
+\end{eqnarray}
+ -->
+<TABLE CELLPADDING="0" ALIGN="CENTER" WIDTH="100%">
+<TR VALIGN="MIDDLE"><TD NOWRAP WIDTH="50%" ALIGN="RIGHT"><IMG
+ WIDTH="263" HEIGHT="106" ALIGN="MIDDLE" BORDER="0"
+ SRC="img290.png"
+ ALT="$\displaystyle \left\{ \begin{array}{ll}
+\frac{dx}{dt} - Tf(x,\alpha) +\beta p_1...
+...{old}(t) \rangle dt+\beta p_3 &amp; = 0 \\
+G[x,T,\alpha] &amp; = 0
+\end{array} \right.$"></TD>
+<TD>&nbsp;</TD>
+<TD>&nbsp;</TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+(<SPAN CLASS="arabic">50</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+where <SPAN CLASS="MATH"><IMG
+ WIDTH="18" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img178.png"
+ ALT="$G$"></SPAN> is defined as in (<A HREF="node100.html#minextBPC">84</A>) and <!-- MATH
+ $[p_1^T p_2^T p_3]^T$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="79" HEIGHT="39" ALIGN="MIDDLE" BORDER="0"
+ SRC="img291.png"
+ ALT="$[p_1^T p_2^T p_3]^T$"></SPAN> is the bordering vector <!-- MATH
+ $[w_{01};w_{02};w_{03}]^T$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="120" HEIGHT="39" ALIGN="MIDDLE" BORDER="0"
+ SRC="img292.png"
+ ALT="$[w_{01};w_{02};w_{03}]^T$"></SPAN> in (<A HREF="node100.html#eq:bpc2">86</A>).
+We solve this system with respect to <SPAN CLASS="MATH"><IMG
+ WIDTH="52" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img293.png"
+ ALT="$x,T,\alpha$"></SPAN> and <SPAN CLASS="MATH"><IMG
+ WIDTH="15" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img294.png"
+ ALT="$\beta$"></SPAN> by Newton's method with initial <SPAN CLASS="MATH"><IMG
+ WIDTH="47" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img220.png"
+ ALT="$\beta=0$"></SPAN>. A branch point <SPAN CLASS="MATH"><IMG
+ WIDTH="66" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img295.png"
+ ALT="$(x,T,\alpha)$"></SPAN> corresponds to a regular solution <!-- MATH
+ $(x,T,\alpha,0)$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="82" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img296.png"
+ ALT="$(x,T,\alpha,0)$"></SPAN> of system (<A HREF="#bpcloc">50</A>) 
+(see [<A
+ HREF="node115.html#preprint">3</A>],p. 165). We note, however that the second order partial 
+derivatives (Hessian) of <SPAN CLASS="MATH"><IMG
+ WIDTH="14" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img225.png"
+ ALT="$f$"></SPAN> with respect to <SPAN CLASS="MATH"><IMG
+ WIDTH="14" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img44.png"
+ ALT="$x$"></SPAN> and <SPAN CLASS="MATH"><IMG
+ WIDTH="15" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img227.png"
+ ALT="$\alpha$"></SPAN> are required. 
+The tangent vector <SPAN CLASS="MATH"><IMG
+ WIDTH="31" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img297.png"
+ ALT="$v_{1st}$"></SPAN> at the BPC singularity is approximated as <!-- MATH
+ $v_{1st}=\frac{v_1+v_2}{2}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="95" HEIGHT="40" ALIGN="MIDDLE" BORDER="0"
+ SRC="img298.png"
+ ALT="$v_{1st}=\frac{v_1+v_2}{2}$"></SPAN> where <SPAN CLASS="MATH"><IMG
+ WIDTH="20" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img198.png"
+ ALT="$v_1$"></SPAN> is the tangent vector in the continuation point previous to the BPC and <SPAN CLASS="MATH"><IMG
+ WIDTH="20" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img299.png"
+ ALT="$v_2$"></SPAN> is the one in the next point. 
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html976"
+  HREF="node60.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="/usr/share/latex2html/icons/next.png"></A> 
+<A NAME="tex2html972"
+  HREF="node58.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="/usr/share/latex2html/icons/up.png"></A> 
+<A NAME="tex2html966"
+  HREF="node58.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="/usr/share/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html974"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="/usr/share/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html977"
+  HREF="node60.html">Normal form coefficients</A>
+<B> Up:</B> <A NAME="tex2html973"
+  HREF="node58.html">Bifurcations of limit cycles</A>
+<B> Previous:</B> <A NAME="tex2html967"
+  HREF="node58.html">Bifurcations of limit cycles</A>
+ &nbsp; <B>  <A NAME="tex2html975"
+  HREF="node1.html">Contents</A></B> </DIV>
+<!--End of Navigation Panel-->
+
+</BODY>
+</HTML>

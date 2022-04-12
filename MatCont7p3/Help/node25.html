@@ -1,0 +1,80 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Workspace</TITLE>
+<META NAME="description" CONTENT="Workspace">
+<META NAME="keywords" CONTENT="ManualAug2019 ">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="ManualAug2019 .css">
+
+<LINK REL="next" HREF="node26.html">
+<LINK REL="previous" HREF="node24.html">
+<LINK REL="up" HREF="node17.html">
+<LINK REL="next" HREF="node26.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html551"
+  HREF="node26.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="/usr/share/latex2html/icons/next.png"></A> 
+<A NAME="tex2html547"
+  HREF="node17.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="/usr/share/latex2html/icons/up.png"></A> 
+<A NAME="tex2html541"
+  HREF="node24.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="/usr/share/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html549"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="/usr/share/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html552"
+  HREF="node26.html">Adaptation</A>
+<B> Up:</B> <A NAME="tex2html548"
+  HREF="node17.html">Options</A>
+<B> Previous:</B> <A NAME="tex2html542"
+  HREF="node24.html">Special processors</A>
+ &nbsp; <B>  <A NAME="tex2html550"
+  HREF="node1.html">Contents</A></B> 
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H3><A NAME="SECTION00034800000000000000">
+Workspace</A>
+</H3>
+During the computation of a curve it is sometimes necessary to 
+introduce variables and do additional computations that are common to all points of the
+curve. The continuer has stored the handle to the initialization and cleaning of the workspace in the variables <TT>cds.curve_init</TT> and <TT>cds.curve_done</TT>.
+These can be relegated to a call of the type
+<PRE>
+feval(cds.curve_init,x,v).
+</PRE>
+This option has to be provided only
+if the variable <TT>WorkSpace</TT> in <TT>cds.options</TT> is switched on. In this case a call
+<PRE>
+feval(cds.curve_done,x,v)
+</PRE>
+must clear the workspace. Variables in the workspace must be set global.
+
+<P>
+<BR><HR>
+
+</BODY>
+</HTML>

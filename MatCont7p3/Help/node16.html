@@ -1,0 +1,133 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Curve file</TITLE>
+<META NAME="description" CONTENT="Curve file">
+<META NAME="keywords" CONTENT="ManualAug2019 ">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="ManualAug2019 .css">
+
+<LINK REL="next" HREF="node17.html">
+<LINK REL="previous" HREF="node15.html">
+<LINK REL="up" HREF="node13.html">
+<LINK REL="next" HREF="node17.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html432"
+  HREF="node17.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="/usr/share/latex2html/icons/next.png"></A> 
+<A NAME="tex2html428"
+  HREF="node13.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="/usr/share/latex2html/icons/up.png"></A> 
+<A NAME="tex2html422"
+  HREF="node15.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="/usr/share/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html430"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="/usr/share/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html433"
+  HREF="node17.html">Options</A>
+<B> Up:</B> <A NAME="tex2html429"
+  HREF="node13.html">General software aspects of</A>
+<B> Previous:</B> <A NAME="tex2html423"
+  HREF="node15.html">Continuation and output</A>
+ &nbsp; <B>  <A NAME="tex2html431"
+  HREF="node1.html">Contents</A></B> 
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00033000000000000000"></A><A NAME="s:curvedef"></A>
+<BR>
+Curve file
+</H2>
+The continuer uses a special m-file where the type of solution branch is defined.
+This file, further referred to as <TT>curve.m</TT>, contains the following sections:
+
+<UL>
+<LI><TT>curve_func</TT>: contains the evaluation of the right-hand side of that type of solution branch.
+</LI>
+<LI><TT>defaultprocessor</TT>: is called and executed after each point computed during a continuation experiment.
+</LI>
+<LI><TT>options</TT>: sets the default setting for the options-structure for this type of solution branch (more details are given in section <A HREF="node17.html#s:options">3.4</A>).
+</LI>
+<LI><TT>jacobian</TT>: contains the evaluation of the jacobian of that type of solution branch.
+</LI>
+<LI><TT>hessians</TT>: contains the evaluation of the hessians of that type of solution branch.
+</LI>
+<LI><TT>testf</TT>: contains the test functions for detecting bifurcations along the branch.
+</LI>
+<LI><TT>userf</TT>: calls the user-defined functions if there are any.
+</LI>
+<LI><TT>process</TT>: is called when a bifurcation point is detected, to handle any necessary output messages and storage.
+</LI>
+<LI><TT>singmat</TT>: defines the singularity matrix of the solution branch (cf. section <A HREF="node11.html#s:singmat">2.4.3</A>).
+</LI>
+<LI><TT>locate</TT>: here specific localisation functions can be defined for bifurcations (cf. section <A HREF="node12.html#s:locator">2.4.4</A>)
+</LI>
+<LI><TT>init</TT>: handles any special initialisations needed in the parameters or workspace.
+</LI>
+<LI><TT>done</TT>: handles any special actions needed at the end of continuing the solution branch.
+</LI>
+<LI><TT>adapt</TT>: this is called after every <SPAN CLASS="MATH"><IMG
+ WIDTH="14" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img70.png"
+ ALT="$n$"></SPAN> steps, where <SPAN CLASS="MATH"><IMG
+ WIDTH="14" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img70.png"
+ ALT="$n$"></SPAN> is user-defined. It handles any adaptation of parameters, subspaces, etc.
+</LI>
+</UL>
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html432"
+  HREF="node17.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="/usr/share/latex2html/icons/next.png"></A> 
+<A NAME="tex2html428"
+  HREF="node13.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="/usr/share/latex2html/icons/up.png"></A> 
+<A NAME="tex2html422"
+  HREF="node15.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="/usr/share/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html430"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="/usr/share/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html433"
+  HREF="node17.html">Options</A>
+<B> Up:</B> <A NAME="tex2html429"
+  HREF="node13.html">General software aspects of</A>
+<B> Previous:</B> <A NAME="tex2html423"
+  HREF="node15.html">Continuation and output</A>
+ &nbsp; <B>  <A NAME="tex2html431"
+  HREF="node1.html">Contents</A></B> </DIV>
+<!--End of Navigation Panel-->
+
+</BODY>
+</HTML>

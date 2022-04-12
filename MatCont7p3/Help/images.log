@@ -1,0 +1,5285 @@
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=latex 2018.10.12)  10 OCT 2019 21:12
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**./images.tex
+(./images.tex
+LaTeX2e <2016/02/01>
+Babel <3.9q> and hyphenation patterns for 29 language(s) loaded.
+
+(/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2014/09/29 v1.4h Standard LaTeX document class
+(/usr/share/texlive/texmf-dist/tex/latex/base/size11.clo
+File: size11.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
+)
+\c@part=\count79
+\c@section=\count80
+\c@subsection=\count81
+\c@subsubsection=\count82
+\c@paragraph=\count83
+\c@subparagraph=\count84
+\c@figure=\count85
+\c@table=\count86
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+) (/usr/share/texlive/texmf-dist/tex/latex/base/ifthen.sty
+Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
+) (/usr/share/texlive/texmf-dist/tex/latex/a4wide/a4wide.sty
+Package: a4wide 1994/08/30
+(/usr/share/texlive/texmf-dist/tex/latex/ntgclass/a4.sty
+Package: a4 2004/04/15 v1.2g A4 based page layout
+)) (/usr/share/texlive/texmf-dist/tex/latex/tools/longtable.sty
+Package: longtable 2014/10/28 v4.11 Multi-page Table package (DPC)
+\LTleft=\skip43
+\LTright=\skip44
+\LTpre=\skip45
+\LTpost=\skip46
+\LTchunksize=\count87
+\LTcapwidth=\dimen103
+\LT@head=\box26
+\LT@firsthead=\box27
+\LT@foot=\box28
+\LT@lastfoot=\box29
+\LT@cols=\count88
+\LT@rows=\count89
+\c@LT@tables=\count90
+\c@LT@chunks=\count91
+\LT@p@ftn=\toks14
+) (/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2014/10/28 v1.0g Enhanced LaTeX Graphics (DPC,SPQR)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
+\KV@toks@=\toks15
+) (/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2016/01/03 v1.0q Standard LaTeX Graphics (DPC,SPQR)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
+) (/usr/share/texlive/texmf-dist/tex/latex/latexconfig/graphics.cfg
+File: graphics.cfg 2010/04/23 v1.9 graphics configuration of TeX Live
+)
+Package graphics Info: Driver file: dvips.def on input line 95.
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/dvips.def
+File: dvips.def 2015/12/30 v3.0k Driver-dependent file (DPC,SPQR)
+))
+\Gin@req@height=\dimen104
+\Gin@req@width=\dimen105
+) (/usr/share/texlive/texmf-dist/tex/latex/graphics/epsfig.sty
+Package: epsfig 1999/02/16 v1.7a (e)psfig emulation (SPQR)
+\epsfxsize=\dimen106
+\epsfysize=\dimen107
+) (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\@emptytoks=\toks16
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+)
+\c@stelling=\count92
+\c@definition=\count93
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/color.sty
+Package: color 2016/01/03 v1.1b Standard LaTeX Color (DPC)
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/color.cfg
+File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
+)
+Package color Info: Driver file: dvips.def on input line 143.
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/dvipsnam.def
+File: dvipsnam.def 2015/12/30 v3.0k Driver-dependent file (DPC,SPQR)
+)) (/usr/share/texlive/texmf-dist/tex/latex/base/inputenc.sty
+Package: inputenc 2015/03/17 v1.2c Input encoding file
+\inpenc@prehook=\toks17
+\inpenc@posthook=\toks18
+(/usr/share/texlive/texmf-dist/tex/latex/base/latin1.def
+File: latin1.def 2015/03/17 v1.2c Input encoding file
+))
+\sizebox=\box30
+\lthtmlwrite=\write3
+No file images.aux.
+\openout1 = `images.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 142.
+LaTeX Font Info:    ... okay on input line 142.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 142.
+LaTeX Font Info:    ... okay on input line 142.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 142.
+LaTeX Font Info:    ... okay on input line 142.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 142.
+LaTeX Font Info:    ... okay on input line 142.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 142.
+LaTeX Font Info:    ... okay on input line 142.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 142.
+LaTeX Font Info:    ... okay on input line 142.
+
+latex2htmlLength hsize=349.0pt
+
+latex2htmlLength vsize=703.60028pt
+
+latex2htmlLength hoffset=0.0pt
+
+latex2htmlLength voffset=0.0pt
+
+latex2htmlLength topmargin=0.0pt
+
+latex2htmlLength topskip=0.00003pt
+
+latex2htmlLength headheight=0.0pt
+
+latex2htmlLength headsep=0.0pt
+
+latex2htmlLength parskip=0.0pt plus 1.0pt
+
+latex2htmlLength oddsidemargin=9.03374pt
+
+latex2htmlLength evensidemargin=9.03374pt
+
+LaTeX Font Info:    Try loading font information for U+msa on input line 166.
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 166.
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+l2hSize :tex2html_wrap_inline10839:7.98248pt::7.98248pt::17.91927pt.
+[1
+
+
+
+]
+l2hSize :tex2html_wrap_inline10841:8.7125pt::8.7125pt::32.71693pt.
+[2
+
+
+]
+File: ex/LCcurve2.eps Graphic file (type eps)
+<ex/LCcurve2.eps>
+l2hSize :tex2html_wrap12271:189.71066pt::0.0pt::349.0pt.
+[3
+
+
+]
+File: rug.eps Graphic file (type eps)
+<rug.eps>
+l2hSize :tex2html_wrap12273:58.41882pt::0.0pt::349.0pt.
+[4
+
+
+]
+File: uusol.eps Graphic file (type eps)
+<uusol.eps>
+l2hSize :tex2html_wrap12276:46.3737pt::0.0pt::349.0pt.
+[5
+
+
+]
+File: ex/UTLogoBlackRGBEN.eps Graphic file (type eps)
+<ex/UTLogoBlackRGBEN.eps>
+l2hSize :tex2html_wrap12281:27.70377pt::0.0pt::349.0pt.
+[6
+
+
+]
+l2hSize :tex2html_wrap_inline826:9.12923pt::0.0pt::76.33282pt.
+[7
+
+
+]
+l2hSize :tex2html_wrap_inline828:8.7125pt::8.7125pt::43.95967pt.
+[8
+
+
+]
+l2hSize :tex2html_wrap_inline830:7.57185pt::7.57185pt::10.1997pt.
+[9
+
+
+]
+l2hSize :tex2html_wrap_inline832:7.72179pt::7.72179pt::52.3781pt.
+[10
+
+
+]
+l2hSize :tex2html_wrap_inline834:8.7125pt::8.7125pt::58.48994pt.
+[11
+
+
+]
+l2hSize :tex2html_wrap_inline836:7.57185pt::7.57185pt::25.0671pt.
+[12
+
+
+]
+l2hSize :tex2html_wrap_inline838:8.91812pt::8.91812pt::49.49757pt.
+[13
+
+
+]
+l2hSize :tex2html_wrap_inline840:8.91812pt::8.91812pt::27.87265pt.
+[14
+
+
+]
+l2hSize :tex2html_wrap_inline842:8.10416pt::8.10416pt::15.48077pt.
+[15
+
+
+]
+l2hSize :tex2html_wrap_inline846:7.57185pt::7.57185pt::9.2492pt.
+[16
+
+
+]
+l2hSize :tex2html_wrap_inline850:8.7125pt::8.7125pt::119.19746pt.
+[17
+
+
+]
+l2hSize :tex2html_wrap_inline852:7.57185pt::7.57185pt::21.06097pt.
+[18
+
+
+]
+l2hSize :tex2html_wrap_inline854:8.10416pt::8.10416pt::26.93138pt.
+[19
+
+
+]
+! Missing $ inserted.
+<inserted text> 
+                $
+l.283 
+      
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Display math should end with $$.
+<to be read again> 
+                   \par 
+l.283 
+      
+The `$' that I just saw supposedly matches a previous `$$'.
+So I shall assume that you typed `$$' both times.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.284 X^
+        0 = x_i + hv_i.
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.285 \end{displaymath}
+                       %
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+l2hSize :displaymath663:27.20001pt::1.64249pt::349.0pt.
+[20
+
+
+]
+l2hSize :tex2html_wrap_inline856:9.12923pt::0.0pt::15.22862pt.
+[21
+
+
+]
+! Missing $ inserted.
+<inserted text> 
+                $
+l.299 
+      
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Display math should end with $$.
+<to be read again> 
+                   \par 
+l.299 
+      
+The `$' that I just saw supposedly matches a previous `$$'.
+So I shall assume that you typed `$$' both times.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.300   \left
+             \{ \begin{array}{lcl}
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.304 \end{displaymath}
+                       %
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+l2hSize :displaymath669:30.93748pt::10.8625pt::349.0pt.
+[22
+
+
+]
+l2hSize :tex2html_wrap_inline860:8.7125pt::8.7125pt::20.93811pt.
+[23
+
+
+]
+l2hSize :displaymath676:16.3375pt::0.0pt::349.0pt.
+[24
+
+
+]
+l2hSize :displaymath680:16.3375pt::0.0pt::349.0pt.
+[25
+
+
+]
+l2hSize :displaymath684:28.19998pt::0.0pt::349.0pt.
+[26
+
+
+]
+l2hSize :tex2html_wrap_inline872:7.60416pt::0.0pt::6.85646pt.
+[27
+
+
+]
+l2hSize :tex2html_wrap_inline874:8.7125pt::8.7125pt::48.82117pt.
+[28
+
+
+]
+l2hSize :displaymath695:16.3375pt::0.0pt::349.0pt.
+[29
+
+
+]
+l2hSize :tex2html_wrap_inline878:8.7125pt::8.7125pt::62.2704pt.
+[30
+
+
+]
+l2hSize :tex2html_wrap_inline880:7.57185pt::7.57185pt::25.97838pt.
+[31
+
+
+]
+l2hSize :displaymath701:28.19998pt::0.0pt::349.0pt.
+[32
+
+
+]
+l2hSize :tex2html_wrap_inline882:7.57185pt::7.57185pt::20.11047pt.
+[33
+
+
+] (/home/niels/EXTRACT/MatandClMat7p1/moore1.pstex_t
+File: moore1.pstex Graphic file (type eps)
+<moore1.pstex>
+LaTeX Font Info:    Calculating math sizes for size <14> on input line 13.
+)
+l2hSize :figure714:170.45576pt::0.0pt::349.0pt.
+[34
+
+
+]
+l2hSize :tex2html_wrap_inline884:7.48248pt::0.0pt::8.76004pt.
+[35
+
+
+]
+l2hSize :tex2html_wrap_inline886:8.7125pt::8.7125pt::61.28947pt.
+[36
+
+
+]
+l2hSize :tex2html_wrap_inline890:9.94032pt::9.94032pt::88.24516pt.
+[37
+
+
+]
+l2hSize :tex2html_wrap_inline896:9.94032pt::9.94032pt::99.65277pt.
+[38
+
+
+]
+l2hSize :tex2html_wrap_indisplay12341:7.98248pt::7.98248pt::15.01826pt.
+[39
+
+
+]
+l2hSize :tex2html_wrap_indisplay12342:7.57185pt::7.57185pt::9.06422pt.
+[40
+
+
+]
+l2hSize :tex2html_wrap_indisplay12343:8.10416pt::8.10416pt::5.2469pt.
+[41
+
+
+]
+l2hSize :tex2html_wrap_indisplay12344:10.48782pt::10.48782pt::19.1356pt.
+[42
+
+
+]
+l2hSize :tex2html_wrap_indisplay12346:7.57185pt::7.57185pt::6.02254pt.
+[43
+
+
+]
+l2hSize :tex2html_wrap_inline898:7.07185pt::0.0pt::6.80576pt.
+[44
+
+
+]
+l2hSize :tex2html_wrap_inline900:7.07185pt::0.0pt::6.24812pt.
+[45
+
+
+]
+l2hSize :tex2html_wrap_inline904:7.48248pt::0.0pt::34.53555pt.
+[46
+
+
+]
+l2hSize :tex2html_wrap_inline906:8.80704pt::0.0pt::48.08241pt.
+[47
+
+
+]
+l2hSize :tex2html_wrap_inline908:9.94032pt::9.94032pt::142.50334pt.
+[48
+
+
+]
+! Missing $ inserted.
+<inserted text> 
+                $
+l.496 
+      
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Display math should end with $$.
+<to be read again> 
+                   \par 
+l.496 
+      
+The `$' that I just saw supposedly matches a previous `$$'.
+So I shall assume that you typed `$$' both times.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.497 x = A^
+            +b.
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.498 \end{displaymath}
+                       %
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+l2hSize :displaymath730:27.20001pt::0.0pt::349.0pt.
+[49
+
+
+]
+l2hSize :displaymath734:21.265pt::0.0pt::349.0pt.
+[50
+
+
+]
+l2hSize :tex2html_wrap_indisplay12359:8.7125pt::8.7125pt::23.88475pt.
+[51
+
+
+]
+l2hSize :tex2html_wrap_indisplay12362:10.48782pt::10.48782pt::58.15001pt.
+[52
+
+
+]
+l2hSize :tex2html_wrap_inline916:7.07185pt::0.0pt::8.68147pt.
+[53
+
+
+]
+l2hSize :tex2html_wrap_indisplay12372:10.17673pt::10.17673pt::206.21509pt.
+[54
+
+
+]
+l2hSize :tex2html_wrap_indisplay12375:10.48782pt::10.48782pt::144.56923pt.
+[55
+
+
+]
+l2hSize :displaymath743:16.3375pt::0.0pt::349.0pt.
+[56
+
+
+]
+l2hSize :tex2html_wrap_inline924:9.62923pt::9.62923pt::36.07155pt.
+[57
+
+
+]
+l2hSize :tex2html_wrap_inline926:9.62923pt::9.62923pt::37.42001pt.
+[58
+
+
+]
+l2hSize :displaymath747:16.3375pt::0.0pt::349.0pt.
+[59
+
+
+]
+l2hSize :tex2html_wrap_inline934:10.02922pt::10.02922pt::81.3564pt.
+[60
+
+
+]
+l2hSize :tex2html_wrap_inline936:8.10416pt::8.10416pt::54.651pt.
+[61
+
+
+]
+l2hSize :tex2html_wrap_indisplay12386:10.57672pt::10.57672pt::26.47878pt.
+[62
+
+
+]
+l2hSize :tex2html_wrap_indisplay12388:10.57672pt::10.57672pt::145.17192pt.
+[63
+
+
+]
+l2hSize :tex2html_wrap_indisplay12389:10.57672pt::10.57672pt::25.36858pt.
+[64
+
+
+]
+l2hSize :tex2html_wrap_indisplay12391:10.57672pt::10.57672pt::142.46867pt.
+[65
+
+
+]
+l2hSize :displaymath760:28.19998pt::0.0pt::349.0pt.
+[66
+
+
+]
+l2hSize :displaymath768:28.19998pt::0.0pt::349.0pt.
+[67
+
+
+]
+l2hSize :tex2html_wrap_inline942:9.52922pt::0.0pt::14.50731pt.
+[68
+
+
+]
+l2hSize :tex2html_wrap_inline944:8.10416pt::8.10416pt::10.25041pt.
+[69
+
+
+]
+l2hSize :tex2html_wrap_inline946:7.07185pt::0.0pt::7.1201pt.
+[70
+
+
+]
+l2hSize :tex2html_wrap_inline948:8.10416pt::8.10416pt::21.11168pt.
+[71
+
+
+]
+l2hSize :displaymath781:41.79997pt::0.0pt::349.0pt.
+[72
+
+
+]
+l2hSize :tex2html_wrap_inline950:8.10416pt::8.10416pt::39.42969pt.
+[73
+
+
+]
+l2hSize :tex2html_wrap_inline952:8.10416pt::8.10416pt::39.16434pt.
+[74
+
+
+]
+l2hSize :tex2html_wrap_inline954:7.57185pt::7.57185pt::19.6596pt.
+[75
+
+
+]
+l2hSize :tex2html_wrap_inline1054:7.48248pt::0.0pt::7.89314pt.
+[76
+
+
+]
+l2hSize :tex2html_wrap_inline1056:9.62923pt::9.62923pt::68.63744pt.
+[77
+
+
+]
+l2hSize :displaymath998:16.3375pt::0.0pt::349.0pt.
+[78
+
+
+]
+l2hSize :displaymath1001:16.3375pt::0.0pt::349.0pt.
+[79
+
+
+]
+l2hSize :tex2html_wrap_inline1068:7.69589pt::0.0pt::11.55582pt.
+[80
+
+
+]
+l2hSize :tex2html_wrap_inline1070:8.7125pt::8.7125pt::21.84683pt.
+[81
+
+
+]
+l2hSize :tex2html_wrap_indisplay12422:8.7125pt::8.7125pt::21.84683pt.
+[82
+
+
+]
+l2hSize :tex2html_wrap_inline1078:8.7125pt::8.7125pt::41.92175pt.
+[83
+
+
+]
+l2hSize :tex2html_wrap_inline1082:7.57185pt::7.57185pt::10.68959pt.
+[84
+
+
+]
+l2hSize :displaymath1009:16.79805pt::0.0pt::349.0pt.
+[85
+
+
+]
+l2hSize :tex2html_wrap_inline1090:8.19589pt::8.19589pt::11.55582pt.
+[86
+
+
+]
+l2hSize :displaymath1012:17.86258pt::0.0pt::349.0pt.
+[87
+
+
+]
+l2hSize :tex2html_wrap_inline1094:7.4181pt::0.0pt::10.98729pt.
+[88
+
+
+]
+l2hSize :tex2html_wrap_inline1098:7.69589pt::0.0pt::36.59549pt.
+[89
+
+
+]
+l2hSize :tex2html_wrap_inline1100:8.7125pt::8.7125pt::136.09227pt.
+[90
+
+
+]
+l2hSize :tex2html_wrap_inline1102:7.07185pt::0.0pt::4.99217pt.
+[91
+
+
+]
+l2hSize :displaymath1016:35.04048pt::0.0pt::349.0pt.
+[92
+
+
+]
+l2hSize :tex2html_wrap_inline1106:7.98248pt::7.98248pt::12.01207pt.
+[93
+
+
+]
+l2hSize :tex2html_wrap_inline1108:7.98248pt::7.98248pt::12.01207pt.
+[94
+
+
+]
+l2hSize :tex2html_wrap_inline1110:8.10416pt::8.10416pt::11.82198pt.
+[95
+
+
+]
+l2hSize :tex2html_wrap_inline1112:8.10416pt::8.10416pt::11.82198pt.
+[96
+
+
+]
+l2hSize :tex2html_wrap_inline1124:7.57185pt::7.57185pt::11.5507pt.
+[97
+
+
+]
+l2hSize :tex2html_wrap_inline1130:7.57185pt::7.57185pt::35.07603pt.
+[98
+
+
+]
+l2hSize :displaymath1026:41.79997pt::0.0pt::349.0pt.
+[99
+
+
+]
+l2hSize :tex2html_wrap_inline1857:7.98248pt::7.98248pt::110.53416pt.
+[100
+
+
+]
+l2hSize :tex2html_wrap_inline1859:7.98248pt::7.98248pt::117.98625pt.
+[101
+
+
+]
+l2hSize :tex2html_wrap_inline1861:7.07185pt::0.0pt::6.02254pt.
+[102
+
+
+]
+l2hSize :tex2html_wrap_inline1865:7.07185pt::0.0pt::6.02254pt.
+[103
+
+
+]
+l2hSize :tex2html_wrap_inline1871:7.07185pt::0.0pt::20.01422pt.
+[104
+
+
+]
+l2hSize :tex2html_wrap_inline1873:9.12923pt::0.0pt::22.85881pt.
+[105
+
+
+]
+l2hSize :tex2html_wrap_inline1875:7.07185pt::0.0pt::14.53922pt.
+[106
+
+
+]
+l2hSize :tex2html_wrap_inline1877:7.07185pt::0.0pt::11.49754pt.
+[107
+
+
+]
+l2hSize :tex2html_wrap_inline1879:7.07185pt::0.0pt::6.02254pt.
+[108
+
+
+]
+l2hSize :tex2html_wrap_inline1887:8.7125pt::8.7125pt::47.60974pt.
+[109
+
+
+]
+l2hSize :tex2html_wrap_inline1889:9.12923pt::0.0pt::22.85881pt.
+[110
+
+
+]
+l2hSize :tex2html_wrap_inline1891:8.7125pt::8.7125pt::35.81181pt.
+[111
+
+
+]
+l2hSize :tex2html_wrap_inline1897:7.07185pt::0.0pt::6.02254pt.
+[112
+
+
+]
+l2hSize :tex2html_wrap_inline1899:7.07185pt::0.0pt::16.97255pt.
+[113
+
+
+]
+l2hSize :tex2html_wrap_inline1901:7.57185pt::7.57185pt::10.60532pt.
+[114
+
+
+]
+l2hSize :tex2html_wrap_inline1905:7.07185pt::0.0pt::11.49754pt.
+[115
+
+
+]
+l2hSize :tex2html_wrap_inline1929:7.07185pt::0.0pt::17.58084pt.
+[116
+
+
+]
+l2hSize :tex2html_wrap_inline1931:8.7125pt::8.7125pt::54.45091pt.
+[117
+
+
+]
+l2hSize :tex2html_wrap_inline1937:7.57185pt::7.57185pt::65.89006pt.
+[118
+
+
+]
+l2hSize :tex2html_wrap_inline1939:7.48248pt::0.0pt::10.53938pt.
+[119
+
+
+]
+l2hSize :tex2html_wrap_inline1941:12.58446pt::12.58446pt::89.20023pt.
+[120
+
+
+]
+l2hSize :tex2html_wrap_inline1943:7.07185pt::0.0pt::17.58084pt.
+[121
+
+
+]
+l2hSize :tex2html_wrap_inline1949:7.22179pt::0.0pt::4.31995pt.
+[122
+
+
+]
+l2hSize :tex2html_wrap_inline1951:7.07185pt::0.0pt::6.02254pt.
+[123
+
+
+]
+l2hSize :tex2html_wrap_inline1955:7.57185pt::7.57185pt::11.55582pt.
+[124
+
+
+]
+l2hSize :tex2html_wrap_inline1965:8.7125pt::8.7125pt::13.36818pt.
+[125
+
+
+]
+l2hSize :tex2html_wrap_inline1967:8.7125pt::8.7125pt::4.80588pt.
+[126
+
+
+]
+l2hSize :tex2html_wrap_inline1969:7.57185pt::7.57185pt::17.58084pt.
+[127
+
+
+]
+l2hSize :tex2html_wrap_inline1971:7.57185pt::7.57185pt::17.58084pt.
+[128
+
+
+] (/home/niels/EXTRACT/MatandClMat7p1/cmlayer.pstex_t
+File: cmlayer.pstex Graphic file (type eps)
+<cmlayer.pstex>)
+l2hSize :figure1489:271.22131pt::0.0pt::349.0pt.
+[129
+
+
+]
+l2hSize :tex2html_wrap_inline1977:7.57185pt::7.57185pt::10.80681pt.
+[130
+
+
+]
+l2hSize :tex2html_wrap_inline1979:7.57185pt::7.57185pt::10.80681pt.
+[131
+
+
+]
+l2hSize :displaymath2819:41.79997pt::0.0pt::349.0pt.
+[132
+
+
+]
+l2hSize :tex2html_wrap_inline2821:8.7125pt::8.7125pt::36.39104pt.
+[133
+
+
+]
+l2hSize :tex2html_wrap_inline2823:8.7125pt::8.7125pt::44.47446pt.
+[134
+
+
+]
+File: ex/SystemScr.eps Graphic file (type eps)
+<ex/SystemScr.eps>
+l2hSize :tex2html_wrap12673:287.98024pt::0.0pt::349.0pt.
+[135
+
+
+]
+l2hSize :tex2html_wrap_inline2825:7.07185pt::0.0pt::6.02254pt.
+[136
+
+
+]
+File: ex/UserfunctionScr.eps Graphic file (type eps)
+<ex/UserfunctionScr.eps>
+l2hSize :tex2html_wrap12678:300.54199pt::0.0pt::349.0pt.
+[137
+
+
+]
+l2hSize :tex2html_wrap_inline2827:7.57185pt::7.57185pt::25.66403pt.
+[138
+
+
+]
+l2hSize :tex2html_wrap_inline2829:7.57185pt::7.57185pt::27.87434pt.
+[139
+
+
+]
+l2hSize :tex2html_wrap_inline2831:7.98248pt::7.98248pt::35.95776pt.
+[140
+
+
+]
+l2hSize :tex2html_wrap_indisplay12697:23.63748pt::23.63748pt::156.2391pt.
+[141
+
+
+]
+l2hSize :tex2html_wrap_inline2833:7.57185pt::7.57185pt::83.4986pt.
+[142
+
+
+]
+l2hSize :tex2html_wrap_inline2835:7.07185pt::0.0pt::9.16307pt.
+[143
+
+
+]
+l2hSize :tex2html_wrap_inline2837:8.7125pt::8.7125pt::22.44753pt.
+[144
+
+
+]
+l2hSize :tex2html_wrap_inline2839:8.7125pt::8.7125pt::38.87254pt.
+[145
+
+
+]
+l2hSize :tex2html_wrap_inline2841:8.7125pt::8.7125pt::22.44753pt.
+[146
+
+
+]
+l2hSize :tex2html_wrap_inline2843:7.57185pt::7.57185pt::27.3142pt.
+[147
+
+
+]
+l2hSize :tex2html_wrap_inline3171:9.62923pt::9.62923pt::28.77977pt.
+[148
+
+
+]
+l2hSize :tex2html_wrap_inline3179:7.72179pt::7.72179pt::37.36899pt.
+[149
+
+
+]
+l2hSize :tex2html_wrap_inline3191:7.07185pt::0.0pt::50.85286pt.
+[150
+
+
+]
+l2hSize :displaymath3193:15.72917pt::0.0pt::349.0pt.
+[151
+
+
+]
+l2hSize :tex2html_wrap_inline3195:7.98248pt::7.98248pt::23.1902pt.
+[152
+
+
+]
+l2hSize :tex2html_wrap_inline3197:7.48248pt::0.0pt::38.1136pt.
+[153
+
+
+]
+l2hSize :tex2html_wrap_inline3201:7.98248pt::7.98248pt::13.64998pt.
+[154
+
+
+]
+! Missing $ inserted.
+<inserted text> 
+                $
+l.1237 
+       
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Display math should end with $$.
+<to be read again> 
+                   \par 
+l.1237 
+       
+The `$' that I just saw supposedly matches a previous `$$'.
+So I shall assume that you typed `$$' both times.
+
+
+! LaTeX Error: Bad math environment delimiter.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1238 \end{displaymath}
+                        %
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+l2hSize :displaymath3085:57.64398pt::0.0pt::349.0pt.
+[155
+
+
+]
+l2hSize :tex2html_wrap_inline3203:7.98248pt::7.98248pt::50.32811pt.
+[156
+
+
+]
+l2hSize :tex2html_wrap_inline3205:8.10416pt::8.10416pt::10.9982pt.
+[157
+
+
+]
+l2hSize :tex2html_wrap_inline3207:8.10416pt::8.10416pt::10.9982pt.
+[158
+
+
+]
+l2hSize :tex2html_wrap_inline3209:8.10416pt::8.10416pt::10.9982pt.
+[159
+
+
+]
+l2hSize :tex2html_wrap_inline3211:8.10416pt::8.10416pt::10.9982pt.
+[160
+
+
+]
+l2hSize :tex2html_wrap_inline3213:8.10416pt::8.10416pt::10.9982pt.
+[161
+
+
+]
+l2hSize :tex2html_wrap_inline3215:8.10416pt::8.10416pt::10.9982pt.
+[162
+
+
+]
+l2hSize :tex2html_wrap_inline3217:8.10416pt::8.10416pt::10.9982pt.
+[163
+
+
+]
+l2hSize :tex2html_wrap_inline3219:8.10416pt::8.10416pt::10.9982pt.
+[164
+
+
+]
+l2hSize :tex2html_wrap_inline3221:8.10416pt::8.10416pt::17.6094pt.
+[165
+
+
+]
+l2hSize :tex2html_wrap_inline3223:7.57185pt::7.57185pt::85.33783pt.
+[166
+
+
+]
+l2hSize :tex2html_wrap_inline3231:7.48248pt::0.0pt::9.40257pt.
+[167
+
+
+]
+l2hSize :tex2html_wrap_inline3237:7.48248pt::0.0pt::10.47856pt.
+[168
+
+
+]
+l2hSize :tex2html_wrap_inline3243:7.48248pt::0.0pt::9.33795pt.
+[169
+
+
+]
+l2hSize :tex2html_wrap_inline3251:8.10416pt::8.10416pt::56.01482pt.
+[170
+
+
+]
+File: ex/moduloscill.eps Graphic file (type eps)
+<ex/moduloscill.eps>
+File: ex/torproj.eps Graphic file (type eps)
+<ex/torproj.eps>
+l2hSize :figure3117:130.14851pt::0.0pt::349.0pt.
+[171
+
+
+]
+l2hSize :tex2html_wrap_inline3257:7.57185pt::7.57185pt::11.95488pt.
+[172
+
+
+]
+l2hSize :tex2html_wrap_inline3259:7.57185pt::7.57185pt::22.81615pt.
+[173
+
+
+]
+l2hSize :tex2html_wrap_inline3261:7.57185pt::7.57185pt::12.4734pt.
+[174
+
+
+]
+l2hSize :tex2html_wrap_inline3263:7.57185pt::7.57185pt::23.33467pt.
+[175
+
+
+]
+l2hSize :tex2html_wrap_inline3265:8.7125pt::8.7125pt::36.11736pt.
+[176
+
+
+]
+l2hSize :tex2html_wrap_inline3267:8.7125pt::8.7125pt::35.29758pt.
+[177
+
+
+]
+l2hSize :tex2html_wrap_inline3269:7.48248pt::0.0pt::9.15695pt.
+[178
+
+
+]
+l2hSize :tex2html_wrap_inline3275:8.7125pt::8.7125pt::48.89227pt.
+[179
+
+
+]
+l2hSize :tex2html_wrap_inline3277:8.7125pt::8.7125pt::48.89227pt.
+[180
+
+
+]
+l2hSize :tex2html_wrap_inline3279:7.57185pt::7.57185pt::6.30898pt.
+[181
+
+
+]
+l2hSize :tex2html_wrap_inline3287:7.07185pt::0.0pt::16.97255pt.
+[182
+
+
+]
+l2hSize :tex2html_wrap_inline3289:8.7125pt::8.7125pt::66.8559pt.
+[183
+
+
+]
+l2hSize :tex2html_wrap_inline3291:7.57185pt::7.57185pt::24.88086pt.
+[184
+
+
+]
+l2hSize :tex2html_wrap_inline3295:8.7125pt::8.7125pt::51.93394pt.
+[185
+
+
+]
+l2hSize :displaymath3475:23.52306pt::0.0pt::349.0pt.
+[186
+
+
+]
+l2hSize :tex2html_wrap_inline3662:8.7125pt::8.7125pt::53.85905pt.
+[187
+
+
+]
+l2hSize :displaymath3481:16.3375pt::0.0pt::349.0pt.
+[188
+
+
+]
+l2hSize :tex2html_wrap_inline3664:9.62923pt::9.62923pt::87.44896pt.
+[189
+
+
+]
+l2hSize :tex2html_wrap_inline3666:9.62923pt::9.62923pt::45.59442pt.
+[190
+
+
+]
+l2hSize :tex2html_wrap_indisplay12846:8.7125pt::8.7125pt::38.51897pt.
+[191
+
+
+]
+l2hSize :tex2html_wrap_indisplay12848:16.83748pt::16.83748pt::60.89822pt.
+[192
+
+
+]
+l2hSize :tex2html_wrap_indisplay12849:8.7125pt::8.7125pt::38.51897pt.
+[193
+
+
+]
+l2hSize :tex2html_wrap_indisplay12851:30.43747pt::30.43747pt::210.41415pt.
+[194
+
+
+]
+l2hSize :tex2html_wrap_indisplay12852:8.7125pt::8.7125pt::38.51897pt.
+[195
+
+
+]
+l2hSize :tex2html_wrap_indisplay12854:7.57185pt::7.57185pt::25.41566pt.
+[196
+
+
+]
+l2hSize :tex2html_wrap_inline3670:7.57185pt::7.57185pt::9.06422pt.
+[197
+
+
+]
+l2hSize :tex2html_wrap_inline3672:7.57185pt::7.57185pt::10.60532pt.
+[198
+
+
+]
+l2hSize :tex2html_wrap_inline3674:7.57185pt::7.57185pt::13.13689pt.
+[199
+
+
+]
+l2hSize :tex2html_wrap_inline3676:11.89447pt::11.89447pt::30.73494pt.
+[200
+
+
+]
+l2hSize :tex2html_wrap_inline3678:8.10416pt::8.10416pt::31.8969pt.
+[201
+
+
+]
+l2hSize :tex2html_wrap_inline3680:8.10416pt::8.10416pt::31.8969pt.
+[202
+
+
+]
+l2hSize :tex2html_wrap_inline3682:8.10416pt::8.10416pt::71.7629pt.
+[203
+
+
+]
+l2hSize :tex2html_wrap_inline3686:8.10416pt::8.10416pt::11.19327pt.
+[204
+
+
+]
+l2hSize :displaymath3527:41.79997pt::0.0pt::349.0pt.
+[205
+
+
+]
+! Missing $ inserted.
+<inserted text> 
+                $
+l.1568 
+       
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Display math should end with $$.
+<to be read again> 
+                   \par 
+l.1568 
+       
+The `$' that I just saw supposedly matches a previous `$$'.
+So I shall assume that you typed `$$' both times.
+
+
+! LaTeX Error: Bad math environment delimiter.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1569 \end{displaymath}
+                        %
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+l2hSize :displaymath3533:22.97556pt::0.0pt::349.0pt.
+[206
+
+
+]
+l2hSize :tex2html_wrap_inline3688:9.94032pt::9.94032pt::154.45801pt.
+[207
+
+
+]
+l2hSize :tex2html_wrap_inline3690:8.10416pt::8.10416pt::29.45218pt.
+[208
+
+
+]
+l2hSize :tex2html_wrap_inline3692:7.07185pt::0.0pt::6.33559pt.
+[209
+
+
+]
+l2hSize :tex2html_wrap_inline3694:8.10416pt::8.10416pt::11.82198pt.
+[210
+
+
+]
+l2hSize :tex2html_wrap_inline3696:7.07185pt::0.0pt::26.4105pt.
+[211
+
+
+]
+! Missing $ inserted.
+<inserted text> 
+                $
+l.1609 
+       
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Display math should end with $$.
+<to be read again> 
+                   \par 
+l.1609 
+       
+The `$' that I just saw supposedly matches a previous `$$'.
+So I shall assume that you typed `$$' both times.
+
+
+Overfull \hbox (51.60883pt too wide) detected at line 1609
+\OML/cmm/m/it/10.95 l[] \OT1/cmr/m/n/10.95 = [][] [] \OML/cmm/m/it/10.95 ;
+ []
+
+
+! LaTeX Error: Bad math environment delimiter.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1610 \end{displaymath}
+                        %
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+l2hSize :displaymath3542:22.97556pt::0.0pt::349.0pt.
+[212
+
+
+]
+l2hSize :tex2html_wrap_inline3698:9.94032pt::9.94032pt::206.06894pt.
+[213
+
+
+]
+l2hSize :tex2html_wrap_inline3700:8.10416pt::8.10416pt::28.63977pt.
+[214
+
+
+]
+l2hSize :tex2html_wrap_inline3702:8.10416pt::8.10416pt::28.63977pt.
+[215
+
+
+]
+l2hSize :tex2html_wrap_inline3704:8.10416pt::8.10416pt::28.63977pt.
+[216
+
+
+]
+l2hSize :tex2html_wrap_inline3706:8.01291pt::8.01291pt::34.54178pt.
+[217
+
+
+]
+l2hSize :tex2html_wrap_inline3708:8.10416pt::8.10416pt::30.1466pt.
+[218
+
+
+]
+! Missing $ inserted.
+<inserted text> 
+                $
+l.1654 
+       
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Display math should end with $$.
+<to be read again> 
+                   \par 
+l.1654 
+       
+The `$' that I just saw supposedly matches a previous `$$'.
+So I shall assume that you typed `$$' both times.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.1655 \left
+            \{ \begin{array}{rcl}
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.1661 \end{displaymath}
+                        %
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+l2hSize :displaymath3569:44.53748pt::24.4625pt::349.0pt.
+[219
+
+
+]
+l2hSize :tex2html_wrap_inline3710:8.10416pt::8.10416pt::27.39397pt.
+[220
+
+
+]
+l2hSize :tex2html_wrap_inline3712:9.94032pt::9.94032pt::60.56677pt.
+[221
+
+
+]
+l2hSize :tex2html_wrap_inline3714:7.57185pt::7.57185pt::7.14545pt.
+[222
+
+
+]
+l2hSize :tex2html_wrap_inline3716:8.7125pt::8.7125pt::27.24452pt.
+[223
+
+
+]
+l2hSize :tex2html_wrap_inline3718:8.7125pt::8.7125pt::47.96202pt.
+[224
+
+
+]
+l2hSize :tex2html_wrap_inline3720:8.10416pt::8.10416pt::7.08714pt.
+[225
+
+
+]
+l2hSize :tex2html_wrap_inline3722:7.07185pt::0.0pt::6.81593pt.
+[226
+
+
+]
+l2hSize :tex2html_wrap_inline3724:7.07185pt::0.0pt::7.59279pt.
+[227
+
+
+]
+l2hSize :tex2html_wrap_indisplay12891:9.46562pt::9.46562pt::9.61131pt.
+[228
+
+
+]
+l2hSize :tex2html_wrap_indisplay12893:8.4656pt::8.4656pt::60.98018pt.
+[229
+
+
+]
+l2hSize :tex2html_wrap_indisplay12894:9.46562pt::9.46562pt::9.11453pt.
+[230
+
+
+]
+l2hSize :tex2html_wrap_indisplay12896:8.4656pt::8.4656pt::60.68388pt.
+[231
+
+
+]
+l2hSize :tex2html_wrap_inline3953:7.07185pt::0.0pt::34.92719pt.
+[232
+
+
+]
+l2hSize :tex2html_wrap_inline3955:8.7125pt::8.7125pt::85.88013pt.
+[233
+
+
+]
+l2hSize :tex2html_wrap_inline3963:8.7125pt::8.7125pt::116.90517pt.
+[234
+
+
+]
+l2hSize :tex2html_wrap_inline3967:7.07185pt::0.0pt::11.49756pt.
+[235
+
+
+]
+File: ex/bratu3d.eps Graphic file (type eps)
+<ex/bratu3d.eps>
+l2hSize :tex2html_wrap13017:158.09062pt::0.0pt::349.0pt.
+[236
+
+
+]
+l2hSize :tex2html_wrap_inline3979:7.07185pt::0.0pt::5.68033pt.
+[237
+
+
+]
+l2hSize :tex2html_wrap_inline3981:8.7125pt::8.7125pt::22.7137pt.
+[238
+
+
+]
+l2hSize :tex2html_wrap_inline3983:7.57185pt::7.57185pt::6.05675pt.
+[239
+
+
+]
+File: ex/bratuBP.eps Graphic file (type eps)
+<ex/bratuBP.eps>
+l2hSize :tex2html_wrap13024:158.09062pt::0.0pt::349.0pt.
+[240
+
+
+]
+l2hSize :tex2html_wrap_indisplay13028:15.5119pt::15.5119pt::62.75177pt.
+[241
+
+
+]
+l2hSize :tex2html_wrap_inline4635:8.01291pt::8.01291pt::35.30096pt.
+[242
+
+
+]
+l2hSize :tex2html_wrap_inline4637:8.01291pt::8.01291pt::30.42035pt.
+[243
+
+
+]
+l2hSize :tex2html_wrap_inline4639:7.48248pt::0.0pt::8.46729pt.
+[244
+
+
+]
+l2hSize :tex2html_wrap_indisplay13033:17.01096pt::17.01096pt::88.0082pt.
+[245
+
+
+]
+l2hSize :tex2html_wrap_indisplay13036:17.01096pt::17.01096pt::98.36124pt.
+[246
+
+
+]
+l2hSize :tex2html_wrap_inline4643:8.7125pt::8.7125pt::21.35895pt.
+[247
+
+
+]
+l2hSize :tex2html_wrap_inline4645:8.7125pt::8.7125pt::39.87502pt.
+[248
+
+
+]
+l2hSize :tex2html_wrap_indisplay13041:24.45586pt::24.45586pt::132.69365pt.
+[249
+
+
+]
+l2hSize :tex2html_wrap_inline4649:7.81305pt::7.81305pt::18.42995pt.
+[250
+
+
+]
+l2hSize :tex2html_wrap_inline4651:8.7125pt::8.7125pt::47.98488pt.
+[251
+
+
+]
+l2hSize :tex2html_wrap_inline4653:8.7125pt::8.7125pt::22.44753pt.
+[252
+
+
+]
+l2hSize :tex2html_wrap_inline4655:7.57185pt::7.57185pt::9.06422pt.
+[253
+
+
+]
+l2hSize :tex2html_wrap_inline4679:8.10416pt::8.10416pt::95.6464pt.
+[254
+
+
+]
+l2hSize :tex2html_wrap_inline4681:8.7125pt::8.7125pt::35.07808pt.
+[255
+
+
+]
+l2hSize :tex2html_wrap_inline4683:8.10416pt::8.10416pt::98.68806pt.
+[256
+
+
+]
+l2hSize :tex2html_wrap_inline4685:8.7125pt::8.7125pt::35.07808pt.
+[257
+
+
+]
+l2hSize :tex2html_wrap_inline4687:8.7125pt::8.7125pt::69.28925pt.
+[258
+
+
+]
+l2hSize :tex2html_wrap_inline4689:8.7125pt::8.7125pt::33.39755pt.
+[259
+
+
+]
+l2hSize :tex2html_wrap_inline4691:7.07185pt::0.0pt::20.01422pt.
+[260
+
+
+]
+l2hSize :tex2html_wrap_inline4693:7.07185pt::0.0pt::12.28076pt.
+[261
+
+
+]
+File: ex/SelCyc1.eps Graphic file (type eps)
+<ex/SelCyc1.eps>
+l2hSize :figure4220:170.71652pt::0.0pt::349.0pt.
+[262
+
+
+]
+l2hSize :tex2html_wrap_inline4697:7.07185pt::0.0pt::4.50171pt.
+[263
+
+
+]
+l2hSize :tex2html_wrap_inline4705:8.7125pt::8.7125pt::53.50668pt.
+[264
+
+
+]
+l2hSize :tex2html_wrap_inline4707:8.7125pt::8.7125pt::38.00307pt.
+[265
+
+
+]
+l2hSize :tex2html_wrap_inline4709:7.07185pt::0.0pt::11.49754pt.
+[266
+
+
+]
+l2hSize :tex2html_wrap_inline4711:7.07185pt::0.0pt::9.06421pt.
+[267
+
+
+]
+File: ex/SelCyc2.eps Graphic file (type eps)
+<ex/SelCyc2.eps>
+l2hSize :figure4228:170.71652pt::0.0pt::349.0pt.
+[268
+
+
+]
+l2hSize :tex2html_wrap_indisplay13086:24.28238pt::24.28238pt::191.48256pt.
+[269
+
+
+]
+l2hSize :tex2html_wrap_inline4715:7.57185pt::7.57185pt::7.71065pt.
+[270
+
+
+]
+l2hSize :tex2html_wrap_inline4717:8.10416pt::8.10416pt::8.07314pt.
+[271
+
+
+]
+l2hSize :tex2html_wrap_inline4719:8.01291pt::8.01291pt::31.98451pt.
+[272
+
+
+]
+l2hSize :tex2html_wrap_inline4723:7.98248pt::7.98248pt::18.8801pt.
+[273
+
+
+]
+l2hSize :tex2html_wrap_inline4729:9.62923pt::9.62923pt::82.52444pt.
+[274
+
+
+]
+l2hSize :displaymath4731:28.88266pt::0.0pt::349.0pt.
+[275
+
+
+]
+l2hSize :displaymath4733:28.88266pt::0.0pt::349.0pt.
+[276
+
+
+]
+l2hSize :tex2html_wrap_inline4735:8.7125pt::8.7125pt::21.4565pt.
+[277
+
+
+]
+l2hSize :tex2html_wrap_inline4737:8.7125pt::8.7125pt::17.61942pt.
+[278
+
+
+]
+l2hSize :displaymath4741:41.79997pt::0.0pt::349.0pt.
+[279
+
+
+]
+l2hSize :tex2html_wrap_inline4743:7.98248pt::7.98248pt::26.15244pt.
+[280
+
+
+]
+l2hSize :displaymath4745:41.94829pt::0.0pt::349.0pt.
+[281
+
+
+]
+l2hSize :tex2html_wrap_inline4747:8.10416pt::8.10416pt::37.67989pt.
+[282
+
+
+]
+l2hSize :tex2html_wrap_inline4749:8.7125pt::8.7125pt::54.10117pt.
+[283
+
+
+]
+l2hSize :tex2html_wrap_inline4751:7.57185pt::7.57185pt::34.76901pt.
+[284
+
+
+]
+l2hSize :tex2html_wrap_inline4753:7.57185pt::7.57185pt::34.76901pt.
+[285
+
+
+]
+l2hSize :tex2html_wrap_inline4755:7.57185pt::7.57185pt::34.76901pt.
+[286
+
+
+]
+l2hSize :tex2html_wrap_inline4757:7.57185pt::7.57185pt::34.76901pt.
+[287
+
+
+]
+l2hSize :tex2html_wrap_indisplay13110:30.43747pt::30.43747pt::189.78914pt.
+[288
+
+
+]
+l2hSize :tex2html_wrap_inline4759:7.07185pt::0.0pt::6.02254pt.
+[289
+
+
+]
+l2hSize :tex2html_wrap_indisplay13119:31.25586pt::31.25586pt::163.08736pt.
+[290
+
+
+]
+l2hSize :tex2html_wrap_inline4773:9.94032pt::9.94032pt::47.79636pt.
+[291
+
+
+]
+l2hSize :tex2html_wrap_inline4775:9.94032pt::9.94032pt::73.51166pt.
+[292
+
+
+]
+l2hSize :tex2html_wrap_inline4777:7.98248pt::7.98248pt::30.8957pt.
+[293
+
+
+]
+l2hSize :tex2html_wrap_inline4779:8.10416pt::8.10416pt::7.31905pt.
+[294
+
+
+]
+l2hSize :tex2html_wrap_inline4783:8.7125pt::8.7125pt::39.4124pt.
+[295
+
+
+]
+l2hSize :tex2html_wrap_inline4785:8.7125pt::8.7125pt::49.75404pt.
+[296
+
+
+]
+l2hSize :tex2html_wrap_inline4793:7.57185pt::7.57185pt::17.60541pt.
+[297
+
+
+]
+l2hSize :tex2html_wrap_inline4795:9.83894pt::9.83894pt::57.82764pt.
+[298
+
+
+]
+l2hSize :tex2html_wrap_inline4799:7.57185pt::7.57185pt::10.60532pt.
+[299
+
+
+]
+! Missing $ inserted.
+<inserted text> 
+                $
+l.2234 
+       
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Display math should end with $$.
+<to be read again> 
+                   \par 
+l.2234 
+       
+The `$' that I just saw supposedly matches a previous `$$'.
+So I shall assume that you typed `$$' both times.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.2235 \left
+            \{\begin{array}{rcl}
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.2240 \end{displaymath}
+                        %
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+l2hSize :displaymath4331:34.449pt::14.37402pt::349.0pt.
+[300
+
+
+]
+l2hSize :tex2html_wrap_inline4801:8.7125pt::8.7125pt::44.30183pt.
+[301
+
+
+]
+l2hSize :tex2html_wrap_inline4803:8.10416pt::8.10416pt::5.84193pt.
+[302
+
+
+]
+l2hSize :tex2html_wrap_inline4805:8.10416pt::8.10416pt::37.19318pt.
+[303
+
+
+]
+l2hSize :tex2html_wrap_inline4809:9.62923pt::9.62923pt::27.76524pt.
+[304
+
+
+]
+l2hSize :tex2html_wrap_inline4811:7.60416pt::0.0pt::5.2469pt.
+[305
+
+
+]
+l2hSize :tex2html_wrap_inline4813:8.10416pt::8.10416pt::25.32182pt.
+[306
+
+
+]
+l2hSize :tex2html_wrap_inline4817:7.60416pt::0.0pt::25.32182pt.
+[307
+
+
+]
+! Missing $ inserted.
+<inserted text> 
+                $
+l.2289 
+       
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Display math should end with $$.
+<to be read again> 
+                   \par 
+l.2289 
+       
+The `$' that I just saw supposedly matches a previous `$$'.
+So I shall assume that you typed `$$' both times.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.2290 \left
+            \{\begin{array}{rcl}
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.2295 \end{displaymath}
+                        %
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+l2hSize :displaymath4345:34.449pt::14.37402pt::349.0pt.
+[308
+
+
+]
+l2hSize :tex2html_wrap_inline4819:8.7125pt::8.7125pt::49.77684pt.
+[309
+
+
+]
+l2hSize :tex2html_wrap_inline4823:8.04332pt::8.04332pt::37.23248pt.
+[310
+
+
+]
+l2hSize :tex2html_wrap_inline4825:7.48248pt::0.0pt::13.94229pt.
+[311
+
+
+]
+l2hSize :tex2html_wrap_inline4827:9.62923pt::9.62923pt::27.76524pt.
+[312
+
+
+]
+l2hSize :tex2html_wrap_inline4829:7.07185pt::0.0pt::5.28621pt.
+[313
+
+
+]
+l2hSize :tex2html_wrap_inline4831:7.57185pt::7.57185pt::25.36113pt.
+[314
+
+
+]
+l2hSize :tex2html_wrap_inline4833:7.57185pt::7.57185pt::25.36113pt.
+[315
+
+
+]
+l2hSize :tex2html_wrap_inline4835:7.07185pt::0.0pt::25.36113pt.
+[316
+
+
+]
+! Missing $ inserted.
+<inserted text> 
+                $
+l.2350 
+       
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Display math should end with $$.
+<to be read again> 
+                   \par 
+l.2350 
+       
+The `$' that I just saw supposedly matches a previous `$$'.
+So I shall assume that you typed `$$' both times.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.2351 \left
+            \{\begin{array}{rcl}
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.2356 \end{displaymath}
+                        %
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+l2hSize :displaymath4358:34.449pt::14.37402pt::349.0pt.
+[317
+
+
+]
+l2hSize :tex2html_wrap_inline4841:7.07185pt::0.0pt::6.57385pt.
+[318
+
+
+]
+l2hSize :tex2html_wrap_inline4843:8.10416pt::8.10416pt::59.48471pt.
+[319
+
+
+]
+l2hSize :tex2html_wrap_inline4847:9.62923pt::9.62923pt::33.84859pt.
+[320
+
+
+]
+l2hSize :tex2html_wrap_inline4849:7.60416pt::0.0pt::6.24686pt.
+[321
+
+
+]
+l2hSize :tex2html_wrap_inline4851:8.10416pt::8.10416pt::42.89886pt.
+[322
+
+
+]
+l2hSize :tex2html_wrap_inline4853:8.10416pt::8.10416pt::42.89886pt.
+[323
+
+
+]
+l2hSize :tex2html_wrap_inline4855:7.60416pt::0.0pt::42.89886pt.
+[324
+
+
+]
+l2hSize :tex2html_wrap_indisplay13170:23.63748pt::23.63748pt::147.3409pt.
+[325
+
+
+]
+l2hSize :tex2html_wrap_inline4857:7.07185pt::0.0pt::27.66771pt.
+[326
+
+
+]
+l2hSize :tex2html_wrap_inline4859:8.10416pt::8.10416pt::27.39397pt.
+[327
+
+
+]
+l2hSize :tex2html_wrap_inline4861:7.57185pt::7.57185pt::46.78084pt.
+[328
+
+
+]
+l2hSize :tex2html_wrap_inline4863:8.7125pt::8.7125pt::107.614pt.
+[329
+
+
+]
+l2hSize :tex2html_wrap_inline4867:8.10416pt::8.10416pt::40.61893pt.
+[330
+
+
+]
+l2hSize :tex2html_wrap_inline4871:8.10416pt::8.10416pt::40.61893pt.
+[331
+
+
+]
+File: ex/LCcurve.eps Graphic file (type eps)
+<ex/LCcurve.eps>
+l2hSize :tex2html_wrap13184:252.94595pt::0.0pt::349.0pt.
+[332
+
+
+]
+File: ex/LCcurve2.eps Graphic file (type eps)
+<ex/LCcurve2.eps>
+l2hSize :tex2html_wrap13188:252.94595pt::0.0pt::349.0pt.
+[333
+
+
+]
+l2hSize :tex2html_wrap_inline4877:8.10416pt::8.10416pt::37.13126pt.
+[334
+
+
+]
+File: ex/PRC1.eps Graphic file (type eps)
+<ex/PRC1.eps>
+l2hSize :figure4482:227.62204pt::0.0pt::349.0pt.
+[335
+
+
+]
+File: ex/PRC2.eps Graphic file (type eps)
+<ex/PRC2.eps>
+l2hSize :figure4499:227.62204pt::0.0pt::349.0pt.
+[336
+
+
+]
+! Missing $ inserted.
+<inserted text> 
+                $
+l.2503 
+       
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Display math should end with $$.
+<to be read again> 
+                   \par 
+l.2503 
+       
+The `$' that I just saw supposedly matches a previous `$$'.
+So I shall assume that you typed `$$' both times.
+
+
+! LaTeX Error: Bad math environment delimiter.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.2504 \end{displaymath}
+                        %
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+l2hSize :displaymath5314:28.19998pt::0.0pt::349.0pt.
+[337
+
+
+]
+l2hSize :tex2html_wrap_inline6488:9.62923pt::9.62923pt::66.59082pt.
+[338
+
+
+]
+l2hSize :tex2html_wrap_inline6490:7.57185pt::7.57185pt::6.1632pt.
+[339
+
+
+]
+! Missing $ inserted.
+<inserted text> 
+                $
+l.2539 
+       
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Display math should end with $$.
+<to be read again> 
+                   \par 
+l.2539 
+       
+The `$' that I just saw supposedly matches a previous `$$'.
+So I shall assume that you typed `$$' both times.
+
+
+! LaTeX Error: Bad math environment delimiter.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.2540 \end{displaymath}
+                        %
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+l2hSize :displaymath5322:28.19998pt::0.0pt::349.0pt.
+[340
+
+
+]
+l2hSize :tex2html_wrap_inline6492:8.01291pt::8.01291pt::71.67897pt.
+[341
+
+
+]
+l2hSize :tex2html_wrap_inline6496:8.7125pt::8.7125pt::38.02684pt.
+[342
+
+
+]
+l2hSize :displaymath6498:16.3375pt::0.0pt::349.0pt.
+[343
+
+
+]
+l2hSize :tex2html_wrap_inline6500:7.07185pt::0.0pt::6.1214pt.
+[344
+
+
+]
+! Missing $ inserted.
+<inserted text> 
+                $
+l.2592 
+       
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Display math should end with $$.
+<to be read again> 
+                   \par 
+l.2592 
+       
+The `$' that I just saw supposedly matches a previous `$$'.
+So I shall assume that you typed `$$' both times.
+
+
+! LaTeX Error: Bad math environment delimiter.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.2593 \end{displaymath}
+                        %
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+l2hSize :displaymath5340:28.19998pt::0.0pt::349.0pt.
+[345
+
+
+]
+l2hSize :tex2html_wrap_inline6502:8.10416pt::8.10416pt::29.6144pt.
+[346
+
+
+]
+l2hSize :tex2html_wrap_inline6504:8.10416pt::8.10416pt::10.75612pt.
+[347
+
+
+]
+l2hSize :tex2html_wrap_inline6506:9.94032pt::9.94032pt::46.88568pt.
+[348
+
+
+]
+! Missing $ inserted.
+<inserted text> 
+                $
+l.2621 
+       
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Display math should end with $$.
+<to be read again> 
+                   \par 
+l.2621 
+       
+The `$' that I just saw supposedly matches a previous `$$'.
+So I shall assume that you typed `$$' both times.
+
+
+! LaTeX Error: Bad math environment delimiter.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.2622 \end{displaymath}
+                        %
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+l2hSize :displaymath5368:56.73334pt::0.0pt::349.0pt.
+[349
+
+
+]
+l2hSize :tex2html_wrap_inline6508:9.94032pt::9.94032pt::79.23993pt.
+[350
+
+
+]
+l2hSize :tex2html_wrap_inline6510:9.94032pt::9.94032pt::80.33005pt.
+[351
+
+
+]
+l2hSize :tex2html_wrap_inline6512:7.57185pt::7.57185pt::19.2487pt.
+[352
+
+
+]
+l2hSize :tex2html_wrap_inline6522:8.10416pt::8.10416pt::10.13509pt.
+[353
+
+
+]
+l2hSize :tex2html_wrap_inline6526:8.10416pt::8.10416pt::30.83104pt.
+[354
+
+
+]
+l2hSize :displaymath5386:41.79997pt::0.0pt::349.0pt.
+[355
+
+
+]
+l2hSize :displaymath6530:68.99995pt::0.0pt::349.0pt.
+[356
+
+
+]
+l2hSize :tex2html_wrap_inline6532:8.7125pt::8.7125pt::55.40276pt.
+[357
+
+
+]
+l2hSize :tex2html_wrap_inline6536:7.57185pt::7.57185pt::22.72124pt.
+[358
+
+
+]
+l2hSize :tex2html_wrap_inline6538:7.57185pt::7.57185pt::18.17163pt.
+[359
+
+
+]
+l2hSize :tex2html_wrap_inline6540:7.57185pt::7.57185pt::20.7032pt.
+[360
+
+
+]
+l2hSize :tex2html_wrap_inline6550:8.10416pt::8.10416pt::93.62242pt.
+[361
+
+
+]
+l2hSize :tex2html_wrap_inline6552:7.57185pt::7.57185pt::10.18582pt.
+[362
+
+
+]
+File: ex/testequilcataloscill.eps Graphic file (type eps)
+<ex/testequilcataloscill.eps>
+l2hSize :tex2html_wrap13250:189.71066pt::0.0pt::349.0pt.
+[363
+
+
+]
+l2hSize :tex2html_wrap_inline6560:7.60416pt::0.0pt::6.59285pt.
+[364
+
+
+]
+File: ex/testLPcataloscill.eps Graphic file (type eps)
+<ex/testLPcataloscill.eps>
+l2hSize :tex2html_wrap13256:189.71066pt::0.0pt::349.0pt.
+[365
+
+
+]
+! Missing $ inserted.
+<inserted text> 
+                $
+l.2751 
+       
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Display math should end with $$.
+<to be read again> 
+                   \par 
+l.2751 
+       
+The `$' that I just saw supposedly matches a previous `$$'.
+So I shall assume that you typed `$$' both times.
+
+
+! LaTeX Error: Bad math environment delimiter.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.2752 \end{displaymath}
+                        %
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+l2hSize :displaymath5469:41.79997pt::0.0pt::349.0pt.
+[366
+
+
+]
+l2hSize :tex2html_wrap_inline6562:8.7125pt::8.7125pt::133.33656pt.
+[367
+
+
+]
+l2hSize :tex2html_wrap_inline6564:16.83748pt::16.83748pt::85.32982pt.
+[368
+
+
+]
+! Missing $ inserted.
+<inserted text> 
+                $
+l.2793 
+       
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Display math should end with $$.
+<to be read again> 
+                   \par 
+l.2793 
+       
+The `$' that I just saw supposedly matches a previous `$$'.
+So I shall assume that you typed `$$' both times.
+
+
+! LaTeX Error: Bad math environment delimiter.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.2794 \end{displaymath}
+                        %
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+l2hSize :displaymath5484:28.19998pt::0.0pt::349.0pt.
+[369
+
+
+]
+l2hSize :tex2html_wrap_inline6566:8.10416pt::8.10416pt::11.32985pt.
+[370
+
+
+]
+l2hSize :tex2html_wrap_inline6568:7.72179pt::7.72179pt::52.19568pt.
+[371
+
+
+]
+l2hSize :tex2html_wrap_inline6570:9.12923pt::0.0pt::33.15157pt.
+[372
+
+
+]
+l2hSize :tex2html_wrap_inline6572:9.62923pt::9.62923pt::86.12239pt.
+[373
+
+
+]
+l2hSize :tex2html_wrap_inline6574:7.98248pt::7.98248pt::74.28159pt.
+[374
+
+
+]
+l2hSize :tex2html_wrap_inline6576:7.98248pt::7.98248pt::23.20558pt.
+[375
+
+
+]
+l2hSize :tex2html_wrap_inline6578:8.10416pt::8.10416pt::32.46721pt.
+[376
+
+
+]
+l2hSize :tex2html_wrap_inline6580:8.7125pt::8.7125pt::60.92926pt.
+[377
+
+
+]
+l2hSize :tex2html_wrap_inline6582:30.43747pt::30.43747pt::231.42188pt.
+[378
+
+
+]
+l2hSize :tex2html_wrap_inline6584:8.10416pt::8.10416pt::34.43921pt.
+[379
+
+
+]
+l2hSize :tex2html_wrap_inline6590:11.89447pt::11.89447pt::49.59322pt.
+[380
+
+
+]
+l2hSize :displaymath5529:55.39996pt::0.0pt::349.0pt.
+[381
+
+
+]
+l2hSize :tex2html_wrap_inline6596:7.98248pt::7.98248pt::19.2514pt.
+[382
+
+
+]
+l2hSize :tex2html_wrap_inline6604:7.72179pt::7.72179pt::50.71107pt.
+[383
+
+
+]
+File: ex/testLPHopfcataloscill.eps Graphic file (type eps)
+<ex/testLPHopfcataloscill.eps>
+l2hSize :tex2html_wrap13295:189.71066pt::0.0pt::349.0pt.
+[384
+
+
+]
+l2hSize :tex2html_wrap_indisplay13299:31.25586pt::31.25586pt::132.69365pt.
+[385
+
+
+]
+l2hSize :tex2html_wrap_inline6614:8.7125pt::8.7125pt::68.10692pt.
+[386
+
+
+]
+l2hSize :tex2html_wrap_inline6616:8.7125pt::8.7125pt::48.032pt.
+[387
+
+
+]
+l2hSize :tex2html_wrap_indisplay13307:45.9428pt::45.9428pt::156.23987pt.
+[388
+
+
+]
+l2hSize :tex2html_wrap_inline6622:7.57185pt::7.57185pt::15.32245pt.
+[389
+
+
+]
+l2hSize :tex2html_wrap_inline6626:9.94032pt::9.94032pt::107.35066pt.
+[390
+
+
+]
+l2hSize :tex2html_wrap_inline6628:9.94032pt::9.94032pt::122.72006pt.
+[391
+
+
+]
+l2hSize :tex2html_wrap_inline6630:8.71248pt::8.71248pt::120.90353pt.
+[392
+
+
+]
+l2hSize :tex2html_wrap_inline6632:8.10416pt::8.10416pt::31.16057pt.
+[393
+
+
+]
+l2hSize :tex2html_wrap_inline6636:7.48248pt::0.0pt::12.3644pt.
+[394
+
+
+]
+l2hSize :tex2html_wrap_inline6642:8.10416pt::8.10416pt::12.43033pt.
+[395
+
+
+]
+l2hSize :tex2html_wrap_inline6644:9.62923pt::9.62923pt::79.53279pt.
+[396
+
+
+]
+l2hSize :tex2html_wrap_inline6646:10.47366pt::10.47366pt::74.39238pt.
+[397
+
+
+]
+l2hSize :tex2html_wrap_inline6648:9.94032pt::9.94032pt::54.52794pt.
+[398
+
+
+]
+l2hSize :tex2html_wrap_inline6650:16.83748pt::16.83748pt::137.68884pt.
+[399
+
+
+]
+l2hSize :tex2html_wrap_inline6652:8.10416pt::8.10416pt::18.02434pt.
+[400
+
+
+]
+l2hSize :tex2html_wrap_inline6654:8.7125pt::8.7125pt::52.21451pt.
+[401
+
+
+]
+l2hSize :tex2html_wrap_inline6656:7.98248pt::7.98248pt::30.74962pt.
+[402
+
+
+]
+l2hSize :tex2html_wrap_inline6658:8.10416pt::8.10416pt::14.85355pt.
+[403
+
+
+]
+l2hSize :tex2html_wrap_inline6660:8.10416pt::8.10416pt::12.46158pt.
+[404
+
+
+]
+l2hSize :tex2html_wrap_inline6662:8.10416pt::8.10416pt::71.5696pt.
+[405
+
+
+]
+l2hSize :tex2html_wrap_inline6664:7.57185pt::7.57185pt::19.6207pt.
+[406
+
+
+]
+! Missing $ inserted.
+<inserted text> 
+                $
+l.3053 
+       
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Display math should end with $$.
+<to be read again> 
+                   \par 
+l.3053 
+       
+The `$' that I just saw supposedly matches a previous `$$'.
+So I shall assume that you typed `$$' both times.
+
+
+! LaTeX Error: Bad math environment delimiter.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.3054 \end{displaymath}
+                        %
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+l2hSize :displaymath5642:28.69998pt::0.0pt::349.0pt.
+[407
+
+
+]
+l2hSize :tex2html_wrap_inline6668:11.01254pt::11.01254pt::246.43144pt.
+[408
+
+
+]
+l2hSize :tex2html_wrap_inline6670:7.57185pt::7.57185pt::11.2031pt.
+[409
+
+
+]
+l2hSize :tex2html_wrap_inline6672:7.98248pt::7.98248pt::13.0665pt.
+[410
+
+
+]
+l2hSize :displaymath6674:28.69998pt::0.0pt::349.0pt.
+[411
+
+
+]
+l2hSize :tex2html_wrap_inline6676:8.7125pt::8.7125pt::32.20105pt.
+[412
+
+
+]
+l2hSize :tex2html_wrap_inline6678:11.01254pt::11.01254pt::135.20035pt.
+[413
+
+
+]
+l2hSize :tex2html_wrap_inline6680:11.30977pt::11.30977pt::82.90958pt.
+[414
+
+
+]
+l2hSize :tex2html_wrap_inline6682:9.94032pt::9.94032pt::81.4763pt.
+[415
+
+
+]
+l2hSize :tex2html_wrap_inline6684:8.19589pt::8.19589pt::19.80545pt.
+[416
+
+
+]
+l2hSize :tex2html_wrap_inline6686:11.30977pt::11.30977pt::104.15955pt.
+[417
+
+
+]
+l2hSize :tex2html_wrap_inline6688:8.19589pt::8.19589pt::21.63046pt.
+[418
+
+
+]
+l2hSize :displaymath6690:28.69998pt::0.0pt::349.0pt.
+[419
+
+
+]
+l2hSize :tex2html_wrap_inline6692:8.19589pt::8.19589pt::24.6165pt.
+[420
+
+
+]
+l2hSize :tex2html_wrap_inline6694:11.01254pt::11.01254pt::137.02536pt.
+[421
+
+
+]
+l2hSize :tex2html_wrap_inline6696:11.30977pt::11.30977pt::109.38547pt.
+[422
+
+
+]
+l2hSize :tex2html_wrap_inline6698:9.94032pt::9.94032pt::96.8457pt.
+[423
+
+
+]
+l2hSize :tex2html_wrap_inline6700:8.19589pt::8.19589pt::21.63046pt.
+[424
+
+
+]
+l2hSize :tex2html_wrap_inline6702:11.30977pt::11.30977pt::129.46039pt.
+[425
+
+
+]
+l2hSize :tex2html_wrap_inline6704:7.57185pt::7.57185pt::11.08565pt.
+[426
+
+
+]
+l2hSize :tex2html_wrap_inline6706:9.94032pt::9.94032pt::120.35802pt.
+[427
+
+
+]
+l2hSize :tex2html_wrap_inline6708:8.7125pt::8.7125pt::36.2498pt.
+[428
+
+
+]
+Overfull \hbox (43.59097pt too wide) detected at line 3193
+[]
+ []
+
+l2hSize :displaymath6710:42.07599pt::0.0pt::349.0pt.
+[429
+
+
+]
+l2hSize :displaymath6714:28.75201pt::0.0pt::349.0pt.
+[430
+
+
+]
+l2hSize :displaymath5732:41.79997pt::0.0pt::349.0pt.
+[431
+
+
+]
+File: ex/PDbifurcation.eps Graphic file (type eps)
+<ex/PDbifurcation.eps>
+l2hSize :tex2html_wrap13368:252.94595pt::0.0pt::349.0pt.
+[432
+
+
+]
+l2hSize :tex2html_wrap_inline6720:7.57185pt::7.57185pt::46.78084pt.
+[433
+
+
+]
+l2hSize :tex2html_wrap_inline6728:8.10416pt::8.10416pt::19.23094pt.
+[434
+
+
+]
+l2hSize :tex2html_wrap_inline6730:7.57185pt::7.57185pt::25.48924pt.
+[435
+
+
+]
+l2hSize :tex2html_wrap_inline6732:7.57185pt::7.57185pt::25.48924pt.
+[436
+
+
+]
+l2hSize :tex2html_wrap_inline6734:7.48248pt::0.0pt::29.23187pt.
+[437
+
+
+]
+l2hSize :tex2html_wrap_indisplay13381:31.25586pt::31.25586pt::132.69365pt.
+[438
+
+
+]
+! Missing $ inserted.
+<inserted text> 
+                $
+l.3286 
+       
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Display math should end with $$.
+<to be read again> 
+                   \par 
+l.3286 
+       
+The `$' that I just saw supposedly matches a previous `$$'.
+So I shall assume that you typed `$$' both times.
+
+
+! LaTeX Error: Bad math environment delimiter.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.3287 \end{displaymath}
+                        %
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+l2hSize :displaymath5787:55.39996pt::0.0pt::349.0pt.
+[439
+
+
+]
+! Missing $ inserted.
+<inserted text> 
+                $
+l.3303 
+       
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Display math should end with $$.
+<to be read again> 
+                   \par 
+l.3303 
+       
+The `$' that I just saw supposedly matches a previous `$$'.
+So I shall assume that you typed `$$' both times.
+
+
+! LaTeX Error: Bad math environment delimiter.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.3304 \end{displaymath}
+                        %
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+l2hSize :displaymath5796:55.54828pt::0.0pt::349.0pt.
+[440
+
+
+]
+l2hSize :tex2html_wrap_inline6746:7.57185pt::7.57185pt::36.56143pt.
+[441
+
+
+]
+l2hSize :tex2html_wrap_inline6748:7.57185pt::7.57185pt::17.38695pt.
+[442
+
+
+]
+l2hSize :tex2html_wrap_inline6750:7.57185pt::7.57185pt::14.85538pt.
+[443
+
+
+]
+l2hSize :tex2html_wrap_inline6752:7.57185pt::7.57185pt::17.38695pt.
+[444
+
+
+]
+l2hSize :tex2html_wrap_inline6754:9.12923pt::0.0pt::15.28944pt.
+[445
+
+
+]
+l2hSize :tex2html_wrap_inline6756:8.10416pt::8.10416pt::29.6144pt.
+[446
+
+
+]
+l2hSize :tex2html_wrap_inline6760:9.94032pt::9.94032pt::146.01927pt.
+[447
+
+
+]
+l2hSize :tex2html_wrap_inline6762:9.94032pt::9.94032pt::123.94768pt.
+[448
+
+
+]
+l2hSize :tex2html_wrap_inline6764:8.10416pt::8.10416pt::46.25575pt.
+[449
+
+
+]
+l2hSize :tex2html_wrap_inline6766:8.71248pt::8.71248pt::101.71284pt.
+[450
+
+
+]
+l2hSize :tex2html_wrap_inline6768:8.71248pt::8.71248pt::146.98804pt.
+[451
+
+
+]
+l2hSize :tex2html_wrap_inline6770:8.10416pt::8.10416pt::11.07422pt.
+[452
+
+
+]
+l2hSize :tex2html_wrap_inline6778:8.10416pt::8.10416pt::26.95647pt.
+[453
+
+
+]
+! Missing $ inserted.
+<inserted text> 
+                $
+l.3398 
+       
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Display math should end with $$.
+<to be read again> 
+                   \par 
+l.3398 
+       
+The `$' that I just saw supposedly matches a previous `$$'.
+So I shall assume that you typed `$$' both times.
+
+
+! LaTeX Error: Bad math environment delimiter.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.3399 \end{displaymath}
+                        %
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+l2hSize :displaymath5849:43.58978pt::0.0pt::349.0pt.
+[454
+
+
+]
+l2hSize :displaymath6782:28.69998pt::0.0pt::349.0pt.
+[455
+
+
+]
+l2hSize :tex2html_wrap_inline6784:8.7125pt::8.7125pt::33.66357pt.
+[456
+
+
+]
+l2hSize :tex2html_wrap_inline6786:11.01254pt::11.01254pt::168.01929pt.
+[457
+
+
+]
+l2hSize :tex2html_wrap_inline6788:11.30977pt::11.30977pt::84.3721pt.
+[458
+
+
+]
+l2hSize :tex2html_wrap_inline6790:9.94032pt::9.94032pt::82.93883pt.
+[459
+
+
+]
+l2hSize :tex2html_wrap_inline6792:8.19589pt::8.19589pt::21.66084pt.
+[460
+
+
+]
+l2hSize :tex2html_wrap_inline6794:11.30977pt::11.30977pt::104.44702pt.
+[461
+
+
+]
+l2hSize :displaymath6798:22.97556pt::0.0pt::349.0pt.
+[462
+
+
+]
+l2hSize :tex2html_wrap_inline6802:7.48248pt::0.0pt::17.8394pt.
+[463
+
+
+]
+l2hSize :tex2html_wrap_inline6804:8.7125pt::8.7125pt::81.82588pt.
+[464
+
+
+]
+l2hSize :tex2html_wrap_inline6806:7.57185pt::7.57185pt::27.07594pt.
+[465
+
+
+]
+l2hSize :displaymath6814:68.99995pt::0.0pt::349.0pt.
+[466
+
+
+]
+l2hSize :tex2html_wrap_indisplay13429:16.83748pt::16.83748pt::264.99696pt.
+[467
+
+
+]
+l2hSize :tex2html_wrap_inline6818:8.7125pt::8.7125pt::188.72975pt.
+[468
+
+
+]
+l2hSize :tex2html_wrap_inline6820:8.7125pt::8.7125pt::178.53699pt.
+[469
+
+
+]
+l2hSize :tex2html_wrap_inline6822:8.7125pt::8.7125pt::120.01025pt.
+[470
+
+
+]
+l2hSize :tex2html_wrap_inline6832:9.96692pt::9.96692pt::52.72748pt.
+[471
+
+
+]
+l2hSize :tex2html_wrap_inline6834:7.57185pt::7.57185pt::62.2756pt.
+[472
+
+
+]
+l2hSize :tex2html_wrap_inline6836:7.07185pt::0.0pt::34.713pt.
+[473
+
+
+]
+l2hSize :tex2html_wrap_inline6838:8.7125pt::8.7125pt::85.71428pt.
+[474
+
+
+]
+File: ex/LPLC1.eps Graphic file (type eps)
+<ex/LPLC1.eps>
+l2hSize :tex2html_wrap13446:189.71066pt::0.0pt::349.0pt.
+[475
+
+
+]
+l2hSize :tex2html_wrap_inline6844:7.57185pt::7.57185pt::62.2756pt.
+[476
+
+
+]
+l2hSize :tex2html_wrap_inline6846:7.57185pt::7.57185pt::70.7923pt.
+[477
+
+
+]
+l2hSize :tex2html_wrap_inline6848:7.57185pt::7.57185pt::62.2756pt.
+[478
+
+
+]
+l2hSize :tex2html_wrap_inline6850:7.57185pt::7.57185pt::62.2756pt.
+[479
+
+
+]
+l2hSize :tex2html_wrap_inline6852:8.10416pt::8.10416pt::64.53148pt.
+[480
+
+
+]
+l2hSize :tex2html_wrap_inline6858:7.48248pt::0.0pt::36.08931pt.
+[481
+
+
+]
+l2hSize :tex2html_wrap_inline6860:7.07185pt::0.0pt::30.2367pt.
+[482
+
+
+]
+l2hSize :tex2html_wrap_inline6862:7.57185pt::7.57185pt::62.2756pt.
+[483
+
+
+]
+File: ex/LPLC2.eps Graphic file (type eps)
+<ex/LPLC2.eps>
+l2hSize :tex2html_wrap13460:271.21207pt::0.0pt::349.0pt.
+[484
+
+
+]
+File: ex/Figure22.eps Graphic file (type eps)
+<ex/Figure22.eps>
+l2hSize :tex2html_wrap13466:252.94595pt::0.0pt::349.0pt.
+[485
+
+
+]
+l2hSize :tex2html_wrap_indisplay13472:31.25586pt::31.25586pt::132.6733pt.
+[486
+
+
+]
+l2hSize :displaymath6872:28.19998pt::0.0pt::349.0pt.
+[487
+
+
+]
+! Missing $ inserted.
+<inserted text> 
+                $
+l.3640 
+       
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Display math should end with $$.
+<to be read again> 
+                   \par 
+l.3640 
+       
+The `$' that I just saw supposedly matches a previous `$$'.
+So I shall assume that you typed `$$' both times.
+
+
+! LaTeX Error: Bad math environment delimiter.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.3641 \end{displaymath}
+                        %
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+l2hSize :displaymath5982:55.39996pt::0.0pt::349.0pt.
+[488
+
+
+]
+l2hSize :tex2html_wrap_inline6874:9.12923pt::0.0pt::10.99818pt.
+[489
+
+
+]
+l2hSize :tex2html_wrap_inline6876:9.12923pt::0.0pt::10.99818pt.
+[490
+
+
+]
+l2hSize :tex2html_wrap_inline6878:9.62923pt::9.62923pt::63.10944pt.
+[491
+
+
+]
+l2hSize :tex2html_wrap_inline6880:9.12923pt::0.0pt::18.15707pt.
+[492
+
+
+]
+! Missing $ inserted.
+<inserted text> 
+                $
+l.3681 
+       
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Display math should end with $$.
+<to be read again> 
+                   \par 
+l.3681 
+       
+The `$' that I just saw supposedly matches a previous `$$'.
+So I shall assume that you typed `$$' both times.
+
+
+! LaTeX Error: Bad math environment delimiter.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.3682 \end{displaymath}
+                        %
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+l2hSize :displaymath5999:55.39996pt::0.0pt::349.0pt.
+[493
+
+
+]
+l2hSize :tex2html_wrap_inline6882:7.57185pt::7.57185pt::77.44197pt.
+[494
+
+
+]
+l2hSize :tex2html_wrap_inline6884:7.57185pt::7.57185pt::17.38695pt.
+[495
+
+
+]
+l2hSize :tex2html_wrap_inline6886:7.57185pt::7.57185pt::17.38695pt.
+[496
+
+
+]
+l2hSize :tex2html_wrap_inline6888:9.12923pt::0.0pt::15.28944pt.
+[497
+
+
+]
+l2hSize :tex2html_wrap_inline6890:7.07185pt::0.0pt::6.85646pt.
+[498
+
+
+]
+l2hSize :tex2html_wrap_inline6892:8.7125pt::8.7125pt::21.23088pt.
+[499
+
+
+]
+l2hSize :tex2html_wrap_inline6896:8.10416pt::8.10416pt::52.19745pt.
+[500
+
+
+]
+l2hSize :tex2html_wrap_inline6898:8.10416pt::8.10416pt::52.19745pt.
+[501
+
+
+]
+l2hSize :tex2html_wrap_inline6900:8.7125pt::8.7125pt::63.14746pt.
+[502
+
+
+]
+l2hSize :tex2html_wrap_inline6902:8.10416pt::8.10416pt::33.33917pt.
+[503
+
+
+]
+l2hSize :tex2html_wrap_inline6904:9.94032pt::9.94032pt::107.95901pt.
+[504
+
+
+]
+l2hSize :tex2html_wrap_inline6906:8.7125pt::8.7125pt::54.74367pt.
+[505
+
+
+]
+l2hSize :tex2html_wrap_inline6908:8.71248pt::8.71248pt::87.79506pt.
+[506
+
+
+]
+l2hSize :tex2html_wrap_inline6910:8.71248pt::8.71248pt::132.4619pt.
+[507
+
+
+]
+! Missing $ inserted.
+<inserted text> 
+                $
+l.3774 
+       
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Display math should end with $$.
+<to be read again> 
+                   \par 
+l.3774 
+       
+The `$' that I just saw supposedly matches a previous `$$'.
+So I shall assume that you typed `$$' both times.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.3775 \left
+            [\begin{array}{c}D-TA(t)+i\theta I\\
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.3778 \end{displaymath}
+                        %
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+l2hSize :displaymath6051:30.93748pt::11.3625pt::349.0pt.
+[508
+
+
+]
+l2hSize :tex2html_wrap_inline6916:11.01254pt::11.01254pt::178.05602pt.
+[509
+
+
+]
+l2hSize :displaymath6920:28.69998pt::0.0pt::349.0pt.
+[510
+
+
+]
+l2hSize :tex2html_wrap_inline6932:11.30977pt::11.30977pt::102.9845pt.
+[511
+
+
+]
+l2hSize :tex2html_wrap_inline6934:8.19589pt::8.19589pt::21.66084pt.
+[512
+
+
+]
+l2hSize :displaymath6936:28.69998pt::0.0pt::349.0pt.
+[513
+
+
+]
+l2hSize :tex2html_wrap_inline6938:8.19589pt::8.19589pt::24.64688pt.
+[514
+
+
+]
+l2hSize :tex2html_wrap_inline6940:11.01254pt::11.01254pt::136.66287pt.
+[515
+
+
+]
+l2hSize :tex2html_wrap_inline6942:11.30977pt::11.30977pt::109.02298pt.
+[516
+
+
+]
+l2hSize :tex2html_wrap_inline6944:9.94032pt::9.94032pt::96.48322pt.
+[517
+
+
+]
+l2hSize :tex2html_wrap_inline6948:11.30977pt::11.30977pt::129.0979pt.
+[518
+
+
+]
+l2hSize :tex2html_wrap_inline6950:8.10416pt::8.10416pt::31.48317pt.
+[519
+
+
+]
+l2hSize :displaymath6952:28.69998pt::0.0pt::349.0pt.
+[520
+
+
+]
+l2hSize :tex2html_wrap_inline6956:9.94032pt::9.94032pt::120.78127pt.
+[521
+
+
+]
+l2hSize :tex2html_wrap_inline6958:8.7125pt::8.7125pt::40.49986pt.
+[522
+
+
+]
+Overfull \hbox (6.92142pt too wide) detected at line 3887
+[] \OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 h[]\OT1/cmr/m/n/10.95 )[] = []
+ []
+
+l2hSize :displaymath6960:42.07599pt::0.0pt::349.0pt.
+[523
+
+
+]
+Overfull \hbox (76.76006pt too wide) detected at line 3898
+[]
+ []
+
+l2hSize :displaymath6964:29.29318pt::0.0pt::349.0pt.
+[524
+
+
+]
+l2hSize :displaymath6158:82.59995pt::0.0pt::349.0pt.
+[525
+
+
+]
+l2hSize :tex2html_wrap_inline6976:7.57185pt::7.57185pt::17.43384pt.
+[526
+
+
+]
+l2hSize :tex2html_wrap_inline6980:8.10416pt::8.10416pt::68.65942pt.
+[527
+
+
+]
+! Missing $ inserted.
+<inserted text> 
+                $
+l.3939 
+       
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Display math should end with $$.
+<to be read again> 
+                   \par 
+l.3939 
+       
+The `$' that I just saw supposedly matches a previous `$$'.
+So I shall assume that you typed `$$' both times.
+
+
+! LaTeX Error: Bad math environment delimiter.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.3940 \end{displaymath}
+                        %
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+l2hSize :displaymath6183:41.79997pt::0.0pt::349.0pt.
+[528
+
+
+]
+l2hSize :tex2html_wrap_inline6982:7.57185pt::7.57185pt::67.41582pt.
+[529
+
+
+]
+l2hSize :tex2html_wrap_inline6984:8.10416pt::8.10416pt::35.91064pt.
+[530
+
+
+]
+l2hSize :tex2html_wrap_inline6986:7.57185pt::7.57185pt::43.93329pt.
+[531
+
+
+]
+l2hSize :tex2html_wrap_inline6988:7.07185pt::0.0pt::34.38348pt.
+[532
+
+
+]
+l2hSize :tex2html_wrap_inline6990:7.57185pt::7.57185pt::61.57727pt.
+[533
+
+
+]
+l2hSize :tex2html_wrap_inline6992:8.10416pt::8.10416pt::60.48859pt.
+[534
+
+
+]
+l2hSize :tex2html_wrap_inline6994:7.57185pt::7.57185pt::43.76198pt.
+[535
+
+
+]
+l2hSize :tex2html_wrap_inline6996:7.07185pt::0.0pt::6.65369pt.
+[536
+
+
+]
+l2hSize :tex2html_wrap_inline7000:7.57185pt::7.57185pt::65.662pt.
+[537
+
+
+]
+l2hSize :displaymath7002:15.72917pt::0.0pt::349.0pt.
+[538
+
+
+]
+l2hSize :tex2html_wrap_inline7006:7.07185pt::0.0pt::44.53378pt.
+[539
+
+
+]
+l2hSize :tex2html_wrap_inline7010:7.07185pt::0.0pt::57.29738pt.
+[540
+
+
+]
+l2hSize :tex2html_wrap_inline7012:7.57185pt::7.57185pt::54.36728pt.
+[541
+
+
+]
+l2hSize :tex2html_wrap_inline7014:7.07185pt::0.0pt::73.03804pt.
+[542
+
+
+]
+l2hSize :tex2html_wrap_inline7022:7.57185pt::7.57185pt::65.662pt.
+[543
+
+
+]
+l2hSize :tex2html_wrap_inline7024:7.07185pt::0.0pt::68.24739pt.
+[544
+
+
+]
+l2hSize :tex2html_wrap_inline7028:7.07185pt::0.0pt::67.56303pt.
+[545
+
+
+]
+l2hSize :tex2html_wrap_inline7030:7.48248pt::0.0pt::36.08931pt.
+[546
+
+
+]
+File: ex/Figure23.eps Graphic file (type eps)
+<ex/Figure23.eps>
+l2hSize :tex2html_wrap13566:221.3259pt::0.0pt::349.0pt.
+[547
+
+
+]
+l2hSize :tex2html_wrap_inline7036:7.57185pt::7.57185pt::65.662pt.
+[548
+
+
+]
+l2hSize :tex2html_wrap_inline7038:7.57185pt::7.57185pt::15.35663pt.
+[549
+
+
+]
+l2hSize :tex2html_wrap_inline7042:7.57185pt::7.57185pt::74.17868pt.
+[550
+
+
+]
+l2hSize :tex2html_wrap_inline7044:7.57185pt::7.57185pt::92.59209pt.
+[551
+
+
+]
+l2hSize :tex2html_wrap_inline7046:7.07185pt::0.0pt::44.95592pt.
+[552
+
+
+]
+File: ex/Figure24.eps Graphic file (type eps)
+<ex/Figure24.eps>
+l2hSize :tex2html_wrap13576:252.94595pt::0.0pt::349.0pt.
+[553
+
+
+]
+l2hSize :tex2html_wrap_inline7048:8.10416pt::8.10416pt::18.29184pt.
+[554
+
+
+]
+l2hSize :tex2html_wrap_inline7050:7.07185pt::0.0pt::23.98613pt.
+[555
+
+
+]
+l2hSize :tex2html_wrap_inline7052:7.57185pt::7.57185pt::41.30583pt.
+[556
+
+
+]
+File: ex/Figure25.eps Graphic file (type eps)
+<ex/Figure25.eps>
+l2hSize :tex2html_wrap13584:252.94595pt::0.0pt::349.0pt.
+[557
+
+
+]
+! Missing $ inserted.
+<inserted text> 
+                $
+l.4133 
+       
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Display math should end with $$.
+<to be read again> 
+                   \par 
+l.4133 
+       
+The `$' that I just saw supposedly matches a previous `$$'.
+So I shall assume that you typed `$$' both times.
+
+
+! LaTeX Error: Bad math environment delimiter.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.4134 \end{displaymath}
+                        %
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+l2hSize :displaymath7643:41.79997pt::0.0pt::349.0pt.
+[558
+
+
+]
+l2hSize :tex2html_wrap_inline7910:7.57185pt::7.57185pt::10.52039pt.
+[559
+
+
+]
+l2hSize :tex2html_wrap_inline7912:7.57185pt::7.57185pt::10.52039pt.
+[560
+
+
+]
+! Missing $ inserted.
+<inserted text> 
+                $
+l.4166 
+       
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Display math should end with $$.
+<to be read again> 
+                   \par 
+l.4166 
+       
+The `$' that I just saw supposedly matches a previous `$$'.
+So I shall assume that you typed `$$' both times.
+
+
+! LaTeX Error: Bad math environment delimiter.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.4167 \end{displaymath}
+                        %
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+l2hSize :displaymath7651:41.79997pt::0.0pt::349.0pt.
+[561
+
+
+]
+l2hSize :tex2html_wrap_inline7914:7.57185pt::7.57185pt::14.85538pt.
+[562
+
+
+]
+l2hSize :tex2html_wrap_inline7916:7.57185pt::7.57185pt::14.85538pt.
+[563
+
+
+]
+l2hSize :tex2html_wrap_inline7918:7.57185pt::7.57185pt::48.86935pt.
+[564
+
+
+]
+l2hSize :displaymath7922:41.79997pt::0.0pt::349.0pt.
+[565
+
+
+]
+l2hSize :tex2html_wrap_inline7924:9.62923pt::9.62923pt::56.52165pt.
+[566
+
+
+]
+l2hSize :tex2html_wrap_inline7926:9.62923pt::9.62923pt::34.8156pt.
+[567
+
+
+]
+l2hSize :tex2html_wrap_inline7928:9.12923pt::0.0pt::15.28944pt.
+[568
+
+
+]
+! Missing $ inserted.
+<inserted text> 
+                $
+l.4226 
+       
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Display math should end with $$.
+<to be read again> 
+                   \par 
+l.4226 
+       
+The `$' that I just saw supposedly matches a previous `$$'.
+So I shall assume that you typed `$$' both times.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.4227 \left
+            \{
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.4231 \end{displaymath}
+                        %
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+l2hSize :displaymath7698:27.20001pt::4.28935pt::349.0pt.
+[569
+
+
+]
+l2hSize :tex2html_wrap_inline7932:8.10416pt::8.10416pt::171.62709pt.
+[570
+
+
+]
+l2hSize :tex2html_wrap_inline7934:8.10416pt::8.10416pt::93.89867pt.
+[571
+
+
+]
+l2hSize :tex2html_wrap_inline7936:8.10416pt::8.10416pt::49.3804pt.
+[572
+
+
+]
+l2hSize :tex2html_wrap_inline7938:7.57185pt::7.57185pt::43.91405pt.
+[573
+
+
+]
+l2hSize :tex2html_wrap_inline7940:8.7125pt::8.7125pt::45.56416pt.
+[574
+
+
+]
+l2hSize :tex2html_wrap_inline7942:7.60416pt::0.0pt::6.93504pt.
+[575
+
+
+]
+File: ex/LPBP.eps Graphic file (type eps)
+<ex/LPBP.eps>
+l2hSize :tex2html_wrap13621:188.50616pt::0.0pt::349.0pt.
+[576
+
+
+]
+l2hSize :tex2html_wrap_inline7956:8.10416pt::8.10416pt::18.5732pt.
+[577
+
+
+]
+l2hSize :tex2html_wrap_inline7958:7.57185pt::7.57185pt::6.825pt.
+[578
+
+
+]
+l2hSize :tex2html_wrap_inline7962:7.57185pt::7.57185pt::12.30232pt.
+[579
+
+
+]
+File: ex/BP.eps Graphic file (type eps)
+<ex/BP.eps>
+l2hSize :tex2html_wrap13631:251.33995pt::0.0pt::349.0pt.
+[580
+
+
+]
+l2hSize :tex2html_wrap_inline7968:7.98248pt::7.98248pt::33.98193pt.
+[581
+
+
+]
+l2hSize :tex2html_wrap_inline7970:7.98248pt::7.98248pt::33.98193pt.
+[582
+
+
+]
+l2hSize :tex2html_wrap_inline7972:7.98248pt::7.98248pt::13.90701pt.
+[583
+
+
+]
+l2hSize :tex2html_wrap_inline7974:7.98248pt::7.98248pt::13.90701pt.
+[584
+
+
+]
+l2hSize :tex2html_wrap_indisplay13639:31.25586pt::31.25586pt::132.6733pt.
+[585
+
+
+]
+l2hSize :displaymath7976:28.19998pt::0.0pt::349.0pt.
+[586
+
+
+]
+! Missing $ inserted.
+<inserted text> 
+                $
+l.4363 
+       
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Display math should end with $$.
+<to be read again> 
+                   \par 
+l.4363 
+       
+The `$' that I just saw supposedly matches a previous `$$'.
+So I shall assume that you typed `$$' both times.
+
+
+! LaTeX Error: Bad math environment delimiter.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.4364 \end{displaymath}
+                        %
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+l2hSize :displaymath7746:68.99995pt::0.0pt::349.0pt.
+[587
+
+
+]
+! Missing $ inserted.
+<inserted text> 
+                $
+l.4381 
+       
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Display math should end with $$.
+<to be read again> 
+                   \par 
+l.4381 
+       
+The `$' that I just saw supposedly matches a previous `$$'.
+So I shall assume that you typed `$$' both times.
+
+
+! LaTeX Error: Bad math environment delimiter.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.4382 \end{displaymath}
+                        %
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+l2hSize :displaymath7755:69.14827pt::0.0pt::349.0pt.
+[588
+
+
+]
+l2hSize :tex2html_wrap_inline7986:7.57185pt::7.57185pt::34.02986pt.
+[589
+
+
+]
+l2hSize :tex2html_wrap_inline7988:7.57185pt::7.57185pt::17.38695pt.
+[590
+
+
+]
+l2hSize :tex2html_wrap_inline7992:7.57185pt::7.57185pt::72.37883pt.
+[591
+
+
+]
+l2hSize :tex2html_wrap_inline7996:7.48248pt::0.0pt::10.53938pt.
+[592
+
+
+]
+! Missing $ inserted.
+<inserted text> 
+                $
+l.4421 
+       
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Display math should end with $$.
+<to be read again> 
+                   \par 
+l.4421 
+       
+The `$' that I just saw supposedly matches a previous `$$'.
+So I shall assume that you typed `$$' both times.
+
+
+! LaTeX Error: Bad math environment delimiter.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.4422 \end{displaymath}
+                        %
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+l2hSize :displaymath7800:41.79997pt::0.0pt::349.0pt.
+[593
+
+
+]
+l2hSize :tex2html_wrap_inline8002:7.98248pt::7.98248pt::12.77249pt.
+[594
+
+
+]
+l2hSize :tex2html_wrap_inline8004:7.57185pt::7.57185pt::38.61392pt.
+[595
+
+
+]
+l2hSize :tex2html_wrap_inline8006:7.57185pt::7.57185pt::37.62036pt.
+[596
+
+
+]
+l2hSize :tex2html_wrap_inline8010:8.10416pt::8.10416pt::17.6835pt.
+[597
+
+
+]
+l2hSize :tex2html_wrap_inline8014:7.57185pt::7.57185pt::13.50887pt.
+[598
+
+
+]
+l2hSize :tex2html_wrap_inline8016:7.07185pt::0.0pt::25.0671pt.
+[599
+
+
+]
+l2hSize :tex2html_wrap_inline8018:8.10416pt::8.10416pt::25.0671pt.
+[600
+
+
+]
+l2hSize :tex2html_wrap_inline8024:7.57185pt::7.57185pt::67.05228pt.
+[601
+
+
+]
+l2hSize :tex2html_wrap_inline8026:8.10416pt::8.10416pt::65.9636pt.
+[602
+
+
+]
+l2hSize :tex2html_wrap_inline8036:7.57185pt::7.57185pt::82.08702pt.
+[603
+
+
+]
+l2hSize :tex2html_wrap_inline8038:7.57185pt::7.57185pt::43.76198pt.
+[604
+
+
+]
+File: ex/LCBPC1.eps Graphic file (type eps)
+<ex/LCBPC1.eps>
+l2hSize :tex2html_wrap13681:252.94595pt::0.0pt::349.0pt.
+[605
+
+
+]
+File: ex/LCBPC2.eps Graphic file (type eps)
+<ex/LCBPC2.eps>
+Overfull \hbox (50.0925pt too wide) detected at line 4502
+ [] 
+ []
+
+l2hSize :tex2html_wrap13685:308.35316pt::0.0pt::349.0pt.
+[606
+
+
+]
+l2hSize :tex2html_wrap_inline8040:8.10416pt::8.10416pt::26.99478pt.
+[607
+
+
+]
+File: ex/Figure30.eps Graphic file (type eps)
+<ex/Figure30.eps>
+l2hSize :tex2html_wrap13691:252.94595pt::0.0pt::349.0pt.
+[608
+
+
+]
+l2hSize :tex2html_wrap_inline8408:8.7125pt::8.7125pt::19.2868pt.
+[609
+
+
+]
+l2hSize :tex2html_wrap_inline8410:9.12923pt::0.0pt::11.566pt.
+[610
+
+
+]
+l2hSize :tex2html_wrap_inline8412:9.62923pt::9.62923pt::47.33852pt.
+[611
+
+
+]
+l2hSize :tex2html_wrap_inline8414:7.57185pt::7.57185pt::41.00168pt.
+[612
+
+
+]
+l2hSize :tex2html_wrap_inline8420:8.7125pt::8.7125pt::50.43095pt.
+[613
+
+
+]
+l2hSize :tex2html_wrap_inline8422:8.7125pt::8.7125pt::43.76207pt.
+[614
+
+
+]
+! Missing $ inserted.
+<inserted text> 
+                $
+l.4559 
+       
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Display math should end with $$.
+<to be read again> 
+                   \par 
+l.4559 
+       
+The `$' that I just saw supposedly matches a previous `$$'.
+So I shall assume that you typed `$$' both times.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.4560 \dot
+           {x}(t) - 2 T f(x(t),\alpha) = 0,
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.4561 \end{displaymath}
+                        %
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+l2hSize :displaymath8183:27.20001pt::2.73749pt::349.0pt.
+[615
+
+
+]
+! Missing $ inserted.
+<inserted text> 
+                $
+l.4568 
+       
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Display math should end with $$.
+<to be read again> 
+                   \par 
+l.4568 
+       
+The `$' that I just saw supposedly matches a previous `$$'.
+So I shall assume that you typed `$$' both times.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.4569 f(x_
+           0,\alpha) = 0.
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.4570 \end{displaymath}
+                        %
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+l2hSize :displaymath8187:27.20001pt::2.73749pt::349.0pt.
+[616
+
+
+]
+! Missing $ inserted.
+<inserted text> 
+                $
+l.4577 
+       
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Display math should end with $$.
+<to be read again> 
+                   \par 
+l.4577 
+       
+The `$' that I just saw supposedly matches a previous `$$'.
+So I shall assume that you typed `$$' both times.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.4578 \int
+           _0^1 \dot{\widetilde{x}}^*(t)[x(t) -\widetilde{x}(t)]dt = 0.
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.4579 \end{displaymath}
+                        %
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+l2hSize :displaymath8190:27.20001pt::3.8459pt::349.0pt.
+[617
+
+
+]
+l2hSize :tex2html_wrap_inline8426:8.7125pt::8.7125pt::19.27663pt.
+[618
+
+
+]
+l2hSize :tex2html_wrap_inline8428:7.98248pt::7.98248pt::13.02135pt.
+[619
+
+
+]
+l2hSize :tex2html_wrap_inline8430:7.98248pt::7.98248pt::14.00719pt.
+[620
+
+
+]
+l2hSize :tex2html_wrap_inline8432:8.7125pt::8.7125pt::23.1958pt.
+[621
+
+
+]
+l2hSize :tex2html_wrap_inline8434:7.07185pt::0.0pt::10.16177pt.
+[622
+
+
+]
+l2hSize :tex2html_wrap_inline8436:8.7125pt::8.7125pt::65.44257pt.
+[623
+
+
+]
+l2hSize :tex2html_wrap_inline8438:7.98248pt::7.98248pt::14.23898pt.
+[624
+
+
+]
+! Missing $ inserted.
+<inserted text> 
+                $
+l.4628 
+       
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Display math should end with $$.
+<to be read again> 
+                   \par 
+l.4628 
+       
+The `$' that I just saw supposedly matches a previous `$$'.
+So I shall assume that you typed `$$' both times.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.4629 \left
+            [ \begin{array} {cc}T_{11}\ \ T_{12}\\T_{21}\ \ T_{22}\end{array...
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.4630 \end{displaymath}
+                        %
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+l2hSize :displaymath8200:30.93748pt::10.8625pt::349.0pt.
+[625
+
+
+]
+l2hSize :tex2html_wrap_inline8442:7.98248pt::7.98248pt::15.94656pt.
+[626
+
+
+]
+l2hSize :tex2html_wrap_inline8444:7.57185pt::7.57185pt::33.15929pt.
+[627
+
+
+]
+l2hSize :tex2html_wrap_inline8446:7.98248pt::7.98248pt::15.94656pt.
+[628
+
+
+]
+l2hSize :tex2html_wrap_inline8448:8.7125pt::8.7125pt::90.10435pt.
+[629
+
+
+]
+! Missing $ inserted.
+<inserted text> 
+                $
+l.4661 
+       
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Display math should end with $$.
+<to be read again> 
+                   \par 
+l.4661 
+       
+The `$' that I just saw supposedly matches a previous `$$'.
+So I shall assume that you typed `$$' both times.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.4662 \begin{array}{l}
+                       
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.4665 \end{array}
+                  
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+
+! LaTeX Error: Bad math environment delimiter.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.4666 \end{displaymath}
+                        %
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+l2hSize :displaymath8212:30.93748pt::10.8625pt::349.0pt.
+[630
+
+
+]
+l2hSize :tex2html_wrap_inline8456:8.7125pt::8.7125pt::53.7057pt.
+[631
+
+
+]
+l2hSize :tex2html_wrap_inline8460:8.7125pt::8.7125pt::30.29837pt.
+[632
+
+
+]
+l2hSize :tex2html_wrap_inline8462:10.02922pt::10.02922pt::29.9648pt.
+[633
+
+
+]
+l2hSize :displaymath8464:28.19998pt::0.0pt::349.0pt.
+[634
+
+
+]
+l2hSize :tex2html_wrap_inline8468:7.98248pt::7.98248pt::20.55673pt.
+[635
+
+
+]
+! Missing $ inserted.
+<inserted text> 
+                $
+l.4705 
+       
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Display math should end with $$.
+<to be read again> 
+                   \par 
+l.4705 
+       
+The `$' that I just saw supposedly matches a previous `$$'.
+So I shall assume that you typed `$$' both times.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.4706 \begin{array}{l}
+                       
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.4709 \end{array}
+                  
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+
+! LaTeX Error: Bad math environment delimiter.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.4710 \end{displaymath}
+                        %
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+l2hSize :displaymath8231:30.94675pt::10.87177pt::349.0pt.
+[636
+
+
+]
+l2hSize :tex2html_wrap_inline8470:8.7125pt::8.7125pt::20.79745pt.
+[637
+
+
+]
+l2hSize :tex2html_wrap_inline8472:8.7125pt::8.7125pt::20.79745pt.
+[638
+
+
+]
+! Missing $ inserted.
+<inserted text> 
+                $
+l.4729 
+       
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Display math should end with $$.
+<to be read again> 
+                   \par 
+l.4729 
+       
+The `$' that I just saw supposedly matches a previous `$$'.
+So I shall assume that you typed `$$' both times.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.4730 \begin{array}{l}
+                       
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.4733 \end{array}
+                  
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+
+! LaTeX Error: Bad math environment delimiter.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.4734 \end{displaymath}
+                        %
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+l2hSize :displaymath8237:30.93748pt::10.8625pt::349.0pt.
+[639
+
+
+]
+l2hSize :tex2html_wrap_inline8476:7.57185pt::7.57185pt::16.35344pt.
+[640
+
+
+]
+l2hSize :tex2html_wrap_inline8478:8.7125pt::8.7125pt::19.27663pt.
+[641
+
+
+]
+l2hSize :tex2html_wrap_inline8494:7.57185pt::7.57185pt::9.74223pt.
+[642
+
+
+]
+l2hSize :tex2html_wrap_inline8496:7.57185pt::7.57185pt::9.74223pt.
+[643
+
+
+]
+l2hSize :tex2html_wrap_inline8506:8.7125pt::8.7125pt::53.7057pt.
+[644
+
+
+]
+l2hSize :tex2html_wrap_inline8508:7.98248pt::7.98248pt::9.2041pt.
+[645
+
+
+]
+l2hSize :tex2html_wrap_inline8510:7.57185pt::7.57185pt::58.10039pt.
+[646
+
+
+]
+l2hSize :tex2html_wrap_inline8514:7.57185pt::7.57185pt::12.54146pt.
+[647
+
+
+]
+l2hSize :tex2html_wrap_inline8516:8.7125pt::8.7125pt::47.33968pt.
+[648
+
+
+]
+! Missing $ inserted.
+<inserted text> 
+                $
+l.4797 
+       
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Display math should end with $$.
+<to be read again> 
+                   \par 
+l.4797 
+       
+The `$' that I just saw supposedly matches a previous `$$'.
+So I shall assume that you typed `$$' both times.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.4798 \Re
+          (\mu_{ns}) \leq ... \leq \Re(\mu_1) < 0 < \Re(\lambda_1) \leq ... ...
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.4799 \end{displaymath}
+                        %
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+l2hSize :displaymath8266:27.20001pt::2.73749pt::349.0pt.
+[649
+
+
+]
+l2hSize :tex2html_wrap_inline8518:8.7125pt::8.7125pt::16.97256pt.
+[650
+
+
+]
+l2hSize :tex2html_wrap_inline8520:7.07185pt::0.0pt::12.2529pt.
+[651
+
+
+]
+l2hSize :displaymath8524:16.3375pt::0.0pt::349.0pt.
+[652
+
+
+]
+l2hSize :tex2html_wrap_inline8526:7.57185pt::7.57185pt::11.89551pt.
+[653
+
+
+]
+l2hSize :tex2html_wrap_inline8528:8.10416pt::8.10416pt::11.6851pt.
+[654
+
+
+]
+l2hSize :displaymath8530:28.19998pt::0.0pt::349.0pt.
+[655
+
+
+]
+l2hSize :displaymath8532:28.19998pt::0.0pt::349.0pt.
+[656
+
+
+]
+l2hSize :displaymath8534:16.3375pt::0.0pt::349.0pt.
+[657
+
+
+]
+l2hSize :displaymath8536:16.3375pt::0.0pt::349.0pt.
+[658
+
+
+]
+l2hSize :displaymath8538:16.3375pt::0.0pt::349.0pt.
+[659
+
+
+]
+l2hSize :displaymath8540:16.3375pt::0.0pt::349.0pt.
+[660
+
+
+]
+l2hSize :displaymath8542:16.3375pt::0.0pt::349.0pt.
+[661
+
+
+]
+l2hSize :displaymath8544:16.3375pt::0.0pt::349.0pt.
+[662
+
+
+]
+l2hSize :displaymath8546:28.19998pt::0.0pt::349.0pt.
+[663
+
+
+]
+l2hSize :tex2html_wrap_inline8548:8.7125pt::8.7125pt::106.29851pt.
+[664
+
+
+]
+l2hSize :displaymath8554:16.3375pt::0.0pt::349.0pt.
+[665
+
+
+]
+l2hSize :tex2html_wrap_inline8556:7.9181pt::7.9181pt::10.80681pt.
+[666
+
+
+]
+l2hSize :tex2html_wrap_inline8558:7.9181pt::7.9181pt::11.4781pt.
+[667
+
+
+]
+l2hSize :tex2html_wrap_inline8560:9.94032pt::9.94032pt::51.5357pt.
+[668
+
+
+]
+l2hSize :tex2html_wrap_inline8562:7.9181pt::7.9181pt::10.25923pt.
+[669
+
+
+]
+l2hSize :tex2html_wrap_inline8564:7.9181pt::7.9181pt::11.24998pt.
+[670
+
+
+]
+l2hSize :tex2html_wrap_inline8566:8.7125pt::8.7125pt::44.90645pt.
+[671
+
+
+]
+l2hSize :tex2html_wrap_inline8568:8.7125pt::8.7125pt::36.69394pt.
+[672
+
+
+]
+l2hSize :tex2html_wrap_indisplay13787:10.48782pt::10.48782pt::105.30214pt.
+[673
+
+
+]
+l2hSize :tex2html_wrap_indisplay13788:7.57185pt::7.57185pt::15.1475pt.
+[674
+
+
+]
+l2hSize :tex2html_wrap_indisplay13789:10.48782pt::10.48782pt::106.43433pt.
+[675
+
+
+]
+l2hSize :tex2html_wrap_indisplay13790:8.7125pt::8.7125pt::97.57773pt.
+[676
+
+
+]
+l2hSize :tex2html_wrap_indisplay13792:8.7125pt::8.7125pt::106.0405pt.
+[677
+
+
+]
+l2hSize :displaymath8570:16.3375pt::0.0pt::349.0pt.
+[678
+
+
+]
+l2hSize :displaymath8572:16.3375pt::0.0pt::349.0pt.
+[679
+
+
+]
+l2hSize :displaymath8574:16.3375pt::0.0pt::349.0pt.
+[680
+
+
+]
+l2hSize :displaymath8576:16.3375pt::0.0pt::349.0pt.
+[681
+
+
+]
+l2hSize :tex2html_wrap_inline8578:8.10416pt::8.10416pt::7.07191pt.
+[682
+
+
+]
+l2hSize :tex2html_wrap_inline8580:9.62923pt::9.62923pt::80.45862pt.
+[683
+
+
+]
+! Missing $ inserted.
+<inserted text> 
+                $
+l.5015 
+       
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Display math should end with $$.
+<to be read again> 
+                   \par 
+l.5015 
+       
+The `$' that I just saw supposedly matches a previous `$$'.
+So I shall assume that you typed `$$' both times.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.5016 \left
+            \{\begin{array}{l} \dot{\phi}(t) + 2\:T\:A^T(x(t),\alpha_0)\:\ph...
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.5020 \end{displaymath}
+                        %
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+l2hSize :displaymath8299:45.52373pt::25.44873pt::349.0pt.
+[684
+
+
+]
+l2hSize :tex2html_wrap_inline8582:7.98248pt::7.98248pt::12.43022pt.
+[685
+
+
+]
+l2hSize :tex2html_wrap_inline8584:7.98248pt::7.98248pt::13.42097pt.
+[686
+
+
+]
+l2hSize :tex2html_wrap_inline8588:8.7125pt::8.7125pt::24.28146pt.
+[687
+
+
+]
+l2hSize :tex2html_wrap_inline8590:8.04332pt::8.04332pt::26.57779pt.
+[688
+
+
+]
+l2hSize :tex2html_wrap_inline8594:7.98248pt::7.98248pt::16.30667pt.
+[689
+
+
+]
+l2hSize :tex2html_wrap_inline8598:7.98248pt::7.98248pt::15.32083pt.
+[690
+
+
+]
+File: ex/MLFasthom.eps Graphic file (type eps)
+<ex/MLFasthom.eps>
+l2hSize :figure8361:227.62204pt::0.0pt::349.0pt.
+[691
+
+
+]
+l2hSize :tex2html_wrap_inline8606:8.10416pt::8.10416pt::68.95457pt.
+[692
+
+
+]
+l2hSize :tex2html_wrap_inline8608:8.7125pt::8.7125pt::47.33852pt.
+[693
+
+
+]
+l2hSize :tex2html_wrap_inline8610:7.57185pt::7.57185pt::41.00168pt.
+[694
+
+
+]
+l2hSize :tex2html_wrap_inline8612:8.7125pt::8.7125pt::47.33852pt.
+[695
+
+
+]
+l2hSize :tex2html_wrap_inline8614:7.07185pt::0.0pt::35.52666pt.
+[696
+
+
+]
+l2hSize :tex2html_wrap_inline8774:8.7125pt::8.7125pt::25.95053pt.
+[697
+
+
+]
+l2hSize :tex2html_wrap_inline8776:9.62923pt::9.62923pt::55.52551pt.
+[698
+
+
+]
+l2hSize :displaymath8768:16.3375pt::0.0pt::349.0pt.
+[699
+
+
+]
+l2hSize :tex2html_wrap_inline8867:8.7125pt::8.7125pt::64.88379pt.
+[700
+
+
+]
+File: ex/circle.eps Graphic file (type eps)
+<ex/circle.eps>
+l2hSize :tex2html_wrap13913:191.71625pt::0.0pt::349.0pt.
+[701
+
+
+]
+l2hSize :tex2html_wrap_inline9055:8.7125pt::8.7125pt::108.00197pt.
+[702
+
+
+]
+l2hSize :tex2html_wrap_inline9057:8.7125pt::8.7125pt::32.9983pt.
+[703
+
+
+]
+l2hSize :tex2html_wrap_inline9063:8.7125pt::8.7125pt::42.08899pt.
+[704
+
+
+]
+l2hSize :tex2html_wrap_inline9065:7.48248pt::0.0pt::7.99962pt.
+[705
+
+
+]
+! Missing $ inserted.
+<inserted text> 
+                $
+l.5169 
+       
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Display math should end with $$.
+<to be read again> 
+                   \par 
+l.5169 
+       
+The `$' that I just saw supposedly matches a previous `$$'.
+So I shall assume that you typed `$$' both times.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.5170 \begin{array}{ccl}
+                         
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.5173 \end{array}
+                  
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+
+! LaTeX Error: Bad math environment delimiter.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.5174 \end{displaymath}
+                        %
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+l2hSize :displaymath8987:32.4321pt::12.35712pt::349.0pt.
+[706
+
+
+]
+l2hSize :tex2html_wrap_inline9071:8.7125pt::8.7125pt::74.63472pt.
+[707
+
+
+]
+l2hSize :tex2html_wrap_inline9073:7.98248pt::7.98248pt::33.8188pt.
+[708
+
+
+]
+l2hSize :tex2html_wrap_inline9079:7.07185pt::0.0pt::26.88068pt.
+[709
+
+
+]
+l2hSize :tex2html_wrap_inline9081:7.07185pt::0.0pt::26.88068pt.
+[710
+
+
+]
+! Missing $ inserted.
+<inserted text> 
+                $
+l.5205 
+       
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Display math should end with $$.
+<to be read again> 
+                   \par 
+l.5205 
+       
+The `$' that I just saw supposedly matches a previous `$$'.
+So I shall assume that you typed `$$' both times.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.5206 \left
+            \{ \begin{array}{l}
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.5210 \end{displaymath}
+                        %
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+l2hSize :displaymath9001:31.06651pt::10.99153pt::349.0pt.
+[711
+
+
+]
+l2hSize :tex2html_wrap_inline9083:8.7125pt::8.7125pt::25.25348pt.
+[712
+
+
+]
+l2hSize :tex2html_wrap_inline9085:8.7125pt::8.7125pt::24.11287pt.
+[713
+
+
+]
+! Missing $ inserted.
+<inserted text> 
+                $
+l.5229 
+       
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Display math should end with $$.
+<to be read again> 
+                   \par 
+l.5229 
+       
+The `$' that I just saw supposedly matches a previous `$$'.
+So I shall assume that you typed `$$' both times.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.5230 \left
+            \{ \begin{array}{ccl}
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.5234 \end{displaymath}
+                        %
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+l2hSize :displaymath9009:31.06651pt::10.99153pt::349.0pt.
+[714
+
+
+]
+l2hSize :tex2html_wrap_inline9089:7.48248pt::0.0pt::28.83496pt.
+[715
+
+
+]
+l2hSize :tex2html_wrap_inline9091:7.48248pt::0.0pt::37.99417pt.
+[716
+
+
+]
+l2hSize :tex2html_wrap_inline9093:7.98248pt::7.98248pt::59.91461pt.
+[717
+
+
+]
+l2hSize :tex2html_wrap_inline9095:7.98248pt::7.98248pt::48.6683pt.
+[718
+
+
+]
+l2hSize :tex2html_wrap_inline9097:7.48248pt::0.0pt::42.06622pt.
+[719
+
+
+]
+l2hSize :tex2html_wrap_inline9101:12.14001pt::12.14001pt::133.66472pt.
+[720
+
+
+]
+l2hSize :tex2html_wrap_inline9103:9.96692pt::9.96692pt::42.31633pt.
+[721
+
+
+]
+l2hSize :tex2html_wrap_inline9113:7.48248pt::0.0pt::16.01439pt.
+[722
+
+
+]
+l2hSize :tex2html_wrap_inline9115:7.07185pt::0.0pt::14.53922pt.
+[723
+
+
+]
+l2hSize :tex2html_wrap_inline9117:7.07185pt::0.0pt::6.02254pt.
+[724
+
+
+]
+l2hSize :tex2html_wrap_inline9427:7.98248pt::7.98248pt::60.61963pt.
+[725
+
+
+]
+l2hSize :tex2html_wrap_inline9437:7.07185pt::0.0pt::20.01422pt.
+[726
+
+
+]
+l2hSize :tex2html_wrap_inline9443:7.07185pt::0.0pt::12.28076pt.
+[727
+
+
+]
+File: ex/bruss2.eps Graphic file (type eps)
+<ex/bruss2.eps>
+l2hSize :tex2html_wrap14287:158.09062pt::0.0pt::349.0pt.
+[728
+
+
+] (./images.aux) ) 
+Here is how much of TeX's memory you used:
+ 1232 strings out of 494375
+ 16484 string characters out of 6164979
+ 64672 words of memory out of 5000000
+ 4518 multiletter control sequences out of 15000+600000
+ 13311 words of font info for 51 fonts, out of 8000000 for 9000
+ 350 hyphenation exceptions out of 8191
+ 26i,11n,24p,223b,365s stack positions out of 5000i,500n,10000p,200000b,80000s
+
+Output written on images.dvi (728 pages, 193340 bytes).

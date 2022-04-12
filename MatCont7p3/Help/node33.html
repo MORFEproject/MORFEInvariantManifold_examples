@@ -1,0 +1,79 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Plots in MATCONT</TITLE>
+<META NAME="description" CONTENT="Plots in MATCONT">
+<META NAME="keywords" CONTENT="ManualAug2019 ">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="ManualAug2019 .css">
+
+<LINK REL="previous" HREF="node32.html">
+<LINK REL="up" HREF="node13.html">
+<LINK REL="next" HREF="node34.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html643"
+  HREF="node34.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="/usr/share/latex2html/icons/next.png"></A> 
+<A NAME="tex2html639"
+  HREF="node13.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="/usr/share/latex2html/icons/up.png"></A> 
+<A NAME="tex2html635"
+  HREF="node32.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="/usr/share/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html641"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="/usr/share/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html644"
+  HREF="node34.html">The odefile of a</A>
+<B> Up:</B> <A NAME="tex2html640"
+  HREF="node13.html">General software aspects of</A>
+<B> Previous:</B> <A NAME="tex2html636"
+  HREF="node32.html">Global Structures</A>
+ &nbsp; <B>  <A NAME="tex2html642"
+  HREF="node1.html">Contents</A></B> 
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00039000000000000000"></A><A NAME="Plotting"></A>
+<BR>
+Plots in M<SMALL>AT</SMALL>C<SMALL>ONT</SMALL>
+</H2>
+When M<SMALL>AT</SMALL>C<SMALL>ONT</SMALL> is handled from the command line, then of course all MATLAB plot functionalities can be used. However, M<SMALL>AT</SMALL>C<SMALL>ONT</SMALL> provides two specific plot functions, namely <TT>cpl.m</TT> and
+<TT>plotcycle.m</TT>.
+
+<P>
+<TT>cpl(x, v, s, e)</TT> makes a two or three dimensional plot. This routine automatically places labels at the singularity points.The first three arguments must be the output of a continuation run. The fourth argument <TT>e</TT> is optional.
+<TT>e</TT> is an array whose elements define which coordinates of the system are used. Therefore <TT>e</TT> must have either 2 components (2D-plot) or 3 components (3D-plot). If e is not given and <TT>x</TT> has 2 (respectively 3) components, then a 2D-plot (3D-plot,respectively) is drawn. In all other cases an error message will be generated.
+
+<P>
+The use of <TT>plotcycle</TT> is discussed in &#167;<A HREF="node56.html#lcplot">7.3</A>.
+
+<P>
+
+<P>
+
+<BR><HR>
+
+</BODY>
+</HTML>

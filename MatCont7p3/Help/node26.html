@@ -1,0 +1,78 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Adaptation</TITLE>
+<META NAME="description" CONTENT="Adaptation">
+<META NAME="keywords" CONTENT="ManualAug2019 ">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="ManualAug2019 .css">
+
+<LINK REL="next" HREF="node27.html">
+<LINK REL="previous" HREF="node25.html">
+<LINK REL="up" HREF="node17.html">
+<LINK REL="next" HREF="node27.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html563"
+  HREF="node27.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="/usr/share/latex2html/icons/next.png"></A> 
+<A NAME="tex2html559"
+  HREF="node17.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="/usr/share/latex2html/icons/up.png"></A> 
+<A NAME="tex2html553"
+  HREF="node25.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="/usr/share/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html561"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="/usr/share/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html564"
+  HREF="node27.html">Tangent search order</A>
+<B> Up:</B> <A NAME="tex2html560"
+  HREF="node17.html">Options</A>
+<B> Previous:</B> <A NAME="tex2html554"
+  HREF="node25.html">Workspace</A>
+ &nbsp; <B>  <A NAME="tex2html562"
+  HREF="node1.html">Contents</A></B> 
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H3><A NAME="SECTION00034900000000000000"></A><A NAME="labelAdapt"></A>
+<BR>
+Adaptation
+</H3>
+It is possible to adapt the problem while generating the curve. If <SPAN  CLASS="textit">Adapt</SPAN> has a value, say <SPAN CLASS="MATH"><IMG
+ WIDTH="13" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img123.png"
+ ALT="$5$"></SPAN>, then after <SPAN CLASS="MATH"><IMG
+ WIDTH="13" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img123.png"
+ ALT="$5$"></SPAN> computed points a call to <TT>[reeval,x,v]=feval(cds.curve_adapt,x,v)</TT> will be made where the user can program to change the system.
+
+<P>
+For some applications it is useful to change or modify the used test functions while computing the curve (like in bordering techniques). In order to preserve the correct signs of the test functions it is sometimes necessary to reevaluate the test functions after adaptation. To do this <TT>reeval</TT> should be one, otherwise zero. The return variables <TT>x</TT> and <TT>v</TT> should be the updated <TT>x</TT> and <TT>v</TT> which may have changed because of the changes made to the system.
+
+<P>
+<BR><HR>
+
+</BODY>
+</HTML>

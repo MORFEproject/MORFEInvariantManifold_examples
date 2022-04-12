@@ -1,0 +1,568 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Bratu example</TITLE>
+<META NAME="description" CONTENT="Bratu example">
+<META NAME="keywords" CONTENT="ManualAug2019 ">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="ManualAug2019 .css">
+
+<LINK REL="previous" HREF="node51.html">
+<LINK REL="up" HREF="node46.html">
+<LINK REL="next" HREF="node53.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html880"
+  HREF="node53.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="/usr/share/latex2html/icons/next.png"></A> 
+<A NAME="tex2html876"
+  HREF="node46.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="/usr/share/latex2html/icons/up.png"></A> 
+<A NAME="tex2html872"
+  HREF="node51.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="/usr/share/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html878"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="/usr/share/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html881"
+  HREF="node53.html">Continuation of limit cycles</A>
+<B> Up:</B> <A NAME="tex2html877"
+  HREF="node46.html">Equilibrium continuation</A>
+<B> Previous:</B> <A NAME="tex2html873"
+  HREF="node51.html">Equilibrium initialization</A>
+ &nbsp; <B>  <A NAME="tex2html879"
+  HREF="node1.html">Contents</A></B> 
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00065000000000000000"></A><A NAME="Bratu"></A>
+<BR>
+Bratu example
+</H2>
+
+<P>
+The first example we will look at is a 4-point discretization of the Bratu-Gelfand BVP [<A
+ HREF="node115.html#willy">22</A>]. This model is defined as follows:
+<BR>
+<DIV ALIGN="CENTER">
+
+<!-- MATH
+ \begin{eqnarray}
+x' &=& y - 2x + a e^{x} \\
+y' &=& x - 2y + a e^{y}
+\end{eqnarray}
+ -->
+<TABLE CELLPADDING="0" ALIGN="CENTER" WIDTH="100%">
+<TR VALIGN="MIDDLE"><TD NOWRAP WIDTH="50%" ALIGN="RIGHT"><IMG
+ WIDTH="18" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img228.png"
+ ALT="$\displaystyle x'$"></TD>
+<TD ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="17" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img40.png"
+ ALT="$\textstyle =$"></TD>
+<TD ALIGN="LEFT" WIDTH="50%" NOWRAP><IMG
+ WIDTH="100" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img229.png"
+ ALT="$\displaystyle y - 2x + a e^{x}$"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+(<SPAN CLASS="arabic">42</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE"><TD NOWRAP WIDTH="50%" ALIGN="RIGHT"><IMG
+ WIDTH="17" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img230.png"
+ ALT="$\displaystyle y'$"></TD>
+<TD ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="17" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img40.png"
+ ALT="$\textstyle =$"></TD>
+<TD ALIGN="LEFT" WIDTH="50%" NOWRAP><IMG
+ WIDTH="100" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img231.png"
+ ALT="$\displaystyle x - 2y + a e^{y}$"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+(<SPAN CLASS="arabic">43</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+The system is specified as
+<DIV ALIGN="CENTER">
+<TABLE CELLPADDING=3 BORDER="1">
+<TR><TD ALIGN="CENTER" COLSPAN=2><SMALL CLASS="FOOTNOTESIZE">
+<SPAN></SMALL><SMALL CLASS="FOOTNOTESIZE"><EM>bratu.m</EM></SPAN> </SMALL></TD>
+</TR>
+<TR><TD ALIGN="RIGHT"><SMALL CLASS="FOOTNOTESIZE"> 
+
+</SMALL><SMALL CLASS="TINY">1</SMALL><SMALL CLASS="FOOTNOTESIZE"> </SMALL></TD>
+<TD ALIGN="LEFT" VALIGN="TOP" WIDTH=397><SMALL CLASS="FOOTNOTESIZE"> <code>function out = bratu</code> </SMALL></TD>
+</TR>
+<TR><TD ALIGN="RIGHT"><SMALL CLASS="FOOTNOTESIZE"> 
+</SMALL><SMALL CLASS="TINY">2</SMALL><SMALL CLASS="FOOTNOTESIZE"> </SMALL></TD>
+<TD ALIGN="LEFT" VALIGN="TOP" WIDTH=397><SMALL CLASS="FOOTNOTESIZE"> <code>out{1} = @init;</code> </SMALL></TD>
+</TR>
+<TR><TD ALIGN="RIGHT"><SMALL CLASS="FOOTNOTESIZE"> 
+</SMALL><SMALL CLASS="TINY">3</SMALL><SMALL CLASS="FOOTNOTESIZE"> </SMALL></TD>
+<TD ALIGN="LEFT" VALIGN="TOP" WIDTH=397><SMALL CLASS="FOOTNOTESIZE"> <code>out{2} = @fun_eval;</code> </SMALL></TD>
+</TR>
+<TR><TD ALIGN="RIGHT"><SMALL CLASS="FOOTNOTESIZE"> 
+</SMALL><SMALL CLASS="TINY">4</SMALL><SMALL CLASS="FOOTNOTESIZE"> </SMALL></TD>
+<TD ALIGN="LEFT" VALIGN="TOP" WIDTH=397><SMALL CLASS="FOOTNOTESIZE"> <code>out{3} = @jacobian;</code> </SMALL></TD>
+</TR>
+<TR><TD ALIGN="RIGHT"><SMALL CLASS="FOOTNOTESIZE"> 
+</SMALL><SMALL CLASS="TINY">5</SMALL><SMALL CLASS="FOOTNOTESIZE"> </SMALL></TD>
+<TD ALIGN="LEFT" VALIGN="TOP" WIDTH=397><SMALL CLASS="FOOTNOTESIZE"> <code>out{4} = @jacobianp;</code> </SMALL></TD>
+</TR>
+<TR><TD ALIGN="RIGHT"><SMALL CLASS="FOOTNOTESIZE"> 
+</SMALL><SMALL CLASS="TINY">6</SMALL><SMALL CLASS="FOOTNOTESIZE"> </SMALL></TD>
+<TD ALIGN="LEFT" VALIGN="TOP" WIDTH=397><SMALL CLASS="FOOTNOTESIZE"> <code>out{5} = @hessians;</code> </SMALL></TD>
+</TR>
+<TR><TD ALIGN="RIGHT"><SMALL CLASS="FOOTNOTESIZE"> 
+</SMALL><SMALL CLASS="TINY">7</SMALL><SMALL CLASS="FOOTNOTESIZE"> </SMALL></TD>
+<TD ALIGN="LEFT" VALIGN="TOP" WIDTH=397><SMALL CLASS="FOOTNOTESIZE"> <code>out{6} = @hessiansp;</code> </SMALL></TD>
+</TR>
+<TR><TD ALIGN="RIGHT"><SMALL CLASS="FOOTNOTESIZE"> 
+</SMALL><SMALL CLASS="TINY">8</SMALL><SMALL CLASS="FOOTNOTESIZE"> </SMALL></TD>
+<TD ALIGN="LEFT" VALIGN="TOP" WIDTH=397><SMALL CLASS="FOOTNOTESIZE"> <code>out{7} = [];</code> </SMALL></TD>
+</TR>
+<TR><TD ALIGN="RIGHT"><SMALL CLASS="FOOTNOTESIZE"> 
+</SMALL><SMALL CLASS="TINY">9</SMALL><SMALL CLASS="FOOTNOTESIZE"> </SMALL></TD>
+<TD ALIGN="LEFT" VALIGN="TOP" WIDTH=397><SMALL CLASS="FOOTNOTESIZE"> <code>out{8} = [];</code> </SMALL></TD>
+</TR>
+<TR><TD ALIGN="RIGHT"><SMALL CLASS="FOOTNOTESIZE"> 
+</SMALL><SMALL CLASS="TINY">10</SMALL><SMALL CLASS="FOOTNOTESIZE"> </SMALL></TD>
+<TD ALIGN="LEFT" VALIGN="TOP" WIDTH=397><SMALL CLASS="FOOTNOTESIZE"> <code>out{9} = [];</code> </SMALL></TD>
+</TR>
+<TR><TD ALIGN="RIGHT"><SMALL CLASS="FOOTNOTESIZE"> 
+</SMALL><SMALL CLASS="TINY">11</SMALL><SMALL CLASS="FOOTNOTESIZE"> </SMALL></TD>
+<TD ALIGN="LEFT" VALIGN="TOP" WIDTH=397><SMALL CLASS="FOOTNOTESIZE"> <code>out{10}= @userf1;</code> </SMALL></TD>
+</TR>
+<TR><TD ALIGN="RIGHT"><SMALL CLASS="FOOTNOTESIZE"> 
+</SMALL><SMALL CLASS="TINY">12</SMALL><SMALL CLASS="FOOTNOTESIZE"> </SMALL></TD>
+<TD ALIGN="LEFT" VALIGN="TOP" WIDTH=397><SMALL CLASS="FOOTNOTESIZE"> <code></code> </SMALL></TD>
+</TR>
+<TR><TD ALIGN="RIGHT"><SMALL CLASS="FOOTNOTESIZE"> 
+</SMALL><SMALL CLASS="TINY">13</SMALL><SMALL CLASS="FOOTNOTESIZE"> </SMALL></TD>
+<TD ALIGN="LEFT" VALIGN="TOP" WIDTH=397><SMALL CLASS="FOOTNOTESIZE"> <code>end</code> </SMALL></TD>
+</TR>
+<TR><TD ALIGN="RIGHT"><SMALL CLASS="FOOTNOTESIZE"> 
+</SMALL><SMALL CLASS="TINY">14</SMALL><SMALL CLASS="FOOTNOTESIZE"> </SMALL></TD>
+<TD ALIGN="LEFT" VALIGN="TOP" WIDTH=397><SMALL CLASS="FOOTNOTESIZE"> <code></code> </SMALL></TD>
+</TR>
+<TR><TD ALIGN="RIGHT"><SMALL CLASS="FOOTNOTESIZE"> 
+</SMALL><SMALL CLASS="TINY">15</SMALL><SMALL CLASS="FOOTNOTESIZE"> </SMALL></TD>
+<TD ALIGN="LEFT" VALIGN="TOP" WIDTH=397><SMALL CLASS="FOOTNOTESIZE"> <code>% --------------------------------------------------------------------------</code> </SMALL></TD>
+</TR>
+<TR><TD ALIGN="RIGHT"><SMALL CLASS="FOOTNOTESIZE"> 
+</SMALL><SMALL CLASS="TINY">16</SMALL><SMALL CLASS="FOOTNOTESIZE"> </SMALL></TD>
+<TD ALIGN="LEFT" VALIGN="TOP" WIDTH=397><SMALL CLASS="FOOTNOTESIZE"> <code>function dydt = fun_eval(t,kmrgd,a)</code> </SMALL></TD>
+</TR>
+<TR><TD ALIGN="RIGHT"><SMALL CLASS="FOOTNOTESIZE"> 
+</SMALL><SMALL CLASS="TINY">17</SMALL><SMALL CLASS="FOOTNOTESIZE"> </SMALL></TD>
+<TD ALIGN="LEFT" VALIGN="TOP" WIDTH=397><SMALL CLASS="FOOTNOTESIZE"> <code>dydt =  [ -2*kmrgd(1)+kmrgd(2)+a*exp(kmrgd(1)); </code> </SMALL></TD>
+</TR>
+<TR><TD ALIGN="RIGHT"><SMALL CLASS="FOOTNOTESIZE"> 
+</SMALL><SMALL CLASS="TINY">18</SMALL><SMALL CLASS="FOOTNOTESIZE"> </SMALL></TD>
+<TD ALIGN="LEFT" VALIGN="TOP" WIDTH=397><SMALL CLASS="FOOTNOTESIZE"> <code>           kmrgd(1)-2*kmrgd(2)+a*exp(kmrgd(2)) ];             </code> </SMALL></TD>
+</TR>
+<TR><TD ALIGN="RIGHT"><SMALL CLASS="FOOTNOTESIZE"> 
+</SMALL><SMALL CLASS="TINY">19</SMALL><SMALL CLASS="FOOTNOTESIZE"> </SMALL></TD>
+<TD ALIGN="LEFT" VALIGN="TOP" WIDTH=397><SMALL CLASS="FOOTNOTESIZE"> <code></code> </SMALL></TD>
+</TR>
+<TR><TD ALIGN="RIGHT"><SMALL CLASS="FOOTNOTESIZE"> 
+</SMALL><SMALL CLASS="TINY">20</SMALL><SMALL CLASS="FOOTNOTESIZE"> </SMALL></TD>
+<TD ALIGN="LEFT" VALIGN="TOP" WIDTH=397><SMALL CLASS="FOOTNOTESIZE"> <code>% --------------------------------------------------------------------------</code> </SMALL></TD>
+</TR>
+<TR><TD ALIGN="RIGHT"><SMALL CLASS="FOOTNOTESIZE"> 
+</SMALL><SMALL CLASS="TINY">21</SMALL><SMALL CLASS="FOOTNOTESIZE"> </SMALL></TD>
+<TD ALIGN="LEFT" VALIGN="TOP" WIDTH=397><SMALL CLASS="FOOTNOTESIZE"> <code>function [tspan,y0,options] = init</code> </SMALL></TD>
+</TR>
+<TR><TD ALIGN="RIGHT"><SMALL CLASS="FOOTNOTESIZE"> 
+</SMALL><SMALL CLASS="TINY">22</SMALL><SMALL CLASS="FOOTNOTESIZE"> </SMALL></TD>
+<TD ALIGN="LEFT" VALIGN="TOP" WIDTH=397><SMALL CLASS="FOOTNOTESIZE"> <code>tspan = [0; 10];</code> </SMALL></TD>
+</TR>
+<TR><TD ALIGN="RIGHT"><SMALL CLASS="FOOTNOTESIZE"> 
+</SMALL><SMALL CLASS="TINY">23</SMALL><SMALL CLASS="FOOTNOTESIZE"> </SMALL></TD>
+<TD ALIGN="LEFT" VALIGN="TOP" WIDTH=397><SMALL CLASS="FOOTNOTESIZE"> <code>y0 = [0;0];handles = feval(@bratu)</code> </SMALL></TD>
+</TR>
+<TR><TD ALIGN="RIGHT"><SMALL CLASS="FOOTNOTESIZE"> 
+</SMALL><SMALL CLASS="TINY">24</SMALL><SMALL CLASS="FOOTNOTESIZE"> </SMALL></TD>
+<TD ALIGN="LEFT" VALIGN="TOP" WIDTH=397><SMALL CLASS="FOOTNOTESIZE"> <code>options = odeset('Jacobian',handles(3),'JacobianP', 'handles(4)',...</code> </SMALL></TD>
+</TR>
+<TR><TD ALIGN="RIGHT"><SMALL CLASS="FOOTNOTESIZE"> 
+</SMALL><SMALL CLASS="TINY">25</SMALL><SMALL CLASS="FOOTNOTESIZE"> </SMALL></TD>
+<TD ALIGN="LEFT" VALIGN="TOP" WIDTH=397><SMALL CLASS="FOOTNOTESIZE"> <code>...,'Hessians',handles(5), 'Hessiansp',handles(6));</code> </SMALL></TD>
+</TR>
+<TR><TD ALIGN="RIGHT"><SMALL CLASS="FOOTNOTESIZE"> 
+</SMALL><SMALL CLASS="TINY">26</SMALL><SMALL CLASS="FOOTNOTESIZE"> </SMALL></TD>
+<TD ALIGN="LEFT" VALIGN="TOP" WIDTH=397><SMALL CLASS="FOOTNOTESIZE"> <code>% --------------------------------------------------------------------------</code> </SMALL></TD>
+</TR>
+<TR><TD ALIGN="RIGHT"><SMALL CLASS="FOOTNOTESIZE"> 
+</SMALL><SMALL CLASS="TINY">27</SMALL><SMALL CLASS="FOOTNOTESIZE"> </SMALL></TD>
+<TD ALIGN="LEFT" VALIGN="TOP" WIDTH=397><SMALL CLASS="FOOTNOTESIZE"> <code>function jac = jacobian(t,kmrgd,a)</code> </SMALL></TD>
+</TR>
+<TR><TD ALIGN="RIGHT"><SMALL CLASS="FOOTNOTESIZE"> 
+</SMALL><SMALL CLASS="TINY">28</SMALL><SMALL CLASS="FOOTNOTESIZE"> </SMALL></TD>
+<TD ALIGN="LEFT" VALIGN="TOP" WIDTH=397><SMALL CLASS="FOOTNOTESIZE"> <code>jac  = [ -2+a*exp(kmrgd(1))   1               </code> </SMALL></TD>
+</TR>
+<TR><TD ALIGN="RIGHT"><SMALL CLASS="FOOTNOTESIZE"> 
+</SMALL><SMALL CLASS="TINY">29</SMALL><SMALL CLASS="FOOTNOTESIZE"> </SMALL></TD>
+<TD ALIGN="LEFT" VALIGN="TOP" WIDTH=397><SMALL CLASS="FOOTNOTESIZE"> <code>          1              -2+a*exp(kmrgd(2)) ];</code> </SMALL></TD>
+</TR>
+<TR><TD ALIGN="RIGHT"><SMALL CLASS="FOOTNOTESIZE"> 
+</SMALL><SMALL CLASS="TINY">30</SMALL><SMALL CLASS="FOOTNOTESIZE"> </SMALL></TD>
+<TD ALIGN="LEFT" VALIGN="TOP" WIDTH=397><SMALL CLASS="FOOTNOTESIZE"> <code></code> </SMALL></TD>
+</TR>
+<TR><TD ALIGN="RIGHT"><SMALL CLASS="FOOTNOTESIZE"> 
+</SMALL><SMALL CLASS="TINY">31</SMALL><SMALL CLASS="FOOTNOTESIZE"> </SMALL></TD>
+<TD ALIGN="LEFT" VALIGN="TOP" WIDTH=397><SMALL CLASS="FOOTNOTESIZE"> <code>% --------------------------------------------------------------------------</code> </SMALL></TD>
+</TR>
+<TR><TD ALIGN="RIGHT"><SMALL CLASS="FOOTNOTESIZE"> 
+</SMALL><SMALL CLASS="TINY">32</SMALL><SMALL CLASS="FOOTNOTESIZE"> </SMALL></TD>
+<TD ALIGN="LEFT" VALIGN="TOP" WIDTH=397><SMALL CLASS="FOOTNOTESIZE"> <code>function jacp = jacobianp(t,kmrgd,a)</code> </SMALL></TD>
+</TR>
+<TR><TD ALIGN="RIGHT"><SMALL CLASS="FOOTNOTESIZE"> 
+</SMALL><SMALL CLASS="TINY">33</SMALL><SMALL CLASS="FOOTNOTESIZE"> </SMALL></TD>
+<TD ALIGN="LEFT" VALIGN="TOP" WIDTH=397><SMALL CLASS="FOOTNOTESIZE"> <code></code> </SMALL></TD>
+</TR>
+<TR><TD ALIGN="RIGHT"><SMALL CLASS="FOOTNOTESIZE"> 
+</SMALL><SMALL CLASS="TINY">34</SMALL><SMALL CLASS="FOOTNOTESIZE"> </SMALL></TD>
+<TD ALIGN="LEFT" VALIGN="TOP" WIDTH=397><SMALL CLASS="FOOTNOTESIZE"> <code>jacp = [ exp(kmrgd(1))</code> </SMALL></TD>
+</TR>
+<TR><TD ALIGN="RIGHT"><SMALL CLASS="FOOTNOTESIZE"> 
+</SMALL><SMALL CLASS="TINY">35</SMALL><SMALL CLASS="FOOTNOTESIZE"> </SMALL></TD>
+<TD ALIGN="LEFT" VALIGN="TOP" WIDTH=397><SMALL CLASS="FOOTNOTESIZE"> <code>         exp(kmrgd(2)) ];</code> </SMALL></TD>
+</TR>
+<TR><TD ALIGN="RIGHT"><SMALL CLASS="FOOTNOTESIZE"> 
+</SMALL><SMALL CLASS="TINY">36</SMALL><SMALL CLASS="FOOTNOTESIZE"> </SMALL></TD>
+<TD ALIGN="LEFT" VALIGN="TOP" WIDTH=397><SMALL CLASS="FOOTNOTESIZE"> <code></code> </SMALL></TD>
+</TR>
+<TR><TD ALIGN="RIGHT"><SMALL CLASS="FOOTNOTESIZE"> 
+</SMALL><SMALL CLASS="TINY">37</SMALL><SMALL CLASS="FOOTNOTESIZE"> </SMALL></TD>
+<TD ALIGN="LEFT" VALIGN="TOP" WIDTH=397><SMALL CLASS="FOOTNOTESIZE"> <code>% --------------------------------------------------------------------------</code> </SMALL></TD>
+</TR>
+<TR><TD ALIGN="RIGHT"><SMALL CLASS="FOOTNOTESIZE"> 
+</SMALL><SMALL CLASS="TINY">38</SMALL><SMALL CLASS="FOOTNOTESIZE"> </SMALL></TD>
+<TD ALIGN="LEFT" VALIGN="TOP" WIDTH=397><SMALL CLASS="FOOTNOTESIZE"> <code>function hess = hessians(t,kmrgd,a)</code></SMALL></TD>
+</TR>
+<TR><TD ALIGN="RIGHT"><SMALL CLASS="FOOTNOTESIZE"> 
+</SMALL><SMALL CLASS="TINY">39</SMALL><SMALL CLASS="FOOTNOTESIZE"> </SMALL></TD>
+<TD ALIGN="LEFT" VALIGN="TOP" WIDTH=397><SMALL CLASS="FOOTNOTESIZE"> <code>hess1=[[a*exp(kmrgd(1)),0];[0,0]];</code></SMALL></TD>
+</TR>
+<TR><TD ALIGN="RIGHT"><SMALL CLASS="FOOTNOTESIZE"> 
+</SMALL><SMALL CLASS="TINY">40</SMALL><SMALL CLASS="FOOTNOTESIZE"> </SMALL></TD>
+<TD ALIGN="LEFT" VALIGN="TOP" WIDTH=397><SMALL CLASS="FOOTNOTESIZE"> <code>hess2=[[0,0];[0,a*exp(kmrgd(2))]];</code></SMALL></TD>
+</TR>
+<TR><TD ALIGN="RIGHT"><SMALL CLASS="FOOTNOTESIZE"> 
+</SMALL><SMALL CLASS="TINY">41</SMALL><SMALL CLASS="FOOTNOTESIZE"> </SMALL></TD>
+<TD ALIGN="LEFT" VALIGN="TOP" WIDTH=397><SMALL CLASS="FOOTNOTESIZE"> <code>hess(:,:,1) = hess1;</code></SMALL></TD>
+</TR>
+<TR><TD ALIGN="RIGHT"><SMALL CLASS="FOOTNOTESIZE"> 
+</SMALL><SMALL CLASS="TINY">42</SMALL><SMALL CLASS="FOOTNOTESIZE"> </SMALL></TD>
+<TD ALIGN="LEFT" VALIGN="TOP" WIDTH=397><SMALL CLASS="FOOTNOTESIZE"> <code>hess(:,:,2) = hess2;</code></SMALL></TD>
+</TR>
+<TR><TD ALIGN="RIGHT"><SMALL CLASS="FOOTNOTESIZE"> 
+</SMALL><SMALL CLASS="TINY">43</SMALL><SMALL CLASS="FOOTNOTESIZE"> </SMALL></TD>
+<TD ALIGN="LEFT" VALIGN="TOP" WIDTH=397><SMALL CLASS="FOOTNOTESIZE"> <code></code></SMALL></TD>
+</TR>
+<TR><TD ALIGN="RIGHT"><SMALL CLASS="FOOTNOTESIZE"> 
+</SMALL><SMALL CLASS="TINY">44</SMALL><SMALL CLASS="FOOTNOTESIZE"> </SMALL></TD>
+<TD ALIGN="LEFT" VALIGN="TOP" WIDTH=397><SMALL CLASS="FOOTNOTESIZE"> <code>% --------------------------------------------------------------------------</code> </SMALL></TD>
+</TR>
+<TR><TD ALIGN="RIGHT"><SMALL CLASS="FOOTNOTESIZE"> 
+</SMALL><SMALL CLASS="TINY">45</SMALL><SMALL CLASS="FOOTNOTESIZE"> </SMALL></TD>
+<TD ALIGN="LEFT" VALIGN="TOP" WIDTH=397><SMALL CLASS="FOOTNOTESIZE"> <code>function hessp = hessiansp(t,kmrgd,a)</code></SMALL></TD>
+</TR>
+<TR><TD ALIGN="RIGHT"><SMALL CLASS="FOOTNOTESIZE"> 
+</SMALL><SMALL CLASS="TINY">46</SMALL><SMALL CLASS="FOOTNOTESIZE"> </SMALL></TD>
+<TD ALIGN="LEFT" VALIGN="TOP" WIDTH=397><SMALL CLASS="FOOTNOTESIZE"> <code>hessp1=[[exp(kmrgd(1)),0];[0,exp(kmrgd(2))]];</code></SMALL></TD>
+</TR>
+<TR><TD ALIGN="RIGHT"><SMALL CLASS="FOOTNOTESIZE"> 
+</SMALL><SMALL CLASS="TINY">47</SMALL><SMALL CLASS="FOOTNOTESIZE"> </SMALL></TD>
+<TD ALIGN="LEFT" VALIGN="TOP" WIDTH=397><SMALL CLASS="FOOTNOTESIZE"> <code>hessp(:,:,1) = hessp1;</code></SMALL></TD>
+</TR>
+<TR><TD ALIGN="RIGHT"><SMALL CLASS="FOOTNOTESIZE"> 
+</SMALL><SMALL CLASS="TINY">48</SMALL><SMALL CLASS="FOOTNOTESIZE"> </SMALL></TD>
+<TD ALIGN="LEFT" VALIGN="TOP" WIDTH=397><SMALL CLASS="FOOTNOTESIZE"> <code></code></SMALL></TD>
+</TR>
+<TR><TD ALIGN="RIGHT"><SMALL CLASS="FOOTNOTESIZE"> 
+</SMALL><SMALL CLASS="TINY">49</SMALL><SMALL CLASS="FOOTNOTESIZE"> </SMALL></TD>
+<TD ALIGN="LEFT" VALIGN="TOP" WIDTH=397><SMALL CLASS="FOOTNOTESIZE"> <code>%---------------------------------------------------------------------------</code> </SMALL></TD>
+</TR>
+<TR><TD ALIGN="RIGHT"><SMALL CLASS="FOOTNOTESIZE"> 
+</SMALL><SMALL CLASS="TINY">60</SMALL><SMALL CLASS="FOOTNOTESIZE"> </SMALL></TD>
+<TD ALIGN="LEFT" VALIGN="TOP" WIDTH=397><SMALL CLASS="FOOTNOTESIZE"> <code>function userfun1 = userf1(t,kmrgd,a)</code></SMALL></TD>
+</TR>
+<TR><TD ALIGN="RIGHT"><SMALL CLASS="FOOTNOTESIZE"> 
+</SMALL><SMALL CLASS="TINY">61</SMALL><SMALL CLASS="FOOTNOTESIZE"> </SMALL></TD>
+<TD ALIGN="LEFT" VALIGN="TOP" WIDTH=397><SMALL CLASS="FOOTNOTESIZE"> <code>userfun1 = a-0.2;</code></SMALL></TD>
+</TR>
+<TR><TD ALIGN="RIGHT"><SMALL CLASS="FOOTNOTESIZE"> 
+</SMALL><SMALL CLASS="TINY">62</SMALL><SMALL CLASS="FOOTNOTESIZE"> </SMALL></TD>
+<TD ALIGN="LEFT" VALIGN="TOP" WIDTH=397><SMALL CLASS="FOOTNOTESIZE"> <code></code></SMALL></TD>
+</TR>
+<TR><TD ALIGN="CENTER" COLSPAN=2><SMALL CLASS="FOOTNOTESIZE"> 
+
+<SPAN></SMALL><SMALL CLASS="FOOTNOTESIZE"><EM>bratu.m</EM></SPAN> </SMALL></TD>
+</TR>
+</TABLE>
+</DIV>
+<A NAME="bratu"></A>As seen above, a user function is defined to detect all points where <SPAN CLASS="MATH"><IMG
+ WIDTH="59" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img232.png"
+ ALT="$a=0.2$"></SPAN>.
+This system has an equilibrium at <!-- MATH
+ $(x,y,a)=(0,0,0)$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="140" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img233.png"
+ ALT="$(x,y,a)=(0,0,0)$"></SPAN> which we will continue with respect to <SPAN CLASS="MATH"><IMG
+ WIDTH="13" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img209.png"
+ ALT="$a$"></SPAN>.
+We first compute <SPAN CLASS="MATH"><IMG
+ WIDTH="21" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img115.png"
+ ALT="$50$"></SPAN> points and then extend the curve with another <SPAN CLASS="MATH"><IMG
+ WIDTH="21" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img115.png"
+ ALT="$50$"></SPAN> points.
+
+<P>
+<PRE>
+global cds
+p=[0];ap=[1];
+[x0,v0]=init_EP_EP(@bratu,[0;0],p,ap);
+opt=contset;
+opt=contset(opt,'MaxNumPoints',50);
+opt=contset(opt,'Singularities',1);
+opt=contset(opt,'Userfunctions',1);
+UserInfo.name='userf1';
+UserInfo.state=1;
+UserInfo.label='u1';
+opt=contset(opt,'UserfunctionsInfo',UserInfo);
+[x,v,s,h,f]=cont(@equilibrium,x0,[],opt);
+[x,v,s,h,f]=cont(x,v,s,h,f,cds);
+cpl(x,v,s,[3 1 2]);
+</PRE>
+The above computations can be done by running <TT>testbratu.m</TT> in the directory <TT>Testruns</TT>. The output in the command window is as follows:
+<PRE>
+&gt;&gt; testbratu
+first point found
+tangent vector to first point found
+label = u1, x = ( 0.259174 0.259174 0.200002 )
+label = LP, x = ( 1.000001 1.000001 0.367879 )
+a=3.535537e-01
+Neutral saddle
+label = H , x = ( 2.000000 2.000000 0.270671 )
+label = u1, x = ( 2.542639 2.542639 0.200000 )
+elapsed time  = 0.4 secs
+npoints curve = 50
+start computing extended curve
+label = BP, x = ( 3.000000 3.000000 0.149361 )
+elapsed time  = 0.1 secs
+npoints curve = 100
+</PRE>
+We note that in the first continuation two zeros of the user function (label u1) were detected, as well as a limit point (label LP) and a neutral equilibrium (label H). A neutral equilibrium is an  equilibrium with two real eigenvalues with sum zero.
+
+<P>
+In the extension of the run at <!-- MATH
+ $(x,y,a)\approx(3.0;3.0;0.15)$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="189" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img234.png"
+ ALT="$(x,y,a)\approx(3.0;3.0;0.15)$"></SPAN> the system has a branch point (label BP). 
+
+<P>
+<TT>cpl(x,v,s,[3 1 2])</TT> plots a 3D-plot with the parameter <SPAN CLASS="MATH"><IMG
+ WIDTH="13" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img209.png"
+ ALT="$a$"></SPAN> on the x-axis and the first and second state variable on the y- and z-axes, respectively. 
+The labels of the plot are changed manually by the following commands:
+
+<P>
+
+<UL>
+<LI>press `Insert' <SPAN CLASS="MATH"><IMG
+ WIDTH="21" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img235.png"
+ ALT="$\rightarrow$"></SPAN> `XLabel' <SPAN CLASS="MATH"><IMG
+ WIDTH="21" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img235.png"
+ ALT="$\rightarrow$"></SPAN>, `a'
+</LI>
+<LI>press `Insert' <SPAN CLASS="MATH"><IMG
+ WIDTH="21" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img235.png"
+ ALT="$\rightarrow$"></SPAN> `YLabel' <SPAN CLASS="MATH"><IMG
+ WIDTH="21" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img235.png"
+ ALT="$\rightarrow$"></SPAN>, `x'
+</LI>
+<LI>press `Insert' <SPAN CLASS="MATH"><IMG
+ WIDTH="21" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img235.png"
+ ALT="$\rightarrow$"></SPAN> `ZLabel' <SPAN CLASS="MATH"><IMG
+ WIDTH="21" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img235.png"
+ ALT="$\rightarrow$"></SPAN>, `y'
+</LI>
+</UL>
+
+<P>
+The resulting curve is plotted in Figure <A HREF="#fig:bratu">8</A>.
+<BR>
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="fig:bratu"></A><A NAME="3941"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 8:</STRONG>
+Equilibrium curve of <TT>bratu.m</TT> with a branch point</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="336" HEIGHT="252" ALIGN="BOTTOM" BORDER="0"
+ SRC="img236.png"
+ ALT="\includegraphics[scale=0.5]{ex/bratu3d.eps}">
+
+</DIV></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+To select the branch point the output <SPAN CLASS="MATH"><IMG
+ WIDTH="12" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img237.png"
+ ALT="$s$"></SPAN> is used. Since the first and last points are also treated as singular, the array of structures <TT>s</TT> has 7 components
+and the data concerning the branch point are at <SPAN CLASS="MATH"><IMG
+ WIDTH="39" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img238.png"
+ ALT="$s(6).$"></SPAN>
+To switch to another branch at the detected branch point, we select that branch point and we use the starter <TT>init_BP_EP</TT>. We start a forward and backward continuation from this point:
+
+<P>
+<PRE>
+testbratu;
+x1=x(1:2,s(6).index);
+p(ap)=x(3,s(6).index);
+[x0,v0]=init_BP_EP(@bratu,x1,p,s(6),0.01);
+opt=contset(opt,'InitStepsize',0.0001);
+[x1,v1,s1,h1,f1]=cont(@equilibrium,x0,v0,opt);
+cpl(x1,v1,s1,[3 1 2]);
+opt=contset(opt,'Backward',1);
+[x2,v2,s2,h2,f2]=cont(@equilibrium,x0,v0,opt);
+cpl(x2,v2,s2,[3 1 2]);
+</PRE>
+
+<P>
+Note that <SPAN CLASS="MATH"><IMG
+ WIDTH="13" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img239.png"
+ ALT="$p$"></SPAN> is a vector containing the initial values of all parameters. The above computations can be done by running <TT>testbratu2.m</TT> in the directory <TT>Testruns</TT>. The output in the command window is as follows:
+
+<P>
+<PRE>
+&gt;&gt; testbratu2
+first point found
+tangent vector to first point found
+label = u1, x = ( 0.259174 0.259174 0.200002 )
+label = LP, x = ( 1.000001 1.000001 0.367879 )
+a=3.535537e-01
+label = H , x = ( 2.000000 2.000000 0.270671 )
+label = u1, x = ( 2.542639 2.542639 0.200000 )
+
+elapsed time  = 0.1 secs
+npoints curve = 50
+start computing extended curve
+label = BP, x = ( 3.000000 3.000000 0.149361 )
+
+elapsed time  = 0.1 secs
+npoints curve = 100
+first point found
+tangent vector to first point found
+
+elapsed time  = 0.1 secs
+npoints curve = 50
+first point found
+tangent vector to first point found
+label = BP, x = ( 3.000000 3.000000 0.149361 )
+
+elapsed time  = 0.1 secs
+npoints curve = 50
+</PRE>
+
+<P>
+We note that the branch point is "discovered" a second time during  the backward continuation of the secondary  branch that
+is rooted at the branch point. All computed  curves are plotted together in Figure <A HREF="#fig:bratuBP">9</A>.
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="fig:bratuBP"></A><A NAME="3942"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 9:</STRONG>
+Equilibrium curve of <TT>bratu.m</TT> with new branches rooted in the branch point</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="336" HEIGHT="252" ALIGN="BOTTOM" BORDER="0"
+ SRC="img240.png"
+ ALT="\includegraphics[scale=0.5]{ex/bratuBP.eps}">
+
+</DIV></TD></TR>
+</TABLE>
+</DIV>
+ 
+<P>
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html880"
+  HREF="node53.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="/usr/share/latex2html/icons/next.png"></A> 
+<A NAME="tex2html876"
+  HREF="node46.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="/usr/share/latex2html/icons/up.png"></A> 
+<A NAME="tex2html872"
+  HREF="node51.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="/usr/share/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html878"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="/usr/share/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html881"
+  HREF="node53.html">Continuation of limit cycles</A>
+<B> Up:</B> <A NAME="tex2html877"
+  HREF="node46.html">Equilibrium continuation</A>
+<B> Previous:</B> <A NAME="tex2html873"
+  HREF="node51.html">Equilibrium initialization</A>
+ &nbsp; <B>  <A NAME="tex2html879"
+  HREF="node1.html">Contents</A></B> </DIV>
+<!--End of Navigation Panel-->
+
+</BODY>
+</HTML>

@@ -1,0 +1,252 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Bifurcations along a fold curve</TITLE>
+<META NAME="description" CONTENT="Bifurcations along a fold curve">
+<META NAME="keywords" CONTENT="ManualAug2019 ">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="ManualAug2019 .css">
+
+<LINK REL="next" HREF="node68.html">
+<LINK REL="previous" HREF="node66.html">
+<LINK REL="up" HREF="node65.html">
+<LINK REL="next" HREF="node68.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html1101"
+  HREF="node68.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="/usr/share/latex2html/icons/next.png"></A> 
+<A NAME="tex2html1097"
+  HREF="node65.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="/usr/share/latex2html/icons/up.png"></A> 
+<A NAME="tex2html1091"
+  HREF="node66.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="/usr/share/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html1099"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="/usr/share/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html1102"
+  HREF="node68.html">Fold initialization</A>
+<B> Up:</B> <A NAME="tex2html1098"
+  HREF="node65.html">Fold Continuation</A>
+<B> Previous:</B> <A NAME="tex2html1092"
+  HREF="node66.html">Mathematical definition</A>
+ &nbsp; <B>  <A NAME="tex2html1100"
+  HREF="node1.html">Contents</A></B> 
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H3><A NAME="SECTION00081200000000000000">
+Bifurcations along a fold curve</A>
+</H3>
+In continuous-time systems there are four generic codim 2 bifurcations that can be detected along
+a fold curve:
+
+<UL>
+<LI><EM>Bogdanov - Takens</EM>. We will denote this bifurcation by <TT>BT</TT>
+</LI>
+<LI><EM>Zero - Hopf</EM> point, denoted by <TT>ZH</TT>
+</LI>
+<LI><EM>Cusp</EM> point, denoted by <TT>CP</TT>
+</LI>
+<LI><EM>Branch</EM> point, denoted by <TT>BP</TT>
+</LI>
+</UL>
+To detect these singularities, we first define <SPAN CLASS="MATH"><IMG
+ WIDTH="50" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img346.png"
+ ALT="$bp+3$"></SPAN> test functions, where <SPAN CLASS="MATH"><IMG
+ WIDTH="20" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img347.png"
+ ALT="$bp$"></SPAN> is the number of branch parameters:
+
+<UL>
+<LI><SPAN CLASS="MATH"><IMG
+ WIDTH="78" HEIGHT="39" ALIGN="MIDDLE" BORDER="0"
+ SRC="img348.png"
+ ALT="$\phi_1=w^Tv$"></SPAN> (cf. formula (<A HREF="node49.html#Eq.NFfold">39</A>))
+</LI>
+<LI>
+<BR>
+<DIV ALIGN="RIGHT" CLASS="mathdisplay">
+
+<!-- MATH
+ \begin{equation}
+\phi_2(u,\alpha) =
+\left( \left[\begin{array}{cc}(2f_u(u,\alpha) \odot I_n)  & w_1\\v_1^T & d\end{array} 
+\right] \: \backslash \left(\begin{array}{c}0\\...\\0\\1\end{array} \right) \right) _{n+1}
+\end{equation}
+ -->
+<A NAME="secondbif2"></A>
+<TABLE WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE"><TD ALIGN="CENTER" NOWRAP><A NAME="secondbif2"></A><IMG
+ WIDTH="408" HEIGHT="96" BORDER="0"
+ SRC="img349.png"
+ ALT="\begin{displaymath}\phi_2(u,\alpha) =
+\left( \left[\begin{array}{cc}(2f_u(u,\a...
+...{array}{c}0\\ ...\\ 0\\ 1\end{array} \right) \right) _{n+1}
+\end{displaymath}"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+(<SPAN CLASS="arabic">58</SPAN>)</TD></TR>
+</TABLE>
+<BR CLEAR="ALL"></DIV><P></P> 
+</LI>
+<LI><!-- MATH
+ $\phi_3=w^Tf_{uu}[v,v]$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="129" HEIGHT="39" ALIGN="MIDDLE" BORDER="0"
+ SRC="img350.png"
+ ALT="$\phi_3=w^Tf_{uu}[v,v]$"></SPAN>
+</LI>
+<LI><!-- MATH
+ $\phi_i=w^Tf_{\beta_i}(u,\alpha)$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="131" HEIGHT="39" ALIGN="MIDDLE" BORDER="0"
+ SRC="img351.png"
+ ALT="$\phi_i=w^Tf_{\beta_i}(u,\alpha)$"></SPAN>
+</LI>
+</UL>
+In these expressions <SPAN CLASS="MATH"><IMG
+ WIDTH="34" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img352.png"
+ ALT="$v, w$"></SPAN> are the vectors computed in (<A HREF="node66.html#fe2">56</A>) and(<A HREF="node66.html#fe3">57</A>) respectively, <SPAN CLASS="MATH"><IMG
+ WIDTH="17" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img197.png"
+ ALT="$\odot$"></SPAN> is the bialternate matrix product, <SPAN CLASS="MATH"><IMG
+ WIDTH="20" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img198.png"
+ ALT="$v_1$"></SPAN>, <SPAN CLASS="MATH"><IMG
+ WIDTH="24" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img199.png"
+ ALT="$w_1$"></SPAN> are <!-- MATH
+ $\frac{n(n-1)}{2}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="52" HEIGHT="45" ALIGN="MIDDLE" BORDER="0"
+ SRC="img200.png"
+ ALT="$\frac{n(n-1)}{2}$"></SPAN> vectors chosen so that the square matrix in (<A HREF="#secondbif2">58</A>) is non-singular, and 
+<SPAN CLASS="MATH"><IMG
+ WIDTH="19" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img353.png"
+ ALT="$\beta_i$"></SPAN> (branch parameters) are components of <SPAN CLASS="MATH"><IMG
+ WIDTH="15" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img227.png"
+ ALT="$\alpha$"></SPAN>.
+The singularity matrix for <SPAN CLASS="MATH"><IMG
+ WIDTH="52" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img354.png"
+ ALT="$bp=0$"></SPAN> is:
+<BR>
+<DIV ALIGN="RIGHT" CLASS="mathdisplay">
+
+<!-- MATH
+ \begin{equation}
+S = \left(\begin{array}{ccc}
+0 & 0 & -\\
+1 & 0 & -\\
+- & - & 0
+\end{array}\right)
+\end{equation}
+ -->
+<TABLE WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE"><TD ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="148" HEIGHT="72" BORDER="0"
+ SRC="img355.png"
+ ALT="\begin{displaymath}
+S = \left(\begin{array}{ccc}
+0 &amp; 0 &amp; -\\
+1 &amp; 0 &amp; -\\
+- &amp; - &amp; 0
+\end{array}\right)
+\end{displaymath}"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+(<SPAN CLASS="arabic">59</SPAN>)</TD></TR>
+</TABLE>
+<BR CLEAR="ALL"></DIV><P></P>
+The number of branch parameters is not fixed. If the number of branch parameters is <SPAN CLASS="MATH"><IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img103.png"
+ ALT="$2$"></SPAN> then this matrix has two more rows and columns. This singularity matrix is automatically extended:
+<BR><P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay">
+<!-- MATH
+ \begin{displaymath}
+S = \left(\begin{array}{ccccc}
+0 & 0 & - & - & -\\
+1 & 0 & - & - & -\\
+- & - & 0 & - & -\\
+- & - & - & 0 & -\\
+- & - & - & - & 0
+\end{array}\right)
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="206" HEIGHT="115" BORDER="0"
+ SRC="img356.png"
+ ALT="\begin{displaymath}
+S = \left(\begin{array}{ccccc}
+0 &amp; 0 &amp; - &amp; - &amp; -\\
+1 &amp; 0...
+...
+- &amp; - &amp; - &amp; 0 &amp; -\\
+- &amp; - &amp; - &amp; - &amp; 0
+\end{array}\right)
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P> 
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html1101"
+  HREF="node68.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="/usr/share/latex2html/icons/next.png"></A> 
+<A NAME="tex2html1097"
+  HREF="node65.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="/usr/share/latex2html/icons/up.png"></A> 
+<A NAME="tex2html1091"
+  HREF="node66.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="/usr/share/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html1099"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="/usr/share/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html1102"
+  HREF="node68.html">Fold initialization</A>
+<B> Up:</B> <A NAME="tex2html1098"
+  HREF="node65.html">Fold Continuation</A>
+<B> Previous:</B> <A NAME="tex2html1092"
+  HREF="node66.html">Mathematical definition</A>
+ &nbsp; <B>  <A NAME="tex2html1100"
+  HREF="node1.html">Contents</A></B> </DIV>
+<!--End of Navigation Panel-->
+
+</BODY>
+</HTML>

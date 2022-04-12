@@ -1,0 +1,250 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Initialization by time integration</TITLE>
+<META NAME="description" CONTENT="Initialization by time integration">
+<META NAME="keywords" CONTENT="ManualAug2019 ">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="ManualAug2019 .css">
+
+<LINK REL="next" HREF="node58.html">
+<LINK REL="previous" HREF="node56.html">
+<LINK REL="up" HREF="node53.html">
+<LINK REL="next" HREF="node58.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html950"
+  HREF="node58.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="/usr/share/latex2html/icons/next.png"></A> 
+<A NAME="tex2html946"
+  HREF="node53.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="/usr/share/latex2html/icons/up.png"></A> 
+<A NAME="tex2html940"
+  HREF="node56.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="/usr/share/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html948"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="/usr/share/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html951"
+  HREF="node58.html">Bifurcations of limit cycles</A>
+<B> Up:</B> <A NAME="tex2html947"
+  HREF="node53.html">Continuation of limit cycles</A>
+<B> Previous:</B> <A NAME="tex2html941"
+  HREF="node56.html">Plotting the output of</A>
+ &nbsp; <B>  <A NAME="tex2html949"
+  HREF="node1.html">Contents</A></B> 
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00074000000000000000"></A><A NAME="IniTimInt"></A>
+<BR>
+Initialization by time integration
+</H2>
+
+<P>
+The initialization of a continuation of limit cycles is a nontrivial issue. Probably the most often used
+method is to start from a Hopf point that is detected on a curve  of equilibria, see &#167;<A HREF="node61.html#LimCycInit">7.6</A>.
+Another powerful method is to compute orbits and see whether some of them converge to (stable) periodic orbits. 
+If such an orbit is found (the easiest way is by graphical inspection) then one uses an (approximation to) 
+a point of the orbit and integrates again over a time interval that is somewhat larger than the period of the
+orbit but smaller that twice the period. The routine <TT>initOrbLC.m</TT> in the directory <TT>LimitCycle</TT>
+then can initialize the  continuation of periodic orbits with a user-chosen free parameter, with the period of orbit as the
+second free parameter. An example is provided in the testrun <TT>testselectcycle.m</TT> in the directory 
+<TT>Testruns</TT>:
+
+<P>
+<PRE>
+OPTIONS = [];
+hls = adaptx;
+OPTIONS=odeset('RelTol',1e-8);
+[t,y] = ode45(hls{2},[0 300],[0.3 0.5 -0.1],OPTIONS,1,0.8);
+
+x1 = y(end,:);
+
+[t,y] = ode45(hls{2},[0 10],x1,OPTIONS,1,0.8);
+
+figure
+plot(y(:,1),y(:,2))
+
+p=[1;0.8];
+ap=[2];
+
+tolerance=1e-2;
+[x0,v0]=initOrbLC(@adaptx,t,y,p,ap,20,4,tolerance);
+opt=contset;
+opt=contset(opt,'MaxNumPoints',50);
+%opt=contset(opt,'TSearchOrder',0);
+%opt=contset(opt,'Backward',1);
+[xlcc,vlcc,slcc,hlcc,flcc]=cont(@limitcycle,x0,v0,opt);
+
+figure
+axes
+plotcycle(xlcc,vlcc,slcc,[size(xlcc,1) 1 2]);
+</PRE>
+
+<P>
+In this script <TT>adaptx</TT> is the dynamical system (<A HREF="node62.html#adaptivecontrol">54</A>) in &#167;<A HREF="node62.html#s:lcex">7.7</A> whose <I>odefile</I> <TT>adaptx.m</TT>
+is stored in the directory <TT>Testruns/TestSystems</TT>. It has three state variables and
+two parameters. Starting from the point <!-- MATH
+ $(0.3;0.5;-0.1)$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="113" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img258.png"
+ ALT="$(0.3;0.5;-0.1)$"></SPAN> and with parameter values <SPAN CLASS="MATH"><IMG
+ WIDTH="56" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img259.png"
+ ALT="$(1,0.8)$"></SPAN>
+it is integrated over the time span <SPAN CLASS="MATH"><IMG
+ WIDTH="35" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img260.png"
+ ALT="$300.$"></SPAN> The endpoint is called <SPAN CLASS="MATH"><IMG
+ WIDTH="23" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img261.png"
+ ALT="$x1$"></SPAN> and from this point another
+time integration over the shorter span <SPAN CLASS="MATH"><IMG
+ WIDTH="21" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img107.png"
+ ALT="$10$"></SPAN> is performed. It is then checked graphically that this
+new integration contains a closed circle, see Figure <A HREF="#SelCyc1">10</A> for a plot in a two-dimensional space.
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="SelCyc1"></A><A NAME="4222"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 10:</STRONG>
+A closed curve in the adaptx - system.</CAPTION>
+<TR><TD><IMG
+ WIDTH="363" HEIGHT="272" BORDER="0"
+ SRC="img262.png"
+ ALT="\begin{figure}
+\centering
+\centerline{\psfig{figure=ex/SelCyc1.eps,height=6cm}}
+\end{figure}"></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+The call
+<PRE>
+[x0,v0]=initOrbLC(@adaptx,t,y,p,ap,20,4,tolerance);
+</PRE>
+now initializes the continuation of limit cycles. Here <SPAN CLASS="MATH"><IMG
+ WIDTH="10" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img263.png"
+ ALT="$t$"></SPAN> is a column vector whose entries
+are the time points (between <SPAN CLASS="MATH"><IMG
+ WIDTH="13" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img112.png"
+ ALT="$0$"></SPAN> and <SPAN CLASS="MATH"><IMG
+ WIDTH="21" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img107.png"
+ ALT="$10$"></SPAN>) and <SPAN CLASS="MATH"><IMG
+ WIDTH="13" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img181.png"
+ ALT="$y$"></SPAN> is a matrix whose rows contain the coordinates
+of the points computed along the orbit. Also, <SPAN CLASS="MATH"><IMG
+ WIDTH="88" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img264.png"
+ ALT="$p=(1;0.8)$"></SPAN> is the parameter vector and <SPAN CLASS="MATH"><IMG
+ WIDTH="63" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img265.png"
+ ALT="$ap=[2]$"></SPAN>
+contains the indices of the free parameters, so in this case the second parameter is free. Also,
+the number of test functions is <SPAN CLASS="MATH"><IMG
+ WIDTH="21" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img266.png"
+ ALT="$20$"></SPAN> and the number of collocation points in the discretization
+of the limit cycle is <SPAN CLASS="MATH"><IMG
+ WIDTH="17" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img267.png"
+ ALT="$4.$"></SPAN> Finally, the tolerance is a threshold for accepting an initial part of
+the computed orbit as an approximation to a limit cycle.
+
+<P>
+The last command plots the continuation of a branch of limit cycles with <SPAN CLASS="MATH"><IMG
+ WIDTH="21" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img115.png"
+ ALT="$50$"></SPAN> computed limit cycles
+in the state space, see Figure <A HREF="#SelCyc2">11</A> (the axis labels were added manually).
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="SelCyc2"></A><A NAME="4230"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 11:</STRONG>
+50 limit cycles  in the adaptx - system.</CAPTION>
+<TR><TD><IMG
+ WIDTH="363" HEIGHT="272" BORDER="0"
+ SRC="img268.png"
+ ALT="\begin{figure}
+\centering
+\centerline{\psfig{figure=ex/SelCyc2.eps,height=6cm}}
+\end{figure}"></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+Note: when the lines
+<PRE>
+%opt=contset(opt,'TSearchOrder',0);
+%opt=contset(opt,'Backward',1);
+</PRE>
+in <TT>testselectcycle</TT> are made active, then the initialization of the continuation of
+limit cycles involves a decreasing order of the unit vectors in continuation space instead of
+an increasing order. This accidentally leads to a continuation in the opposite direction; therefore
+cds.options.Backward is set to reverse the continuation. 
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html950"
+  HREF="node58.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="/usr/share/latex2html/icons/next.png"></A> 
+<A NAME="tex2html946"
+  HREF="node53.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="/usr/share/latex2html/icons/up.png"></A> 
+<A NAME="tex2html940"
+  HREF="node56.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="/usr/share/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html948"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="/usr/share/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html951"
+  HREF="node58.html">Bifurcations of limit cycles</A>
+<B> Up:</B> <A NAME="tex2html947"
+  HREF="node53.html">Continuation of limit cycles</A>
+<B> Previous:</B> <A NAME="tex2html941"
+  HREF="node56.html">Plotting the output of</A>
+ &nbsp; <B>  <A NAME="tex2html949"
+  HREF="node1.html">Contents</A></B> </DIV>
+<!--End of Navigation Panel-->
+
+</BODY>
+</HTML>

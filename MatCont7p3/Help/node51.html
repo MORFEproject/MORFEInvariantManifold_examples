@@ -1,0 +1,133 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Equilibrium initialization</TITLE>
+<META NAME="description" CONTENT="Equilibrium initialization">
+<META NAME="keywords" CONTENT="ManualAug2019 ">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="ManualAug2019 .css">
+
+<LINK REL="next" HREF="node52.html">
+<LINK REL="previous" HREF="node49.html">
+<LINK REL="up" HREF="node46.html">
+<LINK REL="next" HREF="node52.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html870"
+  HREF="node52.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="/usr/share/latex2html/icons/next.png"></A> 
+<A NAME="tex2html866"
+  HREF="node46.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="/usr/share/latex2html/icons/up.png"></A> 
+<A NAME="tex2html860"
+  HREF="node50.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="/usr/share/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html868"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="/usr/share/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html871"
+  HREF="node52.html">Bratu example</A>
+<B> Up:</B> <A NAME="tex2html867"
+  HREF="node46.html">Equilibrium continuation</A>
+<B> Previous:</B> <A NAME="tex2html861"
+  HREF="node50.html">Branch point locator</A>
+ &nbsp; <B>  <A NAME="tex2html869"
+  HREF="node1.html">Contents</A></B> 
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00064000000000000000">
+Equilibrium initialization</A>
+</H2>
+
+<P>
+Naively, one would start the continuation immediately with:
+<BLOCKQUOTE>
+<TT>[x,v,s,h,f]=cont(@equilibrium, x0, v0, opt)</TT>
+
+</BLOCKQUOTE>
+However, the equilibrium curve file has to know :
+
+<UL>
+<LI>which ode file to use,
+</LI>
+<LI>the values of all state variables,
+</LI>
+<LI>the values of all parameters,
+</LI>
+<LI>which parameter is active.
+</LI>
+</UL>
+All this information can be supplied by one of the following two starting functions. Both functions return an initial point <TT>x0</TT> as well as its tangent vector <TT>v0</TT>.
+
+<UL>
+<LI><TT>[x0,v0]=init_EP_EP(@odefile, x, p, ap)</TT>
+
+<P>
+This routine stores its information in a global structure <TT>eds</TT> (see also Figure <A HREF="node30.html#fig:layers">4</A>).
+The result of <TT>init_EP_EP</TT> is a vector <TT>x0</TT> with the state variables and the active parameter and a vector <TT>v0</TT> that is empty. Here <TT>odefile</TT> is the ode-file (system-definition file) to be used, <TT>x</TT> is a vector containing the values of the state variables. <TT>p</TT> is the vector containing the current values of the parameters and <TT>ap</TT> is the active parameter.
+The full listing of the equilibrium initializer can be found in the file 'Equilibrium/init_EP_EP.m' of the toolbox. 
+
+<P>
+</LI>
+<LI><TT>[x0,v0]=init_BP_EP(@odefile, x, p, s, h)</TT>
+
+<P>
+Calculates an initial point for starting a new branch from a branch point detected on an equilibrium curve. This routine stores its information in a global structure <TT>eds</TT> (see also Figure <A HREF="node30.html#fig:layers">4</A>). Here <TT>odefile</TT> is the ode-file (system-definition file) to be used, <TT>x</TT> is a vector containing the values of the state variables returned by a previous equilibrium curve continuation. <TT>p</TT> is the vector containing the current values of the parameters and <TT>h</TT> contains the value of the initial amplitude.
+The full listing of the equilibrium initializer and the curve definition can be found 
+in the files 'Equilibrium/init_BP_EP.m' and 'equilibrium.m' of the toolbox, respectively. 
+</LI>
+</UL>
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html870"
+  HREF="node52.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="/usr/share/latex2html/icons/next.png"></A> 
+<A NAME="tex2html866"
+  HREF="node46.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="/usr/share/latex2html/icons/up.png"></A> 
+<A NAME="tex2html860"
+  HREF="node50.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="/usr/share/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html868"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="/usr/share/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html871"
+  HREF="node52.html">Bratu example</A>
+<B> Up:</B> <A NAME="tex2html867"
+  HREF="node46.html">Equilibrium continuation</A>
+<B> Previous:</B> <A NAME="tex2html861"
+  HREF="node50.html">Branch point locator</A>
+ &nbsp; <B>  <A NAME="tex2html869"
+  HREF="node1.html">Contents</A></B> </DIV>
+<!--End of Navigation Panel-->
+
+</BODY>
+</HTML>

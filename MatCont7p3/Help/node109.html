@@ -1,0 +1,145 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Homoclinic initialization (HHS)</TITLE>
+<META NAME="description" CONTENT="Homoclinic initialization (HHS)">
+<META NAME="keywords" CONTENT="ManualAug2019 ">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="ManualAug2019 .css">
+
+<LINK REL="next" HREF="node110.html">
+<LINK REL="previous" HREF="node108.html">
+<LINK REL="up" HREF="node104.html">
+<LINK REL="next" HREF="node110.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html1631"
+  HREF="node110.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="/usr/share/latex2html/icons/next.png"></A> 
+<A NAME="tex2html1627"
+  HREF="node104.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="/usr/share/latex2html/icons/up.png"></A> 
+<A NAME="tex2html1621"
+  HREF="node108.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="/usr/share/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html1629"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="/usr/share/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html1632"
+  HREF="node110.html">Homoclinic-to-Saddle-Node initialization (HSN)</A>
+<B> Up:</B> <A NAME="tex2html1628"
+  HREF="node104.html">Continuation of homoclinic and</A>
+<B> Previous:</B> <A NAME="tex2html1622"
+  HREF="node108.html">Bifurcations</A>
+ &nbsp; <B>  <A NAME="tex2html1630"
+  HREF="node1.html">Contents</A></B> 
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION000103000000000000000"></A><A NAME="HomInt"></A>
+<BR>
+Homoclinic initialization (HHS)
+</H2>
+For homoclinics the same problems occur as with limit cycles, a homoclinic continuation cannot be done by just calling the continuer as
+<BLOCKQUOTE>
+<TT>[x,v,s,h,f]=cont(@homoclinic, x0, v0, opt)</TT>
+
+</BLOCKQUOTE>
+The homoclinic curve file has to know
+
+<UL>
+<LI>which ode file to use,
+</LI>
+<LI>which (two) system parameters are active,
+</LI>
+<LI>the values of all parameters,
+</LI>
+<LI>the number of mesh and collocation points to use for the discretization.
+</LI>
+</UL>
+Also, some initial information about the state variables is necessary. In the simplest cases this is an initial cycle <TT>x0</TT> with a large period and close to a homoclic orbit, or an already known homoclinic orbit. This information can be supplied using an initializer:
+
+<P>
+
+<UL>
+<LI><TT>[x0,v0]=init_LC_Hom(@odefile, x, s, p, ap, ntst, ncol, extravec, T, eps0, eps1)</TT> 
+<BR>
+Calculates an initial homoclinic orbit from a limit cycle with large period. Here <TT>odefile</TT> is the ode-file to be used. <TT>x</TT> and <TT>s</TT> are here the <TT>x</TT> and <TT>s</TT> belonging to the limit cycle with large period, obtained in a previous continuation. <TT>p</TT> is the vector containing the current values of the parameters. <TT>ap</TT> is the active parameter and <TT>ntst</TT> and <TT>ncol</TT> are the number of mesh and collocation points to be used for the discretization. <TT>extravec</TT> is a vector of 3 integers, which are either <TT>0</TT>  or <TT>1</TT>, and which indicate which of <TT>T, eps0, eps1</TT> are to be variable during the continuation. The vector is <TT>1</TT> for those that should be variable. This can either be 1 or 2 or the three parameters. <TT>T, eps0</TT> and  <TT>eps1</TT> are values for these parameters.
+
+<P>
+</LI>
+<LI><TT>[x0,v0]=init_Hom_Hom(@odefile, x, s, p, ap, ntst, ncol, extravec, T, eps0, eps1)</TT> 
+<BR>
+Calculates an initial homoclinic orbit from a homoclinic orbit obtained during a previous continuation. All parameters are similar to the initialisations above.
+</LI>
+</UL>
+
+<P>
+These initializers return an initial homoclinic orbit <TT>x0</TT> as well as its tangent vector <TT>v0</TT>.
+
+<P>
+It is also possible to start a homoclinic orbit from a Bogdanov-Takens equilibrium point. The initialization of homoclinic orbits from a BT point has a long history. We refer in particular
+to [<A
+ HREF="node115.html#BTHom1">30</A>], [<A
+ HREF="node115.html#BTHom2">31</A>] and [<A
+ HREF="node115.html#BTHom3">1</A>] where further references can be found. This case is relegated to the 
+M<SMALL>AT</SMALL>C<SMALL>ONT </SMALL>GUI tutorials. 
+
+<P>
+The homotopy method even allows a start from any equilibrium point. For details and examples we refer to [<A
+ HREF="node115.html#degokufr">8</A>]. This case is  also relegated to the 
+M<SMALL>AT</SMALL>C<SMALL>ONT </SMALL>GUI tutorials. 
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html1631"
+  HREF="node110.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="/usr/share/latex2html/icons/next.png"></A> 
+<A NAME="tex2html1627"
+  HREF="node104.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="/usr/share/latex2html/icons/up.png"></A> 
+<A NAME="tex2html1621"
+  HREF="node108.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="/usr/share/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html1629"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="/usr/share/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html1632"
+  HREF="node110.html">Homoclinic-to-Saddle-Node initialization (HSN)</A>
+<B> Up:</B> <A NAME="tex2html1628"
+  HREF="node104.html">Continuation of homoclinic and</A>
+<B> Previous:</B> <A NAME="tex2html1622"
+  HREF="node108.html">Bifurcations</A>
+ &nbsp; <B>  <A NAME="tex2html1630"
+  HREF="node1.html">Contents</A></B> </DIV>
+<!--End of Navigation Panel-->
+
+</BODY>
+</HTML>

@@ -1,0 +1,356 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Bifurcations along a fold of cycles curve</TITLE>
+<META NAME="description" CONTENT="Bifurcations along a fold of cycles curve">
+<META NAME="keywords" CONTENT="ManualAug2019 ">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="ManualAug2019 .css">
+
+<LINK REL="next" HREF="node86.html">
+<LINK REL="previous" HREF="node84.html">
+<LINK REL="up" HREF="node83.html">
+<LINK REL="next" HREF="node86.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html1325"
+  HREF="node86.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="/usr/share/latex2html/icons/next.png"></A> 
+<A NAME="tex2html1321"
+  HREF="node83.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="/usr/share/latex2html/icons/up.png"></A> 
+<A NAME="tex2html1315"
+  HREF="node84.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="/usr/share/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html1323"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="/usr/share/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html1326"
+  HREF="node86.html">Fold of cycles initialization</A>
+<B> Up:</B> <A NAME="tex2html1322"
+  HREF="node83.html">Continuation of fold bifurcation</A>
+<B> Previous:</B> <A NAME="tex2html1316"
+  HREF="node84.html">Mathematical definition</A>
+ &nbsp; <B>  <A NAME="tex2html1324"
+  HREF="node1.html">Contents</A></B> 
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H3><A NAME="SECTION00084200000000000000">
+Bifurcations along a fold of cycles curve</A>
+</H3>
+In CL_M<SMALL>AT</SMALL>C<SMALL>ONT</SMALL> there are five generic codim 2 bifurcations that can be detected along
+a fold of cycles curve:
+
+<UL>
+<LI><EM>Branch point</EM>. We will denote this bifurcation with <TT>BPC</TT>
+</LI>
+<LI><EM>Strong 1:1 resonance</EM>. We will denote this bifurcation with <TT>R1</TT>
+</LI>
+<LI><EM>Cusp</EM> point, denoted by <TT>CPC</TT>
+</LI>
+<LI><EM>Fold - flip</EM>, <EM>Limit Point - Period Doubling</EM>or  We will denote this bifurcation by <TT>LPPD</TT>
+</LI>
+<LI><EM>Fold - Neimark-Sacker</EM>, denoted by <TT>LPNS</TT>
+</LI>
+</UL>
+A <EM>Generalized Hopf</EM> (<TT>GH</TT>) marks the end (or start) of an LPC curve.
+<BR>
+To detect the generic singularities, we first define <SPAN CLASS="MATH"><IMG
+ WIDTH="50" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img446.png"
+ ALT="$bp+5$"></SPAN> test functions, where <SPAN CLASS="MATH"><IMG
+ WIDTH="20" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img347.png"
+ ALT="$bp$"></SPAN> is the number of branch parameters:
+
+<UL>
+<LI><!-- MATH
+ $\psi_i=w^Tf_{\beta_i}(u,\alpha),i\in (1,...,bp)$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="235" HEIGHT="39" ALIGN="MIDDLE" BORDER="0"
+ SRC="img447.png"
+ ALT="$\psi_i=w^Tf_{\beta_i}(u,\alpha),i\in (1,...,bp)$"></SPAN>
+</LI>
+<LI><!-- MATH
+ $\psi_{bp+1}=(\varphi_1^*)^T_{W_1}L_{C\times M}v_{1M}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="200" HEIGHT="39" ALIGN="MIDDLE" BORDER="0"
+ SRC="img448.png"
+ ALT="$\psi_{bp+1}=(\varphi_1^*)^T_{W_1}L_{C\times M}v_{1M}$"></SPAN>
+</LI>
+<LI><!-- MATH
+ $\psi_{bp+2}= b$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="77" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img449.png"
+ ALT="$\psi_{bp+2}= b$"></SPAN>  (normal form coefficient)
+</LI>
+<LI><!-- MATH
+ $\phi_{bp+3}=det\left( M + I_n \right)$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="165" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img450.png"
+ ALT="$\phi_{bp+3}=det\left( M + I_n \right)$"></SPAN>
+</LI>
+<LI><!-- MATH
+ $\psi_{bp+4}=det\left(\left( M2 \odot M2 \right) - I_n \right)$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="237" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img451.png"
+ ALT="$\psi_{bp+4}=det\left(\left( M2 \odot M2 \right) - I_n \right)$"></SPAN>
+</LI>
+</UL>
+
+<P>
+In the <SPAN CLASS="MATH"><IMG
+ WIDTH="21" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img452.png"
+ ALT="$\psi_i$"></SPAN> expressions <SPAN CLASS="MATH"><IMG
+ WIDTH="17" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img53.png"
+ ALT="$w$"></SPAN> is the vector computed in (<A HREF="node66.html#fe3">57</A>) and 
+<SPAN CLASS="MATH"><IMG
+ WIDTH="19" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img353.png"
+ ALT="$\beta_i$"></SPAN> (branch parameter) is a component of <SPAN CLASS="MATH"><IMG
+ WIDTH="15" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img227.png"
+ ALT="$\alpha$"></SPAN>.
+
+<P>
+In the second expression <SPAN CLASS="MATH"><IMG
+ WIDTH="46" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img453.png"
+ ALT="$\psi_{bp+1}$"></SPAN>, we compute <SPAN CLASS="MATH"><IMG
+ WIDTH="34" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img406.png"
+ ALT="$v_{1M}$"></SPAN> by solving
+<BR>
+<DIV ALIGN="RIGHT" CLASS="mathdisplay">
+
+<!-- MATH
+ \begin{equation}
+\left[\begin{array}{c}D-TA(t)\\
+\delta_0-\delta_1\\
+\int_0^1{F(u_{0,1}(t))L_{C\times M}}
+\end{array}\right]_{disc}v_{1M}=
+\left[\begin{array}{c}TF(u_{0,1}(t))\\
+0\\
+0
+\end{array}\right]_{disc}.
+
+\end{equation}
+ -->
+<A NAME="opLP"></A>
+<TABLE WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE"><TD ALIGN="CENTER" NOWRAP><A NAME="opLP"></A><IMG
+ WIDTH="418" HEIGHT="75" BORDER="0"
+ SRC="img454.png"
+ ALT="\begin{displaymath}
+\left[\begin{array}{c}D-TA(t)\\
+\delta_0-\delta_1\\
+\in...
+...y}{c}TF(u_{0,1}(t))\\
+0\\
+0
+\end{array}\right]_{disc}.
+\end{displaymath}"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+(<SPAN CLASS="arabic">73</SPAN>)</TD></TR>
+</TABLE>
+<BR CLEAR="ALL"></DIV><P></P>
+By discretization we obtain <BR><P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay">
+<!-- MATH
+ \begin{displaymath}
+(\varphi_{1W}^*)^T\left[\begin{array}{c}D-TA(t)\\\delta_0-\delta_1\end{array}\right]_{disc}=0.
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="236" HEIGHT="51" BORDER="0"
+ SRC="img455.png"
+ ALT="\begin{displaymath}(\varphi_{1W}^*)^T\left[\begin{array}{c}D-TA(t)\\ \delta_0-\delta_1\end{array}\right]_{disc}=0.\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+To normalize <!-- MATH
+ $(\varphi_1^*)_{W_1}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="57" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img456.png"
+ ALT="$(\varphi_1^*)_{W_1}$"></SPAN> we require <!-- MATH
+ $\sum_{i=1}^N\sum_{j=1}^m\left|((v_1^*)_{W_1})_{(i-1)m+j}\right|_1=1$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="270" HEIGHT="41" ALIGN="MIDDLE" BORDER="0"
+ SRC="img457.png"
+ ALT="$\sum_{i=1}^N\sum_{j=1}^m\left\vert((v_1^*)_{W_1})_{(i-1)m+j}\right\vert _1=1$"></SPAN>. Then <!-- MATH
+ $\int_{0}^{1} {\langle \varphi_1^*(t),v_1(t)\rangle dt}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="137" HEIGHT="42" ALIGN="MIDDLE" BORDER="0"
+ SRC="img458.png"
+ ALT="$\int_{0}^{1} {\langle \varphi_1^*(t),v_1(t)\rangle dt}$"></SPAN> is approximated by <!-- MATH
+ $(\varphi_1^*)^T_{W_1}L_{C\times M}v_{1M}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="135" HEIGHT="39" ALIGN="MIDDLE" BORDER="0"
+ SRC="img459.png"
+ ALT="$(\varphi_1^*)^T_{W_1}L_{C\times M}v_{1M}$"></SPAN> and if this quantity is nonzero, <!-- MATH
+ $\varphi^*_{1W}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="37" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img460.png"
+ ALT="$\varphi^*_{1W}$"></SPAN> is rescaled so that <!-- MATH
+ $\int_{0}^{1} {\langle \varphi_1^*(t),v_1(t)\rangle dt}=1$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="169" HEIGHT="42" ALIGN="MIDDLE" BORDER="0"
+ SRC="img461.png"
+ ALT="$\int_{0}^{1} {\langle \varphi_1^*(t),v_1(t)\rangle dt}=1$"></SPAN>.
+
+<P>
+So the third expression for the normal form coefficient <SPAN CLASS="MATH"><IMG
+ WIDTH="11" HEIGHT="20" ALIGN="BOTTOM" BORDER="0"
+ SRC="img305.png"
+ ALT="$b$"></SPAN> becomes
+<BR><P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay">
+<!-- MATH
+ \begin{displaymath}
+b = \frac{1}{2}((\varphi_{1W_1}^*)^T((B(t;v_{1M},v_{1M})_C+2(A(t)v_{1}(t))_C)).
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="389" HEIGHT="42" BORDER="0"
+ SRC="img462.png"
+ ALT="\begin{displaymath}b = \frac{1}{2}((\varphi_{1W_1}^*)^T((B(t;v_{1M},v_{1M})_C+2(A(t)v_{1}(t))_C)).\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+
+<P>
+In the fourth expression, <SPAN CLASS="MATH"><IMG
+ WIDTH="23" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img394.png"
+ ALT="$M$"></SPAN> is the monodromy matrix.
+
+<P>
+In the fifth expression, <SPAN CLASS="MATH"><IMG
+ WIDTH="31" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img463.png"
+ ALT="$M2$"></SPAN> is the <!-- MATH
+ $(n-2) \times (n-2)$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="133" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img464.png"
+ ALT="$(n-2) \times (n-2)$"></SPAN> matrix that restricts the <SPAN CLASS="MATH"><IMG
+ WIDTH="46" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img465.png"
+ ALT="$n \times n$"></SPAN> matrix <SPAN CLASS="MATH"><IMG
+ WIDTH="23" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img394.png"
+ ALT="$M$"></SPAN> to the space orthogonal to the two-dimensional left eigenspace of  the two multipliers that are closest to <SPAN CLASS="MATH"><IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img102.png"
+ ALT="$1$"></SPAN>.
+<BR>
+
+<BR>
+The number of branch parameters is not fixed. If the number of branch parameters is <SPAN CLASS="MATH"><IMG
+ WIDTH="13" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img108.png"
+ ALT="$3$"></SPAN> then this matrix has three more rows and columns. This singularity matrix is automatically extended:
+<BR><P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay">
+<!-- MATH
+ \begin{displaymath}
+S = \left(\begin{array}{ccccc}
+ 0 & - & - & - & -\\
+ - & 0 & - & - & -\\
+ - & - & 0 & - & -\\
+ - & - & - & 0 & -\\
+ - & - & - & 1 & 0
+\end{array}\right).
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="218" HEIGHT="115" BORDER="0"
+ SRC="img466.png"
+ ALT="\begin{displaymath}
+S = \left(\begin{array}{ccccc}
+0 &amp; - &amp; - &amp; - &amp; -\\
+- &amp;...
+...- &amp; - &amp; - &amp; 0 &amp; -\\
+- &amp; - &amp; - &amp; 1 &amp; 0
+\end{array}\right).
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P> 
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html1325"
+  HREF="node86.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="/usr/share/latex2html/icons/next.png"></A> 
+<A NAME="tex2html1321"
+  HREF="node83.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="/usr/share/latex2html/icons/up.png"></A> 
+<A NAME="tex2html1315"
+  HREF="node84.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="/usr/share/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html1323"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="/usr/share/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html1326"
+  HREF="node86.html">Fold of cycles initialization</A>
+<B> Up:</B> <A NAME="tex2html1322"
+  HREF="node83.html">Continuation of fold bifurcation</A>
+<B> Previous:</B> <A NAME="tex2html1316"
+  HREF="node84.html">Mathematical definition</A>
+ &nbsp; <B>  <A NAME="tex2html1324"
+  HREF="node1.html">Contents</A></B> </DIV>
+<!--End of Navigation Panel-->
+
+</BODY>
+</HTML>

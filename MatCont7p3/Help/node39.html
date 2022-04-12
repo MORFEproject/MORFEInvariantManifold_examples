@@ -1,0 +1,111 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Time integration and Poincar&#233; maps</TITLE>
+<META NAME="description" CONTENT="Time integration and Poincar&#233; maps">
+<META NAME="keywords" CONTENT="ManualAug2019 ">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="ManualAug2019 .css">
+
+<LINK REL="next" HREF="node46.html">
+<LINK REL="previous" HREF="node34.html">
+<LINK REL="up" HREF="ManualAug2019 .html">
+<LINK REL="next" HREF="node40.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html717"
+  HREF="node40.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="/usr/share/latex2html/icons/next.png"></A> 
+<A NAME="tex2html713"
+  HREF="ManualAug2019 .html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="/usr/share/latex2html/icons/up.png"></A> 
+<A NAME="tex2html707"
+  HREF="node38.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="/usr/share/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html715"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="/usr/share/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html718"
+  HREF="node40.html">Time integration</A>
+<B> Up:</B> <A NAME="tex2html714"
+  HREF="ManualAug2019 .html">ManualAug2019</A>
+<B> Previous:</B> <A NAME="tex2html708"
+  HREF="node38.html">Time integration using the</A>
+ &nbsp; <B>  <A NAME="tex2html716"
+  HREF="node1.html">Contents</A></B> 
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION00050000000000000000"></A><A NAME="Poinsection"></A>
+<BR>
+Time integration and Poincar&#233; maps
+</H1>
+
+<P>
+<SMALL>MATLAB</SMALL> provides a suite of ODE-solvers. To create a combined 
+integration-continuation environment, we have made them all accessible in M<SMALL>AT</SMALL>C<SMALL>ONT</SMALL> 
+and added two new ones, <TT>ode78</TT> and <TT>ode87</TT>.
+<TT>ode78</TT>  is an explicit Runge-Kutta method that uses 7th order Fehlberg formulas
+[Fehlberg 1969]. This is a 7-8th-order accurate integrator, therefore the local error normally
+expected is <SPAN CLASS="MATH"><IMG
+ WIDTH="49" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img148.png"
+ ALT="$O(h^9)$"></SPAN>. <TT>ode87</TT> is a Runge-Kutta method that uses
+8-7th order Dorman and Prince formulas.  See [Prince and Dorman 1981]. 
+This is a 8th-order accurate integrator therefore the local error normally
+expected is <SPAN CLASS="MATH"><IMG
+ WIDTH="49" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img148.png"
+ ALT="$O(h^9)$"></SPAN>. In M<SMALL>AT</SMALL>C<SMALL>ONT</SMALL> the choice of the solver is made via the Integrator window that is
+opened automatically when the curve type O (Orbit) is chosen. 
+We note that the Starter window has a SelectCycle button that allows to start the continuation of 
+periodic orbits from curves computed by time integration.
+
+<P>
+<BR><HR>
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"><STRONG>Subsections</STRONG></A>
+
+<UL CLASS="ChildLinks">
+<LI><A NAME="tex2html719"
+  HREF="node40.html">Time integration</A>
+<UL>
+<LI><A NAME="tex2html720"
+  HREF="node41.html">Solver output properties</A>
+<LI><A NAME="tex2html721"
+  HREF="node42.html">Jacobian matrices</A>
+<LI><A NAME="tex2html722"
+  HREF="node43.html">The Steinmetz-Larter example</A>
+</UL>
+<BR>
+<LI><A NAME="tex2html723"
+  HREF="node44.html">Poincar&#233; section and Poincar&#233; map</A>
+<UL>
+<LI><A NAME="tex2html724"
+  HREF="node45.html">Poincar&#233; maps in C<SMALL>L/SMALL>_M<SMALL>AT</SMALL>C<SMALL>ONT</SMALL></A>
+</UL></UL>
+<!--End of Table of Child-Links-->
+<BR><HR>
+
+</BODY>
+</HTML>

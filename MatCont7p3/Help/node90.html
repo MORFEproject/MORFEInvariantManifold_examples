@@ -1,0 +1,488 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Bifurcations along a Neimark-Sacker curve</TITLE>
+<META NAME="description" CONTENT="Bifurcations along a Neimark-Sacker curve">
+<META NAME="keywords" CONTENT="ManualAug2019 ">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="ManualAug2019 .css">
+
+<LINK REL="next" HREF="node91.html">
+<LINK REL="previous" HREF="node89.html">
+<LINK REL="up" HREF="node88.html">
+<LINK REL="next" HREF="node91.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html1385"
+  HREF="node91.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="/usr/share/latex2html/icons/next.png"></A> 
+<A NAME="tex2html1381"
+  HREF="node88.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="/usr/share/latex2html/icons/up.png"></A> 
+<A NAME="tex2html1375"
+  HREF="node89.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="/usr/share/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html1383"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="/usr/share/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html1386"
+  HREF="node91.html">Torus bifurcation initialization</A>
+<B> Up:</B> <A NAME="tex2html1382"
+  HREF="node88.html">Continuation of torus bifurcation</A>
+<B> Previous:</B> <A NAME="tex2html1376"
+  HREF="node89.html">Mathematical definition</A>
+ &nbsp; <B>  <A NAME="tex2html1384"
+  HREF="node1.html">Contents</A></B> 
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H3><A NAME="SECTION00085200000000000000">
+Bifurcations along a Neimark-Sacker curve</A>
+</H3>
+In continuous-time systems there are eight generic codim 2 bifurcations that can be detected along
+a torus curve:
+
+<UL>
+<LI><EM>1:1 resonance</EM>. We will denote this bifurcation by <TT>R1</TT>
+</LI>
+<LI><EM>2:1 resonance</EM> point, denoted by <TT>R2</TT>
+</LI>
+<LI><EM>3:1 resonance</EM> point, denoted by <TT>R3</TT>
+</LI>
+<LI><EM>4:1 resonance</EM> point, denoted by <TT>R4</TT>
+</LI>
+<LI><EM>Fold-Neimarksacker</EM> point, denoted by <TT>LPNS</TT>
+</LI>
+<LI><EM>Chenciner</EM> point, denoted by <TT>CH</TT>.
+</LI>
+<LI><EM>Flip-Neimarksacker</EM> point, denoted by <TT>PDNS</TT>
+</LI>
+<LI><EM>Double Neimarksacker bifurcation</EM> point, denoted by <TT>NSNS</TT>
+</LI>
+</UL>
+To detect these singularities, we first define 6 test functions:
+
+<UL>
+<LI><!-- MATH
+ $\psi_1=\kappa-1$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="86" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img500.png"
+ ALT="$\psi_1=\kappa-1$"></SPAN> (cf. formula (<A HREF="node49.html#Eq.NFfold">39</A>))
+</LI>
+<LI><!-- MATH
+ $\psi_2=\kappa+1$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="86" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img501.png"
+ ALT="$\psi_2=\kappa+1$"></SPAN>
+</LI>
+<LI><!-- MATH
+ $\psi_3=\kappa-1/2$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="103" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img502.png"
+ ALT="$\psi_3=\kappa-1/2$"></SPAN>
+</LI>
+<LI><SPAN CLASS="MATH"><IMG
+ WIDTH="56" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img503.png"
+ ALT="$\psi_4=\kappa$"></SPAN>
+</LI>
+<LI><!-- MATH
+ $\psi_5=(v_1^*)^T_{W_1}L_{C\times M}v_{1M}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="175" HEIGHT="39" ALIGN="MIDDLE" BORDER="0"
+ SRC="img504.png"
+ ALT="$\psi_5=(v_1^*)^T_{W_1}L_{C\times M}v_{1M}$"></SPAN>
+</LI>
+<LI><SPAN CLASS="MATH"><IMG
+ WIDTH="90" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img505.png"
+ ALT="$\psi_6=Re(d)$"></SPAN>
+</LI>
+<LI><!-- MATH
+ $\psi_7=det\left( M + I_n \right)$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="143" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img506.png"
+ ALT="$\psi_7=det\left( M + I_n \right)$"></SPAN>
+</LI>
+<LI><!-- MATH
+ $\psi_8=det\left(\left( M2 \odot M2 \right) - I_n \right)$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="214" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img507.png"
+ ALT="$\psi_8=det\left(\left( M2 \odot M2 \right) - I_n \right)$"></SPAN>
+</LI>
+</UL>
+where <SPAN CLASS="MATH"><IMG
+ WIDTH="34" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img406.png"
+ ALT="$v_{1M}$"></SPAN> is computed by solving
+<BR>
+<DIV ALIGN="RIGHT" CLASS="mathdisplay">
+
+<!-- MATH
+ \begin{equation}
+\left[\begin{array}{c}D-TA(t)+i\theta I\\
+\delta_0-\delta_1
+\end{array}\right]_Dv_{1M}=0.
+\end{equation}
+ -->
+<A NAME="opNS"></A>
+<TABLE WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE"><TD ALIGN="CENTER" NOWRAP><A NAME="opNS"></A><IMG
+ WIDTH="239" HEIGHT="75" BORDER="0"
+ SRC="img508.png"
+ ALT="\begin{displaymath}
+\left[\begin{array}{c}D-TA(t)+i\theta I\\
+\delta_0-\delta_1
+\end{array}\right]_Dv_{1M}=0.
+\end{displaymath}"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+(<SPAN CLASS="arabic">78</SPAN>)</TD></TR>
+</TABLE>
+<BR CLEAR="ALL"></DIV><P></P>
+The normalization of <SPAN CLASS="MATH"><IMG
+ WIDTH="34" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img406.png"
+ ALT="$v_{1M}$"></SPAN> is done by requiring <!-- MATH
+ $\sum_{i=1}^N\sum_{j=0}^m\sigma_j\langle(v_{1M})_{ij},(v_{1M})_{ij}\rangle t_i=1$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="286" HEIGHT="41" ALIGN="MIDDLE" BORDER="0"
+ SRC="img509.png"
+ ALT="$\sum_{i=1}^N\sum_{j=0}^m\sigma_j\langle(v_{1M})_{ij},(v_{1M})_{ij}\rangle t_i=1$"></SPAN> where <SPAN CLASS="MATH"><IMG
+ WIDTH="21" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img409.png"
+ ALT="$\sigma_j$"></SPAN> is the Gauss-Lagrange quadrature coefficient.
+By discretization we obtain <BR><P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay">
+<!-- MATH
+ \begin{displaymath}
+(v_{1W}^*)^H\left[\begin{array}{c}D-TA(t)+i\theta \\\delta_0+\delta_1\end{array}\right]_{disc}=0.
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="272" HEIGHT="51" BORDER="0"
+ SRC="img510.png"
+ ALT="\begin{displaymath}(v_{1W}^*)^H\left[\begin{array}{c}D-TA(t)+i\theta \\ \delta_0+\delta_1\end{array}\right]_{disc}=0.\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+To normalize <SPAN CLASS="MATH"><IMG
+ WIDTH="54" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img412.png"
+ ALT="$(v_1^*)_{W_1}$"></SPAN> we require <!-- MATH
+ $\sum_{i=1}^N\sum_{j=1}^m\left|((v_1^*)_{W_1})_{ij}\right|_1=1$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="218" HEIGHT="41" ALIGN="MIDDLE" BORDER="0"
+ SRC="img413.png"
+ ALT="$\sum_{i=1}^N\sum_{j=1}^m\left\vert((v_1^*)_{W_1})_{ij}\right\vert _1=1$"></SPAN>. Then <!-- MATH
+ $\int_{0}^{1} {\langle v_1^*(t),v_1(t)\rangle dt}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="135" HEIGHT="42" ALIGN="MIDDLE" BORDER="0"
+ SRC="img414.png"
+ ALT="$\int_{0}^{1} {\langle v_1^*(t),v_1(t)\rangle dt}$"></SPAN> is approximated by <!-- MATH
+ $(v_1^*)^T_{W_1}L_{C\times M}v_{1M}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="133" HEIGHT="39" ALIGN="MIDDLE" BORDER="0"
+ SRC="img415.png"
+ ALT="$(v_1^*)^T_{W_1}L_{C\times M}v_{1M}$"></SPAN> and if this quantity is nonzero, <SPAN CLASS="MATH"><IMG
+ WIDTH="35" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img416.png"
+ ALT="$v^*_{1W}$"></SPAN> is rescaled so that <!-- MATH
+ $\int_{0}^{1} {\langle v_1^*(t),v_1(t)\rangle dt}=1$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="167" HEIGHT="42" ALIGN="MIDDLE" BORDER="0"
+ SRC="img511.png"
+ ALT="$\int_{0}^{1} {\langle v_1^*(t),v_1(t)\rangle dt}=1$"></SPAN>.
+We compute <!-- MATH
+ $\varphi_{1W}^*$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="37" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img512.png"
+ ALT="$\varphi_{1W}^*$"></SPAN> by solving  <BR><P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay">
+<!-- MATH
+ \begin{displaymath}
+(\varphi_{1W}^*)^T\left[\begin{array}{c}D-TA(t)\\\delta_0-\delta_1\end{array}\right]_{disc}=0
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="232" HEIGHT="51" BORDER="0"
+ SRC="img513.png"
+ ALT="\begin{displaymath}(\varphi_{1W}^*)^T\left[\begin{array}{c}D-TA(t)\\ \delta_0-\delta_1\end{array}\right]_{disc}=0\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+and normalize <!-- MATH
+ $\varphi_{1W_1}^*$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="42" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img514.png"
+ ALT="$\varphi_{1W_1}^*$"></SPAN> by requiring <!-- MATH
+ $\sum_{i=1}^N\sum_{j=1}^m\left|((\varphi_1^*)_{W_1})_{ij}\right|_1=1$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="220" HEIGHT="41" ALIGN="MIDDLE" BORDER="0"
+ SRC="img515.png"
+ ALT="$\sum_{i=1}^N\sum_{j=1}^m\left\vert((\varphi_1^*)_{W_1})_{ij}\right\vert _1=1$"></SPAN>. Then <!-- MATH
+ $\int_{0}^{1} {\langle \varphi_1^*(t),F(u_{0,1}(t))\rangle dt}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="176" HEIGHT="42" ALIGN="MIDDLE" BORDER="0"
+ SRC="img516.png"
+ ALT="$\int_{0}^{1} {\langle \varphi_1^*(t),F(u_{0,1}(t))\rangle dt}$"></SPAN> is approximated by <!-- MATH
+ $(\varphi_1^*)^T_{W_1}(F(u_{0,1}(t)))_C$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="157" HEIGHT="39" ALIGN="MIDDLE" BORDER="0"
+ SRC="img517.png"
+ ALT="$(\varphi_1^*)^T_{W_1}(F(u_{0,1}(t)))_C$"></SPAN> and if this quantity is nonzero, <!-- MATH
+ $\varphi^*_{1W}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="37" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img460.png"
+ ALT="$\varphi^*_{1W}$"></SPAN> is rescaled so that <!-- MATH
+ $\int_{0}^{1} {\langle \varphi_1^*(t),F(u_{0,1}(t))\rangle dt}=1$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="208" HEIGHT="42" ALIGN="MIDDLE" BORDER="0"
+ SRC="img518.png"
+ ALT="$\int_{0}^{1} {\langle \varphi_1^*(t),F(u_{0,1}(t))\rangle dt}=1$"></SPAN>.
+ We compute <SPAN CLASS="MATH"><IMG
+ WIDTH="53" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img519.png"
+ ALT="$h_{20,1M}$"></SPAN> by solving
+<BR><P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay">
+<!-- MATH
+ \begin{displaymath}
+\left[\begin{array}{c}D-TA(t)+2i\theta I\\
+\delta_0-\delta_1
+\end{array}\right]_{disc}h_{20,1M}=
+\left[\begin{array}{c}B(t,v_{1M}(t),v_{1M}(t))\\
+0
+\end{array}\right].
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="457" HEIGHT="51" BORDER="0"
+ SRC="img520.png"
+ ALT="\begin{displaymath}
+\left[\begin{array}{c}D-TA(t)+2i\theta I\\
+\delta_0-\delt...
+...{array}{c}B(t,v_{1M}(t),v_{1M}(t))\\
+0
+\end{array}\right].
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+ <SPAN CLASS="MATH"><IMG
+ WIDTH="21" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img426.png"
+ ALT="$a_1$"></SPAN> can be computed as <!-- MATH
+ $(\varphi^*_{W_1})^T(B(t,v_{1M},\overline{v}_{1M}))_C$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="195" HEIGHT="39" ALIGN="MIDDLE" BORDER="0"
+ SRC="img521.png"
+ ALT="$(\varphi^*_{W_1})^T(B(t,v_{1M},\overline{v}_{1M}))_C$"></SPAN>.
+
+<P>
+The computation of <SPAN CLASS="MATH"><IMG
+ WIDTH="67" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img522.png"
+ ALT="$(h_{11,1})_M$"></SPAN> is done by solving 
+ <BR><P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay">
+<!-- MATH
+ \begin{displaymath}
+\left[\begin{array}{c}
+(D-TA(t))_{C\times M}\\
+\delta(0)-\delta(1)\\
+(\varphi^*_{W_1})^TL_{C\times M}
+\end{array}\right](h_{11,1})_M=
+\left[\begin{array}{c}
+B(t;v_{1M},\overline{v}_{1M}))_C - a_1(F(u_{0,1}(t)))_C\\
+0\\
+0
+\end{array}
+\right]
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="556" HEIGHT="73" BORDER="0"
+ SRC="img523.png"
+ ALT="\begin{displaymath}
+\left[\begin{array}{c}
+(D-TA(t))_{C\times M}\\
+\delta(0)...
+...))_C - a_1(F(u_{0,1}(t)))_C\\
+0\\
+0
+\end{array}
+\right]
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+The expression for the normal form coefficient <SPAN CLASS="MATH"><IMG
+ WIDTH="13" HEIGHT="20" ALIGN="BOTTOM" BORDER="0"
+ SRC="img321.png"
+ ALT="$d$"></SPAN> becomes
+<BR><P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay">
+<!-- MATH
+ \begin{displaymath}
+\begin{array}{c}
+d= \frac{1}{2}((v_{1W_1}^*)^T,(B(t;h_{11,1M},v_{1M}))_C+(B(t;h_{20,1M},\overline{v}_{1M}))_C+\frac{1}{T}(C(t;v_{1M},v_{1M},\overline{v}_{1M}))_C) \\
+-\frac{a_1}{T}(v_{1W_1}^*)^T(A(t)v_{1}(t))_C+ \frac{ia_1\theta}{T^2}.
+\end{array}
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="660" HEIGHT="53" BORDER="0"
+ SRC="img524.png"
+ ALT="\begin{displaymath}
+\begin{array}{c}
+d= \frac{1}{2}((v_{1W_1}^*)^T,(B(t;h_{11,...
+...1}^*)^T(A(t)v_{1}(t))_C+ \frac{ia_1\theta}{T^2}.
+\end{array}
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+
+<P>
+In the 7th test function, <SPAN CLASS="MATH"><IMG
+ WIDTH="23" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img394.png"
+ ALT="$M$"></SPAN> is the monodromy matrix.
+
+<P>
+In the 8th test function, <SPAN CLASS="MATH"><IMG
+ WIDTH="31" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img463.png"
+ ALT="$M2$"></SPAN> is the <!-- MATH
+ $(n-2) \times (n-2)$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="133" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img464.png"
+ ALT="$(n-2) \times (n-2)$"></SPAN> matrix which restricts the <SPAN CLASS="MATH"><IMG
+ WIDTH="46" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img465.png"
+ ALT="$n \times n$"></SPAN> matrix <SPAN CLASS="MATH"><IMG
+ WIDTH="23" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img394.png"
+ ALT="$M$"></SPAN> to the subspace orthogonal to the two-dimensional left eigenspace of the Neimark-Sacker eigenvalues.
+
+<P>
+The singularity matrix is:
+<BR>
+<DIV ALIGN="RIGHT" CLASS="mathdisplay">
+
+<!-- MATH
+ \begin{equation}
+S = \left(\begin{array}{cccccc}
+0 & - & - & - & - & -\\
+- & 0 & - & - & - & -\\
+- & - & 0 & - & - & -\\
+- & - & - & 0 & - & -\\
+- & - & - & - & 0 & -\\
+- & - & - & - & 1 & 0 
+\end{array}\right).
+\end{equation}
+ -->
+<TABLE WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE"><TD ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="248" HEIGHT="138" BORDER="0"
+ SRC="img525.png"
+ ALT="\begin{displaymath}
+S = \left(\begin{array}{cccccc}
+0 &amp; - &amp; - &amp; - &amp; - &amp; -\\
+...
+...- &amp; - &amp; 0 &amp; -\\
+- &amp; - &amp; - &amp; - &amp; 1 &amp; 0
+\end{array}\right).
+\end{displaymath}"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+(<SPAN CLASS="arabic">79</SPAN>)</TD></TR>
+</TABLE>
+<BR CLEAR="ALL"></DIV><P></P>
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html1385"
+  HREF="node91.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="/usr/share/latex2html/icons/next.png"></A> 
+<A NAME="tex2html1381"
+  HREF="node88.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="/usr/share/latex2html/icons/up.png"></A> 
+<A NAME="tex2html1375"
+  HREF="node89.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="/usr/share/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html1383"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="/usr/share/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html1386"
+  HREF="node91.html">Torus bifurcation initialization</A>
+<B> Up:</B> <A NAME="tex2html1382"
+  HREF="node88.html">Continuation of torus bifurcation</A>
+<B> Previous:</B> <A NAME="tex2html1376"
+  HREF="node89.html">Mathematical definition</A>
+ &nbsp; <B>  <A NAME="tex2html1384"
+  HREF="node1.html">Contents</A></B> </DIV>
+<!--End of Navigation Panel-->
+
+</BODY>
+</HTML>

@@ -1,0 +1,190 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Branch point locator</TITLE>
+<META NAME="description" CONTENT="Branch point locator">
+<META NAME="keywords" CONTENT="ManualAug2019 ">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="ManualAug2019 .css">
+
+<LINK REL="previous" HREF="node49.html">
+<LINK REL="up" HREF="node49.html">
+<LINK REL="next" HREF="node51.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html858"
+  HREF="node51.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="/usr/share/latex2html/icons/next.png"></A> 
+<A NAME="tex2html854"
+  HREF="node49.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="/usr/share/latex2html/icons/up.png"></A> 
+<A NAME="tex2html850"
+  HREF="node49.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="/usr/share/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html856"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="/usr/share/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html859"
+  HREF="node51.html">Equilibrium initialization</A>
+<B> Up:</B> <A NAME="tex2html855"
+  HREF="node49.html">Bifurcations and their normal</A>
+<B> Previous:</B> <A NAME="tex2html851"
+  HREF="node49.html">Bifurcations and their normal</A>
+ &nbsp; <B>  <A NAME="tex2html857"
+  HREF="node1.html">Contents</A></B> 
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H3><A NAME="SECTION00063100000000000000"></A><A NAME="s:bploc"></A>
+<BR>
+Branch point locator
+</H3>
+
+<P>
+The location of Hopf and limit points usually does not cause problems. However, 
+the location of branch points can give problems. The region of attraction of the 
+Newton type continuation method which is used, has the shape of a cone (see [<A
+ HREF="node115.html#allgower">2</A>]). 
+In the localisation process we cannot assume to stay in this cone.
+This difficulty can be avoided by introducing <!-- MATH
+ $p\in \ensuremath{\mathbf{R}}^n$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="58" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img217.png"
+ ALT="$p\in \ensuremath{\mathbf{R}}^n$"></SPAN> and <!-- MATH
+ $\beta\in \ensuremath{\mathbf{R}}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="51" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img218.png"
+ ALT="$\beta\in \ensuremath{\mathbf{R}}$"></SPAN> and 
+considering the <EM>extended system</EM>:
+<BR>
+<DIV ALIGN="RIGHT" CLASS="mathdisplay">
+
+<!-- MATH
+ \begin{equation}
+\left\{ \begin{array}{rcl}
+f(u,\alpha) + \beta p &=& 0 \\
+f_u^T(u,\alpha)p &=& 0 \\
+p^Tf_\alpha(u,\alpha) &=& 0 \\
+p^Tp-1 &=& 0
+\end{array}\right.
+\end{equation}
+ -->
+<A NAME="brloc"></A>
+<TABLE WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE"><TD ALIGN="CENTER" NOWRAP><A NAME="brloc"></A><IMG
+ WIDTH="168" HEIGHT="117" BORDER="0"
+ SRC="img219.png"
+ ALT="\begin{displaymath}
+\left\{ \begin{array}{rcl}
+f(u,\alpha) + \beta p &amp;=&amp; 0 \\...
+..._\alpha(u,\alpha) &amp;=&amp; 0 \\
+p^Tp-1 &amp;=&amp; 0
+\end{array}\right.
+\end{displaymath}"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+(<SPAN CLASS="arabic">41</SPAN>)</TD></TR>
+</TABLE>
+<BR CLEAR="ALL"></DIV><P></P>
+We solve this system by Newton's method with initial data <SPAN CLASS="MATH"><IMG
+ WIDTH="47" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img220.png"
+ ALT="$\beta=0$"></SPAN> and 
+<!-- MATH
+ $p: f_u^Tp=\mu p$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="99" HEIGHT="39" ALIGN="MIDDLE" BORDER="0"
+ SRC="img221.png"
+ ALT="$p: f_u^Tp=\mu p$"></SPAN> 
+where <SPAN CLASS="MATH"><IMG
+ WIDTH="14" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img222.png"
+ ALT="$\mu$"></SPAN> is the real eigenvalue with smallest norm. 
+A branch point <SPAN CLASS="MATH"><IMG
+ WIDTH="46" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img223.png"
+ ALT="$(u,\alpha)$"></SPAN> 
+corresponds to a regular solution <!-- MATH
+ $(u,\alpha,0,p)$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="79" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img224.png"
+ ALT="$(u,\alpha,0,p)$"></SPAN> of system (<A HREF="#brloc">41</A>) 
+(see [<A
+ HREF="node115.html#preprint">3</A>],p. 165). We note that the second order partial 
+derivatives 
+(Hessian) of <SPAN CLASS="MATH"><IMG
+ WIDTH="14" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img225.png"
+ ALT="$f$"></SPAN> with respect to <SPAN CLASS="MATH"><IMG
+ WIDTH="14" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img226.png"
+ ALT="$u$"></SPAN> and <SPAN CLASS="MATH"><IMG
+ WIDTH="15" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img227.png"
+ ALT="$\alpha$"></SPAN> are required. 
+
+<P>
+The tangent vector at the singularity 
+is also computed here. This is related to 
+the processing of the branch point (computing the direction of the 
+secondary branch).
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html858"
+  HREF="node51.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="/usr/share/latex2html/icons/next.png"></A> 
+<A NAME="tex2html854"
+  HREF="node49.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="/usr/share/latex2html/icons/up.png"></A> 
+<A NAME="tex2html850"
+  HREF="node49.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="/usr/share/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html856"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="/usr/share/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html859"
+  HREF="node51.html">Equilibrium initialization</A>
+<B> Up:</B> <A NAME="tex2html855"
+  HREF="node49.html">Bifurcations and their normal</A>
+<B> Previous:</B> <A NAME="tex2html851"
+  HREF="node49.html">Bifurcations and their normal</A>
+ &nbsp; <B>  <A NAME="tex2html857"
+  HREF="node1.html">Contents</A></B> </DIV>
+<!--End of Navigation Panel-->
+
+</BODY>
+</HTML>

@@ -1,0 +1,481 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Homoclinic-to-Hyperbolic-Saddle Orbits</TITLE>
+<META NAME="description" CONTENT="Homoclinic-to-Hyperbolic-Saddle Orbits">
+<META NAME="keywords" CONTENT="ManualAug2019 ">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="ManualAug2019 .css">
+
+<LINK REL="next" HREF="node107.html">
+<LINK REL="previous" HREF="node105.html">
+<LINK REL="up" HREF="node105.html">
+<LINK REL="next" HREF="node107.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html1597"
+  HREF="node107.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="/usr/share/latex2html/icons/next.png"></A> 
+<A NAME="tex2html1593"
+  HREF="node105.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="/usr/share/latex2html/icons/up.png"></A> 
+<A NAME="tex2html1587"
+  HREF="node105.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="/usr/share/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html1595"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="/usr/share/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html1598"
+  HREF="node107.html">Homoclinic-to-Saddle-Node Orbits</A>
+<B> Up:</B> <A NAME="tex2html1594"
+  HREF="node105.html">Homoclinic orbits: Mathematical definition</A>
+<B> Previous:</B> <A NAME="tex2html1588"
+  HREF="node105.html">Homoclinic orbits: Mathematical definition</A>
+ &nbsp; <B>  <A NAME="tex2html1596"
+  HREF="node1.html">Contents</A></B> 
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H3><A NAME="SECTION000101100000000000000">
+Homoclinic-to-Hyperbolic-Saddle Orbits</A>
+</H3>
+To continue HHS orbits in two free parameters, we use an extended defining system
+that consists of several parts.
+<BR>
+
+<BR>
+First, the infinite time interval is truncated, so that instead of <!-- MATH
+ $[-\infty,+\infty]$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="83" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img613.png"
+ ALT="$[-\infty,+\infty]$"></SPAN> 
+we use <SPAN CLASS="MATH"><IMG
+ WIDTH="73" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img614.png"
+ ALT="$[-T,+T]$"></SPAN>, which is scaled to <SPAN CLASS="MATH"><IMG
+ WIDTH="39" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img252.png"
+ ALT="$[0,1]$"></SPAN> and divided into mesh-intervals. 
+The mesh is nonuniform and adaptive. Each mesh interval is further subdivided by 
+equidistant fine mesh points. Also, each mesh interval contains a number of collocation 
+points. (This discretization is the same as that in <SMALL>AUTO</SMALL> for boundary value problems.) 
+The equation
+<BR>
+<DIV ALIGN="RIGHT" CLASS="mathdisplay">
+
+<!-- MATH
+ \begin{equation}
+\dot{x}(t) - 2 T f(x(t),\alpha) = 0,
+\end{equation}
+ -->
+<A NAME="Homoclinic"></A>
+<TABLE WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE"><TD ALIGN="CENTER" NOWRAP><A NAME="Homoclinic"></A><IMG
+ WIDTH="181" HEIGHT="55" BORDER="0"
+ SRC="img615.png"
+ ALT="\begin{displaymath}
+\dot{x}(t) - 2 T f(x(t),\alpha) = 0,
+\end{displaymath}"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+(<SPAN CLASS="arabic">88</SPAN>)</TD></TR>
+</TABLE>
+<BR CLEAR="ALL"></DIV><P></P>
+must be satisfied in each collocation point.
+<BR>
+
+<BR>
+The second part is the equilibrium condition
+<BR>
+<DIV ALIGN="RIGHT" CLASS="mathdisplay">
+
+<!-- MATH
+ \begin{equation}
+f(x_0,\alpha) = 0.
+\end{equation}
+ -->
+<A NAME="Equilibrium"></A>
+<TABLE WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE"><TD ALIGN="CENTER" NOWRAP><A NAME="Equilibrium"></A><IMG
+ WIDTH="91" HEIGHT="55" BORDER="0"
+ SRC="img616.png"
+ ALT="\begin{displaymath}
+f(x_0,\alpha) = 0.
+\end{displaymath}"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+(<SPAN CLASS="arabic">89</SPAN>)</TD></TR>
+</TABLE>
+<BR CLEAR="ALL"></DIV><P></P>
+Third, there is a so-called phase condition needed for the homoclinic solution, similar to 
+periodic solutions
+<BR>
+<DIV ALIGN="RIGHT" CLASS="mathdisplay">
+
+<!-- MATH
+ \begin{equation}
+\int_0^1 \dot{\widetilde{x}}^*(t)[x(t) -\widetilde{x}(t)]dt = 0.
+\end{equation}
+ -->
+<A NAME="Phase"></A>
+<TABLE WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE"><TD ALIGN="CENTER" NOWRAP><A NAME="Phase"></A><IMG
+ WIDTH="201" HEIGHT="57" BORDER="0"
+ SRC="img617.png"
+ ALT="\begin{displaymath}
+\int_0^1 \dot{\widetilde{x}}^*(t)[x(t) -\widetilde{x}(t)]dt = 0.
+\end{displaymath}"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+(<SPAN CLASS="arabic">90</SPAN>)</TD></TR>
+</TABLE>
+<BR CLEAR="ALL"></DIV><P></P>
+Here <!-- MATH
+ $\widetilde{x}(t)$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="34" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img618.png"
+ ALT="$\widetilde{x}(t)$"></SPAN> is some initial guess for the solution, 
+typically obtained from the previous continuation step.
+We note that in the literature another phase condition
+is also used, see, for example [<A
+ HREF="node115.html#DoFr">13</A>]. However, in the present implementation we employ 
+the condition (<A HREF="#Phase">90</A>).
+<BR>
+
+<BR>
+Fourth, there are the homoclinic-specific constraints to the solution. 
+For these we need access to the stable and unstable eigenspaces of the system in the 
+equilibrium point after each step. It is not efficient to recompute the spaces from 
+scratch in each continuation-step. Instead, we use the algorithm for continuing 
+invariant subspaces, as described in [<A
+ HREF="node115.html#dedifr">7</A>]. This method adds two small-sized 
+vectors (<SPAN CLASS="MATH"><IMG
+ WIDTH="24" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img619.png"
+ ALT="$Y_S$"></SPAN> and <SPAN CLASS="MATH"><IMG
+ WIDTH="25" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img620.png"
+ ALT="$Y_U$"></SPAN>) to the system variables, from which the necessary eigenspaces 
+(stable and unstable, respectively) can easily be computed in each step.
+<BR>
+
+<BR>
+If <SPAN CLASS="MATH"><IMG
+ WIDTH="40" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img621.png"
+ ALT="$Q(0)$"></SPAN> is an orthogonal matrix whose first <SPAN CLASS="MATH"><IMG
+ WIDTH="19" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img622.png"
+ ALT="$m$"></SPAN> columns form a basis for the invariant 
+subspace under consideration in the previous step, and <!-- MATH
+ $A=f_x(x_0,\alpha)$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="107" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img623.png"
+ ALT="$A=f_x(x_0,\alpha)$"></SPAN> is the Jacobian 
+at the new 
+equilibrium point, then we first compute the so-called Ricatti-blocks, <SPAN CLASS="MATH"><IMG
+ WIDTH="26" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img624.png"
+ ALT="$T_{ij}$"></SPAN>, by the formula
+<BR>
+<DIV ALIGN="RIGHT" CLASS="mathdisplay">
+
+<!-- MATH
+ \begin{equation}
+\left[ \begin{array} {cc}T_{11}\ \ T_{12}\\T_{21}\ \ T_{22}\end{array}\right] =\ Q(0)^T\:A\:Q(0).
+\end{equation}
+ -->
+<A NAME="Ricattiblocks"></A>
+<TABLE WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE"><TD ALIGN="CENTER" NOWRAP><A NAME="Ricattiblocks"></A><IMG
+ WIDTH="228" HEIGHT="74" BORDER="0"
+ SRC="img625.png"
+ ALT="\begin{displaymath}
+\left[ \begin{array}{cc}T_{11}\ \ T_{12}\\ T_{21}\ \ T_{22}\end{array}\right] =\ Q(0)^T\:A\:Q(0).
+\end{displaymath}"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+(<SPAN CLASS="arabic">91</SPAN>)</TD></TR>
+</TABLE>
+<BR CLEAR="ALL"></DIV><P></P>
+If <SPAN CLASS="MATH"><IMG
+ WIDTH="14" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img70.png"
+ ALT="$n$"></SPAN> is the number of state variables, then <SPAN CLASS="MATH"><IMG
+ WIDTH="28" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img626.png"
+ ALT="$T_{11}$"></SPAN> is of size <SPAN CLASS="MATH"><IMG
+ WIDTH="56" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img627.png"
+ ALT="$m \times m$"></SPAN> and <SPAN CLASS="MATH"><IMG
+ WIDTH="28" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img628.png"
+ ALT="$T_{22}$"></SPAN> 
+is <!-- MATH
+ $(n-m) \times (n-m)$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="146" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img629.png"
+ ALT="$(n-m) \times (n-m)$"></SPAN>. This is done for the stable and unstable eigenspaces separately. 
+Now <SPAN CLASS="MATH"><IMG
+ WIDTH="24" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img619.png"
+ ALT="$Y_S$"></SPAN> and <SPAN CLASS="MATH"><IMG
+ WIDTH="25" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img620.png"
+ ALT="$Y_U$"></SPAN> are obtained from the Ricatti equations
+<BR>
+<DIV ALIGN="RIGHT" CLASS="mathdisplay">
+
+<!-- MATH
+ \begin{equation}
+\begin{array}{l}
+T_{22U} Y_U\ -\ Y_U T_{11U}\ +\ T_{21U}\ -\ Y_U T_{12U} Y_U\ =\ 0,\\
+T_{22S}\,Y_S\ -\ Y_S\, T_{11S}\ +\ T_{21S}\ -\ Y_S \,T_{12S}\, Y_S\ =\ 0.
+\end{array}
+\end{equation}
+ -->
+<A NAME="Ricatti"></A>
+<TABLE WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE"><TD ALIGN="CENTER" NOWRAP><A NAME="Ricatti"></A><IMG
+ WIDTH="372" HEIGHT="74" BORDER="0"
+ SRC="img630.png"
+ ALT="\begin{displaymath}
+\begin{array}{l}
+T_{22U} Y_U\ -\ Y_U T_{11U}\ +\ T_{21U}\...
+...{11S}\ +\ T_{21S}\ -\ Y_S \,T_{12S}\, Y_S\ =\ 0.
+\end{array}
+\end{displaymath}"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+(<SPAN CLASS="arabic">92</SPAN>)</TD></TR>
+</TABLE>
+<BR CLEAR="ALL"></DIV><P></P>
+Now we can formulate constraints on the behavior of the solution close to the 
+equilibrium <SPAN CLASS="MATH"><IMG
+ WIDTH="21" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img124.png"
+ ALT="$x_0$"></SPAN>. The initial vector of the orbit, <SPAN CLASS="MATH"><IMG
+ WIDTH="88" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img631.png"
+ ALT="$(x(0) - x_0)$"></SPAN>, is placed in the unstable 
+eigenspace of the system in the equilibrium. We express that by the requirement that it is 
+orthogonal to the orthogonal complement of the unstable eigenspace. Using <SPAN CLASS="MATH"><IMG
+ WIDTH="25" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img620.png"
+ ALT="$Y_U$"></SPAN>, we can 
+compute the orthogonal complement of the unstable eigenspace. If <SPAN CLASS="MATH"><IMG
+ WIDTH="51" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img632.png"
+ ALT="$Q_U(0)$"></SPAN> is the
+orthogonal matrix from the previous step, related to the unstable invariant subspace, 
+then a basis for the orthogonal complement in the new step <SPAN CLASS="MATH"><IMG
+ WIDTH="51" HEIGHT="39" ALIGN="MIDDLE" BORDER="0"
+ SRC="img633.png"
+ ALT="$Q_U^\bot(s)$"></SPAN> is
+<BR><P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay">
+<!-- MATH
+ \begin{displaymath}
+Q_U^\bot(s) = Q_U(0) \left[ \begin{array}{c} -Y_{U}^T\\I \end{array} \right].
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="199" HEIGHT="51" BORDER="0"
+ SRC="img634.png"
+ ALT="\begin{displaymath}
+Q_U^\bot(s) = Q_U(0) \left[ \begin{array}{c} -Y_{U}^T\\ I \end{array} \right].
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+Note that <SPAN CLASS="MATH"><IMG
+ WIDTH="51" HEIGHT="39" ALIGN="MIDDLE" BORDER="0"
+ SRC="img633.png"
+ ALT="$Q_U^\bot(s)$"></SPAN> is not orthogonal. The full orthogonal matrix <SPAN CLASS="MATH"><IMG
+ WIDTH="36" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img635.png"
+ ALT="$Q_{1U}$"></SPAN> needed for the 
+next step, is computed separately after each step. The equations to be added 
+to the system are (after analogous preparatory computations for the stable eigenspace)
+<BR>
+<DIV ALIGN="RIGHT" CLASS="mathdisplay">
+
+<!-- MATH
+ \begin{equation}
+\begin{array}{l}
+Q_U^\bot(s)^T(x(0) - x_0)  = 0,\\
+Q_S^\bot(s)^T(x(1) - x_0) = 0.
+\end{array}
+\end{equation}
+ -->
+<A NAME="Project"></A>
+<TABLE WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE"><TD ALIGN="CENTER" NOWRAP><A NAME="Project"></A><IMG
+ WIDTH="178" HEIGHT="74" BORDER="0"
+ SRC="img636.png"
+ ALT="\begin{displaymath}
+\begin{array}{l}
+Q_U^\bot(s)^T(x(0) - x_0) = 0,\\
+Q_S^\bot(s)^T(x(1) - x_0) = 0.
+\end{array}
+\end{displaymath}"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+(<SPAN CLASS="arabic">93</SPAN>)</TD></TR>
+</TABLE>
+<BR CLEAR="ALL"></DIV><P></P>
+Finally, the distances between <SPAN CLASS="MATH"><IMG
+ WIDTH="36" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img637.png"
+ ALT="$x(0)$"></SPAN> (resp., <SPAN CLASS="MATH"><IMG
+ WIDTH="36" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img638.png"
+ ALT="$x(1)$"></SPAN>) and <SPAN CLASS="MATH"><IMG
+ WIDTH="21" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img124.png"
+ ALT="$x_0$"></SPAN> must be small enough,
+so that
+<BR>
+<DIV ALIGN="RIGHT" CLASS="mathdisplay">
+
+<!-- MATH
+ \begin{equation}
+\begin{array}{l}
+\left\| x(0) - x_0 \right\| - \epsilon_0 = 0,\\
+\left\| x(1) - x_0 \right\| - \epsilon_1 = 0.
+\end{array}
+\end{equation}
+ -->
+<A NAME="Dist"></A>
+<TABLE WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE"><TD ALIGN="CENTER" NOWRAP><A NAME="Dist"></A><IMG
+ WIDTH="158" HEIGHT="74" BORDER="0"
+ SRC="img639.png"
+ ALT="\begin{displaymath}
+\begin{array}{l}
+\left\Vert x(0) - x_0 \right\Vert - \eps...
+...ft\Vert x(1) - x_0 \right\Vert - \epsilon_1 = 0.
+\end{array}
+\end{displaymath}"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+(<SPAN CLASS="arabic">94</SPAN>)</TD></TR>
+</TABLE>
+<BR CLEAR="ALL"></DIV><P></P>
+A system consisting of all equations (<A HREF="#Homoclinic">88</A>), (<A HREF="#Equilibrium">89</A>), 
+(<A HREF="#Phase">90</A>), (<A HREF="#Ricatti">92</A>), (<A HREF="#Project">93</A>) and (<A HREF="#Dist">94</A>), is overdetermined.
+The basic defining system for the continuation of a HHS orbit in two free parameters
+consists of (<A HREF="#Homoclinic">88</A>), (<A HREF="#Equilibrium">89</A>), (<A HREF="#Ricatti">92</A>), (<A HREF="#Project">93</A>), and 
+(<A HREF="#Dist">94</A>) with fixed <!-- MATH
+ $\epsilon_{0,1}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="29" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img640.png"
+ ALT="$\epsilon_{0,1}$"></SPAN>, so that the phase condition (<A HREF="#Phase">90</A>) is 
+not used. The variables in this system are stored in one vector. It contains 
+the values of <SPAN CLASS="MATH"><IMG
+ WIDTH="34" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img641.png"
+ ALT="$x(t)$"></SPAN> in the fine mesh points including <SPAN CLASS="MATH"><IMG
+ WIDTH="36" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img637.png"
+ ALT="$x(0)$"></SPAN> and <SPAN CLASS="MATH"><IMG
+ WIDTH="36" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img638.png"
+ ALT="$x(1)$"></SPAN>, 
+the truncation time <SPAN CLASS="MATH"><IMG
+ WIDTH="16" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img244.png"
+ ALT="$T$"></SPAN>, two free system parameters, the coordinates 
+of the saddle <SPAN CLASS="MATH"><IMG
+ WIDTH="21" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img124.png"
+ ALT="$x_0$"></SPAN>, and the elements of the matrices <SPAN CLASS="MATH"><IMG
+ WIDTH="24" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img619.png"
+ ALT="$Y_S$"></SPAN> and <SPAN CLASS="MATH"><IMG
+ WIDTH="25" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img620.png"
+ ALT="$Y_U$"></SPAN>.
+Alternatively, the phase condition (<A HREF="#Phase">90</A>) can be added if <SPAN CLASS="MATH"><IMG
+ WIDTH="16" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img244.png"
+ ALT="$T$"></SPAN> is kept fixed
+but <SPAN CLASS="MATH"><IMG
+ WIDTH="19" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img642.png"
+ ALT="$\epsilon_0$"></SPAN> and <SPAN CLASS="MATH"><IMG
+ WIDTH="19" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img643.png"
+ ALT="$\epsilon_1$"></SPAN> are allowed to vary.
+It is also possible to fix <SPAN CLASS="MATH"><IMG
+ WIDTH="16" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img244.png"
+ ALT="$T$"></SPAN> and <SPAN CLASS="MATH"><IMG
+ WIDTH="19" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img642.png"
+ ALT="$\epsilon_0$"></SPAN>, say, and allow <SPAN CLASS="MATH"><IMG
+ WIDTH="19" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img643.png"
+ ALT="$\epsilon_1$"></SPAN> to vary, 
+again with no phase condition. Other combinations are also possible, in particular, when
+the homotopy method [<A
+ HREF="node115.html#dedifr">7</A>] is used to compute a starting homoclinic solution. 
+For more details on the implementation of the homoclinic 
+continuation we refer to [<A
+ HREF="node115.html#GoSaHom">19</A>]. 
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html1597"
+  HREF="node107.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="/usr/share/latex2html/icons/next.png"></A> 
+<A NAME="tex2html1593"
+  HREF="node105.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="/usr/share/latex2html/icons/up.png"></A> 
+<A NAME="tex2html1587"
+  HREF="node105.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="/usr/share/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html1595"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="/usr/share/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html1598"
+  HREF="node107.html">Homoclinic-to-Saddle-Node Orbits</A>
+<B> Up:</B> <A NAME="tex2html1594"
+  HREF="node105.html">Homoclinic orbits: Mathematical definition</A>
+<B> Previous:</B> <A NAME="tex2html1588"
+  HREF="node105.html">Homoclinic orbits: Mathematical definition</A>
+ &nbsp; <B>  <A NAME="tex2html1596"
+  HREF="node1.html">Contents</A></B> </DIV>
+<!--End of Navigation Panel-->
+
+</BODY>
+</HTML>

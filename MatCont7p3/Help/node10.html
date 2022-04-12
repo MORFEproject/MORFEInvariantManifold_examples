@@ -1,0 +1,212 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Multiple test functions</TITLE>
+<META NAME="description" CONTENT="Multiple test functions">
+<META NAME="keywords" CONTENT="ManualAug2019 ">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="ManualAug2019 .css">
+
+<LINK REL="next" HREF="node11.html">
+<LINK REL="previous" HREF="node9.html">
+<LINK REL="up" HREF="node8.html">
+<LINK REL="next" HREF="node11.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html342"
+  HREF="node11.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="/usr/share/latex2html/icons/next.png"></A> 
+<A NAME="tex2html338"
+  HREF="node8.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="/usr/share/latex2html/icons/up.png"></A> 
+<A NAME="tex2html332"
+  HREF="node9.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="/usr/share/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html340"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="/usr/share/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html343"
+  HREF="node11.html">Singularity matrix</A>
+<B> Up:</B> <A NAME="tex2html339"
+  HREF="node8.html">Singularity handling</A>
+<B> Previous:</B> <A NAME="tex2html333"
+  HREF="node9.html">Test functions</A>
+ &nbsp; <B>  <A NAME="tex2html341"
+  HREF="node1.html">Contents</A></B> 
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H3><A NAME="SECTION00024200000000000000">
+Multiple test functions</A>
+</H3>
+The above is a general way to detect and locate singularities depending on one test function.  
+However, it may happen that it is not possible to represent a singularity with only one test 
+function. 
+
+<P>
+Suppose we have a singularity <SPAN CLASS="MATH"><IMG
+ WIDTH="16" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img76.png"
+ ALT="$S$"></SPAN> which depends on <SPAN CLASS="MATH"><IMG
+ WIDTH="20" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img84.png"
+ ALT="$n_t$"></SPAN> test functions. 
+Also assume we have found two consecutive points <SPAN CLASS="MATH"><IMG
+ WIDTH="19" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img9.png"
+ ALT="$x_i$"></SPAN> and <SPAN CLASS="MATH"><IMG
+ WIDTH="36" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img18.png"
+ ALT="$x_{i+1}$"></SPAN> and all <SPAN CLASS="MATH"><IMG
+ WIDTH="20" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img84.png"
+ ALT="$n_t$"></SPAN> 
+test functions change sign:
+<BR>
+<DIV ALIGN="RIGHT" CLASS="mathdisplay">
+
+<!-- MATH
+ \begin{equation}
+\forall j\in [1,n_t]: \phi_j(x_i)\phi_j(x_{i+1}) < 0
+\end{equation}
+ -->
+<TABLE WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE"><TD ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="237" HEIGHT="33" BORDER="0"
+ SRC="img85.png"
+ ALT="\begin{displaymath}
+\forall j\in [1,n_t]: \phi_j(x_i)\phi_j(x_{i+1}) &lt; 0
+\end{displaymath}"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+(<SPAN CLASS="arabic">27</SPAN>)</TD></TR>
+</TABLE>
+<BR CLEAR="ALL"></DIV><P></P>
+Also assume we have found, using a one-dimensional secant method, all zeros <SPAN CLASS="MATH"><IMG
+ WIDTH="21" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img86.png"
+ ALT="$x^*_j$"></SPAN> 
+of the test functions. In the ideal (exact) case all these zeros will 
+coincide:
+<BR>
+<DIV ALIGN="RIGHT" CLASS="mathdisplay">
+
+<!-- MATH
+ \begin{equation}
+\forall j\in [1,n_t]: x^*=x^*_j \quad\mbox{and}\quad \phi_j(x^*_j) = 0
+\end{equation}
+ -->
+<TABLE WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE"><TD ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="297" HEIGHT="34" BORDER="0"
+ SRC="img87.png"
+ ALT="\begin{displaymath}
+\forall j\in [1,n_t]: x^*=x^*_j \quad\mbox{and}\quad \phi_j(x^*_j) = 0
+\end{displaymath}"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+(<SPAN CLASS="arabic">28</SPAN>)</TD></TR>
+</TABLE>
+<BR CLEAR="ALL"></DIV><P></P>
+Since the continuation is not exact but numerical, we cannot assume this. 
+However, the locations of <SPAN CLASS="MATH"><IMG
+ WIDTH="21" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img86.png"
+ ALT="$x^*_j$"></SPAN> probably will be clustered around some center point <SPAN CLASS="MATH"><IMG
+ WIDTH="20" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img88.png"
+ ALT="$x^c$"></SPAN>. 
+In this case we will <EM>glue</EM> the points <SPAN CLASS="MATH"><IMG
+ WIDTH="21" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img86.png"
+ ALT="$x^*_j$"></SPAN> to <SPAN CLASS="MATH"><IMG
+ WIDTH="61" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img89.png"
+ ALT="$x^* = x^c$"></SPAN>.
+
+<P>
+A cluster will be detected if <!-- MATH
+ $\forall i,j\in [1,n_t]: ||x^*_i-x^*_j|| \leq \epsilon$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="220" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img90.png"
+ ALT="$\forall i,j\in [1,n_t]: \vert\vert x^*_i-x^*_j\vert\vert \leq \epsilon$"></SPAN> for some 
+small value <SPAN CLASS="MATH"><IMG
+ WIDTH="11" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img91.png"
+ ALT="$\epsilon$"></SPAN>. In this case we define <SPAN CLASS="MATH"><IMG
+ WIDTH="21" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img80.png"
+ ALT="$x^*$"></SPAN> as the mean of all located zeroes:
+<BR>
+<DIV ALIGN="RIGHT" CLASS="mathdisplay">
+
+<!-- MATH
+ \begin{equation}
+x^* = \frac{1}{n_t}\sum_{j=1}^{n_t}x^*_j
+\end{equation}
+ -->
+<TABLE WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE"><TD ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="108" HEIGHT="61" BORDER="0"
+ SRC="img92.png"
+ ALT="\begin{displaymath}
+x^* = \frac{1}{n_t}\sum_{j=1}^{n_t}x^*_j
+\end{displaymath}"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+(<SPAN CLASS="arabic">29</SPAN>)</TD></TR>
+</TABLE>
+<BR CLEAR="ALL"></DIV><P></P>
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html342"
+  HREF="node11.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="/usr/share/latex2html/icons/next.png"></A> 
+<A NAME="tex2html338"
+  HREF="node8.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="/usr/share/latex2html/icons/up.png"></A> 
+<A NAME="tex2html332"
+  HREF="node9.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="/usr/share/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html340"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="/usr/share/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html343"
+  HREF="node11.html">Singularity matrix</A>
+<B> Up:</B> <A NAME="tex2html339"
+  HREF="node8.html">Singularity handling</A>
+<B> Previous:</B> <A NAME="tex2html333"
+  HREF="node9.html">Test functions</A>
+ &nbsp; <B>  <A NAME="tex2html341"
+  HREF="node1.html">Contents</A></B> </DIV>
+<!--End of Navigation Panel-->
+
+</BODY>
+</HTML>

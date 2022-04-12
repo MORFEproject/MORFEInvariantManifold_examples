@@ -1,0 +1,405 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>The Steinmetz-Larter example</TITLE>
+<META NAME="description" CONTENT="The Steinmetz-Larter example">
+<META NAME="keywords" CONTENT="ManualAug2019 ">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="ManualAug2019 .css">
+
+<LINK REL="previous" HREF="node42.html">
+<LINK REL="up" HREF="node40.html">
+<LINK REL="next" HREF="node44.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html772"
+  HREF="node44.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="/usr/share/latex2html/icons/next.png"></A> 
+<A NAME="tex2html768"
+  HREF="node40.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="/usr/share/latex2html/icons/up.png"></A> 
+<A NAME="tex2html764"
+  HREF="node42.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="/usr/share/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html770"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="/usr/share/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html773"
+  HREF="node44.html">Poincar&#233; section and Poincar&#233;</A>
+<B> Up:</B> <A NAME="tex2html769"
+  HREF="node40.html">Time integration</A>
+<B> Previous:</B> <A NAME="tex2html765"
+  HREF="node42.html">Jacobian matrices</A>
+ &nbsp; <B>  <A NAME="tex2html771"
+  HREF="node1.html">Contents</A></B> 
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H3><A NAME="SECTION00051300000000000000"></A><A NAME="S4:maps"></A>
+<BR>
+The Steinmetz-Larter example
+</H3>
+In the peroxidase-oxidase reaction a peroxidase catalyzes an aerobic oxidation:
+<BR><P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay">
+<!-- MATH
+ \begin{displaymath}
+2YH_2+O_2+2H^+\rightarrow 2YH^+ + 2H_2O,
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="291" HEIGHT="30" BORDER="0"
+ SRC="img151.png"
+ ALT="\begin{displaymath}
+2YH_2+O_2+2H^+\rightarrow 2YH^+ + 2H_2O,
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+where <SPAN CLASS="MATH"><IMG
+ WIDTH="40" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img152.png"
+ ALT="$YH_2$"></SPAN> (<SPAN CLASS="MATH"><IMG
+ WIDTH="64" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img153.png"
+ ALT="$NADH$"></SPAN>) is a general electron donor. Under the proper conditions this 
+reaction yields oscillations in the concentrations of <SPAN CLASS="MATH"><IMG
+ WIDTH="40" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img152.png"
+ ALT="$YH_2$"></SPAN>, <SPAN CLASS="MATH"><IMG
+ WIDTH="25" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img154.png"
+ ALT="$O_2$"></SPAN> and various reaction 
+intermediates. 
+Steinmetz and Larter [Steinmetz and Larter 1991] derived the following system of four coupled nonlinear 
+differential rate equations:
+<BR>
+<DIV ALIGN="RIGHT" CLASS="mathdisplay">
+
+<!-- MATH
+ \begin{equation}
+\left\{\begin{array}{rcl}
+\dot A&=& -k_1 ABX- k_3 ABY+ k_7-k_{-7}A,\\
+\dot B&=& -k_1 ABX- k_3 ABY+ k_8        ,\\
+\dot X&=& k_1 ABX -2k_2 X^2 +2k_3 ABY -k_4X+k_6,\\
+\dot Y&=& -k_3 ABY+2k_2X^2-k_5 Y,
+\end{array}\right.
+
+\end{equation}
+ -->
+<A NAME="StLr"></A>
+<TABLE WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE"><TD ALIGN="CENTER" NOWRAP><A NAME="StLr"></A><IMG
+ WIDTH="394" HEIGHT="97" BORDER="0"
+ SRC="img155.png"
+ ALT="\begin{displaymath}
+\left\{\begin{array}{rcl}
+\dot A&amp;=&amp; -k_1 ABX- k_3 ABY+ k_7...
+...,\\
+\dot Y&amp;=&amp; -k_3 ABY+2k_2X^2-k_5 Y,
+\end{array}\right.
+\end{displaymath}"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+(<SPAN CLASS="arabic">32</SPAN>)</TD></TR>
+</TABLE>
+<BR CLEAR="ALL"></DIV><P></P>
+where <SPAN CLASS="MATH"><IMG
+ WIDTH="83" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img156.png"
+ ALT="$A,B,X,Y$"></SPAN> are state variables and <SPAN CLASS="MATH"><IMG
+ WIDTH="20" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img157.png"
+ ALT="$k_1$"></SPAN>, <SPAN CLASS="MATH"><IMG
+ WIDTH="20" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img158.png"
+ ALT="$k_2$"></SPAN>,
+<SPAN CLASS="MATH"><IMG
+ WIDTH="20" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img159.png"
+ ALT="$k_3$"></SPAN>, <SPAN CLASS="MATH"><IMG
+ WIDTH="20" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img160.png"
+ ALT="$k_4$"></SPAN>, <SPAN CLASS="MATH"><IMG
+ WIDTH="20" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img161.png"
+ ALT="$k_5$"></SPAN>, <SPAN CLASS="MATH"><IMG
+ WIDTH="20" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img162.png"
+ ALT="$k_6$"></SPAN>, <SPAN CLASS="MATH"><IMG
+ WIDTH="20" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img163.png"
+ ALT="$k_7$"></SPAN>, <SPAN CLASS="MATH"><IMG
+ WIDTH="20" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img164.png"
+ ALT="$k_8$"></SPAN>, and <SPAN CLASS="MATH"><IMG
+ WIDTH="31" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img165.png"
+ ALT="$k_{-7}$"></SPAN> 
+are parameters. Although highly simplified, the model is able to reproduce the three 
+modes of simple, chaotic, and bursting oscillations found in experiments.
+State and parameter values of a point on a <I CLASS="sans">NS</I> cycle in (<A HREF="#StLr">32</A>)
+are given in Table <A HREF="#NSSR">4</A>. The normal form coefficient of the <I CLASS="sans">NS</I> cycle is <!-- MATH
+ $-1.406017e-006$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="139" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img166.png"
+ ALT="$-1.406017e-006$"></SPAN>. 
+Since it is negative, we expect stable tori nearby.
+
+<P>
+<BR><P></P>
+<DIV ALIGN="CENTER"><A NAME="3159"></A>
+<TABLE>
+<CAPTION><STRONG>Table 4:</STRONG>
+State and parameter values of a point on an <I CLASS="sans">NS</I>- cycle in the Steinmetz-Larter model.</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<SMALL CLASS="FOOTNOTESIZE">
+</SMALL><TABLE CELLPADDING=3 BORDER="1" ALIGN="CENTER">
+<TR><TD ALIGN="LEFT"><SMALL CLASS="FOOTNOTESIZE">
+</SMALL><SMALL CLASS="FOOTNOTESIZE"><EM>Variable </EM> </SMALL></TD>
+<TD ALIGN="LEFT"><SMALL CLASS="FOOTNOTESIZE"> </SMALL><SMALL CLASS="FOOTNOTESIZE"><EM>Value</EM> </SMALL></TD>
+<TD ALIGN="LEFT"><SMALL CLASS="FOOTNOTESIZE"> </SMALL><SMALL CLASS="FOOTNOTESIZE"><EM>Parameter</EM> </SMALL></TD>
+<TD ALIGN="LEFT"><SMALL CLASS="FOOTNOTESIZE"> </SMALL><SMALL CLASS="FOOTNOTESIZE"><EM>Value</EM></SMALL></TD>
+<TD ALIGN="LEFT"><SMALL CLASS="FOOTNOTESIZE"><EM>Parameter</EM> </SMALL></TD>
+<TD ALIGN="LEFT"><SMALL CLASS="FOOTNOTESIZE"> </SMALL><SMALL CLASS="FOOTNOTESIZE"><EM>Value</EM>  </SMALL></TD>
+<TD></TD>
+</TR>
+<TR><TD ALIGN="LEFT"><SMALL CLASS="FOOTNOTESIZE"> 
+ 
+<SPAN CLASS="MATH"><IMG
+ WIDTH="17" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img35.png"
+ ALT="$A$"></SPAN> </SMALL></TD>
+<TD ALIGN="LEFT"><SMALL CLASS="FOOTNOTESIZE">         1.8609653    </SMALL></TD>
+<TD ALIGN="LEFT"><SMALL CLASS="FOOTNOTESIZE"> <SPAN CLASS="MATH"><IMG
+ WIDTH="20" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img157.png"
+ ALT="$k_1$"></SPAN> </SMALL></TD>
+<TD ALIGN="LEFT"><SMALL CLASS="FOOTNOTESIZE">        0.1631021</SMALL></TD>
+<TD ALIGN="LEFT"><SMALL CLASS="FOOTNOTESIZE"> <SPAN CLASS="MATH"><IMG
+ WIDTH="20" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img161.png"
+ ALT="$k_5$"></SPAN> </SMALL></TD>
+<TD ALIGN="LEFT"><SMALL CLASS="FOOTNOTESIZE">          1.104 </SMALL></TD>
+<TD></TD>
+</TR>
+<TR><TD ALIGN="LEFT"><SMALL CLASS="FOOTNOTESIZE"> 
+<SPAN CLASS="MATH"><IMG
+ WIDTH="18" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img167.png"
+ ALT="$B$"></SPAN> </SMALL></TD>
+<TD ALIGN="LEFT"><SMALL CLASS="FOOTNOTESIZE">         25.678306    </SMALL></TD>
+<TD ALIGN="LEFT"><SMALL CLASS="FOOTNOTESIZE"> <SPAN CLASS="MATH"><IMG
+ WIDTH="20" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img158.png"
+ ALT="$k_2$"></SPAN> </SMALL></TD>
+<TD ALIGN="LEFT"><SMALL CLASS="FOOTNOTESIZE">        1250     </SMALL></TD>
+<TD ALIGN="LEFT"><SMALL CLASS="FOOTNOTESIZE"> <SPAN CLASS="MATH"><IMG
+ WIDTH="20" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img162.png"
+ ALT="$k_6$"></SPAN> </SMALL></TD>
+<TD ALIGN="LEFT"><SMALL CLASS="FOOTNOTESIZE">          0.001 </SMALL></TD>
+<TD></TD>
+</TR>
+<TR><TD ALIGN="LEFT"><SMALL CLASS="FOOTNOTESIZE"> 
+<SPAN CLASS="MATH"><IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img168.png"
+ ALT="$X$"></SPAN> </SMALL></TD>
+<TD ALIGN="LEFT"><SMALL CLASS="FOOTNOTESIZE">         0.010838258  </SMALL></TD>
+<TD ALIGN="LEFT"><SMALL CLASS="FOOTNOTESIZE"> <SPAN CLASS="MATH"><IMG
+ WIDTH="20" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img159.png"
+ ALT="$k_3$"></SPAN> </SMALL></TD>
+<TD ALIGN="LEFT"><SMALL CLASS="FOOTNOTESIZE">        0.046875 </SMALL></TD>
+<TD ALIGN="LEFT"><SMALL CLASS="FOOTNOTESIZE"> <SPAN CLASS="MATH"><IMG
+ WIDTH="20" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img163.png"
+ ALT="$k_7$"></SPAN> </SMALL></TD>
+<TD ALIGN="LEFT"><SMALL CLASS="FOOTNOTESIZE">          0.71643356 </SMALL></TD>
+<TD></TD>
+</TR>
+<TR><TD ALIGN="LEFT"><SMALL CLASS="FOOTNOTESIZE"> 
+<SPAN CLASS="MATH"><IMG
+ WIDTH="18" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img169.png"
+ ALT="$Y$"></SPAN> </SMALL></TD>
+<TD ALIGN="LEFT"><SMALL CLASS="FOOTNOTESIZE">         0.094707061  </SMALL></TD>
+<TD ALIGN="LEFT"><SMALL CLASS="FOOTNOTESIZE"> <SPAN CLASS="MATH"><IMG
+ WIDTH="20" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img160.png"
+ ALT="$k_4$"></SPAN> </SMALL></TD>
+<TD ALIGN="LEFT"><SMALL CLASS="FOOTNOTESIZE">        20       </SMALL></TD>
+<TD ALIGN="LEFT"><SMALL CLASS="FOOTNOTESIZE"> <SPAN CLASS="MATH"><IMG
+ WIDTH="31" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img165.png"
+ ALT="$k_{-7}$"></SPAN> </SMALL></TD>
+<TD ALIGN="LEFT"><SMALL CLASS="FOOTNOTESIZE">           0.1175  </SMALL></TD>
+<TD></TD>
+</TR>
+<TR><TD ALIGN="LEFT"><SMALL CLASS="FOOTNOTESIZE"> 
+</SMALL></TD>
+<TD></TD>
+<TD></TD>
+<TD></TD>
+<TD ALIGN="LEFT"><SMALL CLASS="FOOTNOTESIZE"> <SPAN CLASS="MATH"><IMG
+ WIDTH="20" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img164.png"
+ ALT="$k_8$"></SPAN> </SMALL></TD>
+<TD ALIGN="LEFT"><SMALL CLASS="FOOTNOTESIZE">          0.5 </SMALL></TD>
+<TD></TD>
+</TR>
+<TR><TD></TD>
+<TD></TD>
+<TD></TD>
+<TD></TD>
+<TD></TD>
+<TD></TD>
+<TD></TD>
+</TR>
+</TABLE></DIV>
+
+<A NAME="NSSR"></A>
+</TD></TR>
+</TABLE>
+</DIV><P></P>
+<BR>
+
+<P>
+To start a time integration from this NS point,
+with a slightly supercritical parameter value, namely <SPAN CLASS="MATH"><IMG
+ WIDTH="92" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img170.png"
+ ALT="$k_7=0.7167$"></SPAN>, 
+we can use the commands
+
+<P>
+<PRE>
+X0=[1.8609653;25.678306;0.010838258;0.094707061];
+P0=[0.1631021;1250;0.046875;20;1.104;0.001;0.71643356;0.1175;0.5];
+P0(7)=0.7167;
+hls=feval(@SteLar);
+options=odeset('RelTol',1e-8);
+[t,y]=ode45(hls{2},[0,3000],X0,options,0.1631021,1250,0.046875,20,1.104,
+0.001,0.7167,0.1175,0.5);
+size(t)
+size(y)
+plot(t(100000:339000),y(100000:339000,2));
+'press any key'
+pause
+plot(y(100000:339000,3),y(100000:339000,2));
+</PRE>
+
+<P>
+After a transient the time-series exhibits modulated oscillations with 
+two frequencies near the original limit cycle
+(see Fig. <A HREF="#prent9">7</A>). This is a motion on a stable two-dimensional torus 
+that arises from the Neimark-Sacker bifurcation. The commands can be executed by running
+the testrun <TT>testtimeinteg.m</TT>. The total number of computed points is 339161.
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="prent9"></A><A NAME="3160"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 7:</STRONG>
+Movement on a stable torus in a 4-dimensional space 
+as a function of  time in the <SPAN CLASS="MATH"><IMG
+ WIDTH="32" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1.png"
+ ALT="$B-$"></SPAN> direction and as projected
+on the <SPAN CLASS="MATH"><IMG
+ WIDTH="55" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2.png"
+ ALT="$(B,X)$"></SPAN> phase plane.</CAPTION>
+<TR><TD><IMG
+ WIDTH="556" HEIGHT="208" BORDER="0"
+ SRC="img171.png"
+ ALT="\begin{figure}
+\psfig{figure=ex/moduloscill.eps,height=4cm}\hfill \psfig{figure...
+...a) Modulated oscillations.\hfill(b) Orbits on a stable 2-torus.}
+\end{figure}"></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+The testrun <TT>testtimeintegJacobian.m</TT> 
+
+<P>
+<PRE>
+X0=[1.8609653;25.678306;0.010838258;0.094707061];
+P0=[0.1631021;1250;0.046875;20;1.104;0.001;0.71643356;0.1175;0.5];
+P0(7)=0.7167;
+hls=feval(@SteLar);
+options=odeset('RelTol',1e-8);
+options = odeset('Jacobian',hls(3),'JacobianP',hls(4),
+'Hessians',hls(5),'HessiansP',hls(6));
+[t,y]=ode45(hls{2},[0,3000],X0,options,0.1631021,1250,0.046875,20,
+1.104,0.001,0.7167,0.1175,0.5);
+size(t)
+size(y)
+plot(t(100000:325000),y(100000:325000,2));
+'press any key'
+pause
+plot(y(100000:325000,3),y(100000:325000,2));
+</PRE>
+
+<P>
+is a small modification of <TT>testtimeinteg.m</TT> in which the solver has access to the Jacobian matrix.
+The graphical output is similar, but the number of computed points is now 328197.
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html772"
+  HREF="node44.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="/usr/share/latex2html/icons/next.png"></A> 
+<A NAME="tex2html768"
+  HREF="node40.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="/usr/share/latex2html/icons/up.png"></A> 
+<A NAME="tex2html764"
+  HREF="node42.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="/usr/share/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html770"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="/usr/share/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html773"
+  HREF="node44.html">Poincar&#233; section and Poincar&#233;</A>
+<B> Up:</B> <A NAME="tex2html769"
+  HREF="node40.html">Time integration</A>
+<B> Previous:</B> <A NAME="tex2html765"
+  HREF="node42.html">Jacobian matrices</A>
+ &nbsp; <B>  <A NAME="tex2html771"
+  HREF="node1.html">Contents</A></B> </DIV>
+<!--End of Navigation Panel-->
+
+</BODY>
+</HTML>

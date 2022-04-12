@@ -1,0 +1,172 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Discretization of a limit cycle</TITLE>
+<META NAME="description" CONTENT="Discretization of a limit cycle">
+<META NAME="keywords" CONTENT="ManualAug2019 ">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="ManualAug2019 .css">
+
+<LINK REL="next" HREF="node56.html">
+<LINK REL="previous" HREF="node54.html">
+<LINK REL="up" HREF="node53.html">
+<LINK REL="next" HREF="node56.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html926"
+  HREF="node56.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="/usr/share/latex2html/icons/next.png"></A> 
+<A NAME="tex2html922"
+  HREF="node53.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="/usr/share/latex2html/icons/up.png"></A> 
+<A NAME="tex2html916"
+  HREF="node54.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="/usr/share/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html924"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="/usr/share/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html927"
+  HREF="node56.html">Plotting the output of</A>
+<B> Up:</B> <A NAME="tex2html923"
+  HREF="node53.html">Continuation of limit cycles</A>
+<B> Previous:</B> <A NAME="tex2html917"
+  HREF="node54.html">Mathematical definition</A>
+ &nbsp; <B>  <A NAME="tex2html925"
+  HREF="node1.html">Contents</A></B> 
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00072000000000000000">
+Discretization of a limit cycle</A>
+</H2>
+
+<P>
+In M<SMALL>AT</SMALL>C<SMALL>ONT</SMALL> limit cycles are discretized using orthogonal collocation [<A
+ HREF="node115.html#Collocation">6</A>], the same way as it was done in AUTO [<A
+ HREF="node115.html#AUTO">12</A>]; the left hand side of the resulting system is the defining function <SPAN CLASS="MATH"><IMG
+ WIDTH="79" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img251.png"
+ ALT="$F(u,T,\alpha)$"></SPAN> for limit cycles.
+
+<P>
+In practice this means that the normalized time interval <SPAN CLASS="MATH"><IMG
+ WIDTH="39" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img252.png"
+ ALT="$[0,1]$"></SPAN> is divided in a number <I>ntst</I> (number of test intervals) of intervals with variable lengths;
+the (<I>ntst</I>+1) endpoints of these intervals form the <I>coarse mesh</I>. 
+Each interval is further subdivided in a number <I>ncol</I> (number of collocation points) of subintervals with equal lengths. So altogether there are 
+(<I>ntst</I> <SPAN CLASS="MATH"><IMG
+ WIDTH="17" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img253.png"
+ ALT="$\times$"></SPAN> <I>ncol</I> + 1) 
+<I>fine mesh</I> points. The state variable values are collected in the points of the <I>fine mesh</I>. The limit cycle itself is then approximated by a continuous piecewise polynomial which is a polynomial of degree <I>ncol</I> in each of the <I>ntst</I> coarse mesh intervals.
+
+<P>
+If the number of phase
+variables is denoted by <I>nphase</I> then altogether 
+
+<P>
+(<I>ntst</I> <SPAN CLASS="MATH"><IMG
+ WIDTH="17" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img253.png"
+ ALT="$\times$"></SPAN> <I>ncol</I> <SPAN CLASS="MATH"><IMG
+ WIDTH="17" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img253.png"
+ ALT="$\times$"></SPAN> <I>nphase</I>) 
+
+<P>
+state variable values are stored, since by periodicity
+the values in the endpoints <SPAN CLASS="MATH"><IMG
+ WIDTH="13" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img112.png"
+ ALT="$0$"></SPAN> and <SPAN CLASS="MATH"><IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img102.png"
+ ALT="$1$"></SPAN> must be identical. But the number of continuation variables is
+
+<P>
+((<I>ntst</I> <SPAN CLASS="MATH"><IMG
+ WIDTH="17" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img253.png"
+ ALT="$\times$"></SPAN> <I>ncol</I> + <SPAN CLASS="MATH"><IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img102.png"
+ ALT="$1$"></SPAN> ) <SPAN CLASS="MATH"><IMG
+ WIDTH="17" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img253.png"
+ ALT="$\times$"></SPAN> <I>nphase</I>)+2
+
+<P>
+since the state variable values in both <SPAN CLASS="MATH"><IMG
+ WIDTH="13" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img112.png"
+ ALT="$0$"></SPAN> and <SPAN CLASS="MATH"><IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img102.png"
+ ALT="$1$"></SPAN> are stored and the period <SPAN CLASS="MATH"><IMG
+ WIDTH="16" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img244.png"
+ ALT="$T$"></SPAN> and a free system parameter must be included. They are stored in the output vector
+<SPAN CLASS="MATH"><IMG
+ WIDTH="14" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img44.png"
+ ALT="$x$"></SPAN> of a limit cycle continuation in that order, after all state variable values.
+
+<P>
+The coarse mesh is adapted after each number of <I>Adapt</I> continuation points, cf &#167;<A HREF="node26.html#labelAdapt">3.4.9</A>. We note that <I>ntst</I> and <I>ncol</I> are input arguments
+of the routines that initialize the continuation of limit cycles but are not explicitly found in the output of the continuation; however, they are preserved as
+fields in the global structure <TT>lds</TT>.
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html926"
+  HREF="node56.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="/usr/share/latex2html/icons/next.png"></A> 
+<A NAME="tex2html922"
+  HREF="node53.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="/usr/share/latex2html/icons/up.png"></A> 
+<A NAME="tex2html916"
+  HREF="node54.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="/usr/share/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html924"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="/usr/share/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html927"
+  HREF="node56.html">Plotting the output of</A>
+<B> Up:</B> <A NAME="tex2html923"
+  HREF="node53.html">Continuation of limit cycles</A>
+<B> Previous:</B> <A NAME="tex2html917"
+  HREF="node54.html">Mathematical definition</A>
+ &nbsp; <B>  <A NAME="tex2html925"
+  HREF="node1.html">Contents</A></B> </DIV>
+<!--End of Navigation Panel-->
+
+</BODY>
+</HTML>

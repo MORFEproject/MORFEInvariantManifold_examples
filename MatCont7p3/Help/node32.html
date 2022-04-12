@@ -1,0 +1,134 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Global Structures</TITLE>
+<META NAME="description" CONTENT="Global Structures">
+<META NAME="keywords" CONTENT="ManualAug2019 ">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="ManualAug2019 .css">
+
+<LINK REL="next" HREF="node33.html">
+<LINK REL="previous" HREF="node31.html">
+<LINK REL="up" HREF="node13.html">
+<LINK REL="next" HREF="node33.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html633"
+  HREF="node33.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="/usr/share/latex2html/icons/next.png"></A> 
+<A NAME="tex2html629"
+  HREF="node13.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="/usr/share/latex2html/icons/up.png"></A> 
+<A NAME="tex2html623"
+  HREF="node31.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="/usr/share/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html631"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="/usr/share/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html634"
+  HREF="node33.html">Plots in MATCONT</A>
+<B> Up:</B> <A NAME="tex2html630"
+  HREF="node13.html">General software aspects of</A>
+<B> Previous:</B> <A NAME="tex2html624"
+  HREF="node31.html">Directories</A>
+ &nbsp; <B>  <A NAME="tex2html632"
+  HREF="node1.html">Contents</A></B> 
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00038000000000000000"></A><A NAME="GlobStruct"></A>
+<BR>
+Global Structures
+</H2>
+In general the user does not need to know much about the use of global structures in M<SMALL>AT</SMALL>C<SMALL>ONT</SMALL> but advanced users can find it useful since a lot of
+additional information can be hidden in these structures. M<SMALL>AT</SMALL>C<SMALL>ONT</SMALL> uses a structure <TT>cds</TT> (continuation descriptor structure) which is global
+in the continuer routine <TT>cont.m</TT> and in all (12) curve definition files and it carries information back and forth between them 
+(cf. Figure <A HREF="node30.html#fig:layers">4</A>). Also, <TT>cds</TT> has
+a field <TT>cds.options</TT> with the fields described in &#167;<A HREF="node17.html#s:options">3.4</A>. It contains default values for these options but overrides them with the values
+in the options-structure that is passed with the call of <TT>cont.m</TT>. Other fields of <TT>cds.options</TT> are filled via the interaction with the curve definition file which is also passed with the call to <TT>cont.m</TT>
+
+<P>
+Next, M<SMALL>AT</SMALL>C<SMALL>ONT</SMALL>
+uses more specific global structures, namely:
+
+<P>
+
+<UL>
+<LI><TT>eds</TT> (equilibrium descriptor structure): this structure is global in the curve definition file <TT>equilibrium.m</TT> and in the initializers for the
+continuation of equilibria.
+</LI>
+<LI><TT>lpds</TT> (limit point descriptor structure): this structure is global in the curve definition file <TT>limitpoint.m</TT> and in the initializers for the
+continuation of limit points.
+</LI>
+<LI><TT>hds</TT> (Hopf descriptor structure): this structure is global in the curve definition file <TT>hopf.m</TT> and in the initializers for the
+continuation of Hopf points.
+</LI>
+<LI><TT>bpds</TT> (branch point descriptor structure): this structure is global in the curve definition file <TT>branchpoint.m</TT> and in the initializers for the
+continuation of branch points.
+</LI>
+<LI><TT>lds</TT> (limitcycle descriptor structure): this structure is global in the curve definition files <TT>limitcycle.m</TT>, <TT>limitpointcycle.m</TT>,
+<TT>perioddoubling.m</TT>, <TT>neimarksacker.m</TT>, and also in <TT>branchpointcycle.m</TT>, in the initializers for the continuation of limit cycles, their codimension 1 bifurcations and branch points.
+</LI>
+<LI><TT>homds</TT> (homoclinc descriptor structure): this structure is global in the curve definition files <TT>homoclinic.m</TT>, <TT>homoclinicsaddlenode.m</TT> and in the initializers for the continuation of orbits to saddle or to saddle-node.
+</LI>
+<LI><TT>hetds</TT> (heteroclinc descriptor structure): this structure is global in the curve definition file <TT>heteroclinic.m</TT> and in the initializers for the continuation of heteroclinic orbits.
+</LI>
+</UL>
+
+<P>
+These specific structures carry information that is collected or computed in the initializers to the curve definition files in which they are global. In the initializers themselves other specific structures can also be global, depending on the data that are used in the initializer. For example, in the initializer
+<TT>init_H_LC</TT> not only <TT>lds</TT> and <TT>cds</TT> are global but also <TT>eds</TT> and <TT>hds</TT>. Indeed, Hopf points can be detected on equilibrium curves or be taken from Hopf curves.
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html633"
+  HREF="node33.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="/usr/share/latex2html/icons/next.png"></A> 
+<A NAME="tex2html629"
+  HREF="node13.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="/usr/share/latex2html/icons/up.png"></A> 
+<A NAME="tex2html623"
+  HREF="node31.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="/usr/share/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html631"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="/usr/share/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html634"
+  HREF="node33.html">Plots in MATCONT</A>
+<B> Up:</B> <A NAME="tex2html630"
+  HREF="node13.html">General software aspects of</A>
+<B> Previous:</B> <A NAME="tex2html624"
+  HREF="node31.html">Directories</A>
+ &nbsp; <B>  <A NAME="tex2html632"
+  HREF="node1.html">Contents</A></B> </DIV>
+<!--End of Navigation Panel-->
+
+</BODY>
+</HTML>

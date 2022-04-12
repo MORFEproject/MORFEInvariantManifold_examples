@@ -1,0 +1,314 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Normal form coefficients</TITLE>
+<META NAME="description" CONTENT="Normal form coefficients">
+<META NAME="keywords" CONTENT="ManualAug2019 ">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="ManualAug2019 .css">
+
+<LINK REL="previous" HREF="node59.html">
+<LINK REL="up" HREF="node58.html">
+<LINK REL="next" HREF="node61.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html986"
+  HREF="node61.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="/usr/share/latex2html/icons/next.png"></A> 
+<A NAME="tex2html982"
+  HREF="node58.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="/usr/share/latex2html/icons/up.png"></A> 
+<A NAME="tex2html978"
+  HREF="node59.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="/usr/share/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html984"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="/usr/share/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html987"
+  HREF="node61.html">Limitcycle initialization</A>
+<B> Up:</B> <A NAME="tex2html983"
+  HREF="node58.html">Bifurcations of limit cycles</A>
+<B> Previous:</B> <A NAME="tex2html979"
+  HREF="node59.html">Branch Point Locator</A>
+ &nbsp; <B>  <A NAME="tex2html985"
+  HREF="node1.html">Contents</A></B> 
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H3><A NAME="SECTION00075200000000000000"></A><A NAME="s:processing"></A>
+<BR>
+Normal form coefficients
+</H3>
+The numerical methods used in M<SMALL>AT</SMALL>C<SMALL>ONT</SMALL> to compute normal form coefficients of codimension 1 bifurcations of limit cycles are
+discussed in [<A
+ HREF="node115.html#kugododh">28</A>].
+
+<P>
+The periodic normal form at the Limit Point of Cycles (LPC) bifurcation is
+<BR>
+<DIV ALIGN="RIGHT" CLASS="mathdisplay">
+
+<!-- MATH
+ \begin{equation}
+\left\{\begin{array}{rcl}
+ \frac{d\tau}{dt}&=&1 - \xi + a \xi^2 + \cdots ,\vspace{0.2cm}\\
+ \frac{d\xi}{dt}&=& b \xi^2 + \cdots ,
+\end{array}
+\right.
+\end{equation}
+ -->
+<A NAME="PerNF-LP"></A>
+<TABLE WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE"><TD ALIGN="CENTER" NOWRAP><A NAME="PerNF-LP"></A><IMG
+ WIDTH="217" HEIGHT="86" BORDER="0"
+ SRC="img300.png"
+ ALT="\begin{displaymath}
+\left\{\begin{array}{rcl}
+\frac{d\tau}{dt}&amp;=&amp;1 - \xi + a...
+...
+\frac{d\xi}{dt}&amp;=&amp; b \xi^2 + \cdots ,
+\end{array}
+\right.
+\end{displaymath}"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+(<SPAN CLASS="arabic">51</SPAN>)</TD></TR>
+</TABLE>
+<BR CLEAR="ALL"></DIV><P></P>
+where <!-- MATH
+ $\tau \in [0,T]$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="73" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img301.png"
+ ALT="$\tau \in [0,T]$"></SPAN>, <SPAN CLASS="MATH"><IMG
+ WIDTH="12" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img302.png"
+ ALT="$\xi$"></SPAN> is a real coordinate on the center manifold that is transverse to the limitcycle, <!-- MATH
+ $a,b\in \mathbb{R}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="62" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img303.png"
+ ALT="$a,b\in \mathbb{R}$"></SPAN>, and dots denote nonautonomous <SPAN CLASS="MATH"><IMG
+ WIDTH="16" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img244.png"
+ ALT="$T$"></SPAN>-periodic <SPAN CLASS="MATH"><IMG
+ WIDTH="47" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img304.png"
+ ALT="$O(\xi^3)$"></SPAN>-terms. For each detected LPC point the normal form coefficient <SPAN CLASS="MATH"><IMG
+ WIDTH="11" HEIGHT="20" ALIGN="BOTTOM" BORDER="0"
+ SRC="img305.png"
+ ALT="$b$"></SPAN> is computed. If <SPAN CLASS="MATH"><IMG
+ WIDTH="43" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img306.png"
+ ALT="$b\neq 0$"></SPAN> then the LPC bifurcation is
+<I>nondegenerate,</I> i.e., the cycle manifold is quadratically tangential to the hyperplane orthogonal to the parameter direction. In practice, by  round-off errors
+<SPAN CLASS="MATH"><IMG
+ WIDTH="11" HEIGHT="20" ALIGN="BOTTOM" BORDER="0"
+ SRC="img305.png"
+ ALT="$b$"></SPAN> is never zero, so it is better to check if the testfunction changes sign. (for <SPAN CLASS="MATH"><IMG
+ WIDTH="43" HEIGHT="20" ALIGN="BOTTOM" BORDER="0"
+ SRC="img307.png"
+ ALT="$b=0$"></SPAN> the LPC degenerates to a <I>cusp of cycles</I> (CP) but this will not be
+detected on a branch of limit cycles since it is a codimension 2 phenomenon.)
+
+<P>
+The periodic normal form at the Period Doubling (PD) bifurcation is
+<BR>
+<DIV ALIGN="RIGHT" CLASS="mathdisplay">
+
+<!-- MATH
+ \begin{equation}
+\left\{\begin{array}{rcl}
+ \frac{d\tau}{dt}&=&1 + a \xi^2 + \cdots , \vspace{0.2cm}\\
+ \frac{d\xi}{dt}&=& c \xi^3 + \cdots,
+\end{array}
+\right.
+\end{equation}
+ -->
+<A NAME="PerNF-PD"></A>
+<TABLE WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE"><TD ALIGN="CENTER" NOWRAP><A NAME="PerNF-PD"></A><IMG
+ WIDTH="188" HEIGHT="86" BORDER="0"
+ SRC="img308.png"
+ ALT="\begin{displaymath}
+\left\{\begin{array}{rcl}
+\frac{d\tau}{dt}&amp;=&amp;1 + a \xi^2...
+...
+\frac{d\xi}{dt}&amp;=&amp; c \xi^3 + \cdots,
+\end{array}
+\right.
+\end{displaymath}"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+(<SPAN CLASS="arabic">52</SPAN>)</TD></TR>
+</TABLE>
+<BR CLEAR="ALL"></DIV><P></P>
+where <!-- MATH
+ $\tau \in [0,2T]$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="82" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img309.png"
+ ALT="$\tau \in [0,2T]$"></SPAN>, <SPAN CLASS="MATH"><IMG
+ WIDTH="12" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img302.png"
+ ALT="$\xi$"></SPAN> is a real coordinate on the center manifold that is transverse to the limit cycle, <!-- MATH
+ $a,c \in \mathbb{R}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="62" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img310.png"
+ ALT="$a,c \in \mathbb{R}$"></SPAN>, and dots denote nonautonomous <SPAN CLASS="MATH"><IMG
+ WIDTH="25" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img311.png"
+ ALT="$2T$"></SPAN>-periodic <SPAN CLASS="MATH"><IMG
+ WIDTH="47" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img312.png"
+ ALT="$O(\xi^4)$"></SPAN>-terms. The coefficient <SPAN CLASS="MATH"><IMG
+ WIDTH="11" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img313.png"
+ ALT="$c$"></SPAN> determines 
+the stability of the period doubled cycle in the center manifold and is computed during the processing of each PD point. 
+
+<P>
+If <SPAN CLASS="MATH"><IMG
+ WIDTH="43" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img314.png"
+ ALT="$c&lt;0$"></SPAN> then the PD bifurcation is 
+supercritical, i.e., within the center manifold on one side of the bifurcation only stable cycles exist and on the  other side unstable cycles  coexist with stable period-doubled cycles. 
+If <SPAN CLASS="MATH"><IMG
+ WIDTH="43" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img315.png"
+ ALT="$c&gt;0$"></SPAN> the PD bifurcation is subcritical, i.e., within the center manifold on one side of the bifurcation stable cycles coexist with unstable period-doubled cycles and on the other side only unstable cycles exist. (for <SPAN CLASS="MATH"><IMG
+ WIDTH="43" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img316.png"
+ ALT="$c=0$"></SPAN> the PD degenerates to <I>Generalized Period Doubling bifurcation</I> (GPD) but this will not be detected on a branch of
+limit cycles since this is a codimension 2 phenomenon).
+
+<P>
+The periodic normal form at the Neimark-Sacker (NS) bifurcation is
+<BR>
+<DIV ALIGN="RIGHT" CLASS="mathdisplay">
+
+<!-- MATH
+ \begin{equation}
+\left\{\begin{array}{rcl}
+ \frac{d\tau}{dt}&=&1 + a |\xi|^2 + \cdots , \vspace{0.2cm}\\
+ \frac{d\xi}{dt}&=&  \frac{i\theta}{T} \xi + d \xi |\xi|^2 + \cdots,
+\end{array}
+\right.
+\end{equation}
+ -->
+<A NAME="PerNF-NS"></A>
+<TABLE WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE"><TD ALIGN="CENTER" NOWRAP><A NAME="PerNF-NS"></A><IMG
+ WIDTH="220" HEIGHT="86" BORDER="0"
+ SRC="img317.png"
+ ALT="\begin{displaymath}
+\left\{\begin{array}{rcl}
+\frac{d\tau}{dt}&amp;=&amp;1 + a \vert...
+...} \xi + d \xi \vert\xi\vert^2 + \cdots,
+\end{array}
+\right.
+\end{displaymath}"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+(<SPAN CLASS="arabic">53</SPAN>)</TD></TR>
+</TABLE>
+<BR CLEAR="ALL"></DIV><P></P>
+where <!-- MATH
+ $\tau \in [0,T]$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="73" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img301.png"
+ ALT="$\tau \in [0,T]$"></SPAN>, <SPAN CLASS="MATH"><IMG
+ WIDTH="12" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img302.png"
+ ALT="$\xi$"></SPAN> is a complex coordinate on the center manifold that is complementary to <SPAN CLASS="MATH"><IMG
+ WIDTH="13" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img318.png"
+ ALT="$\tau$"></SPAN>,
+<!-- MATH
+ $a \in \mathbb{R},d \in \mathbb{C}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="98" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img319.png"
+ ALT="$a \in \mathbb{R},d \in \mathbb{C}$"></SPAN>, and dots denote nonautonomous <SPAN CLASS="MATH"><IMG
+ WIDTH="16" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img244.png"
+ ALT="$T$"></SPAN>-periodic <SPAN CLASS="MATH"><IMG
+ WIDTH="57" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img320.png"
+ ALT="$O(\vert\xi\vert^4)$"></SPAN>-terms. The critical coefficient <SPAN CLASS="MATH"><IMG
+ WIDTH="13" HEIGHT="20" ALIGN="BOTTOM" BORDER="0"
+ SRC="img321.png"
+ ALT="$d$"></SPAN> in the periodic normal form for the NS bifurcation is computed during the processing of a NS point. 
+
+<P>
+If <SPAN CLASS="MATH"><IMG
+ WIDTH="71" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img322.png"
+ ALT="${\rm Re}~d&lt;0$"></SPAN> then the bifurcation is supercritical, i.e. in the center manifold the limit cycle is stable on one side of the bifurcation point and unstable on the other side and the unstable cycles coexist with stable invariant tori. If <SPAN CLASS="MATH"><IMG
+ WIDTH="71" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img323.png"
+ ALT="${\rm Re}~d&gt;0$"></SPAN> then the bifurcation is subcritical, i.e. in the center manifold the limit cycle is stable on one side of the bifurcation point and unstable on the other side and the stable cycles coexist with unstable invariant tori.
+(for <SPAN CLASS="MATH"><IMG
+ WIDTH="71" HEIGHT="20" ALIGN="BOTTOM" BORDER="0"
+ SRC="img324.png"
+ ALT="${\rm Re}~d=0$"></SPAN> the NS bifurcation degenerates to a <I>Chenciner bifurcation</I> (CH) but this will not be detected on a branch of limit cycles since it is a
+codimension 2 phenomenon).
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html986"
+  HREF="node61.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="/usr/share/latex2html/icons/next.png"></A> 
+<A NAME="tex2html982"
+  HREF="node58.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="/usr/share/latex2html/icons/up.png"></A> 
+<A NAME="tex2html978"
+  HREF="node59.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="/usr/share/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html984"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="/usr/share/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html987"
+  HREF="node61.html">Limitcycle initialization</A>
+<B> Up:</B> <A NAME="tex2html983"
+  HREF="node58.html">Bifurcations of limit cycles</A>
+<B> Previous:</B> <A NAME="tex2html979"
+  HREF="node59.html">Branch Point Locator</A>
+ &nbsp; <B>  <A NAME="tex2html985"
+  HREF="node1.html">Contents</A></B> </DIV>
+<!--End of Navigation Panel-->
+
+</BODY>
+</HTML>

@@ -1,0 +1,75 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Defaultprocessor</TITLE>
+<META NAME="description" CONTENT="Defaultprocessor">
+<META NAME="keywords" CONTENT="ManualAug2019 ">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="ManualAug2019 .css">
+
+<LINK REL="next" HREF="node24.html">
+<LINK REL="previous" HREF="node22.html">
+<LINK REL="up" HREF="node17.html">
+<LINK REL="next" HREF="node24.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html527"
+  HREF="node24.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="/usr/share/latex2html/icons/next.png"></A> 
+<A NAME="tex2html523"
+  HREF="node17.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="/usr/share/latex2html/icons/up.png"></A> 
+<A NAME="tex2html517"
+  HREF="node22.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="/usr/share/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html525"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="/usr/share/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html528"
+  HREF="node24.html">Special processors</A>
+<B> Up:</B> <A NAME="tex2html524"
+  HREF="node17.html">Options</A>
+<B> Previous:</B> <A NAME="tex2html518"
+  HREF="node22.html">User functions</A>
+ &nbsp; <B>  <A NAME="tex2html526"
+  HREF="node1.html">Contents</A></B> 
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H3><A NAME="SECTION00034600000000000000">
+Defaultprocessor</A>
+</H3>
+In many cases it is useful to do some general computations for every calculated point on the curve. The results of these computations can then be used by for example the testfunctions. The continuer has stored the handle to the defaultprocessor in the variable <TT>cds.curve_defaultprocessor</TT>. 
+
+<P>
+The defaultprocessor is called as
+<BR>
+ <TT>[failed,f,s] = feval(cds.curve_defaultprocressor,x,v,s)</TT>.
+<BR>
+  <TT>x</TT> and <TT>v</TT> are the point on the curve and it's tangent vector. The argument <TT>s</TT> is only supplied if the point is a singular point, in that case the defaultprocessor may also add some data to the <TT>s.data</TT> field. If for some reason the default processor fails it should set <TT>failed</TT> to 1. This will result in a reduction of the stepsize and a retry which should solve the problem. Any information that is to be preserved, should be put in <TT>f</TT>. <TT>f</TT> must be a column vector and must be of equal size for every call to the default processor.
+
+<P>
+<BR><HR>
+
+</BODY>
+</HTML>

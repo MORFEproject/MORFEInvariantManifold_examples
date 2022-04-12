@@ -1,0 +1,416 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Bifurcations of limit cycles</TITLE>
+<META NAME="description" CONTENT="Bifurcations of limit cycles">
+<META NAME="keywords" CONTENT="ManualAug2019 ">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="ManualAug2019 .css">
+
+<LINK REL="next" HREF="node61.html">
+<LINK REL="previous" HREF="node57.html">
+<LINK REL="up" HREF="node53.html">
+<LINK REL="next" HREF="node59.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html962"
+  HREF="node59.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="/usr/share/latex2html/icons/next.png"></A> 
+<A NAME="tex2html958"
+  HREF="node53.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="/usr/share/latex2html/icons/up.png"></A> 
+<A NAME="tex2html952"
+  HREF="node57.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="/usr/share/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html960"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="/usr/share/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html963"
+  HREF="node59.html">Branch Point Locator</A>
+<B> Up:</B> <A NAME="tex2html959"
+  HREF="node53.html">Continuation of limit cycles</A>
+<B> Previous:</B> <A NAME="tex2html953"
+  HREF="node57.html">Initialization by time integration</A>
+ &nbsp; <B>  <A NAME="tex2html961"
+  HREF="node1.html">Contents</A></B> 
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00075000000000000000">
+Bifurcations of limit cycles</A>
+</H2>
+On a limit cycle curve the following bifurcations can occur
+
+<UL>
+<LI><EM>Branch Point of Cycles</EM>, this will be denoted as <TT>BPC</TT>
+</LI>
+<LI><EM>Period Doubling</EM>, denoted as <TT>PD</TT>
+</LI>
+<LI><EM>Fold</EM>, also known as <EM>Limit Point of Cycles</EM>, this will be denoted as <TT>LPC</TT>
+</LI>
+<LI><EM>Neimark-Sacker</EM>, this will be denoted as <TT>NS</TT>
+</LI>
+</UL>
+The test function for the Period Doubling bifurcation is defined by 
+the following system
+<BR>
+<DIV ALIGN="CENTER">
+
+<!-- MATH
+ \begin{eqnarray}
+\left\{ \begin{array}{rl}
+\dot v(\tau) - T f_u(u,\alpha)v(\tau) + G\varphi(\tau) & = 0 \\
+v(0) + v(1) & = 0 \\
+\int_0^1 \langle \psi(\tau),v(\tau)\rangle d\tau & = 1
+\end{array} \right.
+\end{eqnarray}
+ -->
+<TABLE CELLPADDING="0" ALIGN="CENTER" WIDTH="100%">
+<TR VALIGN="MIDDLE"><TD NOWRAP WIDTH="50%" ALIGN="RIGHT"><IMG
+ WIDTH="308" HEIGHT="86" ALIGN="MIDDLE" BORDER="0"
+ SRC="img269.png"
+ ALT="$\displaystyle \left\{ \begin{array}{rl}
+\dot v(\tau) - T f_u(u,\alpha)v(\tau) +...
+... \\
+\int_0^1 \langle \psi(\tau),v(\tau)\rangle d\tau &amp; = 1
+\end{array} \right.$"></TD>
+<TD>&nbsp;</TD>
+<TD>&nbsp;</TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+(<SPAN CLASS="arabic">48</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+here <SPAN CLASS="MATH"><IMG
+ WIDTH="15" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img270.png"
+ ALT="$\varphi$"></SPAN> and <SPAN CLASS="MATH"><IMG
+ WIDTH="16" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img271.png"
+ ALT="$\psi$"></SPAN> are so-called bordering vector-functions [<A
+ HREF="node115.html#yuri">25</A>], 
+see [<A
+ HREF="node115.html#report">15</A>] for details on the implementation. The system is discretized using 
+orthogonal collocation and solved using the standard <SMALL>MATLAB</SMALL> sparse system solver. 
+The solution component <!-- MATH
+ $G \in \ensuremath{\mathbf{R}}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="54" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img272.png"
+ ALT="$G \in \ensuremath{\mathbf{R}}$"></SPAN> of this system is the test function and equals zero 
+when there is a Period Doubling bifurcation.
+
+<P>
+The Fold bifurcation is detected in the same way as the Fold bifurcation of equilibria, 
+the last component of the tangent vector (the <SPAN CLASS="MATH"><IMG
+ WIDTH="15" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img227.png"
+ ALT="$\alpha$"></SPAN> component) is used as 
+the test function.  
+
+<P>
+The Neimark-Sacker bifurcation is detected by monitoring the eigenvalues of the monodromy matrix for the cycle. The monodromy matrix is computed like in <SMALL>AUTO</SMALL> by a block elimination in the discretized form of the Jacobian of (<A HREF="node54.html#completelc">47</A>).
+
+<P>
+BPC cycles are not generic in families of limit cycles, but they are common in the case of symmetries, if the
+branch parameter is also the continuation parameter. CL_M<SMALL>AT</SMALL>C<SMALL>ONT</SMALL> uses a strategy that requires only the solution of linear systems;
+it is based on the fact that in a symmetry-breaking BPC cycle <SPAN CLASS="MATH"><IMG
+ WIDTH="33" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img273.png"
+ ALT="$M_D$"></SPAN> has rank defect two, where <SPAN CLASS="MATH"><IMG
+ WIDTH="33" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img273.png"
+ ALT="$M_D$"></SPAN> is the square matrix <SPAN CLASS="MATH"><IMG
+ WIDTH="33" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img273.png"
+ ALT="$M_D$"></SPAN>,
+obtained from the discretized form of the Jacobian of (<A HREF="node54.html#completelc">47</A>). 
+To be precise, if <!-- MATH
+ $h \in {\cal C}^1([0,1],{\mathrm{I\!R}}^n)$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="134" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img274.png"
+ ALT="$h \in {\cal C}^1([0,1],{\mathrm{I\!R}}^n)$"></SPAN>, then 
+<BR><P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay">
+<!-- MATH
+ \begin{displaymath}
+Mh=
+\left[
+\begin{array}{c}
+\dot{h}-Tf_x(x(t),\alpha)h \\
+h(0)-h(1)
+\end{array}
+\right],
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="227" HEIGHT="51" BORDER="0"
+ SRC="img275.png"
+ ALT="\begin{displaymath}
+Mh=
+\left[
+\begin{array}{c}
+\dot{h}-Tf_x(x(t),\alpha)h \\
+h(0)-h(1)
+\end{array}
+\right],
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+and
+<BR><P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay">
+<!-- MATH
+ \begin{displaymath}
+M_D(h)_{dm}=
+\left[
+\begin{array}{c}
+(\dot{h}-Tf_x(x(t),\alpha)h)_{dc} \\
+h(0)-h(1)
+\end{array}
+\right],
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="297" HEIGHT="51" BORDER="0"
+ SRC="img276.png"
+ ALT="\begin{displaymath}
+M_D(h)_{dm}=
+\left[
+\begin{array}{c}
+(\dot{h}-Tf_x(x(t),\alpha)h)_{dc} \\
+h(0)-h(1)
+\end{array}
+\right],
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+where <SPAN CLASS="MATH"><IMG
+ WIDTH="37" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img277.png"
+ ALT="$()_{dm}$"></SPAN> and <SPAN CLASS="MATH"><IMG
+ WIDTH="31" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img278.png"
+ ALT="$()_{dc}$"></SPAN> denote discretization in mesh points 
+and in collocation points, respectively.
+Therefore we border <SPAN CLASS="MATH"><IMG
+ WIDTH="33" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img273.png"
+ ALT="$M_D$"></SPAN> with two additional rows and columns to obtain
+<BR><P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay">
+<!-- MATH
+ \begin{displaymath}
+M_{Dbb}=
+\left[
+\begin{array}{ccc}
+M_D & w_1 & w_2 \\
+v_1^* & 0 & 0\\
+v_2^* & 0 & 0
+\end{array}
+\right],
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="211" HEIGHT="72" BORDER="0"
+ SRC="img279.png"
+ ALT="\begin{displaymath}
+M_{Dbb}=
+\left[
+\begin{array}{ccc}
+M_D &amp; w_1 &amp; w_2 \\
+v_1^* &amp; 0 &amp; 0\\
+v_2^* &amp; 0 &amp; 0
+\end{array}
+\right],
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+so that <SPAN CLASS="MATH"><IMG
+ WIDTH="45" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img280.png"
+ ALT="$M_{Dbb}$"></SPAN> is nonsingular in the BPC cycle. Then we solve the systems
+<BR><P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay">
+<!-- MATH
+ \begin{displaymath}
+M_{Dbb}
+\left[
+\begin{array}{cc}
+\psi_{11} & \psi_{12} \\
+g_{BPC11} & g_{BPC12}  \\
+g_{BPC21} & g_{BPC22}
+\end{array}
+\right]
+= 
+\left[
+\begin{array}{cc}
+0_{(Nm+1)n} & 0_{(Nm+1)n} \\
+1 & 0 \\
+0 & 1
+\end{array}
+\right],
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="432" HEIGHT="73" BORDER="0"
+ SRC="img281.png"
+ ALT="\begin{displaymath}
+M_{Dbb}
+\left[
+\begin{array}{cc}
+\psi_{11} &amp; \psi_{12} \...
+...n} &amp; 0_{(Nm+1)n} \\
+1 &amp; 0 \\
+0 &amp; 1
+\end{array}
+\right],
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+where
+<!-- MATH
+ $\psi_{11},\psi_{12}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="63" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img282.png"
+ ALT="$\psi_{11},\psi_{12}$"></SPAN> have <SPAN CLASS="MATH"><IMG
+ WIDTH="89" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img283.png"
+ ALT="$(Nm+1)n$"></SPAN> components, 
+and <SPAN CLASS="MATH"><IMG
+ WIDTH="58" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img284.png"
+ ALT="$g_{BPC11}$"></SPAN>, <SPAN CLASS="MATH"><IMG
+ WIDTH="58" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img285.png"
+ ALT="$g_{BPC12}$"></SPAN>, <SPAN CLASS="MATH"><IMG
+ WIDTH="58" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img286.png"
+ ALT="$g_{BPC21}$"></SPAN>, and <SPAN CLASS="MATH"><IMG
+ WIDTH="58" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img287.png"
+ ALT="$g_{BPC22}$"></SPAN>,
+are scalar test functions for the BPC. In the BPC cycle they all vanish.
+
+<P>
+The singularity matrix is 
+<BR>
+<DIV ALIGN="CENTER">
+
+<!-- MATH
+ \begin{eqnarray}
+S = \left(\begin{array}{cccccccc}
+0 & 0 & 0 & 0 & - & - & - & - \\
+- & - & - & - & - & 0 & - & - \\
+- & - & - & - & - & - & 0 & - \\
+- & - & - & - & 1 & - & 1 & 0  
+ \end{array}\right)
+\end{eqnarray}
+ -->
+<TABLE CELLPADDING="0" ALIGN="CENTER" WIDTH="100%">
+<TR VALIGN="MIDDLE"><TD NOWRAP WIDTH="50%" ALIGN="RIGHT"><IMG
+ WIDTH="305" HEIGHT="104" ALIGN="MIDDLE" BORDER="0"
+ SRC="img288.png"
+ ALT="$\displaystyle S = \left(\begin{array}{cccccccc}
+0 &amp; 0 &amp; 0 &amp; 0 &amp; - &amp; - &amp; - &amp; - \...
+... - &amp; - &amp; - &amp; - &amp; - &amp; 0 &amp; - \\
+- &amp; - &amp; - &amp; - &amp; 1 &amp; - &amp; 1 &amp; 0
+\end{array}\right)$"></TD>
+<TD>&nbsp;</TD>
+<TD>&nbsp;</TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+(<SPAN CLASS="arabic">49</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+The first row corresponds to the BPC. It contains <SPAN CLASS="MATH"><IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img289.png"
+ ALT="$4$"></SPAN> zeros which indicates that <SPAN CLASS="MATH"><IMG
+ WIDTH="58" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img284.png"
+ ALT="$g_{BPC11}$"></SPAN>, <SPAN CLASS="MATH"><IMG
+ WIDTH="58" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img285.png"
+ ALT="$g_{BPC12}$"></SPAN>, <SPAN CLASS="MATH"><IMG
+ WIDTH="58" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img286.png"
+ ALT="$g_{BPC21}$"></SPAN>, and <SPAN CLASS="MATH"><IMG
+ WIDTH="58" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img287.png"
+ ALT="$g_{BPC22}$"></SPAN> should vanish.
+The last row corresponds to the NS. Because we have to exclude that all four testfunctions of the BPC are zeros, we introduce an extra testfunction which corresponds to the norm of these four testfunctions. A NS is detected if this norm is nonzero,the testfunction for the fold is nonzero and the testfunction for the NS is equal to zero.
+<BR><HR>
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"><STRONG>Subsections</STRONG></A>
+
+<UL CLASS="ChildLinks">
+<LI><A NAME="tex2html964"
+  HREF="node59.html">Branch Point Locator</A>
+<LI><A NAME="tex2html965"
+  HREF="node60.html">Normal form coefficients</A>
+</UL>
+<!--End of Table of Child-Links-->
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html962"
+  HREF="node59.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="/usr/share/latex2html/icons/next.png"></A> 
+<A NAME="tex2html958"
+  HREF="node53.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="/usr/share/latex2html/icons/up.png"></A> 
+<A NAME="tex2html952"
+  HREF="node57.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="/usr/share/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html960"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="/usr/share/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html963"
+  HREF="node59.html">Branch Point Locator</A>
+<B> Up:</B> <A NAME="tex2html959"
+  HREF="node53.html">Continuation of limit cycles</A>
+<B> Previous:</B> <A NAME="tex2html953"
+  HREF="node57.html">Initialization by time integration</A>
+ &nbsp; <B>  <A NAME="tex2html961"
+  HREF="node1.html">Contents</A></B> </DIV>
+<!--End of Navigation Panel-->
+
+</BODY>
+</HTML>

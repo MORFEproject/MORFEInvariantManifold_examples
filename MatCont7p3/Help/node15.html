@@ -1,0 +1,326 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Continuation and output</TITLE>
+<META NAME="description" CONTENT="Continuation and output">
+<META NAME="keywords" CONTENT="ManualAug2019 ">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="ManualAug2019 .css">
+
+<LINK REL="next" HREF="node16.html">
+<LINK REL="previous" HREF="node14.html">
+<LINK REL="up" HREF="node13.html">
+<LINK REL="next" HREF="node16.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html420"
+  HREF="node16.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="/usr/share/latex2html/icons/next.png"></A> 
+<A NAME="tex2html416"
+  HREF="node13.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="/usr/share/latex2html/icons/up.png"></A> 
+<A NAME="tex2html410"
+  HREF="node14.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="/usr/share/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html418"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="/usr/share/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html421"
+  HREF="node16.html">Curve file</A>
+<B> Up:</B> <A NAME="tex2html417"
+  HREF="node13.html">General software aspects of</A>
+<B> Previous:</B> <A NAME="tex2html411"
+  HREF="node14.html">System definition</A>
+ &nbsp; <B>  <A NAME="tex2html419"
+  HREF="node1.html">Contents</A></B> 
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00032000000000000000"></A><A NAME="s:cont"></A>
+<BR>
+Continuation and output
+</H2>
+
+<P>
+The syntax of the continuer is:
+<BLOCKQUOTE>
+<TT>[x,v,s,h,f] = cont(@curve, x0, v0, options);</TT>
+
+</BLOCKQUOTE>
+<TT>curve</TT> is a <SMALL>MATLAB</SMALL> m-file where the problem is specified (cf. section <A HREF="node16.html#s:curvedef">3.3</A>). Evaluating a function by means of a function handle replaces the earlier <SMALL>MATLAB</SMALL> mechanism of evaluating a function through a string containing the function name.
+<BR>
+<TT>x0</TT> and <TT>v0</TT> are respectively the initial point and the tangent vector at the initial point where the continuation starts.
+<BR>
+<TT>options</TT> is a structure as described in section <A HREF="node17.html#s:options">3.4</A>. 
+<BR>
+The arguments <TT>v0</TT> and <TT>options</TT> can be omitted. In this case the tangent vector at <TT>x0</TT> is computed internally and default options are used.
+
+<BR>
+
+<BR>
+The function returns a series of matrices:
+<BR>
+<P>
+<TT>x</TT> and <TT>v</TT> are the points and their tangent vectors along the curve. Each column in <TT>x</TT> and <TT>v</TT> corresponds to a point on the curve.
+<BR>
+<P>
+<TT>s</TT> is an array with structures containing information about the found singularities.  Its first and last elements always refer to the first and last points of the curve, respectively, since for convenience these are also considered
+"special". 
+
+<P>
+Each element of this structure array <TT>s</TT> has the following fields:
+<BR>
+<TABLE CELLPADDING=3>
+<TR><TD ALIGN="LEFT"><TT>s.index</TT></TD>
+<TD ALIGN="LEFT">index of the singularity point in <TT>x</TT>, so <TT>s(1).index</TT> is always
+equal to <SPAN CLASS="MATH"><IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img102.png"
+ ALT="$1$"></SPAN> and</TD>
+</TR>
+<TR><TD ALIGN="LEFT">&nbsp;</TD>
+<TD ALIGN="LEFT"><TT>s(end).index</TT> is the number of computed points.</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><TT>s.label</TT></TD>
+<TD ALIGN="LEFT">label of the singularity; by convention <TT>s(1).label</TT> is "00" and <TT>s(end).label</TT> is</TD>
+</TR>
+<TR><TD ALIGN="LEFT">&nbsp;</TD>
+<TD ALIGN="LEFT">"99".</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><TT>s.msg</TT></TD>
+<TD ALIGN="LEFT">a string that may contain any information which
+is useful for the user,</TD>
+</TR>
+<TR><TD ALIGN="LEFT">&nbsp;</TD>
+<TD ALIGN="LEFT">for example the full name of the detected special point.</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><TT>s.data</TT></TD>
+<TD ALIGN="LEFT">For each special point it contains fields with additional</TD>
+</TR>
+<TR><TD ALIGN="LEFT">&nbsp;</TD>
+<TD ALIGN="LEFT">information, depending on the type of point, and accumulating with increasing</TD>
+</TR>
+<TR><TD ALIGN="LEFT">&nbsp;</TD>
+<TD ALIGN="LEFT">codimension:</TD>
+</TR>
+</TABLE>
+
+<UL>
+<LI>Equilibrium: 
+	s.data.v = tangent vector at the bifurcation
+
+<UL>
+<LI>Hopf point: s.data.lyapunov = first Lyapunov coefficient
+</LI>
+<LI>Limit point: s.data.a = normal form coefficient
+
+<UL>
+<LI>Bogdanov-Takens / Zero Hopf / Double Hopf / Generalized Hopf / Cusp : s.data.c = normal form coefficient
+</LI>
+</UL>
+</LI>
+</UL>
+</LI>
+<LI>Limit cycle: 
+
+<P>
+s.data.multipliers = multipliers at the bifurcation
+
+<P>
+s.data.timemesh = time mesh of the orbit at the bifurcation
+
+<P>
+s.data.ntst = number of test intervals
+
+<P>
+s.data.ncol = number of collocation points
+
+<P>
+s.data.parametervalues = parameter values at the bifurcation
+
+<P>
+s.data.T = period of the orbit at the bifurcation
+
+<P>
+s.data.phi = bordering vector for locating PD bifurcations
+
+<UL>
+<LI>Period-doubling point: s.data.pdcoefficient = normal form coefficient
+</LI>
+<LI>Limit point of cycles: s.data.lpccoefficient = normal form coefficient
+</LI>
+<LI>Neimark-Sacker point: s.data.nscoefficient = normal form coefficient
+</LI>
+</UL>
+</LI>
+<LI>Homoclinic to hyperbolic saddle / Homoclinic to saddle-node:
+
+<P>
+s.data.timemesh = time mesh of the orbit at the bifurcation
+
+<P>
+s.data.ntst = number of test intervals
+
+<P>
+s.data.ncol = number of collocation points
+
+<P>
+s.data.parametervalues = parameter values at the bifurcation
+
+<P>
+s.data.T = period of the orbit at the bifurcation
+</LI>
+</UL>
+
+<P>
+<TT>h</TT> contains some information on the continuation process. Its columns are related to the computed points, and have the following components:
+<BR>
+<TABLE CELLPADDING=3>
+<TR><TD ALIGN="LEFT">Stepsize</TD>
+<TD ALIGN="LEFT">Stepsize used to calculate this point (zero for initial</TD>
+</TR>
+<TR><TD ALIGN="LEFT">&nbsp;</TD>
+<TD ALIGN="LEFT">point and singular points)</TD>
+</TR>
+<TR><TD ALIGN="LEFT">Half the number of correction itera-</TD>
+<TD ALIGN="LEFT">For singular points this is the number of locator</TD>
+</TR>
+<TR><TD ALIGN="LEFT">tions, rounded up to the next integer</TD>
+<TD ALIGN="LEFT">iterations</TD>
+</TR>
+<TR><TD ALIGN="LEFT">User function values</TD>
+<TD ALIGN="LEFT">The values of all active user functions</TD>
+</TR>
+<TR><TD ALIGN="LEFT">Test function values</TD>
+<TD ALIGN="LEFT">The values of all active test functions</TD>
+</TR>
+</TABLE>
+
+<BR>
+
+<BR>
+<TT>f</TT> contains different information, depending on the continuation run. 
+For noncycle-related continuations, the <TT>f</TT>-vector just contains the eigenvalues, 
+if asked for.
+For limit cycle continuations, it begins with the mesh points of the time- discretization, 
+followed by, if they were asked for, 
+the PRC- and dPRC-values in all points of the periodic orbit (cf. section <A HREF="node63.html#s:PRC">7.8</A>). 
+Then, if required, follow the multipliers.
+<BR>
+
+<BR>
+It is also possible to extend the most recently computed curve with the same options (also same number of points) as it was first computed.
+The syntax to extend this curve is:
+<BLOCKQUOTE>
+<TT>[x, v, s, h, f] = cont( x, v, s, h, f, cds);</TT>
+
+</BLOCKQUOTE>
+<TT>x, v, s, h</TT> and <TT>f</TT> are the results of the previous call to the continuer and <TT>cds</TT> is the global variable that contains the curve description of the most recently computed curve (note that this variable has to be defined as <TT>global cds</TT> in the calling command). The function returns the same output as before, extended with the new results. 
+<BR>
+<P>
+In M<SMALL>AT</SMALL>C<SMALL>ONT</SMALL>, all curves that have been computed using a specific system are stored in 
+separate <TT>.mat</TT>-files, in a directory called <I>diagram</I>, under a subdirectory 
+named after the system. For example, curves of the <I>Connor</I> system will be kept in 
+<TT>.mat</TT>-files under the subdirectory 
+<TT>Systems/Connor/diagram/</TT>. 
+For continuation runs, each such <TT>mat</TT>-file
+contains the computed <TT>x,v,s,h,f</TT> arrays, plus the <TT>cds</TT> structure and a 
+structure related to the curve type. Also, it contains the variables <I>point</I>,
+<I>ctype</I> and <I>num</I>. To understand their meaning, suppose that we are computing
+curves of limit cycles that we start from Hopf points. The first such computed curve
+then gets the name "H_LC(1)", <I>point</I> stores the string "H" and
+<I>ctype</I> stores the string "LC". Furthermore, <I>num</I> stores the index in <TT>s</TT>
+of the last selected point of the curve (the default is <SPAN CLASS="MATH"><IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img102.png"
+ ALT="$1$"></SPAN>).
+The second curve of the same type is called "H_LC(2)" and so on. In fact, to save storage space, only a limited number of curves of a certain type is stored. This number can be set by the user and the default is <SPAN CLASS="MATH"><IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img103.png"
+ ALT="$2$"></SPAN>.
+To save a computed curve permanently, the user must change its name.
+
+<P>
+For time integration runs, cf. &#167;<A HREF="node40.html#TimeIntegration">5.1</A> (Curve Type O), the <TT>mat</TT>-file contains <TT>ctype</TT>, <TT>option</TT>, <TT>param</TT>, <TT>point</TT>, <TT>s</TT>, <TT>t</TT>, <TT>x</TT>. Here <TT>t</TT> is the vector of time points and <TT>x</TT>
+is the corresponding array of computed points. <TT>s</TT> contains data on the first and last computed 
+points. The meaning of <TT>point,ctype</TT> is similar to the case of continuation curves.
+Finally, <TT>param</TT> is the vector of parameters of the ODE (constant during time integration) and
+<TT>option</TT> is a structure that contains optional settings for time integration.
+<BR>
+<P>
+To export the computed results of a system to a different installation of M<SMALL>AT</SMALL>C<SMALL>ONT</SMALL> 
+one has to copy the corresponding <TT>m</TT>-file, the <TT>mat</TT>-file and the directory of the 
+system. 
+
+<P>
+These files also contain all information needed to export the computed results to the 
+general <SMALL>MATLAB</SMALL> environment, so M<SMALL>AT</SMALL>C<SMALL>ONT</SMALL> is really an open system.
+<BR>
+<P>
+M<SMALL>AT</SMALL>C<SMALL>ONT</SMALL> also produces graphical output. 2D and 3D graphs are plotted in <SMALL>MATLAB</SMALL> 
+figure windows. Such a graph can be handled as any other graph that is produced in <SMALL>MATLAB</SMALL>. It can be 
+selected using the arrow-function of the <SMALL>MATLAB</SMALL> figure, and 
+the line width, line style and colour can be altered. Markers can be set on the curve. 
+It can be copy-pasted into another <SMALL>MATLAB</SMALL> figure. In a figure, textboxes can be inserted and axes labels can be added.
+Thus the user has a plethora of possibilities to combine different M<SMALL>AT</SMALL>C<SMALL>ONT</SMALL> output 
+graphs into one figure. 
+<BR>
+<P>
+Finally, we note that users often want to introduce new systems that are modifications of existing systems,
+but with slightly different sets of state variables and/or parameters. The best strategy to do this in
+M<SMALL>AT</SMALL>C<SMALL>ONT</SMALL> is first to edit the existing system, change its name to a new one and click "OK" to build an  m-file with a different name and no associated directory of computed curves. Afterwards, one can edit the newly created system, make all desired changes and click "OK" again.
+For C<SMALL>L/SMALL>_M<SMALL>AT</SMALL>C<SMALL>ONT</SMALL> see &#167;<A HREF="node34.html#odefiledynsys">4</A>
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html420"
+  HREF="node16.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="/usr/share/latex2html/icons/next.png"></A> 
+<A NAME="tex2html416"
+  HREF="node13.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="/usr/share/latex2html/icons/up.png"></A> 
+<A NAME="tex2html410"
+  HREF="node14.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="/usr/share/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html418"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="/usr/share/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html421"
+  HREF="node16.html">Curve file</A>
+<B> Up:</B> <A NAME="tex2html417"
+  HREF="node13.html">General software aspects of</A>
+<B> Previous:</B> <A NAME="tex2html411"
+  HREF="node14.html">System definition</A>
+ &nbsp; <B>  <A NAME="tex2html419"
+  HREF="node1.html">Contents</A></B> </DIV>
+<!--End of Navigation Panel-->
+
+</BODY>
+</HTML>

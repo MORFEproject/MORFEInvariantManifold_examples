@@ -1,0 +1,360 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Bifurcations and their normal form coefficients</TITLE>
+<META NAME="description" CONTENT="Bifurcations and their normal form coefficients">
+<META NAME="keywords" CONTENT="ManualAug2019 ">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="ManualAug2019 .css">
+
+<LINK REL="next" HREF="node51.html">
+<LINK REL="previous" HREF="node48.html">
+<LINK REL="up" HREF="node46.html">
+<LINK REL="next" HREF="node50.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html847"
+  HREF="node50.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="/usr/share/latex2html/icons/next.png"></A> 
+<A NAME="tex2html843"
+  HREF="node46.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="/usr/share/latex2html/icons/up.png"></A> 
+<A NAME="tex2html837"
+  HREF="node48.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="/usr/share/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html845"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="/usr/share/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html848"
+  HREF="node50.html">Branch point locator</A>
+<B> Up:</B> <A NAME="tex2html844"
+  HREF="node46.html">Equilibrium continuation</A>
+<B> Previous:</B> <A NAME="tex2html838"
+  HREF="node48.html">Initialization by time integration</A>
+ &nbsp; <B>  <A NAME="tex2html846"
+  HREF="node1.html">Contents</A></B> 
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00063000000000000000">
+Bifurcations and their normal form coefficients</A>
+</H2>
+
+<P>
+In continuous-time systems there are two generic codim 1 bifurcations that can 
+be detected along
+the equilibrium curve (no derivations will be done here; 
+for more detailed information see [<A
+ HREF="node115.html#yuri">25</A>]):
+
+<UL>
+<LI><EM>fold</EM>, also known as <EM>limit point</EM>. We will denote this bifurcation by <TT>LP</TT>
+</LI>
+<LI><EM>Hopf</EM>-point, denoted by <TT>H</TT>
+</LI>
+</UL>
+The equilibrium curve can also have <EM>branch points</EM>. These are denoted with <TT>BP</TT>.
+To detect these singularities, we first define 3 test functions:
+<BR>
+<DIV ALIGN="CENTER"><A NAME="secondbif"></A>
+<!-- MATH
+ \begin{eqnarray}
+\phi_1(u,\alpha)&=&\det\left(\begin{array}{c}
+F_x\\
+{v}^{T}\end{array}\right),\\
+\phi_2(u,\alpha) &=&  \left( \left[\begin{array}{cc}(2f_u(u,\alpha) \odot I_n)& w_1\\v_1^T& d\end{array} \right] \: \backslash \left(\begin{array}{c}0\\...\\0\\1\end{array} \right) \right) _{n+1},\\
+\phi_3(u,\alpha) &=& v_{n+1},
+\end{eqnarray}
+ -->
+<TABLE CELLPADDING="0" ALIGN="CENTER" WIDTH="100%">
+<TR VALIGN="MIDDLE"><TD NOWRAP WIDTH="50%" ALIGN="RIGHT"><IMG
+ WIDTH="64" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img191.png"
+ ALT="$\displaystyle \phi_1(u,\alpha)$"></TD>
+<TD ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="17" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img40.png"
+ ALT="$\textstyle =$"></TD>
+<TD ALIGN="LEFT" WIDTH="50%" NOWRAP><IMG
+ WIDTH="100" HEIGHT="61" ALIGN="MIDDLE" BORDER="0"
+ SRC="img192.png"
+ ALT="$\displaystyle \det\left(\begin{array}{c}
+F_x\\
+{v}^{T}\end{array}\right),$"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+(<SPAN CLASS="arabic">35</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE"><TD NOWRAP WIDTH="50%" ALIGN="RIGHT"><IMG
+ WIDTH="64" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img193.png"
+ ALT="$\displaystyle \phi_2(u,\alpha)$"></TD>
+<TD ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="17" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img40.png"
+ ALT="$\textstyle =$"></TD>
+<TD ALIGN="LEFT" WIDTH="50%" NOWRAP><IMG
+ WIDTH="338" HEIGHT="104" ALIGN="MIDDLE" BORDER="0"
+ SRC="img194.png"
+ ALT="$\displaystyle \left( \left[\begin{array}{cc}(2f_u(u,\alpha) \odot I_n)&amp; w_1\\  ...
+...ash \left(\begin{array}{c}0\\  ...\\  0\\  1\end{array} \right) \right) _{n+1},$"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+(<SPAN CLASS="arabic">36</SPAN>)</TD></TR>
+<TR VALIGN="MIDDLE"><TD NOWRAP WIDTH="50%" ALIGN="RIGHT"><IMG
+ WIDTH="64" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img195.png"
+ ALT="$\displaystyle \phi_3(u,\alpha)$"></TD>
+<TD ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="17" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img40.png"
+ ALT="$\textstyle =$"></TD>
+<TD ALIGN="LEFT" WIDTH="50%" NOWRAP><IMG
+ WIDTH="43" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img196.png"
+ ALT="$\displaystyle v_{n+1},$"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+(<SPAN CLASS="arabic">37</SPAN>)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+where <SPAN CLASS="MATH"><IMG
+ WIDTH="17" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img197.png"
+ ALT="$\odot$"></SPAN> is the bialternate matrix product and <SPAN CLASS="MATH"><IMG
+ WIDTH="20" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img198.png"
+ ALT="$v_1$"></SPAN>, <SPAN CLASS="MATH"><IMG
+ WIDTH="24" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img199.png"
+ ALT="$w_1$"></SPAN> are <!-- MATH
+ $\frac{n(n-1)}{2}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="52" HEIGHT="45" ALIGN="MIDDLE" BORDER="0"
+ SRC="img200.png"
+ ALT="$\frac{n(n-1)}{2}$"></SPAN> vectors chosen so that the square matrix in (<A HREF="#secondbif">36</A>) is non-singular.
+(the bialternate matrix product was introduced by C. St&#233;phanos [<A
+ HREF="node115.html#Stephanos">36</A>]; see [<A
+ HREF="node115.html#willy">22</A>] for details).
+Using these test functions we can define the singularities:
+
+<UL>
+<LI><TT>BP</TT>: <SPAN CLASS="MATH"><IMG
+ WIDTH="54" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img201.png"
+ ALT="$\phi_1=0$"></SPAN>
+</LI>
+<LI><TT>H</TT>:  <SPAN CLASS="MATH"><IMG
+ WIDTH="54" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img202.png"
+ ALT="$\phi_2=0$"></SPAN>
+</LI>
+<LI><TT>LP</TT>: <!-- MATH
+ $\phi_3=0, \ \phi_1\neq 0$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="117" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img203.png"
+ ALT="$\phi_3=0, \ \phi_1\neq 0$"></SPAN>
+</LI>
+</UL>
+A proof that these test functions correctly detect the mentioned singularities can be 
+found in [<A
+ HREF="node115.html#yuri">25</A>]. Here we only notice that <SPAN CLASS="MATH"><IMG
+ WIDTH="54" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img202.png"
+ ALT="$\phi_2=0$"></SPAN> not only at Hopf points
+but also at <I>neutral saddles</I>, i.e. points where <SPAN CLASS="MATH"><IMG
+ WIDTH="21" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img204.png"
+ ALT="$f_x$"></SPAN> has two real eigenvalues with sum zero. So, the singularity matrix is:
+<BR>
+<DIV ALIGN="RIGHT" CLASS="mathdisplay">
+
+<!-- MATH
+ \begin{equation}
+S = \left(\begin{array}{ccc}
+0 & - & -\\
+- & 0 & -\\
+1 & - & 0
+\end{array}\right)
+\end{equation}
+ -->
+<TABLE WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE"><TD ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="148" HEIGHT="72" BORDER="0"
+ SRC="img205.png"
+ ALT="\begin{displaymath}
+S = \left(\begin{array}{ccc}
+0 &amp; - &amp; -\\
+- &amp; 0 &amp; -\\
+1 &amp; - &amp; 0
+\end{array}\right)
+\end{displaymath}"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+(<SPAN CLASS="arabic">38</SPAN>)</TD></TR>
+</TABLE>
+<BR CLEAR="ALL"></DIV><P></P>
+
+<P>
+For each detected limit point, the corresponding <I>quadratic normal form
+coefficient</I> is computed:
+<BR>
+<DIV ALIGN="RIGHT" CLASS="mathdisplay">
+
+<!-- MATH
+ \begin{equation}
+a=\frac{1}{2} p^Tf_{uu}[q,q],
+\end{equation}
+ -->
+<A NAME="Eq.NFfold"></A>
+<TABLE WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE"><TD ALIGN="CENTER" NOWRAP><A NAME="Eq.NFfold"></A><IMG
+ WIDTH="127" HEIGHT="42" BORDER="0"
+ SRC="img206.png"
+ ALT="\begin{displaymath}
+a=\frac{1}{2} p^Tf_{uu}[q,q],
+\end{displaymath}"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+(<SPAN CLASS="arabic">39</SPAN>)</TD></TR>
+</TABLE>
+<BR CLEAR="ALL"></DIV><P></P>
+where <!-- MATH
+ $f_u q=f^T_u p =0, q^Tq =1, p^Tq =1$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="249" HEIGHT="39" ALIGN="MIDDLE" BORDER="0"
+ SRC="img207.png"
+ ALT="$f_u q=f^T_u p =0, q^Tq =1, p^Tq =1$"></SPAN>. Mathematically, the limit point is
+nondegenerate (i.e. the equilibrium branch looks locally like a parabola) if
+and only if <SPAN CLASS="MATH"><IMG
+ WIDTH="50" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img208.png"
+ ALT="$a \neq 0.$"></SPAN> In practice, because of round-off errors the computed <SPAN CLASS="MATH"><IMG
+ WIDTH="13" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img209.png"
+ ALT="$a$"></SPAN>
+is always nonzero. So it is more important to check if the testfunction <SPAN CLASS="MATH"><IMG
+ WIDTH="22" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img210.png"
+ ALT="$\phi_3$"></SPAN> 
+changes sign. (In a <I>cusp point</I> (CP) <SPAN CLASS="MATH"><IMG
+ WIDTH="45" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img211.png"
+ ALT="$a=0$"></SPAN> but this will not be detected on
+a branch of equilibria since it is a codimension 2 phenomenon, see &#167;<A HREF="node65.html#foldcont">8.1</A>)
+
+<P>
+At a Hopf bifurcation
+point, the <I>first Lyapunov coefficient</I> is computed by the formula
+<BR>
+<DIV ALIGN="RIGHT" CLASS="mathdisplay">
+
+<!-- MATH
+ \begin{equation}
+l_1=\frac{1}{2}{\rm Re}\left\{p^T
+\left(f_{uuu}[q,q,\bar{q}]-2f_{uu}[q,F^{-1}_uf_{uu}[q,\bar{q}]]+
+f_{uu}[\bar{q},(2i\omega I_n-f_u)^{-1}f_{uu}[q,q]] \right)\right\},
+
+\end{equation}
+ -->
+<A NAME="Eq.NFHopf"></A>
+<TABLE WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE"><TD ALIGN="CENTER" NOWRAP><A NAME="Eq.NFHopf"></A><IMG
+ WIDTH="637" HEIGHT="42" BORDER="0"
+ SRC="img212.png"
+ ALT="\begin{displaymath}
+l_1=\frac{1}{2}{\rm Re}\left\{p^T
+\left(f_{uuu}[q,q,\bar{q...
+...bar{q},(2i\omega I_n-f_u)^{-1}f_{uu}[q,q]] \right)\right\},
+\end{displaymath}"></TD>
+<TD CLASS="eqno" WIDTH=10 ALIGN="RIGHT">
+(<SPAN CLASS="arabic">40</SPAN>)</TD></TR>
+</TABLE>
+<BR CLEAR="ALL"></DIV><P></P>
+where <!-- MATH
+ $f_uq=i\omega q,\  q^Tq =1,\ f^{T}_u p=-i\omega p,\ \bar{p}^Tq=1$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="331" HEIGHT="39" ALIGN="MIDDLE" BORDER="0"
+ SRC="img213.png"
+ ALT="$f_uq=i\omega q,\ q^Tq =1,\ f^{T}_u p=-i\omega p,\ \bar{p}^Tq=1$"></SPAN>.
+
+<P>
+The <I>first Lyapunov coefficient</I> is quite important. If <SPAN CLASS="MATH"><IMG
+ WIDTH="49" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img214.png"
+ ALT="$l_1&lt;0$"></SPAN> then
+the Hopf bifurcation is <I>supercritical,</I> i.e. within the center manifold on one side of the bifurcation
+only stable equilibria exist, on the other side unstable equilibria coexist with
+stable periodic orbits. If <SPAN CLASS="MATH"><IMG
+ WIDTH="49" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img215.png"
+ ALT="$l_1&gt;0$"></SPAN> then
+the Hopf bifurcation is <I>subcritical,</I> i.e. within the center manifold on one side of the bifurcation
+stable equilibria coexist with unstable periodic orbits, on the other side only unstable equilibria exist.
+(In a <I>Generalized Hopf point</I> (GH) <SPAN CLASS="MATH"><IMG
+ WIDTH="49" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img216.png"
+ ALT="$l_1=0$"></SPAN> but this will not be detected on
+a branch of equilibria since it is a codimension 2 phenomenon, see &#167;<A HREF="node71.html#Hopfcont">8.2</A>)
+
+<P>
+<BR><HR>
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"><STRONG>Subsections</STRONG></A>
+
+<UL CLASS="ChildLinks">
+<LI><A NAME="tex2html849"
+  HREF="node50.html">Branch point locator</A>
+</UL>
+<!--End of Table of Child-Links-->
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html847"
+  HREF="node50.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="/usr/share/latex2html/icons/next.png"></A> 
+<A NAME="tex2html843"
+  HREF="node46.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="/usr/share/latex2html/icons/up.png"></A> 
+<A NAME="tex2html837"
+  HREF="node48.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="/usr/share/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html845"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="/usr/share/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html848"
+  HREF="node50.html">Branch point locator</A>
+<B> Up:</B> <A NAME="tex2html844"
+  HREF="node46.html">Equilibrium continuation</A>
+<B> Previous:</B> <A NAME="tex2html838"
+  HREF="node48.html">Initialization by time integration</A>
+ &nbsp; <B>  <A NAME="tex2html846"
+  HREF="node1.html">Contents</A></B> </DIV>
+<!--End of Navigation Panel-->
+
+</BODY>
+</HTML>

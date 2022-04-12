@@ -1,0 +1,111 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Fold of cycles initialization</TITLE>
+<META NAME="description" CONTENT="Fold of cycles initialization">
+<META NAME="keywords" CONTENT="ManualAug2019 ">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="ManualAug2019 .css">
+
+<LINK REL="next" HREF="node87.html">
+<LINK REL="previous" HREF="node85.html">
+<LINK REL="up" HREF="node83.html">
+<LINK REL="next" HREF="node87.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html1337"
+  HREF="node87.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="/usr/share/latex2html/icons/next.png"></A> 
+<A NAME="tex2html1333"
+  HREF="node83.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="/usr/share/latex2html/icons/up.png"></A> 
+<A NAME="tex2html1327"
+  HREF="node85.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="/usr/share/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html1335"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="/usr/share/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html1338"
+  HREF="node87.html">Example: the fast Morris-Lecar</A>
+<B> Up:</B> <A NAME="tex2html1334"
+  HREF="node83.html">Continuation of fold bifurcation</A>
+<B> Previous:</B> <A NAME="tex2html1328"
+  HREF="node85.html">Bifurcations along a fold</A>
+ &nbsp; <B>  <A NAME="tex2html1336"
+  HREF="node1.html">Contents</A></B> 
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H3><A NAME="SECTION00084300000000000000">
+Fold of cycles initialization</A>
+</H3>
+One way to start a Fold bifurcation of cycles continuation supported in the current version is to start it from a fold bifurcation point (LPC) on a limit cycle curve. This can be done using the following command: <TT>[x0,v0]=init_LPC_LPC(@odefile, x, s, ap, ntst, ncol<!-- MATH
+ $(,bp)_{optional}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="91" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img357.png"
+ ALT="$(,bp)_{optional}$"></SPAN>)</TT>. <TT>x</TT> should be the <TT>x</TT> as returned by the previous limit cycle continuation. <TT>s</TT> is the special point structure of the detected Fold bifurcation point on the limit cycle curve. <TT>odefile</TT> specifies the ode-file to be used. <TT>ap</TT> is the active parameter and <TT>ntst</TT> and <TT>ncol</TT> are  again the number of mesh and collocation points for the discretization. <TT>bp</TT> are the optional indices of the branch parameters. It also works without entering a value for this field: <TT>[x0,v0]=init_LPC_LPC(@odefile, x, s, ap, ntst, ncol)</TT>. 
+
+<P>
+M<SMALL>AT</SMALL>C<SMALL>ONT</SMALL> provides four other initializers which allow to start a continuation of folds of limit cycles by starting from an codim2 bifurcation of limit cycles. 
+These are <TT>init_CPC_LPC.m,</TT> <TT>init_LPNS_LPC.m,</TT> <TT>init_LPPD_LPC.m</TT> and <TT>init_R1_LPC.m</TT>. These initializers are introduced for 
+ease of use since they refer back to <TT>init_LPC_LPC.m</TT>.
+
+<P>
+A more interesting and indeed nontrivial initializer is <TT>init_GH_LPC.m</TT>. Computational methods to switch to nonhyperbolic cycles from codim 2 bifurcations of equilibria are discussed in [<A
+ HREF="node115.html#kumegosa">29</A>].
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html1337"
+  HREF="node87.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="/usr/share/latex2html/icons/next.png"></A> 
+<A NAME="tex2html1333"
+  HREF="node83.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="/usr/share/latex2html/icons/up.png"></A> 
+<A NAME="tex2html1327"
+  HREF="node85.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="/usr/share/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html1335"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="/usr/share/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html1338"
+  HREF="node87.html">Example: the fast Morris-Lecar</A>
+<B> Up:</B> <A NAME="tex2html1334"
+  HREF="node83.html">Continuation of fold bifurcation</A>
+<B> Previous:</B> <A NAME="tex2html1328"
+  HREF="node85.html">Bifurcations along a fold</A>
+ &nbsp; <B>  <A NAME="tex2html1336"
+  HREF="node1.html">Contents</A></B> </DIV>
+<!--End of Navigation Panel-->
+
+</BODY>
+</HTML>

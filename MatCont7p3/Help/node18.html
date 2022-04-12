@@ -1,0 +1,330 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>The options-structure</TITLE>
+<META NAME="description" CONTENT="The options-structure">
+<META NAME="keywords" CONTENT="ManualAug2019 ">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="ManualAug2019 .css">
+
+<LINK REL="next" HREF="node19.html">
+<LINK REL="previous" HREF="node17.html">
+<LINK REL="up" HREF="node17.html">
+<LINK REL="next" HREF="node19.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html467"
+  HREF="node19.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="/usr/share/latex2html/icons/next.png"></A> 
+<A NAME="tex2html463"
+  HREF="node17.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="/usr/share/latex2html/icons/up.png"></A> 
+<A NAME="tex2html457"
+  HREF="node17.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="/usr/share/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html465"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="/usr/share/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html468"
+  HREF="node19.html">Derivatives of the defining</A>
+<B> Up:</B> <A NAME="tex2html464"
+  HREF="node17.html">Options</A>
+<B> Previous:</B> <A NAME="tex2html458"
+  HREF="node17.html">Options</A>
+ &nbsp; <B>  <A NAME="tex2html466"
+  HREF="node1.html">Contents</A></B> 
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H3><A NAME="SECTION00034100000000000000">
+The options-structure</A>
+</H3>
+It is possible to specify various options for the continuation run. In the continuation we use the options structure which is initially created with contset:
+<BLOCKQUOTE>
+<TT>options = contset;</TT>
+
+</BLOCKQUOTE>
+will initialize the structure. The continuer stores the handle to the options in the variable
+<TT>cds.options</TT>. 
+Options can then be set using
+<BLOCKQUOTE>
+<TT>options = contset(options, optionname, optionvalue);</TT>
+
+</BLOCKQUOTE>
+where <TT>optionname</TT> is an option from the following list:
+
+<P>
+<DL>
+<DT><STRONG>InitStepsize</STRONG></DT>
+<DD>the initial stepsize (default: <SPAN CLASS="MATH"><IMG
+ WIDTH="35" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img104.png"
+ ALT="$0.01$"></SPAN>)
+</DD>
+<DT><STRONG>MinStepsize</STRONG></DT>
+<DD>the minimum stepsize to compute the next point on the curve (default: <SPAN CLASS="MATH"><IMG
+ WIDTH="39" HEIGHT="20" ALIGN="BOTTOM" BORDER="0"
+ SRC="img105.png"
+ ALT="$10^{-5}$"></SPAN>)
+</DD>
+<DT><STRONG>MaxStepsize</STRONG></DT>
+<DD>the maximum stepsize (default: <SPAN CLASS="MATH"><IMG
+ WIDTH="26" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img106.png"
+ ALT="$0.1$"></SPAN>)
+</DD>
+<DT><STRONG>MaxCorrIters</STRONG></DT>
+<DD>maximum number of correction iterations (default: <SPAN CLASS="MATH"><IMG
+ WIDTH="21" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img107.png"
+ ALT="$10$"></SPAN>)
+</DD>
+<DT><STRONG>MaxNewtonIters</STRONG></DT>
+<DD>maximum number of Newton-Raphson iterations before switching to Newton-Chords in the corrector iterations (default: <SPAN CLASS="MATH"><IMG
+ WIDTH="13" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img108.png"
+ ALT="$3$"></SPAN>)
+</DD>
+<DT><STRONG>MaxTestIters</STRONG></DT>
+<DD>maximum number of iterations to locate a zero of a testfunction (default: <SPAN CLASS="MATH"><IMG
+ WIDTH="21" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img107.png"
+ ALT="$10$"></SPAN>)
+</DD>
+<DT><STRONG>Increment</STRONG></DT>
+<DD>the increment to compute first order derivatives numerically (default: <SPAN CLASS="MATH"><IMG
+ WIDTH="39" HEIGHT="20" ALIGN="BOTTOM" BORDER="0"
+ SRC="img105.png"
+ ALT="$10^{-5}$"></SPAN>)
+</DD>
+<DT><STRONG>MoorePenrose</STRONG></DT>
+<DD>boolean indicating the use of the Moore-Penrose continuation as the Newton-like corrector procedure (default: <SPAN CLASS="MATH"><IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img102.png"
+ ALT="$1$"></SPAN>)
+</DD>
+<DT><STRONG>FunTolerance</STRONG></DT>
+<DD>tolerance of function values: <SPAN CLASS="MATH"><IMG
+ WIDTH="79" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img109.png"
+ ALT="$\vert\vert F(x)\vert\vert\leq$"></SPAN> <TT>FunTolerance</TT> is the first convergence criterium of the Newton iteration (default: <SPAN CLASS="MATH"><IMG
+ WIDTH="39" HEIGHT="20" ALIGN="BOTTOM" BORDER="0"
+ SRC="img110.png"
+ ALT="$10^{-6}$"></SPAN>)
+</DD>
+<DT><STRONG>VarTolerance</STRONG></DT>
+<DD>tolerance of coordinates: <!-- MATH
+ $||\delta x||\leq$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="60" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img111.png"
+ ALT="$\vert\vert\delta x\vert\vert\leq$"></SPAN> <TT>VarTolerance</TT> is the second convergence criterium of the Newton iteration (default: <SPAN CLASS="MATH"><IMG
+ WIDTH="39" HEIGHT="20" ALIGN="BOTTOM" BORDER="0"
+ SRC="img110.png"
+ ALT="$10^{-6}$"></SPAN>)
+</DD>
+<DT><STRONG>TestTolerance</STRONG></DT>
+<DD>tolerance of test functions (default: <SPAN CLASS="MATH"><IMG
+ WIDTH="39" HEIGHT="20" ALIGN="BOTTOM" BORDER="0"
+ SRC="img105.png"
+ ALT="$10^{-5}$"></SPAN>)
+</DD>
+<DT><STRONG>Singularities</STRONG></DT>
+<DD>boolean indicating the presence of a singularity matrix (default: <SPAN CLASS="MATH"><IMG
+ WIDTH="13" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img112.png"
+ ALT="$0$"></SPAN>)
+</DD>
+<DT><STRONG>MaxNumPoints</STRONG></DT>
+<DD>maximum number of points on the curve (default: <SPAN CLASS="MATH"><IMG
+ WIDTH="30" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img113.png"
+ ALT="$300$"></SPAN>)
+</DD>
+<DT><STRONG>Backward</STRONG></DT>
+<DD>boolean indicating the direction of the continuation (sign of the initial tangent vector) <SPAN CLASS="MATH"><IMG
+ WIDTH="20" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img114.png"
+ ALT="$v_0$"></SPAN> (default: <SPAN CLASS="MATH"><IMG
+ WIDTH="13" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img112.png"
+ ALT="$0$"></SPAN>)
+</DD>
+<DT><STRONG>CheckClosed</STRONG></DT>
+<DD>number of points indicating when to start to check if the curve is closed (0 = do not check) (default: <SPAN CLASS="MATH"><IMG
+ WIDTH="21" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img115.png"
+ ALT="$50$"></SPAN>)
+</DD>
+<DT><STRONG>Adapt</STRONG></DT>
+<DD>number of points after which to call the adapt-function while computing the curve (default: <SPAN CLASS="MATH"><IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img102.png"
+ ALT="$1$"></SPAN>=adapt always)
+</DD>
+<DT><STRONG>IgnoreSingularity</STRONG></DT>
+<DD>vector containing indices of singularities which are to be ignored (default: empty)
+</DD>
+<DT><STRONG>Multipliers</STRONG></DT>
+<DD>boolean indicating the computation of the multipliers (default: <SPAN CLASS="MATH"><IMG
+ WIDTH="13" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img112.png"
+ ALT="$0$"></SPAN>)
+</DD>
+<DT><STRONG>Eigenvalues</STRONG></DT>
+<DD>boolean indicating the computation of the eigenvalues (default: <SPAN CLASS="MATH"><IMG
+ WIDTH="13" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img112.png"
+ ALT="$0$"></SPAN>)
+</DD>
+<DT><STRONG>TSearchOrder</STRONG></DT>
+<DD>numerical value that indicates if unit vectors are cycled in increasing order of index (default: <SPAN CLASS="MATH"><IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img102.png"
+ ALT="$1$"></SPAN>, increasing) or
+decreasing (set to a value different from <SPAN CLASS="MATH"><IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img102.png"
+ ALT="$1$"></SPAN>), see &#167;<A HREF="node27.html#TSO">3.4.10</A>.
+</DD>
+<DT><STRONG>Userfunctions</STRONG></DT>
+<DD>boolean indicating the presence of user functions (default: <SPAN CLASS="MATH"><IMG
+ WIDTH="13" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img112.png"
+ ALT="$0$"></SPAN>)
+</DD>
+<DT><STRONG>UserfunctionsInfo</STRONG></DT>
+<DD>is an array with structures containing information about the userfunctions. This structure has the following fields:
+<BR>
+<TABLE CELLPADDING=3>
+<TR><TD ALIGN="LEFT"><TT>.label</TT></TD>
+<TD ALIGN="LEFT">label of the userfunction</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><TT>.name</TT></TD>
+<TD ALIGN="LEFT">name of this particular userfunction</TD>
+</TR>
+<TR><TD ALIGN="LEFT"><TT>.state</TT></TD>
+<TD ALIGN="LEFT">boolean indicating whether the userfunction has to be evaluated or not</TD>
+</TR>
+</TABLE>
+</DD>
+<DT><STRONG>PRC</STRONG></DT>
+<DD>variable indicating the computation of the phase response curve (default: empty)
+</DD>
+<DT><STRONG>dPRC</STRONG></DT>
+<DD>variable indicating the computation of the derivative of the phase response curve (default: empty)
+</DD>
+<DT><STRONG>Input</STRONG></DT>
+<DD>vector representing the input given to the system for the computation of the phase response curve (default: <SPAN CLASS="MATH"><IMG
+ WIDTH="13" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img112.png"
+ ALT="$0$"></SPAN>)
+</DD>
+</DL>
+
+<P>
+This list is stored in the file <TT>contidx.m</TT> in the directory <TT>Continuer</TT>.
+However, <TT>options</TT> also contains fields which are not set by the user but frozen or filled by calls
+to the curvefile, namely:
+<DL>
+<DT><STRONG>SymDerivative</STRONG></DT>
+<DD>the highest order symbolic derivative which is present (default: <SPAN CLASS="MATH"><IMG
+ WIDTH="13" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img112.png"
+ ALT="$0$"></SPAN>)
+</DD>
+<DT><STRONG>SymDerivativeP</STRONG></DT>
+<DD>the highest order symbolic derivative with respect to the free parameter(s) which is present (default: <SPAN CLASS="MATH"><IMG
+ WIDTH="13" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img112.png"
+ ALT="$0$"></SPAN>)
+</DD>
+<DT><STRONG>Testfunctions</STRONG></DT>
+<DD>boolean indicating the presence of test functions (default: <SPAN CLASS="MATH"><IMG
+ WIDTH="13" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img112.png"
+ ALT="$0$"></SPAN>)
+</DD>
+<DT><STRONG>WorkSpace</STRONG></DT>
+<DD>boolean indicating to initialize and clean up user variable space (default: <SPAN CLASS="MATH"><IMG
+ WIDTH="13" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img112.png"
+ ALT="$0$"></SPAN>)
+</DD>
+<DT><STRONG>Locators</STRONG></DT>
+<DD>boolean vector indicating the user has provided his own locator code to locate zeroes of test functions.                     Otherwise the default locator will be used (default: empty)
+</DD>
+<DT><STRONG>ActiveParams</STRONG></DT>
+<DD>vector containing indices of the active parameter(s) (default: empty)
+</DD>
+<DT><STRONG>ActiveUParams</STRONG></DT>
+<DD>
+</DD>
+<DT><STRONG>ActiveSParams</STRONG></DT>
+<DD>
+</DD>
+<DT><STRONG>ActiveSParam</STRONG></DT>
+<DD>
+</DD>
+</DL>
+
+<P>
+The last three fields are used only in the homotopy methods for the initialzation of connecting orbits.
+
+<P>
+Some more details follow now. 
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html467"
+  HREF="node19.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="/usr/share/latex2html/icons/next.png"></A> 
+<A NAME="tex2html463"
+  HREF="node17.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="/usr/share/latex2html/icons/up.png"></A> 
+<A NAME="tex2html457"
+  HREF="node17.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="/usr/share/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html465"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="/usr/share/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html468"
+  HREF="node19.html">Derivatives of the defining</A>
+<B> Up:</B> <A NAME="tex2html464"
+  HREF="node17.html">Options</A>
+<B> Previous:</B> <A NAME="tex2html458"
+  HREF="node17.html">Options</A>
+ &nbsp; <B>  <A NAME="tex2html466"
+  HREF="node1.html">Contents</A></B> </DIV>
+<!--End of Navigation Panel-->
+
+</BODY>
+</HTML>

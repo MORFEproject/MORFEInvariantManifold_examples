@@ -1,0 +1,105 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Torus bifurcation initialization</TITLE>
+<META NAME="description" CONTENT="Torus bifurcation initialization">
+<META NAME="keywords" CONTENT="ManualAug2019 ">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="ManualAug2019 .css">
+
+<LINK REL="next" HREF="node92.html">
+<LINK REL="previous" HREF="node90.html">
+<LINK REL="up" HREF="node88.html">
+<LINK REL="next" HREF="node92.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html1397"
+  HREF="node92.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="/usr/share/latex2html/icons/next.png"></A> 
+<A NAME="tex2html1393"
+  HREF="node88.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="/usr/share/latex2html/icons/up.png"></A> 
+<A NAME="tex2html1387"
+  HREF="node90.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="/usr/share/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html1395"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="/usr/share/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html1398"
+  HREF="node92.html">Example: an autonomous electronic</A>
+<B> Up:</B> <A NAME="tex2html1394"
+  HREF="node88.html">Continuation of torus bifurcation</A>
+<B> Previous:</B> <A NAME="tex2html1388"
+  HREF="node90.html">Bifurcations along a Neimark-Sacker</A>
+ &nbsp; <B>  <A NAME="tex2html1396"
+  HREF="node1.html">Contents</A></B> 
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H3><A NAME="SECTION00085300000000000000">
+Torus bifurcation initialization</A>
+</H3>
+One way to start a continuation of torus bifurcations of cycles supported in the current version is to start it from a torus bifurcation point or neimarksacker point (NS) on a limit cycle curve. This can be done using the following command: <TT>[x0,v0]=init_NS_NS(@odefile, x, s, ap, ntst, ncol)</TT>. <TT>x</TT> should be the <TT>x</TT> as returned by the previous limit cycle continuation. <TT>s</TT> is the special point structure of the detected torus bifurcation point on the limit cycle curve. <TT>odefile</TT> specifies the ode-file to be used. <TT>ap</TT> is the array containing the two active parameters and <TT>ntst</TT> and <TT>ncol</TT> are  again the number of mesh and collocation points for the discretization.
+
+<P>
+M<SMALL>AT</SMALL>C<SMALL>ONT</SMALL> provides seven other initializers to start the continuation of torus bifurcations from codim2 bifurcations of limit cycles. These all have the form
+<TT>init_XYX_NS</TT> where <TT>XYX</TT> is one of {CH,LP,PD,R1,R2,R3,R4}. They are introduced for ease of use since they all refer back to <TT>init_NS_NS.m</TT>.
+
+<P>
+More interesting and indeed nontrivial initializers are <TT>init_HH_NS1.m,</TT> <TT>init_HH_NS2.m</TT> and <TT>init_ZH_NS.</TT>
+Indeed, two different torus bifurcation curves can generically cross a HH point. Computational methods to switch to nonhyperbolic cycles from codim 2 bifurcations of equilibria are discussed in [<A
+ HREF="node115.html#kumegosa">29</A>].
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html1397"
+  HREF="node92.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="/usr/share/latex2html/icons/next.png"></A> 
+<A NAME="tex2html1393"
+  HREF="node88.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="/usr/share/latex2html/icons/up.png"></A> 
+<A NAME="tex2html1387"
+  HREF="node90.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="/usr/share/latex2html/icons/prev.png"></A> 
+<A NAME="tex2html1395"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents"
+ SRC="/usr/share/latex2html/icons/contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html1398"
+  HREF="node92.html">Example: an autonomous electronic</A>
+<B> Up:</B> <A NAME="tex2html1394"
+  HREF="node88.html">Continuation of torus bifurcation</A>
+<B> Previous:</B> <A NAME="tex2html1388"
+  HREF="node90.html">Bifurcations along a Neimark-Sacker</A>
+ &nbsp; <B>  <A NAME="tex2html1396"
+  HREF="node1.html">Contents</A></B> </DIV>
+<!--End of Navigation Panel-->
+
+</BODY>
+</HTML>

@@ -1,0 +1,10 @@
+p=[0;0;0;3];ap1=[1];
+[x0,v0]=init_EP_EP(@cstr,[-0.9],p,ap1);
+opt=contset;
+opt=contset(opt,'VarTolerance',1e-3);
+opt=contset(opt,'FunTolerance',1e-3);
+opt=contset(opt,'MaxNumPoints',50);
+opt=contset(opt,'Singularities',1);
+opt=contset(opt,'TSearchOrder',0);
+[x,v,s,h,f]=cont(@equilibrium,x0,[],opt);
+cpl(x,v,s,[2,1]);
