@@ -1,11 +1,12 @@
 # Import the module. Using "using" keyword to make all export functions accessible.
 using MORFEInvariantManifold
+using MATLAB
 
 # Name of the mesh file. The one of this example is a COMSOL mesh format.
-mesh_file = "arch_4.mphtxt"
+mesh_file = "arch_III.mphtxt"
 
 # add material
-MORFE_add_material("polysilicon",2.33e-3,160e3,0.22)
+MORFE_add_material("polysilicon",2.32e-3,160e3,0.22)
 
 ### DOMAINS INFO
 # domain_list is a vector that stores vectors of integers. 
@@ -70,3 +71,18 @@ ntst=40.0
 MORFE_integrate_rdyn_backbone(odir,x0,integration_length,forward,MaxNumPoints,minstep,maxstep,ncol,ntst)
 
 frf = MORFE_compute_backbone_modal(odir)
+
+# post proc
+ω₀ = imag(Cp[2].f[1,1]) # extract eigenfrequency
+#
+L = 6.4                 # characteristic length of the vibration amplitude
+N=size(Cp[2].W)[1];
+ϕ = maximum(abs.(Cp[2].W[Int(N/2)+1:N,1])) # maximum value of the mode
+#
+
+x = frf[:,1]./ω₀
+y = frf[:,2].*(ϕ/L)
+# plot results
+eval_string("plot($x,$y)")
+eval_string("xlim([0.98,1.04])")
+eval_string("ylim([0.,0.7606])")

@@ -1,29 +1,31 @@
 # Import the module. Using "using" keyword to make all export functions accessible.
 using MORFEInvariantManifold
+using MATLAB
 
 # Name of the mesh file. The one of this example is a COMSOL mesh format.
-mesh_file = "arch_2.mphtxt"
+# Meshes associated to the blade are used to benchmark the scalability of the code.
+mesh_file = "blade_1.mphtxt"
 
 # add material
-MORFE_add_material("polysilicon",2.33e-3,160e3,0.22)
+MORFE_add_material("Titanium",4400.0,104e9,0.3)
 
 ### DOMAINS INFO
 # domain_list is a vector that stores vectors of integers. 
 # Each subvector is a domain. Each integer is a COMSOL volume.
 domains_list = [                 
-[1,2]
+[1]
 ]
 # materials is an array of strings. 
 # materials[i] embeds the material associated to the domain defined in domains_list[j]
 materials = [
-"polysilicon"
+"Titanium"
 ]
 
 ### BOUNDARIES INFO
 # boundaries_list is a vector that stores vectors of integers.
 # Each subvector is a boundary. Each integer is a COMSOL face
 boundaries_list = [
-[1,11]
+[5]
 ]
 
 # constrained degrees of freedom of the surfaces defined above.
@@ -57,16 +59,32 @@ max_order = 5
 odir, Cp, rdyn = MORFE_mech_autonomous(mesh_file,domains_list,materials,
                                        boundaries_list,constrained_dof,bc_vals,
                                        α,β,
-                                       Φₗᵢₛₜ,style,max_order)
+                                       Φₗᵢₛₜ,style,max_order);
 
-x0 = [0.0,0.3]
-integration_length = 100.0
-forward=true
+x0 = [0.0,1.0]
+integration_length = 5.0
+forward=false
 MaxNumPoints=100
 minstep=1e-8
-maxstep=20.0
+maxstep=0.5
 ncol=4.0
 ntst=40.0
 MORFE_integrate_rdyn_backbone(odir,x0,integration_length,forward,MaxNumPoints,minstep,maxstep,ncol,ntst)
 
+#
 frf = MORFE_compute_backbone_modal(odir)
+
+# post proc
+ω₀ = imag(Cp[2].f[1,1]) # extract eigenfrequency
+#
+L = 1                 # characteristic length of the vibration amplitude
+N=size(Cp[2].W)[1];
+ϕ = maximum(abs.(Cp[2].W[Int(N/2)+1:N,1])) # maximum value of the mode
+#
+
+x = frf[:,1]./ω₀
+y = frf[:,2].*(ϕ/L)
+# plot results
+eval_string("plot($x,$y)")
+eval_string("xlim([0.96,1.00])")
+eval_string("ylim([0.,0.14])")
