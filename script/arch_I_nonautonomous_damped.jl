@@ -81,7 +81,7 @@ bc_vals = [
 # style: parametrisation style. 'g' graph, 'r' real normal form, 'c' complex normal form
 style = 'c'
 # max_order_a: maximum order of the asymptotic expansion of the autonomous problem
-max_order_a = 5
+max_order_a = 7
 # max_order_na: maximum order of the asymptotic expansion of the nonautonomous problem
 max_order_na = 0
 
@@ -111,9 +111,9 @@ zero_amplitude = [0.0,0.0]
 harmonics_init = [1.0,0.0]
 time_integration_length = 1500*T₀
 forward = true
-MaxNumPoints =150.0
+MaxNumPoints =180.0
 minstep = 1e-8
-maxstep = 10.0
+maxstep = 8.0
 initstep = 0.1
 ncol = 4.0
 ntst = 40.0
