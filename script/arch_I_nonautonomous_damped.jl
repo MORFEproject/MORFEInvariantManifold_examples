@@ -5,8 +5,6 @@ using MATLAB
 # Name of the mesh file. The one of this example is a COMSOL mesh format.
 mesh_file = "arch_I.mphtxt"
 
-# add material
-MORFE_add_material("polysilicon",2.32e-3,160e3,0.22)
 
 ### DOMAINS INFO
 # domain_list is a vector that stores vectors of integers. 
@@ -14,6 +12,17 @@ MORFE_add_material("polysilicon",2.32e-3,160e3,0.22)
 domains_list = [                 
 [1,2]
 ]
+
+### MATERIAL 
+# define material properties
+material_name = "polysilicon";
+density = 2.32e-3;
+young_modulus = 160e3;
+poisson_ratio = 0.22;
+# add material to the library. 
+# Once added is saved and can be used without redefining it
+MORFE_add_material(material_name,density,young_modulus,poisson_ratio)
+# assign materials to the domain:
 # materials is an array of strings. 
 # materials[i] embeds the material associated to the domain defined in domains_list[j]
 materials = [
@@ -23,9 +32,7 @@ materials = [
 ### BOUNDARIES INFO
 # boundaries_list is a vector that stores vectors of integers.
 # Each subvector is a boundary. Each integer is a COMSOL face
-boundaries_list = [
-[1,11]
-]
+boundaries_list = [[1,11]]
 
 # constrained degrees of freedom of the surfaces defined above.
 # It is an array n_{surface}*dim, with n_{surface} number of boundaries 
@@ -67,51 +74,72 @@ bc_vals = [
 κ_list = [[0.9222734690990438^2*0.09]]
 κ_phase = [['c']]
 
+
 # PARAMETRISATION INFO
 # Φₗᵢₛₜ: vector of integer. Each integer correspond to which mode is included in the reduced model.
 Φₗᵢₛₜ = [1]
 # style: parametrisation style. 'g' graph, 'r' real normal form, 'c' complex normal form
 style = 'c'
 # max_order_a: maximum order of the asymptotic expansion of the autonomous problem
-max_order_a = 9
+max_order_a = 5
 # max_order_na: maximum order of the asymptotic expansion of the nonautonomous problem
 max_order_na = 0
 
-odir, Cp, Cp_na, rdyn = MORFE_mech_nonautonomous(mesh_file,domains_list,materials,
-                                                 boundaries_list,constrained_dof,bc_vals,
-                                                 Ω_list,κ_modes,κ_list,κ_phase,
-                                                 α,β,
-                                                 Φₗᵢₛₜ,style,max_order_a,max_order_na);
 
-#
-zero_amplitude = [0.0,0.0]
-harmonics_init = [1.0,0.0]
-time_integration_length = 15000.0
-param_init = [0.0,1.0,0.89]
-forward=true
-MaxNumPoints=100.0
-minstep=1e-8
-maxstep=20.0
-ncol=4.0
-ntst=40.0
-cont_param=3.0
-analysis_number=1
-MORFE_integrate_rdyn_frc(odir,zero_amplitude,harmonics_init,param_init,cont_param,
-                                  time_integration_length,forward,MaxNumPoints,minstep,maxstep,ncol,ntst,analysis_number)
-#
-frf = MORFE_compute_frc_modal(odir,Ω_list)
+@time odir, Cp, Cp_na, rdyn = MORFE_mech_nonautonomous(mesh_file,domains_list,materials,
+                                       boundaries_list,constrained_dof,bc_vals,
+                                       Ω_list,κ_modes,κ_list,κ_phase,
+                                       α,β,
+                                       Φₗᵢₛₜ,style,max_order_a,
+                                       max_order_na
+                                       );
 
 # post proc
 ω₀ = imag(Cp[2].f[1,1]) # extract eigenfrequency
+T₀ = 2*pi /ω₀  # extract period
 #
-L = 6.4                 # characteristic length of the vibration amplitude
-N=size(Cp[2].W)[1];
+L = 6.4  # characteristic length of the vibration amplitude
+N = size(Cp[2].W)[1]; # number of physical DOFs 
 ϕ = maximum(abs.(Cp[2].W[Int(N/2)+1:N,1])) # maximum value of the mode
 #
+#
+# param_init:  [artificial damping parameter = 0,  κ multiplier = 1, initial Ω multiplier = 0.99*ω₀]
+param_init = [0.0,1.0,0.99*ω₀] 
+cont_param = 3.0 # continuation parameter is Ω
+#
+zero_amplitude = [0.0,0.0]
+harmonics_init = [1.0,0.0]
+time_integration_length = 1500*T₀
+forward = true
+MaxNumPoints =150.0
+minstep = 1e-8
+maxstep = 10.0
+initstep = 0.1
+ncol = 4.0
+ntst = 40.0
+
+ms = MORFE_integrate_rdyn_frc(odir,zero_amplitude,harmonics_init,param_init,cont_param,
+                                       time_integration_length,forward,MaxNumPoints,
+                                       minstep,maxstep,initstep,ncol,ntst)
+#
+frf = MORFE_compute_frc_modal(odir,Ω_list)
+
 
 x = frf[:,1]./ω₀
 y = frf[:,2].*(ϕ/L)
 # plot results
-eval_string("plot($x,$y)")
-eval_string("xlim([1,1.04])")
-eval_string("ylim([0.,0.76513865625])")
+put_variable(ms,:x,x)
+put_variable(ms,:y,y)
+put_variable(ms,:max_order_a,max_order_a)
+
+show_msession(ms) # do not close the pop up matlab windows until done with the analyses
+eval_string(ms,"
+figure(1);hold on
+plot(x,y,'DisplayName',strcat(\"Order \",num2str(max_order_a)))
+xlim([1,1.04])
+ylim([0.,0.76513865625])
+xlabel('\$\\omega/\\omega_1\$','Interpreter','latex');
+ylabel('max[\$u_1 \\phi_1\$]/\$L\$','Interpreter','latex');
+legend();
+")
+close(ms)
