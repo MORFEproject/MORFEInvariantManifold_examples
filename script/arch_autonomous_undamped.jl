@@ -5,8 +5,6 @@ using MATLAB
 # Name of the mesh file. The one of this example is a COMSOL mesh format.
 mesh_file = "arch_I.mphtxt"
 
-# add material
-MORFE_add_material("polysilicon",2.32e-3,160e3,0.22)
 
 ### DOMAINS INFO
 # domain_list is a vector that stores vectors of integers. 
@@ -14,6 +12,17 @@ MORFE_add_material("polysilicon",2.32e-3,160e3,0.22)
 domains_list = [                 
 [1,2]
 ]
+
+### MATERIAL 
+# define material properties
+material_name = "polysilicon";
+density = 2.32e-3;
+young_modulus = 160e3;
+poisson_ratio = 0.22;
+# add material to the library. 
+# Once added is saved and can be used without redefining it
+MORFE_add_material(material_name,density,young_modulus,poisson_ratio)
+# assign materials to the domain:
 # materials is an array of strings. 
 # materials[i] embeds the material associated to the domain defined in domains_list[j]
 materials = [
