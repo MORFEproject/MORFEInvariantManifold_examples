@@ -51,40 +51,54 @@ bc_vals = [
 # Φₗᵢₛₜ: vector of integer. Each integer correspond to which mode is included in the reduced model.
 Φₗᵢₛₜ = [1]
 # style: parametrisation style. 'g' graph, 'r' real normal form, 'c' complex normal form
-style = 'c'
+style = 'r'
 # max_order: maximum order of the asymptotic expansion of the autonomous problem
-max_order = 9
+max_order = 5
 
-odir, Cp, rdyn = MORFE_mech_autonomous(mesh_file,domains_list,materials,
+@time odir, Cp, rdyn = MORFE_mech_autonomous(mesh_file,domains_list,materials,
                                        boundaries_list,constrained_dof,bc_vals,
                                        α,β,
                                        Φₗᵢₛₜ,style,max_order)
-
+# post proc
+ω₀ = imag(Cp[2].f[1,1]) # extract eigenfrequency
+T₀ = 2*pi /ω₀  # extract period
 #
-x0 = [0.0,0.3]
-integration_length = 100.0
-forward=true
-MaxNumPoints=100
-minstep=1e-8
-maxstep=20.0
-ncol=4.0
-ntst=40.0
-MORFE_integrate_rdyn_backbone(odir,x0,integration_length,forward,MaxNumPoints,minstep,maxstep,ncol,ntst)
+L = 6.4   # characteristic length of the vibration amplitude
+N = size(Cp[2].W)[1]; # number of physical DOFs 
+ϕ = maximum(abs.(Cp[2].W[Int(N/2)+1:N,1])) # maximum value of the mode
 
+small_amplitude = [0.0,0.3]
+time_integration_length = 2*T₀
+forward = true
+MaxNumPoints = 90.0
+minstep = 1e-8
+maxstep = 10.0
+initstep = 0.1
+ncol = 4.0
+ntst = 40.0
+
+ms = MORFE_integrate_rdyn_backbone(odir,small_amplitude,
+                                    time_integration_length,forward,MaxNumPoints,
+                                    minstep,maxstep,initstep,ncol,ntst)
 #
 frf = MORFE_compute_backbone_modal(odir)
 
-# post proc
-ω₀ = imag(Cp[2].f[1,1]) # extract eigenfrequency
-#
-L = 6.4                 # characteristic length of the vibration amplitude
-N=size(Cp[2].W)[1];
-ϕ = maximum(abs.(Cp[2].W[Int(N/2)+1:N,1])) # maximum value of the mode
-#
 
 x = frf[:,1]./ω₀
 y = frf[:,2].*(ϕ/L)
 # plot results
-eval_string("plot($x,$y)")
-eval_string("xlim([0.98,1.04])")
-eval_string("ylim([0.,0.76513865625])")
+put_variable(ms,:x,x)
+put_variable(ms,:y,y)
+put_variable(ms,:max_order_a,max_order_a)
+
+show_msession(ms) # do not close the pop up matlab windows until done with the analyses
+eval_string(ms,"
+figure(1);hold on
+plot(x,y,'DisplayName',strcat(\"Order \",num2str(max_order_a)))
+xlim([0.98,1.04])
+ylim([0.,0.7631])
+xlabel('\$\\omega/\\omega_1\$','Interpreter','latex');
+ylabel('max[\$u_1 \\phi_1\$]/\$L\$','Interpreter','latex');
+legend()
+")
+close(ms)
