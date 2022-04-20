@@ -3,7 +3,9 @@ Collection of analyses performed with MORFEInvariantManifold.
 
 A short tutorial for launching julia from VScode is provided.
 
-This repo contains a folder containing MatCont, a free code for Numerical Continuation and Bifurcation Analysis of ODEs. You can cite MatCont as:
+This repo contains a folder containing MatCont, a free code for Numerical Continuation and Bifurcation Analysis of ODEs. 
+
+You can cite MatCont as:
 
 @article{MATCONT,
 author = {Dhooge, A. and Govaerts, W. and Kuznetsov, Yu. A.},
