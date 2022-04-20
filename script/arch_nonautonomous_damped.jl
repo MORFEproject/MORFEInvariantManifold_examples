@@ -51,7 +51,7 @@ bc_vals = [
 
 # Rayleigh damping coefficients.
 # The damping matrix is defined as C = α M + β K
-α = 0.9222734690990438/500.0
+α = 0.9551328114213917/500.0
 β = 0.0
 
 # FORCING INFO
@@ -71,7 +71,7 @@ bc_vals = [
 # the phase of the input force is given by κ_phase. 'c' stands for cosine,
 # while 's' stands for sine.
 κ_modes = [[1]]
-κ_list = [[0.9222734690990438^2*0.09]]
+κ_list = [[0.9551328114213917^2*0.09]]
 κ_phase = [['c']]
 
 
@@ -79,9 +79,9 @@ bc_vals = [
 # Φₗᵢₛₜ: vector of integer. Each integer correspond to which mode is included in the reduced model.
 Φₗᵢₛₜ = [1]
 # style: parametrisation style. 'g' graph, 'r' real normal form, 'c' complex normal form
-style = 'c'
+style = 'r'
 # max_order_a: maximum order of the asymptotic expansion of the autonomous problem
-max_order_a = 7
+max_order_a = 5
 # max_order_na: maximum order of the asymptotic expansion of the nonautonomous problem
 max_order_na = 0
 
@@ -111,9 +111,9 @@ zero_amplitude = [0.0,0.0]
 harmonics_init = [1.0,0.0]
 time_integration_length = 1500*T₀
 forward = true
-MaxNumPoints =180.0
+MaxNumPoints =140.0
 minstep = 1e-8
-maxstep = 8.0
+maxstep = 10.0
 initstep = 0.1
 ncol = 4.0
 ntst = 40.0
@@ -136,8 +136,8 @@ show_msession(ms) # do not close the pop up matlab windows until done with the a
 eval_string(ms,"
 figure(1);hold on
 plot(x,y,'DisplayName',strcat(\"Order \",num2str(max_order_a)))
-xlim([1,1.04])
-ylim([0.,0.76513865625])
+%xlim([0.995,1.015])
+%ylim([0.,0.7631])
 xlabel('\$\\omega/\\omega_1\$','Interpreter','latex');
 ylabel('max[\$u_1 \\phi_1\$]/\$L\$','Interpreter','latex');
 legend();
