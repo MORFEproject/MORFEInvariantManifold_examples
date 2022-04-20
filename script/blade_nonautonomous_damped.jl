@@ -5,6 +5,8 @@ using MATLAB
 # Name of the mesh file. The one of this example is a COMSOL mesh format.
 # Meshes associated to the blade are used to benchmark the scalability of the code.
 mesh_file = "blade_1.mphtxt"
+# blade_1 is the smallest mesh, blade_9 is the biggest.
+# unzip blade_9 before using it
 
 ### DOMAINS INFO
 # domain_list is a vector that stores vectors of integers. 
@@ -79,9 +81,9 @@ bc_vals = [
 # Φₗᵢₛₜ: vector of integer. Each integer correspond to which mode is included in the reduced model.
 Φₗᵢₛₜ = [1]
 # style: parametrisation style. 'g' graph, 'r' real normal form, 'c' complex normal form
-style = 'c'
+style = 'r'
 # max_order_a: maximum order of the asymptotic expansion of the autonomous problem
-max_order_a = 3
+max_order_a = 7
 # max_order_na: maximum order of the asymptotic expansion of the nonautonomous problem
 max_order_na = 0
 
@@ -139,6 +141,8 @@ figure(1);hold on
 plot(x,y,'DisplayName',strcat(\"Order \",num2str(max_order_a)))
 xlabel('\$\\Omega/\\omega_1\$','Interpreter','latex');
 ylabel('max[\$u_1 \\phi_1\$]/\$L\$','Interpreter','latex');
+xlim([0.96,1.02])
+ylim([0.,0.14])
 legend();
 ")
 close(ms)
