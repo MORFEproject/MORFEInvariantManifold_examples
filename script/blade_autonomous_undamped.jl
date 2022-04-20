@@ -5,9 +5,8 @@ using MATLAB
 # Name of the mesh file. The one of this example is a COMSOL mesh format.
 # Meshes associated to the blade are used to benchmark the scalability of the code.
 mesh_file = "blade_1.mphtxt"
-
-# add material
-MORFE_add_material("Titanium",4400.0,104e9,0.3)
+# blade_1 is the smallest mesh, blade_9 is the biggest.
+# unzip blade_9 before using it
 
 ### DOMAINS INFO
 # domain_list is a vector that stores vectors of integers. 
@@ -15,6 +14,17 @@ MORFE_add_material("Titanium",4400.0,104e9,0.3)
 domains_list = [                 
 [1]
 ]
+
+### MATERIAL 
+# define material properties
+material_name = "Titanium";
+density = 4400.0;
+young_modulus = 104e9;
+poisson_ratio = 0.3;
+# add material to the library. 
+# Once added is saved and can be used without redefining it
+MORFE_add_material(material_name,density,young_modulus,poisson_ratio)
+# assign materials to the domain:
 # materials is an array of strings. 
 # materials[i] embeds the material associated to the domain defined in domains_list[j]
 materials = [
@@ -52,9 +62,9 @@ bc_vals = [
 # Φₗᵢₛₜ: vector of integer. Each integer correspond to which mode is included in the reduced model.
 Φₗᵢₛₜ = [1]
 # style: parametrisation style. 'g' graph, 'r' real normal form, 'c' complex normal form
-style = 'c'
+style = 'r'
 # max_order: maximum order of the asymptotic expansion of the autonomous problem
-max_order = 3
+max_order = 7
 
 odir, Cp, rdyn = MORFE_mech_autonomous(mesh_file,domains_list,materials,
                                        boundaries_list,constrained_dof,bc_vals,
@@ -97,8 +107,8 @@ show_msession(ms) # do not close the pop up matlab windows until done with the a
 eval_string(ms,"
 figure(1);hold on
 plot(x,y,'DisplayName',strcat(\"Order \",num2str(max_order_a)))
-%xlim([0.96,1.00])
-%ylim([0.,0.14])
+xlim([0.96,1.02])
+ylim([0.,0.14])
 xlabel('\$\\omega/\\omega_1\$','Interpreter','latex');
 ylabel('max[\$u_1 \\phi_1\$]/\$L\$','Interpreter','latex');
 legend()
