@@ -101,12 +101,12 @@ y = frf[:,2].*(ϕ/L)
 # plot results
 put_variable(ms,:x,x)
 put_variable(ms,:y,y)
-put_variable(ms,:max_order_a,max_order_a)
+put_variable(ms,:max_order,max_order)
 
 show_msession(ms) # do not close the pop up matlab windows until done with the analyses
 eval_string(ms,"
 figure(1);hold on
-plot(x,y,'DisplayName',strcat(\"Order \",num2str(max_order_a)))
+plot(x,y,'DisplayName',strcat(\"Order \",num2str(max_order)))
 xlim([0.96,1.02])
 ylim([0.,0.14])
 xlabel('\$\\omega/\\omega_1\$','Interpreter','latex');
